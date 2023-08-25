@@ -1,42 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c89cd15-faa8-4d65-907e-77dd55248a3c" name="Changes" comment="Project to display correlations between financial instruments and macroeconomic indicators, including stocks, etfs, indices, and anything that FRED offers.&#10;Currently working with Securities but not with FredSeries objects.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/AAPL_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/AAPL_plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/ASML_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/ASML_plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/CHD_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/CHD_plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/CLX_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/CLX_plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/COST_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/COST_plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/GS_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/GS_plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/MVIS_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/MVIS_plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/NVDA_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/NVDA_plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/TGT_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/TGT_plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/TSLA_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/TSLA_plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/json_plots/AAPL_plot.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/json_plots/AAPL_plot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/json_plots/ASML_plot.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/json_plots/ASML_plot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/json_plots/CHD_plot.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/json_plots/CHD_plot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/json_plots/CLX_plot.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/json_plots/CLX_plot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/json_plots/COST_plot.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/json_plots/COST_plot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/json_plots/GS_plot.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/json_plots/GS_plot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/json_plots/MVIS_plot.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/json_plots/MVIS_plot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/json_plots/NVDA_plot.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/json_plots/NVDA_plot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/json_plots/TGT_plot.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/json_plots/TGT_plot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/json_plots/TSLA_plot.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/json_plots/TSLA_plot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/AAPL.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/AAPL.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/ASML.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/ASML.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/CHD.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/CHD.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/CLX.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/CLX.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/GS.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/GS.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/MVIS.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/MVIS.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/NVDA.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/NVDA.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/file_reading_funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/file_reading_funcs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/find_correlated_symbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/find_correlated_symbols.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/plotting_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/plotting_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/security_correlations_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/security_correlations_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-    </list>
+    <list default="true" id="2c89cd15-faa8-4d65-907e-77dd55248a3c" name="Changes" comment="Working stock, etf, and indices comparisons. Need to add buttons to filter stocks by their sector, industry, industry_group, State, City, and market cap. Also need to format site better. &#10;&#10;FredSeries comparisons not working yet." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,6 +48,12 @@
     "last_opened_file_path": "C:/Users/afshin/IdeaProjects/SecuritiesCorrelations/data/Stock_data",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "editor.preferences.appearance"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "module",
+      "directory"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -242,7 +213,7 @@
       <workItem from="1692907901051" duration="1195000" />
       <workItem from="1692910394670" duration="626000" />
       <workItem from="1692911374205" duration="140000" />
-      <workItem from="1692911844469" duration="22036000" />
+      <workItem from="1692911844469" duration="22565000" />
     </task>
     <task id="LOCAL-00001" summary="Project to display correlations between financial instruments and macroeconomic indicators, including stocks, etfs, indices, and anything that FRED offers.&#10;Currently working with Securities but not with FredSeries objects.">
       <created>1692920101789</created>
@@ -251,7 +222,21 @@
       <option name="project" value="LOCAL" />
       <updated>1692920101789</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Working stock, etf, and indices comparisons. Need to add buttons to filter stocks by their sector, industry, industry_group, State, City, and market cap. Also need to format site better. &#10;&#10;FredSeries comparisons not working yet.">
+      <created>1692938886387</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692938886387</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Working stock, etf, and indices comparisons. Need to add buttons to filter stocks by their sector, industry, industry_group, State, City, and market cap. Also need to format site better. &#10;&#10;FredSeries comparisons not working yet.">
+      <created>1692939063059</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692939063059</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,14 +255,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project to display correlations between financial instruments and macroeconomic indicators, including stocks, etfs, indices, and anything that FRED offers.&#10;Currently working with Securities but not with FredSeries objects." />
-    <option name="LAST_COMMIT_MESSAGE" value="Project to display correlations between financial instruments and macroeconomic indicators, including stocks, etfs, indices, and anything that FRED offers.&#10;Currently working with Securities but not with FredSeries objects." />
+    <MESSAGE value="Working stock, etf, and indices comparisons. Need to add buttons to filter stocks by their sector, industry, industry_group, State, City, and market cap. Also need to format site better. &#10;&#10;FredSeries comparisons not working yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working stock, etf, and indices comparisons. Need to add buttons to filter stocks by their sector, industry, industry_group, State, City, and market cap. Also need to format site better. &#10;&#10;FredSeries comparisons not working yet." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$find_correlated_symbols.coverage" NAME="find_correlated_symbols Coverage Results" MODIFIED="1692934336440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$.coverage" NAME=" Coverage Results" MODIFIED="1692608689001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$generic.coverage" NAME="generic Coverage Results" MODIFIED="1692670946827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../ProgramData/miniconda3/envs/SecuritiesCorrelations/Lib/site-packages/pandas/core" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$main.coverage" NAME="main Coverage Results" MODIFIED="1692902821634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SecuritiesCorrelations$security_correlations_ui.coverage" NAME="security_correlations_ui Coverage Results" MODIFIED="1692934342749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
+    <SUITE FILE_PATH="coverage/SecuritiesCorrelations$security_correlations_ui.coverage" NAME="security_correlations_ui Coverage Results" MODIFIED="1692938652009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$correlation_constants.coverage" NAME="correlation_constants Coverage Results" MODIFIED="1692613326457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$file_reading_funcs.coverage" NAME="file_reading_funcs Coverage Results" MODIFIED="1692889438020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$test.coverage" NAME="test Coverage Results" MODIFIED="1692932986176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
