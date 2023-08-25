@@ -92,6 +92,7 @@ class SecurityDashboard:
                 value=['stock'],   # default value
                 inline=True
             ),
+            # Checkboxes for detrending and monthly resolution
             html.Div([
                 dcc.Checklist(
                     id=self.DETREND_SWITCH_ID,
