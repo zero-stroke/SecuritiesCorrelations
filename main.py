@@ -32,8 +32,9 @@ def compute_security_correlations_and_plot(symbol_list: List[str], start_date: s
     # Take the num_traces positively and negatively correlated and assign to Security
     securities_list = define_top_correlations(securities_list)
 
-    for a in securities_list:
-        print(f'{str(a):<80}', a.all_correlations)
+    for security in securities_list:
+        unicode_security = str(security).encode('unicode_escape').decode()
+        print(f'{unicode_security:<80}', security.all_correlations)
 
     if not DEBUG:
         for security in securities_list:
@@ -65,7 +66,9 @@ def load_securities_correlations_and_plot(symbol: str, start_date: str = '2010-0
 
 
 def main():
-    symbol_list = ['AAPL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA', 'COST', 'TGT']
+    symbol_list = ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
+                   'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
+                   'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'DG', 'DLTR', 'UL', 'EL', 'CL']
 
     start_date = '2010-01-01'
     end_date = '2023-06-02'

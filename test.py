@@ -1,60 +1,55 @@
-import unittest
-import pandas as pd
-from scripts.correlation_constants import Security
-from scripts.find_correlated_symbols import *
+import json
 
+import dash
+import plotly.graph_objs as go
+from dash import dcc, html
 
-class TestCorrelationComputations(unittest.TestCase):
+from config import DATA_DIR
+from main import load_securities_correlations_and_plot
 
-    def setUp(self):
-        # Mock data or a subset of real data
-        dates = pd.date_range(start="2023-08-01", periods=5)
+# Path to the data directory
+data_dir = DATA_DIR
 
-        self.security1 = Security('AAPL')
+# Security to load
+security = "AAPL"  # Modify this to match a security you want to load
 
-        self.security2 = Security('MSFT')
+# Parameters
+num_traces = 2
+show_detrended = False
+etf = True
+stock = False
+index = False
+monthly_resample = False
 
-        self.all_base_series = [self.security1]
+# Load and plot the selected security
+load_securities_correlations_and_plot(
+    symbol=security,
+    start_date='2010-01-01',
+    num_traces=num_traces,
+    display_plot=False,
+    show_detrended=show_detrended,
+    etf=etf,
+    stock=stock,
+    index=index,
+    monthly=False
+)
 
-    def test_compute_correlation(self):
-        # Expected correlation between self.security1 and self.security2
-        expected_corr = self.security1.series_data.corr(self.security2.series_data)
+# Load the plot JSON from the saved file
+with open(data_dir / f'Graphs/json_plots/{security}_plot.json', 'r') as file:
+    fig_data = json.load(file)
+fig = go.Figure(fig_data)
 
-        # Use the function to compute the correlation
-        computed_corr = get_correlation_for_series(self.security2.series_data, self.security1.series_data)
+# Create Dash app
+app = dash.Dash(__name__)
 
-        # Directly compute using pandas
-        direct_corr = self.security1.series_data.diff().dropna().corr(self.security2.series_data.diff().dropna())
-        print("Direct Correlation:", direct_corr)  # Add this line
+# App layout
+app.layout = html.Div([
+    dcc.Graph(
+        id='security-plot',
+        figure=fig  # Use the loaded figure here
+    )
+])
 
-        # Compute standard deviations of detrended Data1 and Data2
-        combined_data = pd.concat([self.security2.series_data.diff().dropna(), self.security1.series_data.diff().dropna()], axis=1)
-        std_dev_data1 = combined_data.iloc[:, 0].std()
-        std_dev_data2 = combined_data.iloc[:, 1].std()
-        print("Standard Deviation of Data1:", std_dev_data1)
-        print("Standard Deviation of Data2:", std_dev_data2)
-
-        # Check if the computed correlation matches the expected correlation
-        self.assertAlmostEqual(computed_corr, expected_corr, places=5)
-
-    def test_compute_correlations_for_symbol(self):
-        compute_correlations_for_symbol('MSFT', self.all_base_series, '2010-01-01', '2020-01-01', 'yahoo', False, False)
-
-        # Check if the all_correlations dictionary for security1 contains MSFT and its correlation
-        self.assertIn('MSFT', self.security1.all_correlations)
-        self.assertAlmostEqual(self.security1.all_correlations['MSFT'],
-                               self.security1.series_data.corr(self.security2.series_data), places=5)
-
-    # You can add more tests for other functions and scenarios.
-
-    def test_compute_correlation_function(self):
-        corr_value = compute_correlation(self.security1.series_data, self.security2.series_data)
-        expected_corr = self.security1.series_data.corr(self.security2.series_data)
-        self.assertAlmostEqual(corr_value, expected_corr, places=5)
-
-    def tearDown(self):
-        # Clean up resources, if necessary.
-        pass
-
+# Run the app
 if __name__ == '__main__':
-    unittest.main()
+    app.run_server(debug=True)

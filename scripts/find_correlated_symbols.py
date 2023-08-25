@@ -7,7 +7,8 @@ from concurrent.futures import ProcessPoolExecutor
 import pandas as pd
 
 from scripts.correlation_constants import Security, SecurityMetadata
-from scripts.file_reading_funcs import get_validated_security_data, read_series_data, is_series_within_date_range
+from scripts.file_reading_funcs import get_validated_security_data, read_series_data, is_series_within_date_range, \
+    fit_data_to_time_range
 
 
 def define_top_correlations(all_main_securities: List[Security]) -> List[Security]:
@@ -66,14 +67,14 @@ class CorrelationCalculator:
                                             start_date: str, end_date: str, source: str, dl_data: bool, use_ch: bool) \
             -> List['Security']:
         if self.DEBUG:
-            symbols = ['MSFT', 'AMZN', 'SNAP', 'JPM', 'NFLX', 'PLUG', 'IBM', 'V', 'GS', 'MS', 'NVO', 'UNH', 'CRM', 'CSCO',
-                       'ASML', 'AMD', 'INTC', 'WMT', 'U', 'CTS', 'OSIS', 'BHE', 'KOPN', 'DAKT', 'FN', 'SANM',
-                       'SRT', 'AGIL', 'BTCM']
+            symbols = ['MSFT', 'AMZN', 'SNAP', 'JPM', 'NFLX', 'PLUG', 'IBM', 'V', 'GS', 'MS', 'NVO', 'UNH']
+            symbols.extend(
+                ['CRM', 'CSCO', 'ASML', 'AMD', 'INTC', 'WMT', 'U', 'CTS', 'OSIS', 'BHE', 'KOPN', 'DAKT', 'FN', 'SANM',
+                 'SRT', 'AGIL', 'BTCM'])
 
         symbols = list(set(symbols))  # This DOES change the order of symbols
 
-        max_workers = 1 if dl_data else 1
-        start_datetime = pd.to_datetime(start_date)
+        max_workers = 1 if dl_data else 7
 
         with ProcessPoolExecutor(max_workers=max_workers) as executor:
             results = executor.map(self.process_symbol, symbols, [start_date] * len(symbols), [end_date] * len(symbols),
@@ -83,17 +84,31 @@ class CorrelationCalculator:
                 if security_data is None:  # Check for None before processing
                     logger.warning(f'Skipping correlation calculation for {symbol} due to missing data.')
                     continue
-                for main_security in all_main_securities:
-                    if symbol == main_security.symbol:
+                # Check time range of security_data
+                if not is_series_within_date_range(security_data, start_date, end_date):
+                    logger.warning(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
+                    continue
+
+                i = 0
+                while i < len(all_main_securities):
+                    main_security = all_main_securities[i]
+
+                    if symbol == main_security.symbol:  # Skips the comparison if it is being compared to itself
+                        i += 1
                         continue
+
                     main_security_data = read_series_data(main_security.symbol, 'yahoo')
-                    start_datetime = max(start_datetime, main_security_data.index.min())
-                    main_security_data = main_security_data.loc[start_datetime:]
-                    if not is_series_within_date_range(security_data, start_date, end_date):
-                        # print(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
+
+                    if main_security_data is None:
+                        logger.warning(f'{main_security.symbol} Data could not be found.')
+                        all_main_securities.pop(i)
                         continue
+
+                    main_security_data = fit_data_to_time_range(main_security_data, start_date)
+
                     main_security.all_correlations[symbol] = self.get_correlation_for_series(main_security_data,
-                                                                                           security_data)
+                                                                                             security_data)
+                    i += 1
         return all_main_securities
 
     @staticmethod

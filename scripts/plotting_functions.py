@@ -9,7 +9,7 @@ from plotly.subplots import make_subplots
 
 from config import DATA_DIR
 from scripts.correlation_constants import Security, EnhancedEncoder, SecurityMetadata
-from scripts.file_reading_funcs import read_series_data
+from scripts.file_reading_funcs import read_series_data, fit_data_to_time_range
 
 
 class CorrelationPlotter:
@@ -20,7 +20,7 @@ class CorrelationPlotter:
         pass
 
     @staticmethod
-    def add_traces_to_plot(fig, securities: List[Security], row: int, num_traces: int, show_detrended: bool,
+    def add_traces_to_plot(fig, securities: List[Security], start_date, row: int, num_traces: int, show_detrended: bool,
                            etf: bool = False, stock: bool = True, index: bool = False, monthly: bool = False):
         """Adds num_traces # of traces of securities to plotly fig. Flags for displaying detrended and monthly data."""
         added_count = 0
@@ -37,8 +37,11 @@ class CorrelationPlotter:
 
             symbol = security.symbol
             name = security.name
+            name = CorrelationPlotter.wrap_text(name, 50)
+
             trace_series = read_series_data(security.symbol, 'yahoo')
 
+            trace_series = fit_data_to_time_range(trace_series, start_date)
             trace_series = CorrelationPlotter.normalize(trace_series)
 
             if monthly:
@@ -61,10 +64,9 @@ class CorrelationPlotter:
         main_security_data = read_series_data(main_security.symbol, 'yahoo')
 
         # Make sure the main security is normalized based on its data from the start date
-        start_datetime = pd.to_datetime(start_date)
-        start_datetime = max(start_datetime, main_security_data.index.min())
-        main_security_data = main_security_data.loc[start_datetime:]
-        main_security_data = self.normalize(main_security_data)
+        main_security_data = fit_data_to_time_range(main_security_data, start_date)
+        main_security_data = CorrelationPlotter.normalize(main_security_data)
+
         if show_detrended:
             main_security_data = main_security_data.diff().dropna()
 
@@ -72,14 +74,11 @@ class CorrelationPlotter:
         num_rows = 2
         fig = make_subplots(rows=num_rows, cols=1)
 
-        fig.add_trace(go.Scatter(x=main_security_data.index, y=main_security_data, mode='lines',
-                                 name=main_security.symbol, line=dict(color=self.MAIN_SERIES_COLOR)), row=1, col=1)
-        self.add_traces_to_plot(fig, main_security.positive_correlations, 1, num_traces, show_detrended,
-                                etf, stock, index, monthly)
-
-        fig.add_trace(go.Scatter(x=main_security_data.index, y=main_security_data, mode='lines',
-                                 name=main_security.symbol, line=dict(color=self.MAIN_SERIES_COLOR)), row=2, col=1)
-        self.add_traces_to_plot(fig, main_security.negative_correlations, 2, num_traces, show_detrended, monthly)
+        for i, correlations in enumerate([main_security.positive_correlations, main_security.negative_correlations],
+                                           start=1):
+            fig.add_trace(go.Scatter(x=main_security_data.index, y=main_security_data, mode='lines',
+                                     name=main_security.symbol, line=dict(color=self.MAIN_SERIES_COLOR)), row=i, col=1)
+            self.add_traces_to_plot(fig, correlations, start_date, i, num_traces, show_detrended, etf, stock, index, monthly)
 
         # Aesthetic configurations
         fig.update_layout(
@@ -119,6 +118,20 @@ class CorrelationPlotter:
     def normalize(series):
         """Normalize a pandas Series by scaling its values between 0 and 1."""
         return (series - series.min()) / (series.max() - series.min())
+
+    @staticmethod
+    def wrap_text(name, max_length=50):
+        if name is not None and len(name) > max_length:
+            # Find a suitable break point (e.g., a space) and insert a line break
+            break_point = name.rfind(' ', 0, max_length)
+            if break_point > 0:
+                name = name[:break_point] + '<br>' + name[break_point + 1:]
+            else:  # If no suitable break point found, force a break at the max length
+                name = name[:max_length] + '<br>' + name[max_length:]
+        elif name is not None:
+            padding = '&nbsp;' * (max_length - len(name))
+            name = name + padding
+        return name
 
 
 if __name__ == '__main__':

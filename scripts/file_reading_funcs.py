@@ -178,3 +178,10 @@ def get_fredmd_series_data(series_id):
     return md_data
 
 
+def fit_data_to_time_range(series_data, start_date):
+    start_datetime = pd.to_datetime(start_date)
+    start_datetime = max(start_datetime, series_data.index.min())
+    series_data = series_data.loc[start_datetime:]
+    return series_data
+
+
