@@ -60,21 +60,26 @@ logger.addHandler(fh)
 
 class CorrelationCalculator:
     def __init__(self):
-        self.DEBUG = True
+        self.DEBUG = False
         pass  # Logger is already configured at the module level
 
-    def define_correlations_for_series_list(self, all_main_securities: List['Security'], symbols: List[str],
+    def define_correlations_for_series_list(self, all_main_securities: List['Security'],
+                                            symbols: List[str],
                                             start_date: str, end_date: str, source: str, dl_data: bool, use_ch: bool) \
             -> List['Security']:
         if self.DEBUG:
-            symbols = ['MSFT', 'AMZN', 'SNAP', 'JPM', 'NFLX', 'PLUG', 'IBM', 'V', 'GS', 'MS', 'NVO', 'UNH']
-            symbols.extend(
-                ['CRM', 'CSCO', 'ASML', 'AMD', 'INTC', 'WMT', 'U', 'CTS', 'OSIS', 'BHE', 'KOPN', 'DAKT', 'FN', 'SANM',
-                 'SRT', 'AGIL', 'BTCM'])
+            symbols = ['MSFT', 'AMZN', 'SNAP', 'JPM', '^BKMC-IV']
+            # symbols.extend(
+            #     ['CRM', 'CSCO', 'ASML', 'AMD', 'INTC', 'WMT', 'U', 'CTS', 'OSIS', 'BHE', 'KOPN', 'DAKT', 'FN', 'SANM',
+            #      'SRT', 'AGIL', 'BTCM', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX',
+            #      'CHD', 'TSLA',
+            #      'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
+            #      'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW', 'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
+            #      'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E'])
 
         symbols = list(set(symbols))  # This DOES change the order of symbols
 
-        max_workers = 1 if dl_data else 7
+        max_workers = 1 if dl_data else 5
 
         with ProcessPoolExecutor(max_workers=max_workers) as executor:
             results = executor.map(self.process_symbol, symbols, [start_date] * len(symbols), [end_date] * len(symbols),
@@ -84,12 +89,12 @@ class CorrelationCalculator:
                 if security_data is None:  # Check for None before processing
                     logger.warning(f'Skipping correlation calculation for {symbol} due to missing data.')
                     continue
-                # Check time range of security_data
+                i = 0
+
                 if not is_series_within_date_range(security_data, start_date, end_date):
                     logger.warning(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
                     continue
 
-                i = 0
                 while i < len(all_main_securities):
                     main_security = all_main_securities[i]
 
@@ -105,6 +110,9 @@ class CorrelationCalculator:
                         continue
 
                     main_security_data = fit_data_to_time_range(main_security_data, start_date)
+
+                    # Check time range of security_data
+                    new_start_date = main_security_data.index.min().strftime('%Y-%m-%d')
 
                     main_security.all_correlations[symbol] = self.get_correlation_for_series(main_security_data,
                                                                                              security_data)

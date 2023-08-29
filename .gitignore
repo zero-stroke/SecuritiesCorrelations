@@ -7,3 +7,4 @@ data/Stock_data/debug/
 # Ignore yahoo_daily folder within Stock_data
 data/Stock_data/yahoo_daily/
 
+SecuritiesCorrelations.iml

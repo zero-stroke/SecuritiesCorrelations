@@ -7,6 +7,9 @@ import numpy as np
 import pandas as pd
 from enum import Enum
 
+from pandas import Series
+from unicodedata import normalize
+
 from config import STOCKS_DIR, FRED_DIR
 
 
@@ -23,9 +26,9 @@ class SecurityMetadata:
         if cls._instance is None:
             cls._instance = super(SecurityMetadata, cls).__new__(cls)
             # Load ETF, Stock, and Index data
-            cls._instance.etf_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/fin_db_etf_data.csv', index_col='symbol')
-            cls._instance.stock_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/fin_db_stock_data.csv', index_col='symbol')
-            cls._instance.index_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/fin_db_indices_data.csv', index_col='symbol')
+            cls._instance.etf_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_etf_data.csv', index_col='symbol')
+            cls._instance.stock_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv', index_col='symbol')
+            cls._instance.index_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv', index_col='symbol')
         return cls._instance
 
     def build_symbol_list(self, data_sources: List[DataSource]) -> List[str]:
@@ -62,19 +65,21 @@ class SecurityMetadata:
 
 class Security:
     def __init__(self, symbol: str, metadata: SecurityMetadata):
-        self.symbol = symbol
+        self.symbol: str = symbol
         self.metadata = metadata
-        self.name = None  # Set it to None initially
-        self.summary = None
-        self.sector = None
-        self.industry_group = None
-        self.industry = None
-        self.state = None
-        self.city = None
-        self.website = None
-        self.market_cap = None
-        self.source = ''  # Initialize to an empty string
-        self.correlation = None  # Initialized to None, can be updated later
+        self.name: Optional[str] = None  # Set it to None initially
+        self.summary: Optional[str] = None
+        self.sector: Optional[str] = None
+        self.industry_group: Optional[str] = None
+        self.industry: Optional[str] = None
+        self.market: Optional[str] = None
+        self.country: Optional[str] = None
+        self.state: Optional[str] = None
+        self.city: Optional[str] = None
+        self.website: Optional[str] = None
+        self.market_cap: Optional[str] = None
+        self.source: Optional[str] = ''  # Initialize to an empty string
+        self.correlation: Optional[float] = None  # Initialized to None, can be updated later
         self.positive_correlations: List[Security] = []  # List of Security objects
         self.negative_correlations: List[Security] = []  # List of Security objects
         self.all_correlations: Dict[str, float] = {}  # Dictionary with string keys and float values
@@ -100,15 +105,28 @@ class Security:
         self.correlation = value
 
     def set_properties_from_metadata(self, metadata: pd.Series, source_type: str) -> None:
-        self.name = metadata['name']
-        self.summary = metadata.get('summary', None)
-        self.sector = metadata.get('sector', None)
-        self.industry_group = metadata.get('industry_group', None)
-        self.industry = metadata.get('industry', None)
-        self.state = metadata.get('state', None)
-        self.city = metadata.get('city', None)
-        self.website = metadata.get('website', None)
-        self.market_cap = metadata.get('market_cap', None)
+        def set_property(name_of_attribute: str, default_val: str = 'Missing') -> None:
+            # If name is 'one', 'two', or 'RH', set the attribute to 'Missing' and return
+            if self.name in ('one', 'two', 'RH'):
+                setattr(self, name_of_attribute, default_val)
+                return
+
+            # Otherwise, get the value of the attribute from the metadata
+            raw_value = metadata.get(name_of_attribute, '')
+            # Normalize the value in cases of non-standard values
+            normalized_value = normalize('NFKD', str(raw_value)).encode('ascii', 'ignore').decode() or None
+            setattr(self, name_of_attribute, normalized_value or default_val)
+
+        # Safely set the name attribute
+        self.name = normalize('NFKD', str(metadata.get('name', ''))).encode('ascii', 'ignore').decode()
+
+        # Use the loop to set the attributes
+        for attribute_name in ['summary', 'sector', 'industry_group', 'industry', 'market', 'country', 'state', 'city',
+                               'website']:
+            set_property(attribute_name)
+
+        # Set market_cap and source attributes
+        self.market_cap = normalize('NFKD', str(metadata.get('market_cap', ''))).encode('ascii', 'ignore').decode() or None
         self.source = source_type
 
     def get_symbol_name_and_type(self) -> None:
@@ -127,11 +145,28 @@ class Security:
             index_data = self.metadata.index_metadata.loc[self.symbol]
             self.set_properties_from_metadata(index_data, 'index')
 
+    def get_unique_values(self, attribute_name: str) -> List[str]:
+        unique_values = set()
+
+        # Get values from positive_correlations
+        unique_values.update(getattr(security, attribute_name) for security in self.positive_correlations if
+                             getattr(security, attribute_name))
+
+        # Get values from negative_correlations
+        unique_values.update(getattr(security, attribute_name) for security in self.negative_correlations if
+                             getattr(security, attribute_name))
+
+        return list(unique_values)
+
     def __hash__(self) -> int:
         # Make the instance hashable using its symbol attribute
         return hash(self.symbol)
 
     def __str__(self) -> str:
+        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}, Correlation: {self.correlation}, " \
+               f"Top Correlations: {[obj.symbol for obj in self.positive_correlations[:5]]}"
+
+    def __repr__(self) -> str:
         return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}, Correlation: {self.correlation}, " \
                f"Top Correlations: {[obj.symbol for obj in self.positive_correlations[:5]]}"
 
@@ -200,6 +235,8 @@ class FredSeries:
                f"Top Correlations: {[obj.symbol for obj in self.positive_correlations[:5]]}"
 
 
+
+
 class EnhancedEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, np.ndarray):
@@ -234,26 +271,3 @@ SERIES_DICT = {
     "VIXCLSx": "VIXCLSx"
 }
 
-# def sort_series_by_correlation(all_correlated_tickers: Dict[Security, Dict[str, float]]) \
-#         -> Dict[Security, Dict[str, float]]:
-#     """Sort series based on their most correlated symbol."""
-#     all_sorted_symbol_dicts = {}
-#
-#     for base_series, symbol_correlation_dict in all_correlated_tickers.items():
-#         all_sorted_symbol_dicts[base_series] = sort_symbols_by_correlation(symbol_correlation_dict)
-#
-#     sorted_series_correlated_symbols = dict(
-#         sorted(all_sorted_symbol_dicts.items(), key=lambda item: next(iter(item[1].values())),
-#                reverse=True))
-#
-#     return sorted_series_correlated_symbols
-#
-# def sort_symbols_by_correlation(symbol_correlation_dict: Dict[str, float]) -> Dict[str, float]:
-#     """Sort symbols by correlation, excluding NaN values."""
-#     sorted_symbols_list = iter(sorted(
-#         [(symbol, correlation) for symbol, correlation in symbol_correlation_dict.items() if not math.isnan(correlation)],
-#         key=lambda item: item[1],
-#         reverse=True
-#     ))
-#
-#     return {k: v for k, v in sorted_symbols_list}

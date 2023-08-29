@@ -1,9 +1,7 @@
-import subprocess
 import json
-from itertools import islice
+import subprocess
 from typing import List
 
-import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
@@ -21,7 +19,10 @@ class CorrelationPlotter:
 
     @staticmethod
     def add_traces_to_plot(fig, securities: List[Security], start_date, row: int, num_traces: int, show_detrended: bool,
-                           etf: bool = False, stock: bool = True, index: bool = False, monthly: bool = False):
+                           etf: bool = False, stock: bool = True, index: bool = False, monthly: bool = False, sector:
+                           List[str] = None, industry_group: List[str] = None, industry: List[str] = None,
+                           country: List[str] = None, state: List[str] = None,
+                           market_cap: List[str] = None, otc_filter: bool = True):
         """Adds num_traces # of traces of securities to plotly fig. Flags for displaying detrended and monthly data."""
         added_count = 0
         for security in securities:
@@ -35,6 +36,23 @@ class CorrelationPlotter:
             elif security.source == 'index' and not index:
                 continue
 
+            if security.source == 'stock':
+                if sector is not None and security.sector not in sector:
+                    continue
+                if industry_group is not None and security.industry_group not in industry_group:
+                    continue
+                if industry is not None and security.industry not in industry:
+                    continue
+                if country is not None and security.country not in country:
+                    continue
+                if state is not None and security.state not in state:
+                    continue
+                if market_cap is not None and security.market_cap not in market_cap:
+                    continue
+
+                if otc_filter and 'OTC ' in security.market:  # If otc_filter is True and market contains 'OTC ' in it, skip
+                    continue
+
             symbol = security.symbol
             name = security.name
             name = CorrelationPlotter.wrap_text(name, 50)
@@ -42,7 +60,7 @@ class CorrelationPlotter:
             trace_series = read_series_data(security.symbol, 'yahoo')
 
             trace_series = fit_data_to_time_range(trace_series, start_date)
-            trace_series = CorrelationPlotter.normalize(trace_series)
+            trace_series = CorrelationPlotter.normalize_data(trace_series)
 
             if monthly:
                 trace_series = trace_series.resample('MS').first()
@@ -57,15 +75,16 @@ class CorrelationPlotter:
 
     def plot_security_correlations(self, main_security: Security, start_date: str, num_traces: int, display_plot: bool,
                                    show_detrended: bool, etf: bool = False, stock: bool = True, index: bool = False,
-                                   monthly: bool = False):
+                                   monthly: bool = False, sector: List[str] = None,
+                                   industry_group: List[str] = None, industry: List[str] = None,
+                                   country: List[str] = None, state: List[str] = None,
+                                   market_cap: List[str] = None, otc_filter: bool = True):
         """Plotting the base series against its correlated series"""
-
-        # Prepare the base series
-        main_security_data = read_series_data(main_security.symbol, 'yahoo')
+        main_security_data = read_series_data(main_security.symbol, 'yahoo')  # Prepare main series
 
         # Make sure the main security is normalized based on its data from the start date
         main_security_data = fit_data_to_time_range(main_security_data, start_date)
-        main_security_data = CorrelationPlotter.normalize(main_security_data)
+        main_security_data = CorrelationPlotter.normalize_data(main_security_data)
 
         if show_detrended:
             main_security_data = main_security_data.diff().dropna()
@@ -75,10 +94,11 @@ class CorrelationPlotter:
         fig = make_subplots(rows=num_rows, cols=1)
 
         for i, correlations in enumerate([main_security.positive_correlations, main_security.negative_correlations],
-                                           start=1):
+                                         start=1):
             fig.add_trace(go.Scatter(x=main_security_data.index, y=main_security_data, mode='lines',
                                      name=main_security.symbol, line=dict(color=self.MAIN_SERIES_COLOR)), row=i, col=1)
-            self.add_traces_to_plot(fig, correlations, start_date, i, num_traces, show_detrended, etf, stock, index, monthly)
+            self.add_traces_to_plot(fig, correlations, start_date, i, num_traces, show_detrended, etf, stock, index,
+                                    monthly, sector, industry_group, industry, country, state, market_cap, otc_filter,)
 
         # Aesthetic configurations
         fig.update_layout(
@@ -115,7 +135,7 @@ class CorrelationPlotter:
         subprocess.run(["cmd", "/c", "firefox2", "--kiosk", html_file_path])
 
     @staticmethod
-    def normalize(series):
+    def normalize_data(series):
         """Normalize a pandas Series by scaling its values between 0 and 1."""
         return (series - series.min()) / (series.max() - series.min())
 

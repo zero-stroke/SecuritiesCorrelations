@@ -1,3 +1,4 @@
+import logging
 import traceback
 from typing import List, Union
 import pickle
@@ -7,9 +8,15 @@ import numpy as np
 import pandas as pd
 
 import yfinance as yf
+import financedatabase as fd
 from scripts.correlation_constants import FredSeries, Security
 from scripts.clickhouse_functions import get_data_from_ch_stock_data
 from config import STOCKS_DIR, FRED_DIR, DATA_DIR
+
+
+# Configure the logger at the module level
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
 
 
 def download_yfin_data(symbol):
@@ -31,7 +38,7 @@ def read_series_data(symbol, source):
     if source == 'yahoo':
         file_path = STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet'
         if not os.path.exists(file_path):
-            print(f'{file_path} does not exist')
+            logger.warning(f'{file_path} does not exist')
             return None
         series = pd.read_parquet(file_path)
         if 'Date' in series.columns:
@@ -48,7 +55,7 @@ def read_series_data(symbol, source):
     elif source == 'alpaca':
         file_path = STOCKS_DIR / f'Alpaca_15m/parquets/{symbol}.parquet'
         if not os.path.exists(file_path):
-            print(f'{file_path} does not exist')
+            logger.warning(f'{file_path} does not exist')
             return None
         series = pd.read_parquet(file_path)
         series['timestamp'] = pd.to_datetime(series['timestamp'])
@@ -78,6 +85,9 @@ def get_validated_security_data(symbol: str, start_date: str, end_date: str, sou
     if not is_series_continuous(security_data, symbol):
         return None
 
+    if not is_series_non_repeating(security_data, symbol):
+        return None
+
     # Detrend
     security_data = security_data.diff().dropna()
 
@@ -89,15 +99,17 @@ def series_is_empty(series, symbol, file_path, dl_data=True) -> bool:
     duplicate_columns = series.columns[series.columns.duplicated()].tolist()
     nan_only_columns = series.columns[series.isna().all()].tolist()
     if duplicate_columns or nan_only_columns:
-        print(f"Duplicate columns/NaN only columns for {symbol}. Skipping...")
+        logger.warning(f"Duplicate columns/NaN only columns for {symbol}. Skipping...")
+        with open(DATA_DIR / 'files_to_delete.txt', 'a') as f:
+            f.write(f'{symbol}\n')
         return True
 
     # Check if the stock has data
-    if series is None or series.empty or series.shape[0] == 0:
-        print(f"No data available for {symbol}. Skipping...")
-        if os.path.exists(file_path) and not dl_data:
-            print('Deleting..')
-            # os.remove(file_path)  # Deletion
+    if series is None or series.empty or series.shape[0] == 0 or series.isna().all().all() or \
+            series.dropna().nunique().nunique() == 1:
+        logger.warning(f"No data available for {symbol}. Skipping...")
+        with open(DATA_DIR / 'files_to_delete.txt', 'a') as f:
+            f.write(f'{symbol}\n')
         return True
 
     return False
@@ -120,11 +132,19 @@ def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
     return True
 
 
+def is_series_non_repeating(series, symbol):
+    window_size = 10
+    if series.rolling(window_size).apply(lambda x: np.all(x == x.iloc[0])).any():
+        logger.warning(f"{symbol} has sections with {window_size} or more consecutive repeated values. Skipping...")
+        return False
+    return True
+
+
 def is_series_continuous(series, symbol: str) -> bool:
     """Check if series is continuous, allowing for up to window_size consecutive missing datapoints"""
     window_size = 10  # Define the size of the rolling window
     if series.rolling(window_size).apply(lambda x: all(np.isnan(x))).any():
-        print(f"{symbol} has sections with {window_size} or more consecutive NaN values. Skipping...")
+        logger.warning(f"{symbol} has sections with {window_size} or more consecutive NaN values. Skipping...")
         return False
     return True
 
@@ -144,10 +164,9 @@ def load_saved_securities(symbol: str) -> Union[Security, FredSeries]:
     if file_path.exists():
         with open(file_path, 'rb') as pickle_file:
             security = pickle.load(pickle_file)
+        return security
     else:
         print(f"No saved data found for symbol: {symbol}")
-
-    return security
 
 
 def get_fred_md_series_list() -> List[FredSeries]:
@@ -185,3 +204,7 @@ def fit_data_to_time_range(series_data, start_date):
     return series_data
 
 
+def initialize_fin_db_stock_metadata():
+    equities = fd.Equities()
+    df = equities.select()
+    df.to_csv(STOCKS_DIR / 'FinDB/fin_db_stock_data.csv')

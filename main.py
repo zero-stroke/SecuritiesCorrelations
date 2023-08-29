@@ -1,12 +1,11 @@
-import os
 import time
 from typing import List
 
+from config import STOCKS_DIR
 from scripts.correlation_constants import SecurityMetadata, DataSource, Security
-from scripts.file_reading_funcs import pickle_securities_objects, load_saved_securities, download_yfin_data
+from scripts.file_reading_funcs import pickle_securities_objects, load_saved_securities
 from scripts.find_correlated_symbols import CorrelationCalculator, define_top_correlations
 from scripts.plotting_functions import CorrelationPlotter
-from config import STOCKS_DIR, DATA_DIR
 
 DEBUG = False
 
@@ -15,17 +14,12 @@ def compute_security_correlations_and_plot(symbol_list: List[str], start_date: s
                                            source: str, dl_data: bool, display_plot: bool, use_ch: bool,
                                            show_detrended: bool, data_sources: List[DataSource]):
     """Returns list of tickers from most to least correlated"""
+    symbol_list = list(set(symbol_list))  # List of symbols to be converted into Securities
+    metadata = SecurityMetadata()  # Initialize SecurityMetadata Singleton object
+    securities_list = [Security(symbol, metadata) for symbol in symbol_list]  # Initialize Security list
+    symbols = metadata.build_symbol_list(data_sources)  # Build list of symbols to be used for comparisons
 
-    metadata = SecurityMetadata()
-    securities_list = [Security(symbol, metadata) for symbol in symbol_list]
-
-    symbols = metadata.build_symbol_list(data_sources)
-
-    print(len(symbols))
-
-    calculator = CorrelationCalculator()
-
-    # Call the function, set downloading == to True to download necessary stock data from yfinance.
+    calculator = CorrelationCalculator()  # Calculate all correlations for securities_list
     securities_list = calculator.define_correlations_for_series_list(securities_list, symbols, start_date, end_date,
                                                                      source, dl_data, use_ch)
 
@@ -33,23 +27,24 @@ def compute_security_correlations_and_plot(symbol_list: List[str], start_date: s
     securities_list = define_top_correlations(securities_list)
 
     for security in securities_list:
-        unicode_security = str(security).encode('unicode_escape').decode()
-        print(f'{unicode_security:<80}', security.all_correlations)
+        print(f'{str(security):<90}', security.all_correlations)
 
-    if not DEBUG:
+    if not DEBUG:  # Pickle securities list to use later for configuring plots
         for security in securities_list:
             pickle_securities_objects(security)
 
     plotter = CorrelationPlotter()
-    for security in securities_list:
+    for security in securities_list:  # Create a plot for each Security
         plotter.plot_security_correlations(security, start_date, num_traces, display_plot, show_detrended)
 
 
-def load_securities_correlations_and_plot(symbol: str, start_date: str = '2010-01-01', num_traces: int = 2,
-                                          display_plot: bool = False, show_detrended: bool = False,
-                                          etf: bool = False, stock: bool = True, index: bool = False,
-                                          monthly: bool = False):
-
+def load_securities_correlations_and_plots(symbol: str, start_date: str = '2010-01-01', num_traces: int = 2,
+                                           display_plot: bool = False, show_detrended: bool = False,
+                                           etf: bool = False, stock: bool = True, index: bool = False,
+                                           monthly: bool = False, sector: List[str] = None,
+                                           industry_group: List[str] = None, industry: List[str] = None,
+                                           country: List[str] = None, state: List[str] = None,
+                                           market_cap: List[str] = None, otc_filter: bool = False):
     security = load_saved_securities(symbol)
     plotter = CorrelationPlotter()
     plotter.plot_security_correlations(
@@ -61,18 +56,28 @@ def load_securities_correlations_and_plot(symbol: str, start_date: str = '2010-0
         etf=etf,
         stock=stock,
         index=index,
-        monthly=monthly
+        monthly=monthly,
+        sector=sector,
+        industry_group=industry_group,
+        industry=industry,
+        country=country,
+        state=state,
+        market_cap=market_cap,
+        otc_filter=otc_filter,
     )
 
 
 def main():
-    symbol_list = ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
-                   'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
-                   'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'DG', 'DLTR', 'UL', 'EL', 'CL']
+    symbol_list = ['AAPL', 'MSFT', 'AMZN', 'GOOG', 'META', 'MVIS']
+    # symbol_list.extend(
+    #     ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
+    #      'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
+    #      'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW', 'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
+    #      'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E']
+    # )
 
-    start_date = '2010-01-01'
+    start_date = '2016-01-01'
     end_date = '2023-06-02'
-
     num_traces = 4
     source = 'yahoo'
     dl_data = False
@@ -92,7 +97,7 @@ def main():
         display_plot=display_plot,
         use_ch=use_ch,
         show_detrended=show_detrended,
-        data_sources=[DataSource.STOCK]
+        data_sources=[DataSource.ETF, DataSource.STOCK, DataSource.INDEX]
     )
 
     end_time = time.time()
@@ -100,15 +105,10 @@ def main():
     print(f"The script took {elapsed_time:.2f} seconds to run.\n")
 
 
-def comprehensive_download_symbols(symbol_list: List[str], start_date: str, end_date: str, num_traces: int,
-                                   source: str, dl_data: bool, display_plot: bool, use_ch: bool,
-                                   show_detrended: bool, data_sources: List[DataSource]):
+def comprehensive_download_symbols(data_sources: List[DataSource]):
     metadata = SecurityMetadata()
-    securities_list = [Security(symbol, metadata) for symbol in symbol_list]
 
     symbols = metadata.build_symbol_list(data_sources)
-
-    print(len(symbols))
 
     with open(STOCKS_DIR / 'stocks_74.txt', 'r') as f:
         for line in f.readlines():
