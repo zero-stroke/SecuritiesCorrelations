@@ -1,3 +1,8 @@
+* {
+    max-width: 100% !important;
+    max-height: 98% !important;
+}
+
 .custom-switch input[type="checkbox"] {
     appearance: none;
     width: 40px;
@@ -70,10 +75,9 @@ body {
     padding: 10rem;
 }
 
-
-#etf-button, #stock-button, #index-button {
+#source_etf, #source_stock, #source_index {
     border: none !important;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 /*#etf-button:hover, #stock-button:hover, #index-button:hover {*/

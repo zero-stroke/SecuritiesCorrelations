@@ -26,8 +26,13 @@ class SecurityDashboard:
     ]
 
     SECURITY_DROPDOWN_ID = 'security-dropdown'
+    START_DATE_ID = 'start_date_dropdown'
     NUM_TRACES_ID = 'num_traces_id'
-    SOURCE_CHECKBOXES_ID = 'source-checkboxes'
+
+    SOURCE_ETF_ID = 'source_etf'
+    SOURCE_STOCK_ID = 'source_stock'
+    SOURCE_INDEX_ID = 'source_index'
+
     DETREND_SWITCH_ID = 'detrend-switch'
     MONTHLY_SWITCH_ID = 'monthly-switch'
     LOAD_PLOT_BUTTON_ID = 'load-plot-button'
@@ -43,14 +48,16 @@ class SecurityDashboard:
     def __init__(self, data_dir):
         self.data_dir = data_dir
         self.available_securities: List[str] = self.get_available_securities()
+        self.available_start_dates = [2010, 2015, 2019, 2020, 2021, 2022, 2023]
         self.initial_plot = self.load_initial_plot()  # Load initial plot
-        self.current_main_security: Optional[Security] = load_saved_securities(choice(self.available_securities))
+        self.current_main_security: Optional[Security] = load_saved_securities(choice(self.available_securities), '2010-01-01')
         self.app = dash.Dash(__name__, external_stylesheets=self.external_stylesheets, assets_folder='assets')
         self.setup_layout()
         self.setup_callbacks()
 
     def load_initial_plot(self):
         random_security = choice(self.available_securities)
+        start_date = '2010-01-01'
         num_traces = 2
         show_detrended = False
         etf = True
@@ -58,14 +65,14 @@ class SecurityDashboard:
         index = False
         monthly_resample = False
 
-        security = load_saved_securities(random_security)
+        security = load_saved_securities(random_security, start_date)
         self.current_main_security = security
 
         plotter = CorrelationPlotter()
 
         plotter.plot_security_correlations(
             main_security=security,
-            start_date='2010-01-01',
+            start_date=start_date,
             num_traces=num_traces,
             display_plot=False,
             show_detrended=show_detrended,
@@ -103,7 +110,7 @@ class SecurityDashboard:
             'cursor': 'pointer',
         }
 
-        sources_button_style={
+        sources_button_style = {
             'display': 'flex',
             'background-color': '#003364',
             'color': 'white',
@@ -113,7 +120,10 @@ class SecurityDashboard:
             'cursor': 'pointer',
         }
 
-        item_style = {'padding': '0 10px'}  # Adjust the value to control the horizontal spacing
+        item_style = {
+            'padding': '0 10px',
+            'margin': '0 0.5em',
+        }  # Adjust the value to control the horizontal spacing
 
         multi_dropdown_style = {
             'backgroundColor': '#171717',
@@ -127,31 +137,87 @@ class SecurityDashboard:
             'background-color': '#002A50',  # Change the background color
             'color': 'white',              # Change the text color
             'border': 'none',              # Remove the border
-            'padding': '10px 20px',        # Add padding
+            'outline': 'none',             # Remove the outline
+            'padding': '0.5em 1em',        # Add padding
             'font-size': '16px',           # Change the font size
             'cursor': 'pointer',            # Change cursor to indicate interactivity
+            'margin': '0'
         }
 
+        div_style = {'display': 'flex', 'justifyContent': 'flex-start', 'alignItems': 'center', 'margin': '0.5em 0'}
+
         self.app.layout = html.Div([
-            # Dropdown selection for which Security to display
-            dcc.Dropdown(
-                id=self.SECURITY_DROPDOWN_ID,
-                options=[{'label': security, 'value': security} for security in self.available_securities],
-                value=random_security,  # Use the random security here
+
+            html.Div([
+                #  Dropdown selection for which Security to display
+                dcc.Dropdown(
+                    id=self.SECURITY_DROPDOWN_ID,
+                    options=[{'label': security, 'value': security} for security in self.available_securities],
+                    value=random_security,  # Use the random security here
+                    style={
+                        'width': '9rem',
+                        'margin': '0.5em 4rem',
+                    }
+                ),
+                # Input for the start date
+                dcc.Dropdown(
+                    id=self.START_DATE_ID,
+                    options=[{'label': start_date, 'value': start_date} for start_date in self.available_start_dates],
+                    value='2010',
+                    style={
+                        'width': '8rem',
+                        'margin': '0.5em 4rem',
+                    }
+                ),
+                # Input for how many traces to display
+                dcc.Input(  # Add this input field for num_traces
+                    id=self.NUM_TRACES_ID,
+                    type='number',
+                    value=2,  # Default value
+                    style={
+                        'width': '4rem',
+                        'margin': '0.5em 4rem',
+                    },
+                ),
+                html.Div([
+                    dcc.Checklist(
+                        id=self.OTC_FILTER_ID,
+                        options=[{'label': '', 'value': 'exclude_otc'}],
+                        value=[],
+                        inline=True,
+                        className='custom-switch',
+                        style=item_style,  # Apply item_style to the element
+                        labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
+                    ),
+                    html.Label('Exclude OTC'),
+                    dcc.Checklist(
+                        id=self.DETREND_SWITCH_ID,
+                        options=[{'label': '', 'value': 'detrend'}],
+                        inline=True,
+                        className='custom-switch',
+                        style=item_style,
+                        labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
+                    ),
+                    html.Label('Detrend'),
+                    dcc.Checklist(
+                        id=self.MONTHLY_SWITCH_ID,
+                        options=[{'label': '', 'value': 'monthly'}],
+                        inline=True,
+                        className='custom-switch',
+                        style=item_style,
+                        labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
+                    ),
+                    html.Label('Monthly Resample'),
+                ], style=div_style),
+                ], style=div_style,
             ),
-            # Input for how many traces to display
-            dcc.Input(  # Add this input field for num_traces
-                id=self.NUM_TRACES_ID,
-                type='number',
-                value=2,  # Default value
-                style={'width': '42px'},
-            ),
+
 
             # Checklist to include ETFs, Stocks, and/or Indices
             html.Div([
-                html.Button('ETF', id='etf-button', n_clicks=1, style=sources_button_style),
-                html.Button('Stock', id='stock-button', n_clicks=1, style=sources_button_style),
-                html.Button('Index', id='index-button', n_clicks=0, style=sources_button_style),
+                html.Button('ETF', id=self.SOURCE_ETF_ID, n_clicks=0, style=sources_button_style),
+                html.Button('Stock', id=self.SOURCE_STOCK_ID, n_clicks=1, style=sources_button_style),
+                html.Button('Index', id=self.SOURCE_INDEX_ID, n_clicks=0, style=sources_button_style),
             ], style=sources_div_style),
 
             html.Button(  # Button for toggling filters
@@ -229,44 +295,11 @@ class SecurityDashboard:
                 id="collapse",
             ),
 
-            html.Div([
-                dcc.Checklist(
-                    id=self.OTC_FILTER_ID,
-                    options=[{'label': '', 'value': 'exclude_otc'}],
-                    value=[],
-                    inline=True,
-                    className='custom-switch',
-                    style=item_style,  # Apply item_style to the element
-                    labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
-                ),
-                html.Label('Exclude OTC'),
-                dcc.Checklist(
-                    id=self.DETREND_SWITCH_ID,
-                    options=[{'label': '', 'value': 'detrend'}],
-                    inline=True,
-                    className='custom-switch',
-                    style=item_style,
-                    labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
-                ),
-                html.Label('Detrend'),
-                dcc.Checklist(
-                    id=self.MONTHLY_SWITCH_ID,
-                    options=[{'label': '', 'value': 'monthly'}],
-                    inline=True,
-                    className='custom-switch',
-                    style=item_style,
-                    labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
-                ),
-                html.Label('Monthly Resample'),
-            ], style={'display': 'flex', 'justifyContent': 'flex-start', 'alignItems': 'center', 'margin': '5px 0'}),
-
-
             # Button to load the plot
             html.Button(
                 'Load and Plot',
                 id=self.LOAD_PLOT_BUTTON_ID,
                 style=button_style,
-
             ),  # Add this button
             dcc.Graph(
                 id='security-plot',
@@ -278,6 +311,8 @@ class SecurityDashboard:
                 interval=100,  # in milliseconds
                 max_intervals=1  # stop after the first interval
             ),
+
+
         ], style={
             'font-family': 'Open Sans, sans-serif',
             'height': '100vh',
@@ -297,19 +332,19 @@ class SecurityDashboard:
 
         @self.app.callback(
             [
-                Output('etf-button', 'style'),
-                Output('stock-button', 'style'),
-                Output('index-button', 'style'),
+                Output(self.SOURCE_ETF_ID, 'style'),
+                Output(self.SOURCE_STOCK_ID, 'style'),
+                Output(self.SOURCE_INDEX_ID, 'style'),
             ],
             [
-                Input('etf-button', 'n_clicks'),
-                Input('stock-button', 'n_clicks'),
-                Input('index-button', 'n_clicks'),
+                Input(self.SOURCE_ETF_ID, 'n_clicks'),
+                Input(self.SOURCE_STOCK_ID, 'n_clicks'),
+                Input(self.SOURCE_INDEX_ID, 'n_clicks'),
             ],
         )
         def update_button_styles(etf_clicks, stock_clicks, index_clicks):
             selected_style = {'flex': 1, 'background-color': '#00498B', 'color': 'white'}
-            not_selected_style = {'flex': 1, 'background-color': '#6B6B6B', 'color': 'white'}
+            not_selected_style = {'flex': 1, 'background-color': '#1e1e2a', 'color': 'white'}
 
             etf_style = selected_style if etf_clicks % 2 == 1 else not_selected_style
             stock_style = selected_style if stock_clicks % 2 == 1 else not_selected_style
@@ -331,13 +366,18 @@ class SecurityDashboard:
             Output('security-plot', 'figure'),
             [
                 Input(self.LOAD_PLOT_BUTTON_ID, 'n_clicks'),
+
                 Input(self.SECURITY_DROPDOWN_ID, 'value'),
+                Input(self.START_DATE_ID, 'value'),
                 State(self.NUM_TRACES_ID, 'value'),
-                State('etf-button', 'n_clicks'),
-                State('stock-button', 'n_clicks'),
-                State('index-button', 'n_clicks'),
+
+                State(self.SOURCE_ETF_ID, 'n_clicks'),
+                State(self.SOURCE_STOCK_ID, 'n_clicks'),
+                State(self.SOURCE_INDEX_ID, 'n_clicks'),
+
                 State(self.DETREND_SWITCH_ID, 'value'),
                 State(self.MONTHLY_SWITCH_ID, 'value'),
+                State(self.OTC_FILTER_ID, 'value'),
 
                 State(self.SECTOR_FILTER_ID, 'value'),
                 State(self.INDUSTRY_GROUP_FILTER_ID, 'value'),
@@ -345,14 +385,14 @@ class SecurityDashboard:
                 State(self.COUNTRY_FILTER_ID, 'value'),
                 State(self.STATE_FILTER_ID, 'value'),
                 State(self.MARKET_CAP_FILTER_ID, 'value'),
-                State(self.OTC_FILTER_ID, 'value'),
             ]
         )
-        def update_graph(n_clicks: int, symbol: str, num_traces: int, etf_clicks, stock_clicks, index_clicks,
-                         detrend: Optional[list], monthly: Optional[list], sector: List[str] = None,
-                         industry_group: List[str] = None, industry: List[str] = None,
+        def update_graph(n_clicks: int, symbol: str, start_date: str, num_traces: int,
+                         etf_clicks, stock_clicks, index_clicks: int = 0,
+                         detrend: Optional[list] = None, monthly: Optional[list] = None, otc_filter: bool = False,
+                         sector: List[str] = None, industry_group: List[str] = None, industry: List[str] = None,
                          country: List[str] = None, state: List[str] = None,
-                         market_cap: List[str] = None, otc_filter: bool = False) -> go.Figure:
+                         market_cap: List[str] = None) -> go.Figure:
 
             etf = etf_clicks % 2 == 1
             stock = stock_clicks % 2 == 1
@@ -375,13 +415,13 @@ class SecurityDashboard:
             show_detrended = 'detrend' in detrend
             monthly_resample = 'monthly' in monthly
 
-            security = load_saved_securities(symbol)
+            security = load_saved_securities(symbol, start_date)
             plotter = CorrelationPlotter()
 
             # Load and plot the selected security
             plotter.plot_security_correlations(
                 main_security=security,
-                start_date='2010-01-01',
+                start_date=start_date,
                 num_traces=num_traces,
                 display_plot=False,
                 show_detrended=show_detrended,
@@ -407,7 +447,7 @@ class SecurityDashboard:
             return fig
 
     def run(self):
-        self.app.run_server(debug=True, host='0.0.0.0', port=8080)
+        self.app.run_server(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
 
 
 # Usage

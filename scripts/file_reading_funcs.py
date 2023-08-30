@@ -157,7 +157,7 @@ def pickle_securities_objects(security: Union[Security, FredSeries]):
         pickle.dump(security, pickle_file)
 
 
-def load_saved_securities(symbol: str) -> Union[Security, FredSeries]:
+def load_saved_securities(symbol: str, start_date: str) -> Union[Security, FredSeries]:
     """Loads and returns saved security objects from pickle files."""
     file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}.pkl'
 
