@@ -1,6 +1,3 @@
-# Ignore config.py
-config.py
-
 # Ignore debug folder within Stock_data
 data/Stock_data/debug/
 
