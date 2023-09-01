@@ -10,14 +10,21 @@ from scripts.plotting_functions import CorrelationPlotter
 DEBUG = False
 
 
-def compute_security_correlations_and_plot(symbol_list: List[str], start_date: str, end_date: str, num_traces: int,
-                                           source: str, dl_data: bool, display_plot: bool, use_ch: bool,
-                                           show_detrended: bool, data_sources: List[DataSource]):
+def compute_security_correlations_and_plot(symbol_list: List[str], start_date: str = '2010', end_date: str = '2023',
+                                           num_traces: int = 2,
+                                           source: str = 'yahoo', dl_data: bool = False,
+                                           display_plot: bool = False, use_ch: bool = False,
+                                           etf: bool = True, stock: bool = True, index: bool = True,
+                                           show_detrended: bool = False, monthly_resample: bool = False,
+                                           otc_filter: bool = True,
+                                           sector: List[str] = None, industry_group: List[str] = None,
+                                           industry: List[str] = None, country: List[str] = None,
+                                           state: List[str] = None, market_cap: List[str] = None):
     """Returns list of tickers from most to least correlated"""
     symbol_list = list(set(symbol_list))  # List of symbols to be converted into Securities
     metadata = SecurityMetadata()  # Initialize SecurityMetadata Singleton object
     securities_list = [Security(symbol, metadata) for symbol in symbol_list]  # Initialize Security list
-    symbols = metadata.build_symbol_list(data_sources)  # Build list of symbols to be used for comparisons
+    symbols = metadata.build_symbol_list(etf, stock, index)  # Build list of symbols to be used for comparisons
 
     calculator = CorrelationCalculator()  # Calculate all correlations for securities_list
     securities_list = calculator.define_correlations_for_series_list(securities_list, symbols, start_date, end_date,
@@ -34,37 +41,32 @@ def compute_security_correlations_and_plot(symbol_list: List[str], start_date: s
             pickle_securities_objects(security)
 
     plotter = CorrelationPlotter()
+    fig_list = []  # List of figures from plotly
     for security in securities_list:  # Create a plot for each Security
-        plotter.plot_security_correlations(security, start_date, num_traces, display_plot, show_detrended)
+        fig = plotter.plot_security_correlations(
+            main_security=security,
+            start_date=start_date,
+            num_traces=num_traces,
+            display_plot=display_plot,
 
+            etf=etf,
+            stock=stock,
+            index=index,
 
-def load_securities_correlations_and_plots(symbol: str, start_date: str = '2010-01-01', num_traces: int = 2,
-                                           display_plot: bool = False, show_detrended: bool = False,
-                                           etf: bool = False, stock: bool = True, index: bool = False,
-                                           monthly: bool = False, sector: List[str] = None,
-                                           industry_group: List[str] = None, industry: List[str] = None,
-                                           country: List[str] = None, state: List[str] = None,
-                                           market_cap: List[str] = None, otc_filter: bool = False):
-    security = load_saved_securities(symbol)
-    plotter = CorrelationPlotter()
-    plotter.plot_security_correlations(
-        security,
-        start_date,
-        num_traces,
-        display_plot,
-        show_detrended,
-        etf=etf,
-        stock=stock,
-        index=index,
-        monthly=monthly,
-        sector=sector,
-        industry_group=industry_group,
-        industry=industry,
-        country=country,
-        state=state,
-        market_cap=market_cap,
-        otc_filter=otc_filter,
-    )
+            show_detrended=show_detrended,
+            monthly=monthly_resample,
+            otc_filter=otc_filter,
+
+            sector=sector,
+            industry_group=industry_group,
+            industry=industry,
+            country=country,
+            state=state,
+            market_cap=market_cap,
+        )
+        fig_list.append(fig)
+
+    return fig_list
 
 
 def main():
@@ -97,7 +99,6 @@ def main():
         display_plot=display_plot,
         use_ch=use_ch,
         show_detrended=show_detrended,
-        data_sources=[DataSource.ETF, DataSource.STOCK, DataSource.INDEX]
     )
 
     end_time = time.time()
@@ -105,6 +106,7 @@ def main():
     print(f"The script took {elapsed_time:.2f} seconds to run.\n")
 
 
+# Code to download symbols from the metadata and from the all_stock_symbols.txt file we scraped
 def comprehensive_download_symbols(data_sources: List[DataSource]):
     metadata = SecurityMetadata()
 
@@ -123,6 +125,38 @@ def comprehensive_download_symbols(data_sources: List[DataSource]):
 
         # if symbol not in downloaded_symbols:
         #     download_yfin_data(symbol)
+
+
+def load_securities_correlations_and_plots(symbol: str, start_date: str = '2010-01-01', num_traces: int = 2,
+                                           display_plot: bool = False, show_detrended: bool = False,
+                                           etf: bool = False, stock: bool = True, index: bool = False,
+                                           monthly_resample: bool = False, sector: List[str] = None,
+                                           industry_group: List[str] = None, industry: List[str] = None,
+                                           country: List[str] = None, state: List[str] = None,
+                                           market_cap: List[str] = None, otc_filter: bool = False):
+    security = load_saved_securities(symbol, start_date)
+    plotter = CorrelationPlotter()
+    plotter.plot_security_correlations(
+        main_security=security,
+        start_date=start_date,
+        num_traces=num_traces,
+        display_plot=display_plot,
+
+        etf=etf,
+        stock=stock,
+        index=index,
+
+        show_detrended=show_detrended,
+        monthly=monthly_resample,
+        otc_filter=otc_filter,
+
+        sector=sector,
+        industry_group=industry_group,
+        industry=industry,
+        country=country,
+        state=state,
+        market_cap=market_cap,
+    )
 
 
 # def fred_md_main(start_date, end_date, instrument_metadata, monthly, num_traces,
