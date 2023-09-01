@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c89cd15-faa8-4d65-907e-77dd55248a3c" name="Changes" comment="Adding input/dropdown functionality. Pseudocoded date functionality. Added specific year correlation lists">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecuritiesCorrelations.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SecuritiesCorrelations.iml" afterDir="false" />
+    <list default="true" id="2c89cd15-faa8-4d65-907e-77dd55248a3c" name="Changes" comment="Added input and dropdown boxes separate">
       <change beforePath="$PROJECT_DIR$/scripts/security_correlations_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/security_correlations_ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -226,7 +223,7 @@
       <workItem from="1693371055249" duration="186000" />
       <workItem from="1693434595712" duration="17686000" />
       <workItem from="1693516148728" duration="13869000" />
-      <workItem from="1693599471417" duration="3538000" />
+      <workItem from="1693599471417" duration="3928000" />
     </task>
     <task id="LOCAL-00001" summary="Project to display correlations between financial instruments and macroeconomic indicators, including stocks, etfs, indices, and anything that FRED offers.&#10;Currently working with Securities but not with FredSeries objects.">
       <created>1692920101789</created>
@@ -298,7 +295,21 @@
       <option name="project" value="LOCAL" />
       <updated>1693599617196</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added input and dropdown boxes separate">
+      <created>1693603133541</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1693603133541</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added input and dropdown boxes separate">
+      <created>1693603358950</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1693603358950</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +332,8 @@
     <MESSAGE value="WORKING!" />
     <MESSAGE value="Working, only things left to fix is to add functionality to dates dropdown and to make it so that it properly shrinks when window is shrunk. Last commit before adding heroku" />
     <MESSAGE value="Adding input/dropdown functionality. Pseudocoded date functionality. Added specific year correlation lists" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding input/dropdown functionality. Pseudocoded date functionality. Added specific year correlation lists" />
+    <MESSAGE value="Added input and dropdown boxes separate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added input and dropdown boxes separate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
