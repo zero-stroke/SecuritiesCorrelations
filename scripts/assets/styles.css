@@ -1,6 +1,32 @@
-* {
-    max-width: 100% !important;
-    max-height: 98% !important;
+.Select-menu-outer {
+    background-color: #171717 !important;
+    color: #fff !important;
+}
+
+.Select {
+    border: none !important;
+    outline: none !important;
+}
+
+.react-autocomplete__menu {
+    background-color: #171717 !important;
+    color: #ffffff !important;
+}
+
+.react-autocomplete__menu-item {
+    color: #171717 !important;
+}
+
+.react-autocomplete__menu-item--highlighted {
+    background-color: #171717 !important;
+}
+
+.Select-option {
+    color: #171717 !important;
+}
+
+.Select-option.is-focused {
+    background-color: #171717;
 }
 
 .custom-switch input[type="checkbox"] {
@@ -80,6 +106,18 @@ body {
     padding: 0.5em;
 }
 
+.autocomplete-input {
+    width: 19rem !important;
+}
+
+.dash-autocomplete input {
+    width: 9rem !important;
+}
+
+
+
+
+
 /*#etf-button:hover, #stock-button:hover, #index-button:hover {*/
 /*    background-color: #003364 !important;*/
 /*}*/
@@ -87,3 +125,5 @@ body {
 /*#etf-button:active, #stock-button:active, #index-button:active {*/
 /*    background-color: #00203F !important;*/
 /*}*/
+
+

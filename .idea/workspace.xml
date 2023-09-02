@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c89cd15-faa8-4d65-907e-77dd55248a3c" name="Changes" comment="Added input and dropdown boxes separate" />
+    <list default="true" id="2c89cd15-faa8-4d65-907e-77dd55248a3c" name="Changes" comment="Added input and dropdown boxes separate">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,24 +41,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/afshin/IdeaProjects/SecuritiesCorrelations/data/Stock_data",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/afshin/IdeaProjects/SecuritiesCorrelations/data/Stock_data&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "module",
-      "directory",
-      "repository"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;module&quot;,
+      &quot;directory&quot;,
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\afshin\IdeaProjects\SecuritiesCorrelations\data\Stock_data" />
@@ -222,7 +224,9 @@
       <workItem from="1693371055249" duration="186000" />
       <workItem from="1693434595712" duration="17686000" />
       <workItem from="1693516148728" duration="13869000" />
-      <workItem from="1693599471417" duration="4316000" />
+      <workItem from="1693599471417" duration="4662000" />
+      <workItem from="1693604246396" duration="45000" />
+      <workItem from="1693675614383" duration="820000" />
     </task>
     <task id="LOCAL-00001" summary="Project to display correlations between financial instruments and macroeconomic indicators, including stocks, etfs, indices, and anything that FRED offers.&#10;Currently working with Securities but not with FredSeries objects.">
       <created>1692920101789</created>
@@ -315,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693603517477</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added input and dropdown boxes separate">
+      <created>1693603916303</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1693603916303</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -13,7 +13,7 @@ from config import DATA_DIR
 from scripts.correlation_constants import Security
 from scripts.file_reading_funcs import load_saved_securities
 from scripts.plotting_functions import CorrelationPlotter
-
+from main import compute_security_correlations_and_plot
 
 class SecurityDashboard:
 
@@ -25,7 +25,9 @@ class SecurityDashboard:
         dbc.themes.BOOTSTRAP
     ]
 
-    SECURITY_DROPDOWN_ID = 'security-dropdown'
+    SECURITIES_DROPDOWN_ID = 'security-dropdown'
+    SECURITIES_INPUT_ID = 'security_dropdown'
+
     START_DATE_ID = 'start_date_dropdown'
     NUM_TRACES_ID = 'num_traces_id'
 
@@ -144,31 +146,40 @@ class SecurityDashboard:
             'margin': '0'
         }
 
-        div_style = {'display': 'flex', 'justifyContent': 'flex-start', 'alignItems': 'center', 'margin': '0.5em 0'}
+        dropdown_div_style = {'margin': '0.5em 3rem'}
+
+        div_style = {'display': 'flex', 'justifyContent': 'flex-start', 'alignItems': 'center', 'margin': '0.5em 4em'}
 
         self.app.layout = html.Div([
 
             html.Div([
-                #  Dropdown selection for which Security to display
-                dcc.Dropdown(
-                    id=self.SECURITY_DROPDOWN_ID,
-                    options=[{'label': security, 'value': security} for security in self.available_securities],
-                    value=random_security,  # Use the random security here
-                    style={
-                        'width': '9rem',
-                        'margin': '0.5em 4rem',
-                    }
-                ),
-                # Input for the start date
-                dcc.Dropdown(
-                    id=self.START_DATE_ID,
-                    options=[{'label': start_date, 'value': start_date} for start_date in self.available_start_dates],
-                    value='2010',
-                    style={
-                        'width': '8rem',
-                        'margin': '0.5em 4rem',
-                    }
-                ),
+                html.Div([
+                    dbc.Input(id=self.SECURITIES_INPUT_ID, type='text', placeholder='Enter new...', debounce=True,
+                              style={
+                                  'width': '9rem',
+                              }),
+                    #  Dropdown selection for which Security to display
+                    dcc.Dropdown(
+                        id=self.SECURITIES_DROPDOWN_ID,
+                        options=[{'label': security, 'value': security} for security in self.available_securities],
+                        value=random_security,  # Use the random security here
+                        style={
+                            'width': '9rem',
+                        },),
+                ], style=dropdown_div_style),
+
+                html.Div([
+                    # Input for the start date
+                    dcc.Dropdown(
+                        id=self.START_DATE_ID,
+                        options=[{'label': start_date, 'value': start_date} for start_date in self.available_start_dates],
+                        value='2010',
+                        style={
+                            'width': '8rem',
+                        }
+                    ),
+                ], style=dropdown_div_style),
+
                 # Input for how many traces to display
                 dcc.Input(  # Add this input field for num_traces
                     id=self.NUM_TRACES_ID,
@@ -176,9 +187,9 @@ class SecurityDashboard:
                     value=2,  # Default value
                     style={
                         'width': '4rem',
-                        'margin': '0.5em 4rem',
                     },
                 ),
+
                 html.Div([
                     dcc.Checklist(
                         id=self.OTC_FILTER_ID,
@@ -301,25 +312,36 @@ class SecurityDashboard:
                 id=self.LOAD_PLOT_BUTTON_ID,
                 style=button_style,
             ),  # Add this button
-            dcc.Graph(
-                id='security-plot',
-                figure=self.initial_plot,  # Use the preloaded figure
-                style={'flexGrow': '1'}
-            ),
+
+            html.Div([
+                dcc.Loading(
+                    id="loading",
+                    children=[dcc.Graph(
+                        id='security-plot',
+                        figure=self.initial_plot,
+                        style={'height': '75vh'},  # adjust this value as needed
+                        responsive=True,
+                    )],
+                    type="circle",
+                )
+            ], style={'display': 'flex', 'flexDirection': 'column', 'height': '100%'}),
+
+
             dcc.Interval(
                 id='initial-load-interval',
                 interval=100,  # in milliseconds
-                max_intervals=1  # stop after the first interval
+                max_intervals=1,  # stop after the first interval
             ),
 
 
         ], style={
             'font-family': 'Open Sans, sans-serif',
+            'max-height': '100vh',
             'height': '100vh',
             'backgroundColor': '#1e1e2a',
             'color': '#e0e0e0',
             'display': 'flex',
-            'flexDirection': 'column'
+            'flexDirection': 'column',
         })
 
     @staticmethod
@@ -367,9 +389,11 @@ class SecurityDashboard:
             [
                 Input(self.LOAD_PLOT_BUTTON_ID, 'n_clicks'),
 
-                Input(self.SECURITY_DROPDOWN_ID, 'value'),
+                State(self.SECURITIES_INPUT_ID, 'value'),
+                Input(self.SECURITIES_DROPDOWN_ID, 'value'),
+
                 Input(self.START_DATE_ID, 'value'),
-                State(self.NUM_TRACES_ID, 'value'),
+                Input(self.NUM_TRACES_ID, 'value'),
 
                 State(self.SOURCE_ETF_ID, 'n_clicks'),
                 State(self.SOURCE_STOCK_ID, 'n_clicks'),
@@ -387,12 +411,15 @@ class SecurityDashboard:
                 State(self.MARKET_CAP_FILTER_ID, 'value'),
             ]
         )
-        def update_graph(n_clicks: int, symbol: str, start_date: str, num_traces: int,
-                         etf_clicks, stock_clicks, index_clicks: int = 0,
+        def update_graph(n_clicks: int, input_symbol: Optional[str] = None, symbol: Optional[str] = None,
+                         start_date: str = '2010', num_traces: int = 2,
+                         etf_clicks: int = 1, stock_clicks: int = 1, index_clicks: int = 0,
                          detrend: Optional[list] = None, monthly: Optional[list] = None, otc_filter: bool = False,
                          sector: List[str] = None, industry_group: List[str] = None, industry: List[str] = None,
-                         country: List[str] = None, state: List[str] = None,
-                         market_cap: List[str] = None) -> go.Figure:
+                         country: List[str] = None, state: List[str] = None, market_cap: List[str] = None) -> go.Figure:
+
+            if input_symbol:
+                symbol = input_symbol
 
             etf = etf_clicks % 2 == 1
             stock = stock_clicks % 2 == 1
@@ -403,7 +430,9 @@ class SecurityDashboard:
             # Skip the update if no relevant trigger has occurred
             if not ctx.triggered or (
                     n_clicks is None
-                    and ctx.triggered_id != self.SECURITY_DROPDOWN_ID
+                    and (
+                            ctx.triggered_id != self.SECURITIES_DROPDOWN_ID
+                            and ctx.triggered_id != self.NUM_TRACES_ID)
                     and ctx.triggered_id != 'initial-load-interval.n_intervals'
             ):
                 raise dash.exceptions.PreventUpdate
@@ -415,36 +444,63 @@ class SecurityDashboard:
             show_detrended = 'detrend' in detrend
             monthly_resample = 'monthly' in monthly
 
-            security = load_saved_securities(symbol, start_date)
-            plotter = CorrelationPlotter()
+            # Check if the symbol is in available securities
+            if symbol in self.available_securities:
+                security = load_saved_securities(symbol, start_date)
+                plotter = CorrelationPlotter()
 
-            # Load and plot the selected security
-            plotter.plot_security_correlations(
-                main_security=security,
-                start_date=start_date,
-                num_traces=num_traces,
-                display_plot=False,
-                show_detrended=show_detrended,
-                etf=etf,
-                stock=stock,
-                index=index,
-                monthly=monthly_resample,
-                sector=sector,
-                industry_group=industry_group,
-                industry=industry,
-                country=country,
-                state=state,
-                market_cap=market_cap,
-                otc_filter=otc_filter,
-            )
+                # Load and plot the selected security, generates new plots based on all the parameters
+                fig = plotter.plot_security_correlations(
+                    main_security=security,
+                    start_date=start_date,
+                    num_traces=num_traces,
+                    display_plot=False,
 
-            # Load the plot JSON from the saved file
-            filepath = self.data_dir / f'Graphs/json_plots/{security.symbol}_plot.json'
-            with open(filepath, 'r') as file:
-                fig_data = json.load(file)
-            fig = go.Figure(fig_data)
+                    etf=etf,
+                    stock=stock,
+                    index=index,
 
-            return fig
+                    show_detrended=show_detrended,
+                    monthly=monthly_resample,
+                    otc_filter=otc_filter,
+
+                    sector=sector,
+                    industry_group=industry_group,
+                    industry=industry,
+                    country=country,
+                    state=state,
+                    market_cap=market_cap,
+                )
+
+                return fig
+            else:
+                # Call compute_security_correlations_and_plot if symbol is not in available securities
+                fig_list = compute_security_correlations_and_plot(
+                    symbol_list=[symbol],
+                    start_date=start_date,
+                    end_date='2023-06-02',
+                    num_traces=num_traces,
+
+                    source='yahoo',
+                    dl_data=False,
+                    display_plot=False,
+                    use_ch=False,
+
+                    etf=etf,
+                    stock=stock,
+                    index=index,
+
+                    show_detrended=show_detrended,
+                    monthly_resample=monthly_resample,
+                    otc_filter=otc_filter,
+                    sector=sector,
+                    industry_group=industry_group,
+                    industry=industry,
+                    country=country,
+                    state=state,
+                    market_cap=market_cap,
+                )
+                return fig_list[0]
 
     def run(self):
         self.app.run_server(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))

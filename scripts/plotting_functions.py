@@ -73,12 +73,13 @@ class CorrelationPlotter:
 
             added_count += 1
 
-    def plot_security_correlations(self, main_security: Security, start_date: str, num_traces: int, display_plot: bool,
-                                   show_detrended: bool, etf: bool = False, stock: bool = True, index: bool = False,
-                                   monthly: bool = False, sector: List[str] = None,
-                                   industry_group: List[str] = None, industry: List[str] = None,
-                                   country: List[str] = None, state: List[str] = None,
-                                   market_cap: List[str] = None, otc_filter: bool = True):
+    def plot_security_correlations(self, main_security: Security, start_date: str = '2010', num_traces: int = 2,
+                                   display_plot: bool = False,
+                                   etf: bool = False, stock: bool = True, index: bool = False,
+                                   show_detrended: bool = False, monthly: bool = False, otc_filter: bool = True,
+                                   sector: List[str] = None, industry_group: List[str] = None,
+                                   industry: List[str] = None, country: List[str] = None, state: List[str] = None,
+                                   market_cap: List[str] = None):
         """Plotting the base series against its correlated series"""
         main_security_data = read_series_data(main_security.symbol, 'yahoo')  # Prepare main series
 
@@ -118,12 +119,16 @@ class CorrelationPlotter:
         if display_plot:
             self.show_popup_plot(main_security.symbol, fig)
 
-        # Save plot (if not in debug mode)
-        if not self.DEBUG:
-            self.save_plot(main_security.symbol, fig)
+        # # Save plot (if not in debug mode)
+        # if not self.DEBUG:
+        #     self.save_plot(main_security.symbol, fig, start_date)
+
+        return fig
 
     @staticmethod
-    def save_plot(symbol: str, fig):
+    def save_plot(symbol: str, fig, start_date: str):
+        json_file_path = DATA_DIR / f'Graphs/json_plots/{symbol}_{start_date}_plot.json'
+        # Graphs/json_plots/AAPL_2010_plot.json
         json_file_path = DATA_DIR / f'Graphs/json_plots/{symbol}_plot.json'
         with open(json_file_path, 'w') as f:
             json.dump(fig.to_dict(), f, cls=EnhancedEncoder)

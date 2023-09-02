@@ -88,6 +88,10 @@ def get_validated_security_data(symbol: str, start_date: str, end_date: str, sou
     if not is_series_non_repeating(security_data, symbol):
         return None
 
+    if not is_series_within_date_range(security_data, start_date, end_date):
+        logger.warning(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
+        return None
+
     # Detrend
     security_data = security_data.diff().dropna()
 
@@ -157,8 +161,14 @@ def pickle_securities_objects(security: Union[Security, FredSeries]):
         pickle.dump(security, pickle_file)
 
 
-def load_saved_securities(symbol: str, start_date: str) -> Union[Security, FredSeries]:
+def load_saved_securities(symbol: str, start_year: str) -> Union[Security, FredSeries]:
     """Loads and returns saved security objects from pickle files."""
+
+    file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{start_year}/{symbol}.pkl'
+    # For future use
+    # Graphs/pickled_securities_objects/2010/AAPL.pkl
+    # Graphs/pickled_securities_objects/2015/AAPL.pkl
+
     file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}.pkl'
 
     if file_path.exists():
@@ -198,6 +208,7 @@ def get_fredmd_series_data(series_id):
 
 
 def fit_data_to_time_range(series_data, start_date):
+    # Makes sure the data starts at the start date, or its earliest datapoint
     start_datetime = pd.to_datetime(start_date)
     start_datetime = max(start_datetime, series_data.index.min())
     series_data = series_data.loc[start_datetime:]

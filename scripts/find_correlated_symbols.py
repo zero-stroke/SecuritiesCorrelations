@@ -91,10 +91,6 @@ class CorrelationCalculator:
                     continue
                 i = 0
 
-                if not is_series_within_date_range(security_data, start_date, end_date):
-                    logger.warning(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
-                    continue
-
                 while i < len(all_main_securities):
                     main_security = all_main_securities[i]
 

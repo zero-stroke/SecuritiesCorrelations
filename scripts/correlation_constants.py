@@ -31,17 +31,17 @@ class SecurityMetadata:
             cls._instance.index_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv', index_col='symbol')
         return cls._instance
 
-    def build_symbol_list(self, data_sources: List[DataSource]) -> List[str]:
+    def build_symbol_list(self, etf: bool = False, stock: bool = True, index: bool = False) -> List[str]:
         """Build list of symbols from the given data sources."""
         symbols = []
 
-        if DataSource.ETF in data_sources and self.etf_metadata is not None:
+        if etf and self.etf_metadata is not None:
             etf_metadata_filtered = self.etf_metadata[self.etf_metadata['market'].notna() &
                                                       self.etf_metadata['exchange'].notna() &
                                                       self.etf_metadata['family'].notna()]
             symbols.extend(etf_metadata_filtered.index.tolist())
 
-        if DataSource.STOCK in data_sources and self.stock_metadata is not None:
+        if stock and self.stock_metadata is not None:
 
             # Use a txt file with all stock symbols
             stock_composite_list = []
@@ -56,7 +56,7 @@ class SecurityMetadata:
 
             symbols.extend(stock_composite_list)
 
-        if DataSource.INDEX in data_sources and self.index_metadata is not None:
+        if index and self.index_metadata is not None:
             index_metadata_filtered = self.index_metadata[self.index_metadata['name'].notna()]
             symbols.extend(index_metadata_filtered.index.tolist())
 
@@ -82,11 +82,24 @@ class Security:
         self.correlation: Optional[float] = None  # Initialized to None, can be updated later
         self.positive_correlations: List[Security] = []  # List of Security objects
         self.negative_correlations: List[Security] = []  # List of Security objects
+        self.positive_correlations_5y: List[Security] = []  # Future use
+        self.negative_correlations_5y: List[Security] = []  # Future use
+        self.positive_correlations_2y: List[Security] = []  # Future use
+        self.negative_correlations_2y: List[Security] = []  # Future use
+        self.positive_correlations_1y: List[Security] = []  # Future use
+        self.negative_correlations_1y: List[Security] = []  # Future use
+        self.positive_correlations_3m: List[Security] = []  # Future use
+        self.negative_correlations_3m: List[Security] = []  # Future use
+        self.positive_correlations_1m: List[Security] = []  # Future use
+        self.negative_correlations_1m: List[Security] = []  # Future use
+        self.positive_correlations_1w: List[Security] = []  # Future use, would have to use weekly Alpaca data
+        self.negative_correlations_1w: List[Security] = []  # Future use, would have to use weekly Alpaca data
         self.all_correlations: Dict[str, float] = {}  # Dictionary with string keys and float values
 
         self.get_symbol_name_and_type()  # Set the name and type during initialization
 
     def get_series_data(self) -> Optional[pd.Series]:
+        """Reads data from file and sets it to 'series' attribute"""
         file_path = STOCKS_DIR / f'yahoo_daily/parquets/{self.symbol}.parquet'
         if not os.path.exists(file_path):
             print(f'{file_path} does not exist')
@@ -146,6 +159,7 @@ class Security:
             self.set_properties_from_metadata(index_data, 'index')
 
     def get_unique_values(self, attribute_name: str) -> List[str]:
+        """Returns a list of a correlation_list's unique values for a given attribute"""
         unique_values = set()
 
         # Get values from positive_correlations
