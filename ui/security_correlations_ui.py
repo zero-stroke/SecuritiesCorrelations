@@ -421,6 +421,8 @@ class SecurityDashboard:
             if input_symbol:
                 symbol = input_symbol
 
+            symbol = symbol.upper()
+
             etf = etf_clicks % 2 == 1
             stock = stock_clicks % 2 == 1
             index = index_clicks % 2 == 1
@@ -503,7 +505,7 @@ class SecurityDashboard:
                 return fig_list[0]
 
     def run(self):
-        self.app.run_server(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+        self.app.run_server(debug=True, host='0.0.0.0', port=8080)
 
 
 # Usage

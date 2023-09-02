@@ -70,7 +70,7 @@ def compute_security_correlations_and_plot(symbol_list: List[str], start_date: s
 
 
 def main():
-    symbol_list = ['AAPL', 'MSFT', 'AMZN', 'GOOG', 'META', 'MVIS']
+    symbol_list = ['MDB']
     # symbol_list.extend(
     #     ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
     #      'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
@@ -126,37 +126,6 @@ def comprehensive_download_symbols(data_sources: List[DataSource]):
         # if symbol not in downloaded_symbols:
         #     download_yfin_data(symbol)
 
-
-def load_securities_correlations_and_plots(symbol: str, start_date: str = '2010-01-01', num_traces: int = 2,
-                                           display_plot: bool = False, show_detrended: bool = False,
-                                           etf: bool = False, stock: bool = True, index: bool = False,
-                                           monthly_resample: bool = False, sector: List[str] = None,
-                                           industry_group: List[str] = None, industry: List[str] = None,
-                                           country: List[str] = None, state: List[str] = None,
-                                           market_cap: List[str] = None, otc_filter: bool = False):
-    security = load_saved_securities(symbol, start_date)
-    plotter = CorrelationPlotter()
-    plotter.plot_security_correlations(
-        main_security=security,
-        start_date=start_date,
-        num_traces=num_traces,
-        display_plot=display_plot,
-
-        etf=etf,
-        stock=stock,
-        index=index,
-
-        show_detrended=show_detrended,
-        monthly=monthly_resample,
-        otc_filter=otc_filter,
-
-        sector=sector,
-        industry_group=industry_group,
-        industry=industry,
-        country=country,
-        state=state,
-        market_cap=market_cap,
-    )
 
 
 # def fred_md_main(start_date, end_date, instrument_metadata, monthly, num_traces,
@@ -285,4 +254,4 @@ def load_securities_correlations_and_plots(symbol: str, start_date: str = '2010-
 if __name__ == '__main__':
     main()
 
-# plot_series()
+
