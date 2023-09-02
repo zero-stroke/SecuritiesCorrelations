@@ -1,0 +1,129 @@
+.Select-menu-outer {
+    background-color: #171717 !important;
+    color: #fff !important;
+}
+
+.Select {
+    border: none !important;
+    outline: none !important;
+}
+
+.react-autocomplete__menu {
+    background-color: #171717 !important;
+    color: #ffffff !important;
+}
+
+.react-autocomplete__menu-item {
+    color: #171717 !important;
+}
+
+.react-autocomplete__menu-item--highlighted {
+    background-color: #171717 !important;
+}
+
+.Select-option {
+    color: #171717 !important;
+}
+
+.Select-option.is-focused {
+    background-color: #171717;
+}
+
+.custom-switch input[type="checkbox"] {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 20px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.custom-switch input[type="checkbox"]:checked {
+    background: #0074D9;
+}
+
+.custom-switch input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transition: left 0.3s;
+}
+
+.custom-switch input[type="checkbox"]:checked::before {
+    left: 20px;
+}
+
+.custom-switch label {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+
+.custom-switch input[type="checkbox"] + label {
+    display: flex;
+    align-items: center;
+}
+
+
+.custom-switch input[type="checkbox"]:checked + label::before {
+    transform: translateX(20px);
+}
+
+html.Label {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #171717;
+    color: #fff;
+}
+
+.button-style {
+    background-color: #0074D9; /* blue background */
+    color: #fff; /* white text */
+    border: 1px solid #0074D9; /* blue border */
+}
+
+.checklist-label-margin .custom-control-inline {
+    display: flex;
+    justify-content: center;
+    margin: 10rem;
+    padding: 10rem;
+}
+
+#source_etf, #source_stock, #source_index {
+    border: none !important;
+    padding: 0.5em;
+}
+
+.autocomplete-input {
+    width: 19rem !important;
+}
+
+.dash-autocomplete input {
+    width: 9rem !important;
+}
+
+
+
+
+
+/*#etf-button:hover, #stock-button:hover, #index-button:hover {*/
+/*    background-color: #003364 !important;*/
+/*}*/
+
+/*#etf-button:active, #stock-button:active, #index-button:active {*/
+/*    background-color: #00203F !important;*/
+/*}*/
+
+
