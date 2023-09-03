@@ -27,8 +27,8 @@ def compute_security_correlations_and_plot(symbol_list: List[str], start_date: s
     symbols = metadata.build_symbol_list(etf, stock, index)  # Build list of symbols to be used for comparisons
 
     calculator = CorrelationCalculator()  # Calculate all correlations for securities_list
-    securities_list = calculator.define_correlations_for_series_list(securities_list, symbols, start_date, end_date,
-                                                                     source, dl_data, use_ch)
+    securities_list = calculator.define_correlation_for_each_year(securities_list, symbols, start_date, end_date,
+                                                                  source, dl_data, use_ch)
 
     # Take the num_traces positively and negatively correlated and assign to Security
     securities_list = define_top_correlations(securities_list)
@@ -125,7 +125,6 @@ def comprehensive_download_symbols(data_sources: List[DataSource]):
 
         # if symbol not in downloaded_symbols:
         #     download_yfin_data(symbol)
-
 
 
 # def fred_md_main(start_date, end_date, instrument_metadata, monthly, num_traces,
@@ -253,5 +252,3 @@ def comprehensive_download_symbols(data_sources: List[DataSource]):
 
 if __name__ == '__main__':
     main()
-
-

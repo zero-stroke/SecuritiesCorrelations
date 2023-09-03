@@ -2,6 +2,7 @@ import json
 import os
 from random import choice
 from typing import List, Optional
+from waitress import serve
 
 import dash
 import dash_bootstrap_components as dbc
@@ -10,10 +11,12 @@ from dash import dcc, html
 from dash.dependencies import Input, Output, State
 
 from config import DATA_DIR
+from config import PROJECT_ROOT
 from scripts.correlation_constants import Security
 from scripts.file_reading_funcs import load_saved_securities
 from scripts.plotting_functions import CorrelationPlotter
 from main import compute_security_correlations_and_plot
+
 
 class SecurityDashboard:
 
@@ -24,6 +27,8 @@ class SecurityDashboard:
         },
         dbc.themes.BOOTSTRAP
     ]
+
+    LOAD_PLOT_BUTTON_ID = 'load-plot-button'
 
     SECURITIES_DROPDOWN_ID = 'security-dropdown'
     SECURITIES_INPUT_ID = 'security_dropdown'
@@ -37,23 +42,26 @@ class SecurityDashboard:
 
     DETREND_SWITCH_ID = 'detrend-switch'
     MONTHLY_SWITCH_ID = 'monthly-switch'
-    LOAD_PLOT_BUTTON_ID = 'load-plot-button'
+    OTC_FILTER_ID = 'otc-filter'
 
+    # Metadata Filters
     SECTOR_FILTER_ID = 'sector-filter'
     INDUSTRY_GROUP_FILTER_ID = 'industry-group-filter'
     INDUSTRY_FILTER_ID = 'industry-filter'
     COUNTRY_FILTER_ID = 'country-filter'
     STATE_FILTER_ID = 'state-filter'
     MARKET_CAP_FILTER_ID = 'market-cap-filter'
-    OTC_FILTER_ID = 'otc-filter'
 
     def __init__(self, data_dir):
         self.data_dir = data_dir
         self.available_securities: List[str] = self.get_available_securities()
-        self.available_start_dates = [2010, 2015, 2019, 2020, 2021, 2022, 2023]
+        self.available_start_dates = [2010, 2018, 2021, 2022, 2023]
         self.initial_plot = self.load_initial_plot()  # Load initial plot
-        self.current_main_security: Optional[Security] = load_saved_securities(choice(self.available_securities), '2010-01-01')
-        self.app = dash.Dash(__name__, external_stylesheets=self.external_stylesheets, assets_folder='assets')
+        self.current_main_security: Optional[Security] = load_saved_securities(choice(self.available_securities),
+                                                                               '2010-01-01')
+        self.app = dash.Dash(__name__, external_scripts=[PROJECT_ROOT / 'ui/custom_script.js'],
+                             external_stylesheets=self.external_stylesheets, assets_folder='assets')
+        self.app.scripts.config.serve_locally = True
         self.setup_layout()
         self.setup_callbacks()
 
@@ -72,7 +80,7 @@ class SecurityDashboard:
 
         plotter = CorrelationPlotter()
 
-        plotter.plot_security_correlations(
+        fig = plotter.plot_security_correlations(
             main_security=security,
             start_date=start_date,
             num_traces=num_traces,
@@ -84,10 +92,7 @@ class SecurityDashboard:
             monthly=monthly_resample
         )
 
-        filepath = self.data_dir / f'Graphs/json_plots/{security.symbol}_plot.json'
-        with open(filepath, 'r') as file:
-            fig_data = json.load(file)
-        return go.Figure(fig_data)
+        return fig
 
     def get_available_securities(self) -> List[str]:
         return [file.split('.')[0] for file in os.listdir(self.data_dir / 'Graphs/pickled_securities_objects/') if
@@ -130,9 +135,14 @@ class SecurityDashboard:
         multi_dropdown_style = {
             'backgroundColor': '#171717',
             'color': '#fff',
-            'border': '1px solid #333',
+            'border': 'none',
             'borderRadius': '5px',  # add border radius
-            'padding': '10px',  # add padding
+            'padding': '0.2em',  # add padding
+            'outline': 'none',
+        }
+
+        multi_dropdown_div_style = {
+            'margin': '1em'
         }
 
         button_style = {
@@ -249,7 +259,7 @@ class SecurityDashboard:
                             multi=True,
                             style=multi_dropdown_style,
                         ),
-                    ]),
+                    ], style=multi_dropdown_div_style),
                     # Add Industry Group Filter
                     html.Div([
                         html.Label('Industry Group Filter'),
@@ -260,7 +270,7 @@ class SecurityDashboard:
                             multi=True,  # allow multiple selection
                             style=multi_dropdown_style,
                         ),
-                    ]),
+                    ], style=multi_dropdown_div_style),
                     html.Div([
                         html.Label('Industry Filter'),
                         dcc.Dropdown(
@@ -270,7 +280,7 @@ class SecurityDashboard:
                             multi=True,
                             style=multi_dropdown_style,
                         ),
-                    ]),
+                    ], style=multi_dropdown_div_style),
                     html.Div([
                         html.Label('Country Filter'),
                         dcc.Dropdown(
@@ -280,7 +290,7 @@ class SecurityDashboard:
                             multi=True,
                             style=multi_dropdown_style,
                         ),
-                    ]),
+                    ], style=multi_dropdown_div_style),
                     html.Div([
                         html.Label('State Filter'),
                         dcc.Dropdown(
@@ -290,7 +300,7 @@ class SecurityDashboard:
                             multi=True,
                             style=multi_dropdown_style,
                         ),
-                    ]),
+                    ], style=multi_dropdown_div_style),
                     html.Div([
                         html.Label('Market Cap Filter'),
                         dcc.Dropdown(
@@ -301,7 +311,7 @@ class SecurityDashboard:
                             multi=True,
                             style=multi_dropdown_style,
                         ),
-                    ]),
+                    ], style=multi_dropdown_div_style),
                 ],
                 id="collapse",
             ),
@@ -311,7 +321,7 @@ class SecurityDashboard:
                 'Load and Plot',
                 id=self.LOAD_PLOT_BUTTON_ID,
                 style=button_style,
-            ),  # Add this button
+            ),
 
             html.Div([
                 dcc.Loading(
@@ -418,9 +428,6 @@ class SecurityDashboard:
                          sector: List[str] = None, industry_group: List[str] = None, industry: List[str] = None,
                          country: List[str] = None, state: List[str] = None, market_cap: List[str] = None) -> go.Figure:
 
-            if input_symbol:
-                symbol = input_symbol
-
             symbol = symbol.upper()
 
             etf = etf_clicks % 2 == 1
@@ -446,36 +453,7 @@ class SecurityDashboard:
             show_detrended = 'detrend' in detrend
             monthly_resample = 'monthly' in monthly
 
-            # Check if the symbol is in available securities
-            if symbol in self.available_securities:
-                security = load_saved_securities(symbol, start_date)
-                plotter = CorrelationPlotter()
-
-                # Load and plot the selected security, generates new plots based on all the parameters
-                fig = plotter.plot_security_correlations(
-                    main_security=security,
-                    start_date=start_date,
-                    num_traces=num_traces,
-                    display_plot=False,
-
-                    etf=etf,
-                    stock=stock,
-                    index=index,
-
-                    show_detrended=show_detrended,
-                    monthly=monthly_resample,
-                    otc_filter=otc_filter,
-
-                    sector=sector,
-                    industry_group=industry_group,
-                    industry=industry,
-                    country=country,
-                    state=state,
-                    market_cap=market_cap,
-                )
-
-                return fig
-            else:
+            if input_symbol:
                 # Call compute_security_correlations_and_plot if symbol is not in available securities
                 fig_list = compute_security_correlations_and_plot(
                     symbol_list=[symbol],
@@ -504,8 +482,36 @@ class SecurityDashboard:
                 )
                 return fig_list[0]
 
+            security = load_saved_securities(symbol, start_date)
+            plotter = CorrelationPlotter()
+
+            # Load and plot the selected security, generates new plots based on all the parameters
+            fig = plotter.plot_security_correlations(
+                main_security=security,
+                start_date=start_date,
+                num_traces=num_traces,
+                display_plot=False,
+
+                etf=etf,
+                stock=stock,
+                index=index,
+
+                show_detrended=show_detrended,
+                monthly=monthly_resample,
+                otc_filter=otc_filter,
+
+                sector=sector,
+                industry_group=industry_group,
+                industry=industry,
+                country=country,
+                state=state,
+                market_cap=market_cap,
+            )
+
+            return fig
+
     def run(self):
-        self.app.run_server(debug=True, host='0.0.0.0', port=8080)
+        serve(self.app.server, host='0.0.0.0', port=8080)
 
 
 # Usage

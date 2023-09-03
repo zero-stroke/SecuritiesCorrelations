@@ -158,3 +158,4 @@ dash~=2.7.0
 numpy~=1.25.2
 pandas~=2.0.3
 plotly~=5.9.0
+waitress~=2.0.0
