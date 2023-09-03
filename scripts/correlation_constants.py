@@ -1,13 +1,11 @@
 import json
 import os
 from datetime import datetime
+from enum import Enum
 from typing import List, Dict, Optional
 
-import numpy as np
+import numpy
 import pandas as pd
-from enum import Enum
-
-from pandas import Series
 from unicodedata import normalize
 
 from config import STOCKS_DIR, FRED_DIR
@@ -26,9 +24,12 @@ class SecurityMetadata:
         if cls._instance is None:
             cls._instance = super(SecurityMetadata, cls).__new__(cls)
             # Load ETF, Stock, and Index data
-            cls._instance.etf_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_etf_data.csv', index_col='symbol')
-            cls._instance.stock_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv', index_col='symbol')
-            cls._instance.index_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv', index_col='symbol')
+            cls._instance.etf_metadata = \
+                pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_etf_data.csv', index_col='symbol')
+            cls._instance.stock_metadata =\
+                pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv', index_col='symbol')
+            cls._instance.index_metadata = \
+                pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv', index_col='symbol')
         return cls._instance
 
     def build_symbol_list(self, etf: bool = False, stock: bool = True, index: bool = False) -> List[str]:
@@ -82,19 +83,25 @@ class Security:
         self.correlation: Optional[float] = None  # Initialized to None, can be updated later
         self.positive_correlations: List[Security] = []  # List of Security objects
         self.negative_correlations: List[Security] = []  # List of Security objects
-        self.positive_correlations_5y: List[Security] = []  # Future use
-        self.negative_correlations_5y: List[Security] = []  # Future use
-        self.positive_correlations_2y: List[Security] = []  # Future use
-        self.negative_correlations_2y: List[Security] = []  # Future use
-        self.positive_correlations_1y: List[Security] = []  # Future use
-        self.negative_correlations_1y: List[Security] = []  # Future use
-        self.positive_correlations_3m: List[Security] = []  # Future use
-        self.negative_correlations_3m: List[Security] = []  # Future use
+        self.positive_correlations_2018: List[Security] = []  # Future use
+        self.negative_correlations_2018: List[Security] = []  # Future use
+        self.positive_correlations_2021: List[Security] = []  # Future use
+        self.negative_correlations_2021: List[Security] = []  # Future use
+        self.positive_correlations_2022: List[Security] = []  # Future use
+        self.negative_correlations_2022: List[Security] = []  # Future use
+        self.positive_correlations_2023: List[Security] = []  # Future use
+        self.negative_correlations_2023: List[Security] = []  # Future use
         self.positive_correlations_1m: List[Security] = []  # Future use
         self.negative_correlations_1m: List[Security] = []  # Future use
         self.positive_correlations_1w: List[Security] = []  # Future use, would have to use weekly Alpaca data
         self.negative_correlations_1w: List[Security] = []  # Future use, would have to use weekly Alpaca data
         self.all_correlations: Dict[str, float] = {}  # Dictionary with string keys and float values
+        self.all_correlations_2018: Dict[str, float] = {}  # Dictionary with string keys and float values
+        self.all_correlations_2021: Dict[str, float] = {}  # Dictionary with string keys and float values
+        self.all_correlations_2022: Dict[str, float] = {}  # Dictionary with string keys and float values
+        self.all_correlations_2023: Dict[str, float] = {}  # Dictionary with string keys and float values
+        self.all_correlations_1m: Dict[str, float] = {}  # Dictionary with string keys and float values
+        self.all_correlations_1w: Dict[str, float] = {}  # Dictionary with string keys and float values
 
         self.get_symbol_name_and_type()  # Set the name and type during initialization
 
@@ -139,7 +146,8 @@ class Security:
             set_property(attribute_name)
 
         # Set market_cap and source attributes
-        self.market_cap = normalize('NFKD', str(metadata.get('market_cap', ''))).encode('ascii', 'ignore').decode() or None
+        self.market_cap = \
+            normalize('NFKD', str(metadata.get('market_cap', ''))).encode('ascii', 'ignore').decode() or None
         self.source = source_type
 
     def get_symbol_name_and_type(self) -> None:
@@ -249,11 +257,9 @@ class FredSeries:
                f"Top Correlations: {[obj.symbol for obj in self.positive_correlations[:5]]}"
 
 
-
-
 class EnhancedEncoder(json.JSONEncoder):
     def default(self, obj):
-        if isinstance(obj, np.ndarray):
+        if isinstance(obj, numpy.ndarray):
             return obj.tolist()
         if isinstance(obj, datetime):
             return obj.isoformat()
@@ -284,4 +290,3 @@ SERIES_DICT = {
     "FEDFUNDS": "COMPAPFFx",
     "VIXCLSx": "VIXCLSx"
 }
-

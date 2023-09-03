@@ -121,8 +121,13 @@ def series_is_empty(series, symbol, file_path, dl_data=True) -> bool:
 
 def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
     """Check if series is within date range"""
-    start_year, start_month, _ = map(int, start_date.split('-'))
-    end_year, end_month, _ = map(int, end_date.split('-'))
+    start_date = pd.Timestamp(start_date)
+    end_date = pd.Timestamp(end_date)
+
+    start_year = start_date.year
+    start_month = start_date.month
+    end_year = end_date.year
+    end_month = end_date.month
 
     # Check if the stock has data since 'start year' and past 'end year'
     start_condition = series.index.min().year > start_year or (series.index.min().year == start_year and
