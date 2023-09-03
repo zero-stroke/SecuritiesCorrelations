@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c89cd15-faa8-4d65-907e-77dd55248a3c" name="Changes" comment="About to remove multiprocessing, calculations isn't working with the ui">
-      <change afterPath="$PROJECT_DIR$/ui/assets/custom_script.js" afterDir="false" />
+    <list default="true" id="2c89cd15-faa8-4d65-907e-77dd55248a3c" name="Changes" comment="Adding functionality for each year to have its own dict">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/files_to_delete.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/files_to_delete.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/correlation_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/correlation_constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/file_reading_funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/file_reading_funcs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/find_correlated_symbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/find_correlated_symbols.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/security_correlations_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/security_correlations_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/fred_correlations_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/fred_correlations_ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +242,7 @@
       <workItem from="1693599471417" duration="4662000" />
       <workItem from="1693604246396" duration="45000" />
       <workItem from="1693675614383" duration="15032000" />
-      <workItem from="1693699263585" duration="3613000" />
+      <workItem from="1693699263585" duration="8838000" />
     </task>
     <task id="LOCAL-00001" summary="Project to display correlations between financial instruments and macroeconomic indicators, including stocks, etfs, indices, and anything that FRED offers.&#10;Currently working with Securities but not with FredSeries objects.">
       <created>1692920101789</created>
@@ -361,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693692889493</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Adding functionality for each year to have its own dict">
+      <created>1693702903575</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1693702903575</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +389,8 @@
     <MESSAGE value="Added input and dropdown boxes separate" />
     <MESSAGE value="Debugging add new Security" />
     <MESSAGE value="About to remove multiprocessing, calculations isn't working with the ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="About to remove multiprocessing, calculations isn't working with the ui" />
+    <MESSAGE value="Adding functionality for each year to have its own dict" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding functionality for each year to have its own dict" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -409,7 +412,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/find_correlated_symbols.py</url>
-          <line>130</line>
+          <line>147</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

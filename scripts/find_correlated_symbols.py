@@ -10,8 +10,6 @@ from scripts.correlation_constants import Security, SecurityMetadata
 from scripts.file_reading_funcs import get_validated_security_data, read_series_data, is_series_within_date_range, \
     fit_data_to_time_range
 
-
-
 # Configure the logger at the module level
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
@@ -33,30 +31,38 @@ logger.addHandler(fh)
 
 
 def define_top_correlations(all_main_securities: List[Security]) -> List[Security]:
-    num_symbols = 100
+    num_symbols = 40
     metadata = SecurityMetadata()
+    # Define the correlation attributes and their corresponding positive and negative correlation attributes
+    correlation_start_dates = ['2018', '2021', '2022', '2023']
 
+    # Loop through each main security
     for main_security in all_main_securities:
-        correlation_dict = main_security.all_correlations
+        # Loop through each correlation start_date
+        for start_date in correlation_start_dates:
+            correlation_dict = main_security.all_correlations.get(start_date, {})
 
-        assert isinstance(correlation_dict, dict)
+            # Sort the symbols by their correlation values in descending and ascending order
+            sorted_symbols_desc = sorted(correlation_dict.keys(), key=correlation_dict.get, reverse=True)
+            sorted_symbols_asc = sorted(correlation_dict.keys(), key=correlation_dict.get, reverse=False)
 
-        sorted_symbols_desc = sorted(correlation_dict.keys(), key=correlation_dict.get, reverse=True)
-        sorted_symbols_asc = sorted(correlation_dict.keys(), key=correlation_dict.get, reverse=False)
+            # Add the top num_symbols positively correlated securities to the positive_correlations attribute
+            for symbol in sorted_symbols_desc[:num_symbols]:
+                correlated_security = Security(symbol, metadata)
+                correlated_security.set_correlation(correlation_dict[symbol])
+                main_security.positive_correlations[start_date].append(correlated_security)
 
-        for symbol in sorted_symbols_desc[:num_symbols]:
-            correlated_security = Security(symbol, metadata)
-            correlated_security.set_correlation(correlation_dict[symbol])
-            main_security.positive_correlations.append(correlated_security)
+            # Add the top num_symbols negatively correlated securities to the negative_correlations attribute
+            for symbol in sorted_symbols_asc[:num_symbols]:
+                correlated_security = Security(symbol, metadata)
+                correlated_security.set_correlation(correlation_dict[symbol])
+                main_security.negative_correlations[start_date].append(correlated_security)
 
-        for symbol in sorted_symbols_asc[:num_symbols]:
-            correlated_security = Security(symbol, metadata)
-            correlated_security.set_correlation(correlation_dict[symbol])
-            main_security.negative_correlations.append(correlated_security)
-
-        main_security.all_correlations = None
+            # Set the correlation_dict for the start_date to None
+            main_security.all_correlations[start_date] = None
 
     return all_main_securities
+
 
 
 class CorrelationCalculator:
@@ -65,12 +71,17 @@ class CorrelationCalculator:
 
     def define_correlation_for_each_year(self, securities_list, symbols, start_date, end_date,
                                          source, dl_data, use_ch):
-        all_start_dates = ['2010', '2018', '2021', '2022', '2023']
-        for start_date in all_start_dates:
-            self.define_correlations_for_series_list(securities_list, symbols, start_date, end_date, source, dl_data,
-                                                     use_ch)
 
-        return securities_list
+        all_start_dates = ['2010', '2018', '2021', '2022', '2023']
+
+        ret_securities_list = []
+
+        for start_date in all_start_dates:
+            ret_securities_list.append(
+                self.define_correlations_for_series_list(securities_list, symbols, start_date, end_date, source,
+                                                         dl_data, use_ch))
+
+        return ret_securities_list
 
     def define_correlations_for_series_list(self, all_main_securities: List['Security'],
                                             symbols: List[str],
@@ -114,7 +125,12 @@ class CorrelationCalculator:
                     new_start_date = main_security_data.index.min().strftime('%Y-%m-%d')
 
                     correlation_float = self.get_correlation_for_series(main_security_data, security_data)
-                    getattr(main_security, attribute_name)[symbol] = correlation_float  # Define dicts' keys & values
+
+                    if start_date not in main_security.all_correlations:
+                        main_security.all_correlations[start_date] = {}
+
+                    main_security.all_correlations[start_date][symbol] = correlation_float
+
                     i += 1
         return all_main_securities
 

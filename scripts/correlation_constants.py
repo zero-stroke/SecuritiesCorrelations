@@ -1,5 +1,6 @@
 import json
 import os
+from collections import defaultdict
 from datetime import datetime
 from enum import Enum
 from typing import List, Dict, Optional
@@ -68,7 +69,7 @@ class Security:
     def __init__(self, symbol: str, metadata: SecurityMetadata):
         self.symbol: str = symbol
         self.metadata = metadata
-        self.name: Optional[str] = None  # Set it to None initially
+        self.name: Optional[str] = None
         self.summary: Optional[str] = None
         self.sector: Optional[str] = None
         self.industry_group: Optional[str] = None
@@ -79,29 +80,11 @@ class Security:
         self.city: Optional[str] = None
         self.website: Optional[str] = None
         self.market_cap: Optional[str] = None
-        self.source: Optional[str] = ''  # Initialize to an empty string
-        self.correlation: Optional[float] = None  # Initialized to None, can be updated later
-        self.positive_correlations: List[Security] = []  # List of Security objects
-        self.negative_correlations: List[Security] = []  # List of Security objects
-        self.positive_correlations_2018: List[Security] = []  # Future use
-        self.negative_correlations_2018: List[Security] = []  # Future use
-        self.positive_correlations_2021: List[Security] = []  # Future use
-        self.negative_correlations_2021: List[Security] = []  # Future use
-        self.positive_correlations_2022: List[Security] = []  # Future use
-        self.negative_correlations_2022: List[Security] = []  # Future use
-        self.positive_correlations_2023: List[Security] = []  # Future use
-        self.negative_correlations_2023: List[Security] = []  # Future use
-        self.positive_correlations_1m: List[Security] = []  # Future use
-        self.negative_correlations_1m: List[Security] = []  # Future use
-        self.positive_correlations_1w: List[Security] = []  # Future use, would have to use weekly Alpaca data
-        self.negative_correlations_1w: List[Security] = []  # Future use, would have to use weekly Alpaca data
-        self.all_correlations: Dict[str, float] = {}  # Dictionary with string keys and float values
-        self.all_correlations_2018: Dict[str, float] = {}  # Dictionary with string keys and float values
-        self.all_correlations_2021: Dict[str, float] = {}  # Dictionary with string keys and float values
-        self.all_correlations_2022: Dict[str, float] = {}  # Dictionary with string keys and float values
-        self.all_correlations_2023: Dict[str, float] = {}  # Dictionary with string keys and float values
-        self.all_correlations_1m: Dict[str, float] = {}  # Dictionary with string keys and float values
-        self.all_correlations_1w: Dict[str, float] = {}  # Dictionary with string keys and float values
+        self.source: Optional[str] = ''
+        self.correlation: Optional[float] = None
+        self.positive_correlations: Dict[str, List[Security]] = {}  # Dict[year, List[Security]]
+        self.negative_correlations: Dict[str, List[Security]] = {}  # Dict[year, List[Security]]
+        self.all_correlations: Dict[str, Optional[Dict[str, float]]] = {}  # Dict[year, Dict[symbol, correlation]]
 
         self.get_symbol_name_and_type()  # Set the name and type during initialization
 
@@ -166,16 +149,16 @@ class Security:
             index_data = self.metadata.index_metadata.loc[self.symbol]
             self.set_properties_from_metadata(index_data, 'index')
 
-    def get_unique_values(self, attribute_name: str) -> List[str]:
+    def get_unique_values(self, attribute_name: str, start_date) -> List[str]:
         """Returns a list of a correlation_list's unique values for a given attribute"""
         unique_values = set()
 
         # Get values from positive_correlations
-        unique_values.update(getattr(security, attribute_name) for security in self.positive_correlations if
+        unique_values.update(getattr(security, attribute_name) for security in self.positive_correlations[start_date] if
                              getattr(security, attribute_name))
 
         # Get values from negative_correlations
-        unique_values.update(getattr(security, attribute_name) for security in self.negative_correlations if
+        unique_values.update(getattr(security, attribute_name) for security in self.negative_correlations[start_date] if
                              getattr(security, attribute_name))
 
         return list(unique_values)
@@ -185,12 +168,10 @@ class Security:
         return hash(self.symbol)
 
     def __str__(self) -> str:
-        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}, Correlation: {self.correlation}, " \
-               f"Top Correlations: {[obj.symbol for obj in self.positive_correlations[:5]]}"
+        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}, Correlation: {self.correlation}"
 
     def __repr__(self) -> str:
-        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}, Correlation: {self.correlation}, " \
-               f"Top Correlations: {[obj.symbol for obj in self.positive_correlations[:5]]}"
+        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}, Correlation: {self.correlation}"
 
 
 # Define Series class with data about each series. Needs self.update_time to be added

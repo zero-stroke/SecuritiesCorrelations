@@ -482,7 +482,7 @@ class SecurityDashboard:
                 )
                 return fig_list[0]
 
-            security = load_saved_securities(symbol, start_date)
+            security = load_saved_securities(symbol)
             plotter = CorrelationPlotter()
 
             # Load and plot the selected security, generates new plots based on all the parameters

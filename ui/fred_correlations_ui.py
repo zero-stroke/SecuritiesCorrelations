@@ -1,18 +1,14 @@
+import json
+from collections import defaultdict
+
 import dash
-import pandas as pd
 import plotly.graph_objects as go
 from dash import dcc, html
 from dash.dependencies import Input, Output
-import re
-import json
-import find_correlated_symbols
-from config import STOCKS_DIR, FRED_DIR, PROJECT_ROOT, DATA_DIR
-from collections import defaultdict
-from .plotting_functions import CorrelationPlotter
-import pickle
-from scripts.correlation_constants import SecurityMetadata, DataSource, Security, FredSeries
-from scripts.file_reading_funcs import pickle_securities_objects, load_saved_securities, get_fredmd_series
-from scripts.find_correlated_symbols import CorrelationCalculator, define_top_correlations
+
+from config import FRED_DIR, DATA_DIR
+from scripts.file_reading_funcs import load_saved_securities, get_fredmd_series
+from scripts.plotting_functions import CorrelationPlotter
 
 # DEFINED CONSTANTS
 #####################################################################################
