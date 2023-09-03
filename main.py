@@ -38,7 +38,7 @@ def compute_security_correlations_and_plot(symbol_list: List[str],
     securities_list = define_top_correlations(securities_list)
 
     for security in securities_list:
-        print(f'{str(security):<90}', security.positive_correlations)
+        print(f'{str(security):<90}', security.positive_correlations, '\n')
 
     if not DEBUG:  # Pickle securities list to use later for configuring plots
         for security in securities_list:
@@ -84,12 +84,12 @@ def main():
         if user_string.lower() == '':
             break
         symbol_list.append(user_string)
-    # symbol_list.extend(
-    #     ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
-    #      'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
-    #      'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW', 'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
-    #      'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E']
-    # )
+    symbol_list.extend(
+        ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
+         'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
+         'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW', 'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
+         'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E']
+    )
 
     start_date = '2018'
     end_date = '2023-06-02'

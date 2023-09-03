@@ -66,7 +66,7 @@ def define_top_correlations(all_main_securities: List[Security]) -> List[Securit
 
 class CorrelationCalculator:
     def __init__(self):
-        self.DEBUG = False
+        self.DEBUG = True
 
     def define_correlation_for_each_year(self, securities_list, symbols, end_date,
                                          source, dl_data, use_ch, use_multiprocessing):
@@ -90,7 +90,8 @@ class CorrelationCalculator:
             -> List['Security']:
         """Main function for calculating the correlations for each seucirty against a list of other securities"""
         if self.DEBUG:
-            symbols = ['MSFT', 'AMZN', 'SNAP', 'JPM']
+            symbols = ['MSFT', 'AMZN', 'SNAP', 'JPM', 'MDB', 'PG', 'T', 'F', 'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN',
+                       'UNH', 'XOM']
 
         symbols = list(set(symbols))  # This DOES change the order of symbols
 

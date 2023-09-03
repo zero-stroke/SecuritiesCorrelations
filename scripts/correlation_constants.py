@@ -172,10 +172,10 @@ class Security:
         return hash(self.symbol)
 
     def __str__(self) -> str:
-        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}, Correlation: {self.correlation}"
+        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}"
 
     def __repr__(self) -> str:
-        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}, Correlation: {self.correlation}"
+        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}"
 
 
 # Define Series class with data about each series. Needs self.update_time to be added

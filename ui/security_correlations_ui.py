@@ -393,6 +393,7 @@ class SecurityDashboard:
             return is_open
         return not is_open
 
+    # Switch the dropdown values between Securities and FRED macroeconomic indicators
     def setup_callbacks(self):
         @self.app.callback(
             [

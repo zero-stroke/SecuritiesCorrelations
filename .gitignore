@@ -7,5 +7,10 @@ data/Stock_data/yahoo_daily/
 # Ignore yahoo_daily folder within Stock_data
 data/Stock_data/Graphs/html_plots
 data/Stock_data/Graphs/json_plots
+data/Stock_data/Graphs
+
+!folder_to_ignore/AAPL.pkl
+!folder_to_ignore/MSFT.pkl
+!folder_to_ignore/GOOG.pkl
 
 SecuritiesCorrelations.iml
