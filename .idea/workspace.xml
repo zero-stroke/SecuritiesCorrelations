@@ -2,10 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c89cd15-faa8-4d65-907e-77dd55248a3c" name="Changes" comment="Adding functionality for each year to have its own dict">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/AAPL_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/AAPL_plot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/GOOG_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/GOOG_plot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/MSFT_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/MSFT_plot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/AAPL.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/AAPL.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/AMZN.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/F.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/GOOG.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/GOOG.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/MDB.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/META.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/MSFT.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/MSFT.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/MVIS.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/files_to_delete.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/files_to_delete.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/correlation_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/correlation_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/file_reading_funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/file_reading_funcs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/find_correlated_symbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/find_correlated_symbols.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/plotting_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/plotting_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/fred_correlations_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/fred_correlations_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/security_correlations_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/security_correlations_ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +48,22 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/scripts" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/config.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/data/FRED/tcode_dict.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/correlation_constants.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/file_reading_funcs.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/find_correlated_symbols.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/plotting_functions.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ui/assets/custom_script.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ui/assets/styles.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ui/assets/styles_test.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ui/fred_correlations_ui.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ui/security_correlations_ui.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -88,7 +120,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/correlation_constants.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\afshin\IdeaProjects\SecuritiesCorrelations\scripts\correlation_constants.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -207,7 +239,6 @@
         <item itemvalue="Python.security_correlations_ui (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.file_reading_funcs" />
-        <item itemvalue="Python.correlation_constants" />
         <item itemvalue="Python.security_correlations_ui" />
       </list>
     </recent_temporary>
@@ -242,7 +273,11 @@
       <workItem from="1693599471417" duration="4662000" />
       <workItem from="1693604246396" duration="45000" />
       <workItem from="1693675614383" duration="15032000" />
-      <workItem from="1693699263585" duration="8838000" />
+      <workItem from="1693699263585" duration="22322000" />
+      <workItem from="1693759128313" duration="85000" />
+      <workItem from="1693759220085" duration="1350000" />
+      <workItem from="1693767910842" duration="7354000" />
+      <workItem from="1693781900792" duration="393000" />
     </task>
     <task id="LOCAL-00001" summary="Project to display correlations between financial instruments and macroeconomic indicators, including stocks, etfs, indices, and anything that FRED offers.&#10;Currently working with Securities but not with FredSeries objects.">
       <created>1692920101789</created>
@@ -397,11 +432,6 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/file_reading_funcs.py</url>
-          <line>97</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/file_reading_funcs.py</url>
           <line>78</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
@@ -411,14 +441,29 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/scripts/find_correlated_symbols.py</url>
-          <line>147</line>
-          <option name="timeStamp" value="52" />
+          <url>file://$PROJECT_DIR$/ui/security_correlations_ui.py</url>
+          <line>542</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ui/security_correlations_ui.py</url>
-          <line>484</line>
-          <option name="timeStamp" value="54" />
+          <url>file://$PROJECT_DIR$/scripts/find_correlated_symbols.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/plotting_functions.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/plotting_functions.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/plotting_functions.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -428,9 +473,9 @@
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1693599999755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$.coverage" NAME=" Coverage Results" MODIFIED="1692608689001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$generic.coverage" NAME="generic Coverage Results" MODIFIED="1692670946827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../ProgramData/miniconda3/envs/SecuritiesCorrelations/Lib/site-packages/pandas/core" />
-    <SUITE FILE_PATH="coverage/SecuritiesCorrelations$main.coverage" NAME="main Coverage Results" MODIFIED="1693697047223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SecuritiesCorrelations$main.coverage" NAME="main Coverage Results" MODIFIED="1693760542325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$security_correlations_ui.coverage" NAME="security_correlations_ui Coverage Results" MODIFIED="1693600992750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
-    <SUITE FILE_PATH="coverage/SecuritiesCorrelations$security_correlations_ui__1_.coverage" NAME="security_correlations_ui (1) Coverage Results" MODIFIED="1693700708232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
+    <SUITE FILE_PATH="coverage/SecuritiesCorrelations$security_correlations_ui__1_.coverage" NAME="security_correlations_ui (1) Coverage Results" MODIFIED="1693782193448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$_base.coverage" NAME="_base Coverage Results" MODIFIED="1693017311830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../ProgramData/miniconda3/envs/SecuritiesCorrelations/Lib/concurrent/futures" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$correlation_constants.coverage" NAME="correlation_constants Coverage Results" MODIFIED="1693688754361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$file_reading_funcs.coverage" NAME="file_reading_funcs Coverage Results" MODIFIED="1693694497269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />

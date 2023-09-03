@@ -50,7 +50,7 @@ class CorrelationPlotter:
                 if market_cap is not None and security.market_cap not in market_cap:
                     continue
 
-                if otc_filter and 'OTC ' in security.market:  # If otc_filter is True and market contains 'OTC ' in it, skip
+                if otc_filter and 'OTC ' in security.market:  # If otc_filter and market contains 'OTC ' in it, skip
                     continue
 
             symbol = security.symbol
@@ -94,8 +94,8 @@ class CorrelationPlotter:
         num_rows = 2
         fig = make_subplots(rows=num_rows, cols=1)
 
-        for i, correlations in enumerate([main_security.positive_correlations, main_security.negative_correlations],
-                                         start=1):
+        for i, correlations in enumerate([main_security.positive_correlations[start_date],
+                                          main_security.negative_correlations[start_date]], start=1):
             fig.add_trace(go.Scatter(x=main_security_data.index, y=main_security_data, mode='lines',
                                      name=main_security.symbol, line=dict(color=self.MAIN_SERIES_COLOR)), row=i, col=1)
             self.add_traces_to_plot(fig, correlations, start_date, i, num_traces, show_detrended, etf, stock, index,
@@ -127,7 +127,6 @@ class CorrelationPlotter:
 
     @staticmethod
     def save_plot(symbol: str, fig, start_date: str):
-        json_file_path = DATA_DIR / f'Graphs/json_plots/{symbol}_{start_date}_plot.json'
         # Graphs/json_plots/AAPL_2010_plot.json
         json_file_path = DATA_DIR / f'Graphs/json_plots/{symbol}_plot.json'
         with open(json_file_path, 'w') as f:

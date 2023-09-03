@@ -3,7 +3,7 @@ import os
 from collections import defaultdict
 from datetime import datetime
 from enum import Enum
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Iterable
 
 import numpy
 import pandas as pd
@@ -82,9 +82,13 @@ class Security:
         self.market_cap: Optional[str] = None
         self.source: Optional[str] = ''
         self.correlation: Optional[float] = None
-        self.positive_correlations: Dict[str, List[Security]] = {}  # Dict[year, List[Security]]
-        self.negative_correlations: Dict[str, List[Security]] = {}  # Dict[year, List[Security]]
-        self.all_correlations: Dict[str, Optional[Dict[str, float]]] = {}  # Dict[year, Dict[symbol, correlation]]
+
+        self.positive_correlations: Dict[str, List[Security]] =\
+            {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
+        self.negative_correlations: Dict[str, List[Security]] =\
+            {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
+        self.all_correlations: Dict[str, Dict[str, float]] = \
+            {start_date: {} for start_date in ['2010', '2018', '2021', '2022', '2023']}
 
         self.get_symbol_name_and_type()  # Set the name and type during initialization
 
@@ -149,17 +153,17 @@ class Security:
             index_data = self.metadata.index_metadata.loc[self.symbol]
             self.set_properties_from_metadata(index_data, 'index')
 
-    def get_unique_values(self, attribute_name: str, start_date) -> List[str]:
+    def get_unique_values(self, attribute_name: str, start_date, num_traces) -> List[str]:
         """Returns a list of a correlation_list's unique values for a given attribute"""
         unique_values = set()
 
         # Get values from positive_correlations
-        unique_values.update(getattr(security, attribute_name) for security in self.positive_correlations[start_date] if
-                             getattr(security, attribute_name))
+        unique_values.update(getattr(security, attribute_name) for security in
+                             self.positive_correlations[start_date][:num_traces] if getattr(security, attribute_name))
 
         # Get values from negative_correlations
-        unique_values.update(getattr(security, attribute_name) for security in self.negative_correlations[start_date] if
-                             getattr(security, attribute_name))
+        unique_values.update(getattr(security, attribute_name) for security in
+                             self.negative_correlations[start_date][:num_traces] if getattr(security, attribute_name))
 
         return list(unique_values)
 
@@ -245,6 +249,15 @@ class EnhancedEncoder(json.JSONEncoder):
         if isinstance(obj, datetime):
             return obj.isoformat()
         return super(EnhancedEncoder, self).default(obj)
+
+
+class EnhancedEncoder2(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        if isinstance(obj, Iterable) and not isinstance(obj, str):
+            return list(obj)
+        return super(EnhancedEncoder2, self).default(obj)
 
 
 SERIES_DICT = {

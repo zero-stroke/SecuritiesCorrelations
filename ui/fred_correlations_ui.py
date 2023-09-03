@@ -7,7 +7,7 @@ from dash import dcc, html
 from dash.dependencies import Input, Output
 
 from config import FRED_DIR, DATA_DIR
-from scripts.file_reading_funcs import load_saved_securities, get_fredmd_series
+from scripts.file_reading_funcs import load_saved_securities
 from scripts.plotting_functions import CorrelationPlotter
 
 # DEFINED CONSTANTS
