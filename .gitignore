@@ -14,6 +14,11 @@ data/Stock_data/Graphs
 !folder_to_ignore/GOOG.pkl
 
 SecuritiesCorrelations.iml
+Procfile
+correlation_calculator.log*
+firebase-debug.log
 
 __pycache__/
 *.pyc
+
+.idea/
