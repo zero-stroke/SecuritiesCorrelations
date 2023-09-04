@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c89cd15-faa8-4d65-907e-77dd55248a3c" name="Changes" comment="Adding functionality for each year to have its own dict">
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Stock_data/FinDB/updated_fin_db_etf_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Stock_data/FinDB/updated_fin_db_etf_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Stock_data/FinDB/updated_fin_db_indices_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Stock_data/FinDB/updated_fin_db_indices_data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/correlation_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/correlation_constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/file_reading_funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/file_reading_funcs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/find_correlated_symbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/find_correlated_symbols.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/plotting_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/plotting_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/test1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,27 +95,8 @@
       <recent name="C:\Users\afshin\IdeaProjects\SecuritiesCorrelations\scripts" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="correlation_constants" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SecuritiesCorrelations" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\afshin\IdeaProjects\SecuritiesCorrelations\scripts\correlation_constants.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+  <component name="RunManager" selected="Python.test">
+    <configuration name="AAPL_plot.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SecuritiesCorrelations/data/AAPL_plot.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="file_reading_funcs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -188,7 +175,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="security_correlations_ui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SecuritiesCorrelations" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -196,12 +183,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/security_correlations_ui.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -211,18 +198,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.AAPL_plot.html" />
+      <item itemvalue="Python.test" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.correlation_constants" />
       <item itemvalue="Python.file_reading_funcs" />
       <item itemvalue="Python.security_correlations_ui (1)" />
-      <item itemvalue="Python.security_correlations_ui" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="JavaScript Debug.AAPL_plot.html" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.security_correlations_ui (1)" />
         <item itemvalue="Python.file_reading_funcs" />
-        <item itemvalue="Python.security_correlations_ui" />
       </list>
     </recent_temporary>
   </component>
@@ -435,18 +423,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/file_reading_funcs.py</url>
-          <line>233</line>
+          <line>242</line>
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/file_reading_funcs.py</url>
-          <line>236</line>
+          <line>245</line>
           <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/file_reading_funcs.py</url>
-          <line>250</line>
+          <line>259</line>
           <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="198" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -462,7 +455,7 @@
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$_base.coverage" NAME="_base Coverage Results" MODIFIED="1693017311830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../ProgramData/miniconda3/envs/SecuritiesCorrelations/Lib/concurrent/futures" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$correlation_constants.coverage" NAME="correlation_constants Coverage Results" MODIFIED="1693688754361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$file_reading_funcs.coverage" NAME="file_reading_funcs Coverage Results" MODIFIED="1693694497269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
-    <SUITE FILE_PATH="coverage/SecuritiesCorrelations$test.coverage" NAME="test Coverage Results" MODIFIED="1693281973976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SecuritiesCorrelations$test.coverage" NAME="test Coverage Results" MODIFIED="1693856946527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SecuritiesCorrelations$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1693538517459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
   </component>
 </project>

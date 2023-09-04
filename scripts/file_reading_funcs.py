@@ -87,7 +87,7 @@ def get_validated_security_data(symbol: str, start_date: str, end_date: str, sou
         delete_symbol_from_metadata(symbol)
         return None
 
-    if not is_series_non_repeating(security_data, symbol):
+    if is_series_repeating(security_data, symbol):
         logger.warning(f"{symbol} has sections with 20 or more consecutive repeated values. Deleting from metadata...")
         delete_symbol_from_metadata(symbol)
         return None
@@ -146,11 +146,20 @@ def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
     return True
 
 
-def is_series_non_repeating(series, symbol):
-    window_size = 20
-    if series.rolling(window_size).apply(lambda x: np.all(x == x.iloc[0])).any():
-        return False
-    return True
+def is_series_repeating(series):
+    window_length = int(len(series) / (60 + np.log1p(len(series))))
+    window_length = max(window_length, 3)  # Ensure window_length is at least 1
+
+    # print(f"Calculated window length: {window_length}")
+    n = len(series)
+
+    # Iterate through series
+    for i in range(n - window_length + 1):
+        window = series.iloc[i:i+window_length]
+        if np.all(window == window.iloc[0]):
+            return True
+
+    return False
 
 
 def is_series_continuous(series, symbol: str) -> bool:

@@ -14,3 +14,6 @@ data/Stock_data/Graphs
 !folder_to_ignore/GOOG.pkl
 
 SecuritiesCorrelations.iml
+
+__pycache__/
+*.pyc
