@@ -81,9 +81,9 @@ class CorrelationPlotter:
                                    industry: List[str] = None, country: List[str] = None, state: List[str] = None,
                                    market_cap: List[str] = None):
         """Plotting the base series against its correlated series"""
-        main_security_data = read_series_data(main_security.symbol, 'yahoo')  # Prepare main series
+        main_security_data = read_series_data(main_security.symbol, 'yahoo')  # Prepare securities_main series
 
-        # Make sure the main security is normalized based on its data from the start date
+        # Make sure the securities_main security is normalized based on its data from the start date
         main_security_data = fit_data_to_time_range(main_security_data, start_date)
         main_security_data = CorrelationPlotter.normalize_data(main_security_data)
 

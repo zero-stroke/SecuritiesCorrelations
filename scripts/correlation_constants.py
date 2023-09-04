@@ -9,7 +9,7 @@ import numpy
 import pandas as pd
 from unicodedata import normalize
 
-from config import STOCKS_DIR, FRED_DIR
+from config import STOCKS_DIR, FRED_DIR, securities_metadata
 
 
 class DataSource(Enum):
@@ -66,9 +66,8 @@ class SecurityMetadata:
 
 
 class Security:
-    def __init__(self, symbol: str, metadata: SecurityMetadata):
+    def __init__(self, symbol: str):
         self.symbol: str = symbol
-        self.metadata = metadata
         self.name: Optional[str] = None
         self.summary: Optional[str] = None
         self.sector: Optional[str] = None
@@ -87,12 +86,12 @@ class Security:
             {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
         self.negative_correlations: Dict[str, List[Security]] =\
             {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
-        self.all_correlations: Dict[str, Dict[str, float]] = \
+        self.all_correlations: Dict[str, Optional[Dict[str, float]]] = \
             {start_date: {} for start_date in ['2010', '2018', '2021', '2022', '2023']}
 
         self.get_symbol_name_and_type()  # Set the name and type during initialization
 
-    def get_series_data(self) -> Optional[pd.Series]:
+    def get_series_data(self) -> Optional[pd.Series]:  # TRY TO DELETE LATER
         """Reads data from file and sets it to 'series' attribute"""
         file_path = STOCKS_DIR / f'yahoo_daily/parquets/{self.symbol}.parquet'
         if not os.path.exists(file_path):
@@ -138,19 +137,21 @@ class Security:
         self.source = source_type
 
     def get_symbol_name_and_type(self) -> None:
-        # Check for ETF metadata
-        if self.metadata.etf_metadata is not None and self.symbol in self.metadata.etf_metadata.index:
-            etf_data = self.metadata.etf_metadata.loc[self.symbol]
-            self.set_properties_from_metadata(etf_data, 'etf')
+        etf_metadata, stock_metadata, index_metadata = securities_metadata
 
         # Check for Stock metadata
-        if self.metadata.stock_metadata is not None and self.symbol in self.metadata.stock_metadata.index:
-            stock_data = self.metadata.stock_metadata.loc[self.symbol]
+        if stock_metadata is not None and self.symbol in stock_metadata.index:
+            stock_data = stock_metadata.loc[self.symbol]
             self.set_properties_from_metadata(stock_data, 'stock')
 
+        # Check for ETF metadata
+        if etf_metadata is not None and self.symbol in etf_metadata.index:
+            etf_data = etf_metadata.loc[self.symbol]
+            self.set_properties_from_metadata(etf_data, 'etf')
+
         # Check for Index metadata
-        if self.metadata.index_metadata is not None and self.symbol in self.metadata.index_metadata.index:
-            index_data = self.metadata.index_metadata.loc[self.symbol]
+        if index_metadata is not None and self.symbol in index_metadata.index:
+            index_data = index_metadata.loc[self.symbol]
             self.set_properties_from_metadata(index_data, 'index')
 
     def get_unique_values(self, attribute_name: str, start_date, num_traces) -> List[str]:
@@ -180,22 +181,30 @@ class Security:
 
 # Define Series class with data about each series. Needs self.update_time to be added
 class FredSeries:
-    def __init__(self, fred_md_id, api_id, name, tcode, frequency, source_title, source_link, release_title,
-                 release_link):
+    def __init__(self, fred_md_id):
         self.fred_md_id = fred_md_id
         self.symbol = fred_md_id
-        self.api_id = api_id
-        self.name = name
-        self.source_title = source_title
-        self.source_link = source_link
-        self.release_title = release_title
-        self.release_link = release_link
-        self.tcode = tcode
-        self.frequency = frequency
+
+        # Fetch the data for the given fred_md_id from fred_md_metadata.csv
+        fred_md_metadata = pd.read_csv(FRED_DIR / 'fred_md_metadata.csv')
+        row = fred_md_metadata[fred_md_metadata['fred_md_id'] == fred_md_id].iloc[0]
+
+        self.api_id = row['api_id']
+        self.name = row['title']
+        self.source_title = row['source_title']
+        self.source_link = row['source_link']
+        self.release_title = row['release_title']
+        self.release_link = row['release_link']
+        self.tcode = row['tcode']
+        self.frequency = row['frequency']
         self.latex_equation = self.get_latex_equation()
-        self.positive_correlations: List[Security] = []  # List of Security objects
-        self.negative_correlations: List[Security] = []  # List of Security objects
-        self.all_correlations: Dict[str, float] = {}  # Dictionary with string keys and float values
+
+        self.positive_correlations: Dict[str, List[Security]] = \
+            {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
+        self.negative_correlations: Dict[str, List[Security]] = \
+            {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
+        self.all_correlations: Dict[str, Optional[Dict[str, float]]] = \
+            {start_date: {} for start_date in ['2010', '2018', '2021', '2022', '2023']}
 
     def get_latex_equation(self):
         latex_eq_dict = {
@@ -238,8 +247,7 @@ class FredSeries:
         return self.__dict__
 
     def __str__(self):
-        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source_title}, " \
-               f"Top Correlations: {[obj.symbol for obj in self.positive_correlations[:5]]}"
+        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source_title}"
 
 
 class EnhancedEncoder(json.JSONEncoder):

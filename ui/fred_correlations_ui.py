@@ -130,7 +130,7 @@ class ButtonGenerator:
             if source_title in self.misc_subgroups:
                 self.button_groups['Misc'][source_title].append(button)
             else:
-                self.button_groups[source_title]['main'].append(button)
+                self.button_groups[source_title]['securities_main'].append(button)
 
         return self.button_groups
 
@@ -197,7 +197,7 @@ class LayoutCreator:
                 print("Misc: ", source_title, button)
                 button_groups['Misc'][source_title].append(button)
             else:
-                button_groups[source_title]['main'].append(button)  # Use 'main' as a default key for non-Misc groups
+                button_groups[source_title]['securities_main'].append(button)  # Use 'securities_main' as a default key for non-Misc groups
                 print("Main: ", source_title, button)
 
         # Create a list of Divs for each group of buttons
@@ -223,7 +223,7 @@ class LayoutCreator:
             else:
                 grouped_buttons.append(html.Div([
                     html.H4(title, style={'textAlign': 'center'}),
-                    html.Div(buttons_dict['main'], style={  # Extract the 'main' key here
+                    html.Div(buttons_dict['securities_main'], style={  # Extract the 'securities_main' key here
                         'display': 'flex',
                         'flexDirection': 'row',
                         'flexWrap': 'wrap',

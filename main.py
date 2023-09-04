@@ -1,16 +1,16 @@
 import time
-from typing import List
+from typing import List, Union
 
-from config import STOCKS_DIR
-from scripts.correlation_constants import SecurityMetadata, DataSource, Security
-from scripts.file_reading_funcs import pickle_securities_objects, load_saved_securities
+from config import STOCKS_DIR, securities_metadata
+from scripts.correlation_constants import SecurityMetadata, DataSource, Security, FredSeries
+from scripts.file_reading_funcs import pickle_securities_objects, load_saved_securities, get_fred_md_series_list
 from scripts.find_correlated_symbols import CorrelationCalculator, define_top_correlations
 from scripts.plotting_functions import CorrelationPlotter
 
 DEBUG = False
 
 
-def compute_security_correlations_and_plot(symbol_list: List[str],
+def compute_security_correlations_and_plot(series_list: Union[List['Security'], List['FredSeries']],
                                            start_date: str = '2010', end_date: str = '2023',
                                            num_traces: int = 2,
                                            source: str = 'yahoo', dl_data: bool = False,
@@ -24,14 +24,13 @@ def compute_security_correlations_and_plot(symbol_list: List[str],
                                            state: List[str] = None, market_cap: List[str] = None):
     """Returns list of tickers from most to least correlated"""
     start_time = time.time()
-
-    symbol_list = list(set(symbol_list))  # List of symbols to be converted into Securities
     metadata = SecurityMetadata()  # Initialize SecurityMetadata Singleton object
-    securities_list = [Security(symbol, metadata) for symbol in symbol_list]  # Initialize Security list
-    symbols = metadata.build_symbol_list(etf, stock, index)  # Build list of symbols to be used for comparisons
+
+    # Build list of symbols to be used for comparisons
+    symbols = metadata.build_symbol_list(etf, stock, index)
 
     calculator = CorrelationCalculator()  # Calculate all correlations for securities_list
-    securities_list = calculator.define_correlation_for_each_year(securities_list, symbols, end_date,
+    securities_list = calculator.define_correlation_for_each_year(series_list, symbols, end_date,
                                                                   source, dl_data, use_ch, use_multiprocessing)
 
     # Take the num_traces positively and negatively correlated and assign to Security
@@ -77,19 +76,28 @@ def compute_security_correlations_and_plot(symbol_list: List[str],
     return fig_list
 
 
-def main():
+def make_securities_list(symbol_list):
+    symbol_list = list(set(symbol_list))  # List of symbols to be converted into Securities
+    securities_list = [Security(symbol) for symbol in symbol_list]  # Initialize Security list
+
+    return securities_list
+
+
+def make_securities_lost():
     symbol_list = []
     while True:
         user_string = input("Enter symbol to add (or press return to finish): ")
         if user_string.lower() == '':
             break
         symbol_list.append(user_string)
-    symbol_list.extend(
-        ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
-         'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
-         'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW', 'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
-         'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E']
-    )
+    # symbol_list.extend(
+    #     ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
+    #      'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
+    #      'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW', 'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
+    #      'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E']
+    # )
+
+    securities_list = make_securities_list(symbol_list)
 
     start_date = '2018'
     end_date = '2023-06-02'
@@ -100,10 +108,8 @@ def main():
     use_ch = False
     show_detrended = False
 
-    start_time = time.time()
-
     compute_security_correlations_and_plot(
-        symbol_list=symbol_list,
+        series_list=securities_list,
         start_date=start_date,
         end_date=end_date,
         num_traces=num_traces,
@@ -112,7 +118,7 @@ def main():
         dl_data=dl_data,
         display_plot=display_plot,
         use_ch=use_ch,
-        use_multiprocessing=True,
+        use_multiprocessing=False,
 
         etf=True,
         stock=True,
@@ -122,10 +128,6 @@ def main():
         monthly_resample=False,
         otc_filter=False,
     )
-
-    end_time = time.time()
-    elapsed_time = end_time - start_time
-    print(f"The script took {elapsed_time:.2f} seconds to run.\n")
 
 
 # Code to download symbols from the metadata and from the all_stock_symbols.txt file we scraped
@@ -273,4 +275,4 @@ def comprehensive_download_symbols(data_sources: List[DataSource]):
 # write_correlation_rankings()
 
 if __name__ == '__main__':
-    main()
+    securities_main()

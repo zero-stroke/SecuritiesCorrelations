@@ -83,9 +83,13 @@ def get_validated_security_data(symbol: str, start_date: str, end_date: str, sou
     #     return None
 
     if not is_series_continuous(security_data, symbol):
+        logger.warning(f"Data not continuous for {symbol}. Deleting from metadata...")
+        delete_symbol_from_metadata(symbol)
         return None
 
     if not is_series_non_repeating(security_data, symbol):
+        logger.warning(f"{symbol} has sections with 20 or more consecutive repeated values. Deleting from metadata...")
+        delete_symbol_from_metadata(symbol)
         return None
 
     if not is_series_within_date_range(security_data, start_date, end_date):
@@ -103,7 +107,8 @@ def series_is_empty(series, symbol, file_path, dl_data=True) -> bool:
     duplicate_columns = series.columns[series.columns.duplicated()].tolist()
     nan_only_columns = series.columns[series.isna().all()].tolist()
     if duplicate_columns or nan_only_columns:
-        logger.warning(f"Duplicate columns/NaN only columns for {symbol}. Skipping...")
+        logger.warning(f"Duplicate columns/NaN only columns for {symbol}. Deleting from metadata...")
+        delete_symbol_from_metadata(symbol)
         with open(DATA_DIR / 'files_to_delete.txt', 'a') as f:
             f.write(f'{symbol}\n')
         return True
@@ -111,7 +116,8 @@ def series_is_empty(series, symbol, file_path, dl_data=True) -> bool:
     # Check if the stock has data
     if series is None or series.empty or series.shape[0] == 0 or series.isna().all().all() or \
             series.dropna().nunique().nunique() == 1:
-        logger.warning(f"No data available for {symbol}. Skipping...")
+        logger.warning(f"No data available for {symbol}. Deleting from metadata...")
+        delete_symbol_from_metadata(symbol)
         with open(DATA_DIR / 'files_to_delete.txt', 'a') as f:
             f.write(f'{symbol}\n')
         return True
@@ -136,15 +142,13 @@ def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
                                                            series.index.max().month < end_month)
 
     if start_condition or end_condition:
-        # print(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
         return False
     return True
 
 
 def is_series_non_repeating(series, symbol):
-    window_size = 10
+    window_size = 20
     if series.rolling(window_size).apply(lambda x: np.all(x == x.iloc[0])).any():
-        logger.warning(f"{symbol} has sections with {window_size} or more consecutive repeated values. Skipping...")
         return False
     return True
 
@@ -154,6 +158,8 @@ def is_series_continuous(series, symbol: str) -> bool:
     window_size = 10  # Define the size of the rolling window
     if series.rolling(window_size).apply(lambda x: all(np.isnan(x))).any():
         logger.warning(f"{symbol} has sections with {window_size} or more consecutive NaN values. Skipping...")
+        with open(DATA_DIR / 'files_to_delete.txt', 'a') as f:
+            f.write(f'{symbol}\n')
         return False
     return True
 
@@ -182,19 +188,16 @@ def get_fred_md_series_list() -> List[FredSeries]:
     """Create list of FredSeries objects from fred_md_metadata csv"""
     fred_md_metadata = pd.read_csv(FRED_DIR / 'fred_md_metadata.csv')
 
-    fred_series_list = [
-        FredSeries(
-            row['fred_md_id'], row['api_id'], row['title'], row['tcode'],
-            row['frequency'], row['source_title'], row['source_link'],
-            row['release_title'], row['release_link']
-        )
-        for _, row in fred_md_metadata.iterrows() if pd.notnull(row['fred_md_id']) and row['fred_md_id'] != ''
-    ]
+    # Filter rows where 'fred_md_id' is not null and not empty
+    valid_rows = fred_md_metadata[pd.notnull(fred_md_metadata['fred_md_id']) & (fred_md_metadata['fred_md_id'] != '')]
+
+    # Create a list of FredSeries objects using the 'fred_md_id' from the valid rows
+    fred_series_list = [FredSeries(row['fred_md_id']) for _, row in valid_rows.iterrows()]
 
     return fred_series_list
 
 
-def get_fredmd_series_data(series_id):
+def get_fred_md_series_data(series_id):
     """For getting a series from the FRED-MD dataset"""
     md_data = pd.read_csv(FRED_DIR / 'FRED_MD/MD_2023-08-02.csv')
     md_data = md_data.rename(columns={'sasdate': 'Date'})
@@ -218,3 +221,33 @@ def initialize_fin_db_stock_metadata():
     equities = fd.Equities()
     df = equities.select()
     df.to_csv(STOCKS_DIR / 'FinDB/fin_db_stock_data.csv')
+
+
+def delete_symbol_from_metadata(symbol):
+    # Read the CSV into a DataFrame
+    etf_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_etf_data.csv', index_col='symbol')
+    stock_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv', index_col='symbol')
+    index_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv', index_col='symbol')
+
+    # Check if the string exists in the 'symbol' column
+    if symbol in etf_metadata.index:
+        etf_metadata = etf_metadata.drop(symbol)
+        etf_metadata.to_csv(STOCKS_DIR / 'FinDB/updated_fin_db_etf_data.csv')
+    elif symbol in stock_metadata.index:
+        stock_metadata = stock_metadata.drop(symbol)
+
+        with open(STOCKS_DIR / 'all_stock_symbols.txt', 'r') as file:
+            lines = file.readlines()
+
+        # Remove lines that match the string
+        lines = [line for line in lines if line.strip() != symbol]
+
+        # Write the modified lines back to the file
+        with open(STOCKS_DIR / 'all_stock_symbols.txt', 'w') as file:
+            file.writelines(lines)
+
+        stock_metadata.to_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv')
+    elif symbol in index_metadata.index:
+        index_metadata = index_metadata.drop(symbol)
+        index_metadata.to_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv')
+

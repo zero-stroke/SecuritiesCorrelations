@@ -1,5 +1,4 @@
 symbol,name,currency,market,exchange,exchange timezone
-^ACWV-EU,iShares Edge MSCI Min Volatilit,USD,us_market,ASE,EDT
 ^AEX,AEX-INDEX,EUR,nl_market,AMS,CEST
 ^AFLI,S&P/ASX 50,AUD,au_market,ASX,AEST
 ^AGNG-EU,,USD,us_market,ASE,EDT
@@ -309,11 +308,9 @@ symbol,name,currency,market,exchange,exchange timezone
 ^DJA,Dow Jones Composite Average,USD,us_market,DJI,EDT
 ^DJAT,Dow Jones Asian Titans 50 Index,USD,us_market,DJI,EDT
 ^DJAU,Dow Jones Australia Index,AUD,us_market,DJI,EDT
-^DJCISIT,Dow Jones Commodity Index Silve,USD,us_market,DJI,EDT
 ^DJGSP,Dow Jones Precious Metals Index,USD,us_market,DJI,EDT
 ^DJI,Dow Jones Industrial Average,USD,us_market,DJI,EDT
 ^DJR,DOW JONES EQUITY REIT INDEX,USD,us_market,WCB,EDT
-^DJSHCP,Dow Jones U.S. Select Health Ca,USD,us_market,DJI,EDT
 ^DJT,Dow Jones Transportation Averag,USD,us_market,DJI,EDT
 ^DJU,Dow Jones Utility Average,USD,us_market,DJI,EDT
 ^DJUS,Dow Jones U.S. Index,USD,us_market,DJI,EDT
@@ -344,14 +341,11 @@ symbol,name,currency,market,exchange,exchange timezone
 ^EEMD-IV,,USD,us_market,ASE,EDT
 ^EEMD-NV,,USD,us_market,ASE,EDT
 ^EEMD-TC,,USD,us_market,ASE,EDT
-^EFIV-NV,SPDR S&P 500 ESG ETF Net Asset ,USD,us_market,ASE,EDT
 ^EGWESG,,USD,us_market,SNP,EDT
 ^EGWESGNT,,USD,us_market,SNP,EDT
 ^EGWESGT,,USD,us_market,SNP,EDT
-^EMXSOE,WisdomTree Emerging Markets ex ,USD,us_market,SNP,EDT
 ^EQOP-IV,,USD,us_market,ASE,EDT
 ^EQOP-PV,,USD,us_market,ASE,EDT
-^ERSX-NV,ERShares Non US Small Cap ETF N,USD,us_market,ASE,EDT
 ^ESGST,,USD,us_market,WCB,EDT
 ^ESML-EU,,USD,us_market,ASE,EDT
 ^ESML-IV,,USD,us_market,ASE,EDT
@@ -375,7 +369,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^FDSMBTR,FACTSET GLOBAL MOBILITY TOTAL R,USD,us_market,NIM,EDT
 ^FEBZ-IV,,USD,us_market,ASE,EDT
 ^FEDXP,,USD,us_market,SNP,EDT
-^FEMS-IV,First Trust Developed Markets S,USD,us_market,ASE,EDT
 ^FGRO-EU,,USD,us_market,ASE,EDT
 ^FGRO-IV,,USD,us_market,ASE,EDT
 ^FGRO-NV,,USD,us_market,ASE,EDT
@@ -388,14 +381,12 @@ symbol,name,currency,market,exchange,exchange timezone
 ^FIDCNUMP,,CAD,us_market,SNP,EDT
 ^FIDCNUVP,,CAD,us_market,SNP,EDT
 ^FIDCNVHP,,CAD,us_market,SNP,EDT
-^FIDEUQIP,Fidelity Europe Quality Income ,EUR,us_market,SNP,EDT
 ^FIDI-EU,,USD,us_market,ASE,EDT
 ^FIDI-IV,,USD,us_market,ASE,EDT
 ^FIDINMFP,,USD,us_market,SNP,EDT
 ^FIDUSDFP,,USD,us_market,SNP,EDT
 ^FIDUSEFP,,USD,us_market,SNP,EDT
 ^FIDUSIFP,,USD,us_market,SNP,EDT
-^FIDUSLFP,Fidelity U.S. Low Volatility Fo,USD,us_market,SNP,EDT
 ^FIDUSMFP,,USD,us_market,SNP,EDT
 ^FIGB-EU,,USD,us_market,ASE,EDT
 ^FIGB-IV,,USD,us_market,ASE,EDT
@@ -468,7 +459,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^FTMC,FTSE 250,GBP,gb_market,FGI,BST
 ^FTSC,FTSE SmallCap,GBP,gb_market,FGI,BST
 ^FTSE,FTSE 100,GBP,gb_market,FGI,BST
-^FTSL-EU,First Trust Senior Loan Fund ET,USD,us_market,ASE,EDT
 ^FTUB0500,FTSE 350 - Oil & Gas,GBP,gb_market,FGI,BST
 ^FTUB1300,FTSE 350 - Chemicals,GBP,gb_market,FGI,BST
 ^FTUB1700,FTSE 350 - Basic Resources,GBP,gb_market,FGI,BST
@@ -539,7 +529,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^GSCE-IV,,USD,us_market,ASE,EDT
 ^GSCE-NV,,USD,us_market,ASE,EDT
 ^GSCE-TC,,USD,us_market,ASE,EDT
-^GSP-TC,iPath ETNs linked to GSCI Total,USD,us_market,ASE,EDT
 ^GSPC,S&P 500,USD,us_market,SNP,EDT
 ^GSPE,S&P 500 Energy (Sector),USD,us_market,SNP,EDT
 ^GSPRTRE,S&P/TSX Capped REIT Index,CAD,ca_market,TSI,EDT
@@ -616,7 +605,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^IETR,ISEQ 20 GR,EUR,ie_market,ISE,IST
 ^IFIN,ISEQ Financial,EUR,ie_market,ISE,IST
 ^IFNT,ISEQ Financial GR,EUR,ie_market,ISE,IST
-^IHAK-IV,iShares Cybersecurity and Tech ,USD,us_market,ASE,EDT
 ^IIAKTE,,USD,us_market,SNP,EDT
 ^IIAKTL,,USD,us_market,SNP,EDT
 ^IIAKTM,,USD,us_market,SNP,EDT
@@ -670,7 +658,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^IIRULTB,,USD,us_market,SNP,EDT
 ^IIUCE,,USD,us_market,SNP,EDT
 ^IIUL,,USD,us_market,SNP,EDT
-^IIULBQ,Invesco US Large Cap Broad Qual,USD,us_market,SNP,EDT
 ^IIUM,,USD,us_market,SNP,EDT
 ^IIUQ,,USD,us_market,SNP,EDT
 ^IIUSE,,USD,us_market,SNP,EDT
@@ -685,7 +672,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^IMXL,Dow Jones Islamic Market Titans,USD,us_market,DJI,EDT
 ^INDS,NASDAQ Industrial,USD,us_market,NIM,EDT
 ^INSR,NASDAQ Insurance,USD,us_market,NIM,EDT
-^IQIN-IV,INDEXIQ ETF TRUST IQ 500 INTERN,USD,us_market,ASE,EDT
 ^IRX,13 WEEK TREASURY BILL,USD,us24_market,NYB,EDT
 ^ISCI,ISEQ Small,EUR,ie_market,ISE,IST
 ^ISCT,ISEQ Small GR,EUR,ie_market,ISE,IST
@@ -727,7 +713,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^JEMA-IV,,USD,us_market,ASE,EDT
 ^JEMA-NV,,USD,us_market,ASE,EDT
 ^JEMA-TC,,USD,us_market,ASE,EDT
-^JHMT-EU,John Hancock Exchange-Traded Fu,USD,us_market,ASE,EDT
 ^JKAGRI,Agriculture Index,IDR,id_market,JKT,WIB
 ^JKBIND,Basic Industry and Chemicals In,IDR,id_market,JKT,WIB
 ^JKCONS,Consumer Goods Index,IDR,id_market,JKT,WIB
@@ -763,7 +748,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^KS11,KOSPI Composite Index,KRW,kr_market,KSC,KST
 ^KS200,KOSPI 200 Index,KRW,kr_market,KSC,KST
 ^KSX,KBW Nasdaq Capital Markets Inde,USD,us_market,NIM,EDT
-^KURE-TC,KraneShares MSCI All China Heal,USD,us_market,ASE,EDT
 ^LEGR-EU,,USD,us_market,ASE,EDT
 ^LEGR-IV,,USD,us_market,ASE,EDT
 ^LEGR-NV,,USD,us_market,ASE,EDT
@@ -826,7 +810,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^MSUSCEPU,,USD,us_market,SNP,EDT
 ^MSUSSMPU,,USD,us_market,SNP,EDT
 ^MSUXTHPU,,USD,us_market,SNP,EDT
-^MUB-TC,iShares National Muni Bond ETF,USD,us_market,ASE,EDT
 ^MULMBGPU,,USD,us_market,SNP,EDT
 ^MULMBVPU,,USD,us_market,SNP,EDT
 ^MULMGCPU,,USD,us_market,SNP,EDT
@@ -839,7 +822,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^N100,EURONEXT 100,EUR,fr_market,PAR,CEST
 ^N1000,Nikkei JAPAN 1000,JPY,jp_market,OSA,JST
 ^N150,NEXT 150,EUR,fr_market,PAR,CEST
-^N225,Nikkei 225,JPY,jp_market,OSA,JST
 ^N300,Nikkei 300,JPY,jp_market,OSA,JST
 ^N500,Nikkei 500,JPY,jp_market,OSA,JST
 ^NBI,NASDAQ Biotechnology,USD,us_market,NIM,EDT
@@ -856,9 +838,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NFDGPRI,,USD,us_market,SNP,EDT
 ^NFDII,,USD,us_market,SNP,EDT
 ^NFDIPRI,,USD,us_market,SNP,EDT
-^NOMXNICSEKNI,NASDAQ OMX Nordic Invest Compan,SEK,se_market,STO,CEST
-^NQASPA10EUR,Nasdaq ASPA Technology EUR Inde,EUR,us_market,NIM,EDT
-^NQASPA20AUD,NASDAQ ASPA Health Care AUD Ind,AUD,us_market,NIM,EDT
 ^NQASPA3010LMEURT,,,,,
 ^NQASPA3010LMGBP,,,,,
 ^NQASPA3010LMGBPT,,,,,
@@ -869,7 +848,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQASPA3020LMN,,,,,
 ^NQASPA3020LMT,,,,,
 ^NQASPA3030LMGBPN,,,,,
-^NQASPA35LMCAD,Nasdaq ASPA Real Estate Large M,CAD,us_market,NIM,EDT
 ^NQASPA4010LMCADT,,,,,
 ^NQASPA4010LMEURN,,,,,
 ^NQASPA4010LMGBP,,,,,
@@ -896,30 +874,16 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQASPA4520LMN,,,,,
 ^NQASPA5010LMGBP,,,,,
 ^NQASPA5010LMT,,,,,
-^NQASPA5020AUDT,Nasdaq ASPA Industrial Goods an,AUD,us_market,NIM,EDT
 ^NQASPA5020LMEURN,,,,,
 ^NQASPA5020LMEURT,,,,,
 ^NQASPA5020LMJPYN,,,,,
 ^NQASPA5510LMAUD,,,,,
 ^NQASPA5510LMEURT,,,,,
 ^NQASPA5510LMN,,,,,
-^NQASPA5520GBPT,NASDAQ ASPA Chemicals GBP TR In,GBP,us_market,NIM,EDT
 ^NQASPA5520LMGBP,,,,,
 ^NQASPA5520LMJPY,,,,,
 ^NQASPA5520LMJPYT,,,,,
 ^NQASPA5520LMN,,,,,
-^NQASPA55LMAUD,Nasdaq ASPA Basic Materials Lar,AUD,us_market,NIM,EDT
-^NQBR50EURN,Nasdaq Brazil Industrials EUR N,EUR,us_market,NIM,EDT
-^NQBRIC20LMGBPN,Nasdaq BRIC Health Care Large M,GBP,us_market,NIM,EDT
-^NQCH35JPY,Nasdaq Switzerland Real Estate ,JPY,us_market,NIM,EDT
-^NQCI2HSBER,NASDAQ Commodity 2nd Hold Sugar,USD,us_market,NIM,EDT
-^NQCI2WER,NASDAQ Commodity 2nd Front Whea,USD,us_market,NIM,EDT
-^NQCLGBPN,NASDAQ Chile GBP NTR Index,GBP,us_market,NIM,EDT
-^NQCLLMGBPT,NASDAQ Chile Large Mid Cap GBP ,GBP,us_market,NIM,EDT
-^NQCNASCJPY,NASDAQ China A Shares Small Cap,JPY,us_market,NIM,EDT
-^NQCNJPY,NASDAQ China JPY Index,JPY,us_market,NIM,EDT
-^NQCNLMCNYT,NASDAQ China Large Mid Cap CNY ,CNY,us_market,NIM,EDT
-^NQDM15JPYN,Nasdaq Developed Markets Teleco,JPY,us_market,NIM,EDT
 ^NQDMASIA10LMCAD,,,,,
 ^NQDMASIA10LMCADN,,,,,
 ^NQDMASIA10LMCADT,,,,,
@@ -1002,7 +966,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQDMASIA30LMGBP,,,,,
 ^NQDMASIA30LMGBPT,,,,,
 ^NQDMASIA30LMN,,,,,
-^NQDMASIA35CADN,NASDAQ DM Asia Real Estate CAD ,CAD,us_market,NIM,EDT
 ^NQDMASIA35LMCADT,,,,,
 ^NQDMASIA35LMEURN,,,,,
 ^NQDMASIA35LMJPY,,,,,
@@ -1096,7 +1059,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQDMASIA4040N,,,,,
 ^NQDMASIA4040T,,,,,
 ^NQDMASIA4050AUDN,,,,,
-^NQDMASIA4050AUDT,Nasdaq DM Asia Travel and Leisu,AUD,us_market,NIM,EDT
 ^NQDMASIA4050CADN,,,,,
 ^NQDMASIA4050CADT,,,,,
 ^NQDMASIA4050EUR,,,,,
@@ -1446,7 +1408,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQDMASPA4050LMJPY,,,,,
 ^NQDMASPA4050LMN,,,,,
 ^NQDMASPA4050N,,,,,
-^NQDMASPA40AUDT,Nasdaq DM ASPA Consumer Discret,AUD,us_market,NIM,EDT
 ^NQDMASPA40LMAUDN,,,,,
 ^NQDMASPA40LMAUDT,,,,,
 ^NQDMASPA40LMCADT,,,,,
@@ -1492,7 +1453,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQDMASPA4520LMN,,,,,
 ^NQDMASPA4520LMT,,,,,
 ^NQDMASPA4520N,,,,,
-^NQDMASPA45GBPT,Nasdaq DM ASPA Consumer Staples,GBP,us_market,NIM,EDT
 ^NQDMASPA45LMAUDN,,,,,
 ^NQDMASPA45LMAUDT,,,,,
 ^NQDMASPA45LMCADN,,,,,
@@ -1598,7 +1558,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQDMASPA60LMCAD,,,,,
 ^NQDMASPA60LMN,,,,,
 ^NQDMASPA60LMT,,,,,
-^NQDMASPA65EURN,NASDAQ DM ASPA Utilities EUR NT,EUR,us_market,NIM,EDT
 ^NQDMASPA65LMAUDN,,,,,
 ^NQDMASPA65LMCAD,,,,,
 ^NQDMASPA65LMEUR,,,,,
@@ -1606,7 +1565,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQDMASPA65LMJPY,,,,,
 ^NQDMASPA65LMJPYN,,,,,
 ^NQDMASPA65LMJPYT,,,,,
-^NQDMASPALMEUR,NASDAQ DM ASPA Large Mid Cap EU,EUR,us_market,NIM,EDT
 ^NQDMASPAXJPLCAUD,,,,,
 ^NQDMASPAXJPLCAUDN,,,,,
 ^NQDMASPAXJPLCAUDT,,,,,
@@ -1680,7 +1638,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQDMEU5010LMEURT,,,,,
 ^NQDMEU5010LMJPYT,,,,,
 ^NQDMEU5010LMN,,,,,
-^NQDMEU5020EURN,Nasdaq DM Europe Industrial Goo,EUR,us_market,NIM,EDT
 ^NQDMEU5020LMCAD,,,,,
 ^NQDMEU5020LMCADN,,,,,
 ^NQDMEU5020LMGBP,,,,,
@@ -1693,8 +1650,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQDMEU5520LMGBP,,,,,
 ^NQDMEU5520LMGBPT,,,,,
 ^NQDMEU5520LMJPYT,,,,,
-^NQDMEU65CADN,NASDAQ DM Europe Utilities CAD ,CAD,us_market,NIM,EDT
-^NQDMEUCADT,NASDAQ DM Europe CAD TR Index,CAD,us_market,NIM,EDT
 ^NQDMXNAXKRLCCADT,,,,,
 ^NQDMXNAXKRLCEUR,,,,,
 ^NQDMXNAXKRLCEURT,,,,,
@@ -1758,8 +1713,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQDMXUSXKRSCT,,,,,
 ^NQDXBR,NASDAQ AlphaDEX Brazil Index,USD,us_market,NIM,EDT
 ^NQDXCA,NASDAQ AlphaDEX Canada Index,USD,us_market,NIM,EDT
-^NQDXCHGBPT,NASDAQ AlphaDEX Switzerland GBP,GBP,us_market,NIM,EDT
-^NQEM15LMJPYN,Nasdaq Emerging Markets Telecom,JPY,us_market,NIM,EDT
 ^NQEMASIA10LMAUD,,,,,
 ^NQEMASIA10LMAUDN,,,,,
 ^NQEMASIA10LMCADN,,,,,
@@ -1844,7 +1797,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQEMASIA30LMJPYT,,,,,
 ^NQEMASIA30LMN,,,,,
 ^NQEMASIA30LMT,,,,,
-^NQEMASIA35GBPN,NASDAQ EM Asia Real Estate GBP ,GBP,us_market,NIM,EDT
 ^NQEMASIA35LMAUDN,,,,,
 ^NQEMASIA35LMAUDT,,,,,
 ^NQEMASIA35LMEURT,,,,,
@@ -1999,7 +1951,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQEMASIA45LMGBPT,,,,,
 ^NQEMASIA45LMJPYN,,,,,
 ^NQEMASIA45LMJPYT,,,,,
-^NQEMASIA50,Nasdaq EM Asia Industrials Inde,USD,us_market,NIM,EDT
 ^NQEMASIA5010AUD,,,,,
 ^NQEMASIA5010AUDN,,,,,
 ^NQEMASIA5010CADN,,,,,
@@ -2082,7 +2033,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQEMASIA5520LMN,,,,,
 ^NQEMASIA5520N,,,,,
 ^NQEMASIA5520T,,,,,
-^NQEMASIA55JPY,Nasdaq EM Asia Basic Materials ,JPY,us_market,NIM,EDT
 ^NQEMASIA55LMAUD,,,,,
 ^NQEMASIA55LMAUDN,,,,,
 ^NQEMASIA55LMCADN,,,,,
@@ -2099,8 +2049,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQEMASIA65LMJPY,,,,,
 ^NQEMASIA65LMJPYN,,,,,
 ^NQEMASIA65LMJPYT,,,,,
-^NQEMASIALCJPYN,NASDAQ EM Asia Large Cap JPY NT,JPY,us_market,NIM,EDT
-^NQEMCNAGBP,NASDAQ Emerging Markets plus Ch,GBP,us_market,NIM,EDT
 ^NQEMEA3010LMAUDN,,,,,
 ^NQEMEA3010LMGBPN,,,,,
 ^NQEMEA3020LMGBPT,,,,,
@@ -2113,13 +2061,11 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQEMEA3030LMGBPT,,,,,
 ^NQEMEA3030LMN,,,,,
 ^NQEMEA3030LMT,,,,,
-^NQEMEA35LMJPYN,Nasdaq EMEA Real Estate Large M,JPY,us_market,NIM,EDT
 ^NQEMEA4010LMGBPT,,,,,
 ^NQEMEA4010LMJPYN,,,,,
 ^NQEMEA4010LMJPYT,,,,,
 ^NQEMEA4010LMT,,,,,
 ^NQEMEA4020LMCAD,,,,,
-^NQEMEA4020LMCADT,Nasdaq EMEA Consumer Products a,CAD,us_market,NIM,EDT
 ^NQEMEA4020LMN,,,,,
 ^NQEMEA4020LMT,,,,,
 ^NQEMEA4030LMCADN,,,,,
@@ -2139,20 +2085,17 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQEMEA4510LMAUD,,,,,
 ^NQEMEA4510LMCADT,,,,,
 ^NQEMEA4510LMEURN,,,,,
-^NQEMEA4510LMJPYN,"Nasdaq EMEA Food, Beverage and ",JPY,us_market,NIM,EDT
 ^NQEMEA4510LMT,,,,,
 ^NQEMEA4520LMAUDN,,,,,
 ^NQEMEA4520LMCAD,,,,,
 ^NQEMEA4520LMJPY,,,,,
 ^NQEMEA4520LMN,,,,,
-^NQEMEA45T,Nasdaq EMEA Consumer Staples TR,USD,us_market,NIM,EDT
 ^NQEMEA5010LMEUR,,,,,
 ^NQEMEA5010LMN,,,,,
 ^NQEMEA5010LMT,,,,,
 ^NQEMEA5020LMCADT,,,,,
 ^NQEMEA5020LMEURN,,,,,
 ^NQEMEA5020LMN,,,,,
-^NQEMEA50LMAUDN,Nasdaq EMEA Industrials Large M,AUD,us_market,NIM,EDT
 ^NQEMEA5510LMAUD,,,,,
 ^NQEMEA5510LMAUDN,,,,,
 ^NQEMEA5510LMJPYN,,,,,
@@ -2198,7 +2141,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQEMMEA4510LMGBPN,,,,,
 ^NQEMMEA4510LMJPYT,,,,,
 ^NQEMMEA4510LMT,,,,,
-^NQEMMEA45LMJPYN,Nasdaq EM MEA Consumer Staples ,JPY,us_market,NIM,EDT
 ^NQEMMEA5020LMAUDN,,,,,
 ^NQEMMEA5020LMAUDT,,,,,
 ^NQEMMEA5020LMCADN,,,,,
@@ -2209,15 +2151,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQEMMEA5510LMJPY,,,,,
 ^NQEMMEA5510LMJPYT,,,,,
 ^NQEMMEA5510LMT,,,,,
-^NQES35JPYT,Nasdaq Spain Real Estate JPY TR,JPY,us_market,NIM,EDT
-^NQES60LMCAD,Nasdaq Spain Energy Large Mid C,CAD,us_market,NIM,EDT
-^NQESLM,NASDAQ Spain Large Mid Cap Inde,USD,us_market,NIM,EDT
-^NQEU35CAD,NASDAQ Europe Real Estate CAD I,CAD,us_market,NIM,EDT
-^NQEU4010LMAUDT,Nasdaq Europe Automobiles and P,AUD,us_market,NIM,EDT
-^NQEU4020LMGBPN,Nasdaq Europe Consumer Products,GBP,us_market,NIM,EDT
-^NQEU4050GBPN,Nasdaq Europe Travel and Leisur,GBP,us_market,NIM,EDT
-^NQEU40LMCAD,Nasdaq Europe Consumer Discreti,CAD,us_market,NIM,EDT
-^NQEUEURT,NASDAQ Europe EUR TR Index,EUR,us_market,NIM,EDT
 ^NQEUROZ3010LM,,,,,
 ^NQEUROZ3010LMAUD,,,,,
 ^NQEUROZ3010LMAUDN,,,,,
@@ -2233,7 +2166,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQEUROZ3030LMEURT,,,,,
 ^NQEUROZ3030LMGBPT,,,,,
 ^NQEUROZ3030LMJPYN,,,,,
-^NQEUROZ35LMAUD,Nasdaq Eurozone Real Estate Lar,AUD,us_market,NIM,EDT
 ^NQEUROZ4010LMCADN,,,,,
 ^NQEUROZ4010LMCADT,,,,,
 ^NQEUROZ4010LMEURT,,,,,
@@ -2246,7 +2178,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQEUROZ4020LMEURT,,,,,
 ^NQEUROZ4020LMJPY,,,,,
 ^NQEUROZ4020LMJPYN,,,,,
-^NQEUROZ4030JPYT,NASDAQ Eurozone Media JPY TR In,JPY,us_market,NIM,EDT
 ^NQEUROZ4030LMAUD,,,,,
 ^NQEUROZ4030LMEURT,,,,,
 ^NQEUROZ4030LMGBP,,,,,
@@ -2285,47 +2216,17 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQEUROZ5020LMEUR,,,,,
 ^NQEUROZ5020LMJPYN,,,,,
 ^NQEUROZ5020LMT,,,,,
-^NQEUROZ50AUDN,Nasdaq Eurozone Industrials AUD,AUD,us_market,NIM,EDT
 ^NQEUROZ5510LMAUD,,,,,
 ^NQEUROZ5510LMCADN,,,,,
 ^NQEUROZ5510LMGBP,,,,,
-^NQEUROZ5510LMGBPT,Nasdaq Eurozone Basic Resources,GBP,us_market,NIM,EDT
 ^NQEUROZ5510LMT,,,,,
 ^NQEUROZ5520LMCADT,,,,,
 ^NQEUROZ5520LMEURN,,,,,
 ^NQEUROZ5520LMEURT,,,,,
 ^NQEUROZ5520LMJPY,,,,,
 ^NQEUROZ5520LMN,,,,,
-^NQFI50EUR,Nasdaq Finland Industrials EUR ,EUR,us_market,NIM,EDT
-^NQG4050CADN,Nasdaq Global Travel and Leisur,CAD,us_market,NIM,EDT
-^NQG5010GBPN,Nasdaq Global Construction and ,GBP,us_market,NIM,EDT
-^NQGB20LMJPYN,Nasdaq United Kingdom Health Ca,JPY,us_market,NIM,EDT
 ^NQGM,NASDAQ Global Market Composite,USD,us_market,NIM,EDT
 ^NQGS,NASDAQ Global Select Market Com,USD,us_market,NIM,EDT
-^NQHK50N,Nasdaq Hong Kong Industrials NT,USD,us_market,NIM,EDT
-^NQHK55HKDT,Nasdaq Hong Kong Basic Material,HKD,us_market,NIM,EDT
-^NQINSCCADN,NASDAQ India Small Cap CAD NTR ,CAD,us_market,NIM,EDT
-^NQJP3020AUDT,Nasdaq Japan Financial Services,AUD,us_market,NIM,EDT
-^NQJP45LMCAD,Nasdaq Japan Consumer Staples L,CAD,us_market,NIM,EDT
-^NQKR10LMGBP,Nasdaq Korea Technology Large M,GBP,us_market,NIM,EDT
-^NQKR45LMJPYT,Nasdaq Korea Consumer Staples L,JPY,us_market,NIM,EDT
-^NQKRLCGBPT,NASDAQ Korea Large Cap GBP TR I,GBP,us_market,NIM,EDT
-^NQLA30AUDT,Nasdaq Latin America Financials,AUD,us_market,NIM,EDT
-^NQLA4510GBP,"Nasdaq Latin America Food, Beve",GBP,us_market,NIM,EDT
-^NQMEALCCAD,NASDAQ MEA Large Cap CAD Index,CAD,us_market,NIM,EDT
-^NQMY40LMEURN,Nasdaq Malaysia Consumer Discre,EUR,us_market,NIM,EDT
-^NQNA4050T,Nasdaq North America Travel and,USD,us_market,NIM,EDT
-^NQNA4520LMAUDT,Nasdaq North America Personal C,AUD,us_market,NIM,EDT
-^NQNLLCCADT,NASDAQ Netherlands Large Cap CA,CAD,us_market,NIM,EDT
-^NQPL30EURT,NASDAQ Poland Financials EUR TR,EUR,us_market,NIM,EDT
-^NQPL50CADT,Nasdaq Poland Industrials CAD T,CAD,us_market,NIM,EDT
-^NQSELMGBPT,NASDAQ Sweden Large Mid Cap GBP,GBP,us_market,NIM,EDT
-^NQTW30JPYN,NASDAQ Taiwan Financials JPY NT,JPY,us_market,NIM,EDT
-^NQTW30TWDN,NASDAQ Taiwan Financials TWD NT,TWD,us_market,NIM,EDT
-^NQTW45LMCADT,Nasdaq Taiwan Consumer Staples ,CAD,us_market,NIM,EDT
-^NQTWSCJPYT,NASDAQ Taiwan Small Cap JPY TR ,JPY,us_market,NIM,EDT
-^NQUS35101015LMAUDT,Nasdaq US Real Estate Services ,AUD,us_market,NIM,EDT
-^NQUS50202020LMJPYN,Nasdaq US Electronic Equipment:,JPY,us_market,NIM,EDT
 ^NQUSB10101010,,,,,
 ^NQUSB10101010AUD,,,,,
 ^NQUSB10101010AUDT,,,,,
@@ -2454,7 +2355,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSB101020LMEURN,,,,,
 ^NQUSB101020LMGBPT,,,,,
 ^NQUSB101020LMN,,,,,
-^NQUSB151010JPYT,Nasdaq US Benchmark Telecommuni,JPY,us_market,NIM,EDT
 ^NQUSB15102010,,,,,
 ^NQUSB15102010AUD,,,,,
 ^NQUSB15102010AUDN,,,,,
@@ -2639,7 +2539,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSB201030LMJPYN,,,,,
 ^NQUSB201030LMN,,,,,
 ^NQUSB201030LMT,,,,,
-^NQUSB3010LMCAD,Nasdaq US Banks Large Mid Cap C,CAD,us_market,NIM,EDT
 ^NQUSB30201020,,,,,
 ^NQUSB30201020AUD,,,,,
 ^NQUSB30201020AUDT,,,,,
@@ -2856,7 +2755,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSB35101015LMT,,,,,
 ^NQUSB35101015N,,,,,
 ^NQUSB35101015T,,,,,
-^NQUSB351010AUDN,Nasdaq US Benchmark Real Estate,AUD,us_market,NIM,EDT
 ^NQUSB351010LMCAD,,,,,
 ^NQUSB351010LMCADT,,,,,
 ^NQUSB351010LMEUR,,,,,
@@ -3035,11 +2933,9 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSB40101025LMCAD,,,,,
 ^NQUSB40101025LMJPY,,,,,
 ^NQUSB40101025LMT,,,,,
-^NQUSB4010LMGBPT,Nasdaq US Automobiles and Parts,GBP,us_market,NIM,EDT
 ^NQUSB40201010AUDT,,,,,
 ^NQUSB40201010CAD,,,,,
 ^NQUSB40201010CADN,,,,,
-^NQUSB40201010CADT,Nasdaq US Benchmark Education S,CAD,us_market,NIM,EDT
 ^NQUSB40201010GBPN,,,,,
 ^NQUSB40201010GBPT,,,,,
 ^NQUSB40201010JPY,,,,,
@@ -3184,7 +3080,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSB40203050LMT,,,,,
 ^NQUSB40203050N,,,,,
 ^NQUSB40203050T,,,,,
-^NQUSB40203055AUD,Nasdaq US Benchmark Recreationa,AUD,us_market,NIM,EDT
 ^NQUSB40203055AUDN,,,,,
 ^NQUSB40203055AUDT,,,,,
 ^NQUSB40203055CADN,,,,,
@@ -3438,7 +3333,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSB40501040LMT,,,,,
 ^NQUSB40501040N,,,,,
 ^NQUSB40501040T,,,,,
-^NQUSB4050JPY,Nasdaq US Benchmark Travel and ,JPY,us_market,NIM,EDT
 ^NQUSB45101015AUDT,,,,,
 ^NQUSB45101015CAD,,,,,
 ^NQUSB45101015GBPN,,,,,
@@ -4210,7 +4104,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSB65102030EURN,,,,,
 ^NQUSB65102030JPYN,,,,,
 ^NQUSB65102030N,,,,,
-^NQUSB651020CADN,"Nasdaq US Benchmark Gas, Water ",CAD,us_market,NIM,EDT
 ^NQUSB651020LMCAD,,,,,
 ^NQUSB651020LMCADN,,,,,
 ^NQUSB651020LMEUR,,,,,
@@ -4400,7 +4293,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSL50101035GBPN,,,,,
 ^NQUSL50101035GBPT,,,,,
 ^NQUSL50101035JPYT,,,,,
-^NQUSL5010GBPT,Nasdaq US Large Cap Constructio,GBP,us_market,NIM,EDT
 ^NQUSL50201010AUD,,,,,
 ^NQUSL50201010CADN,,,,,
 ^NQUSL50201010CADT,,,,,
@@ -4421,7 +4313,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSL50203000CADT,,,,,
 ^NQUSL50203000EURN,,,,,
 ^NQUSL50203000EURT,,,,,
-^NQUSL50203000GBPN,Nasdaq US Large Cap Diversified,GBP,us_market,NIM,EDT
 ^NQUSL50203000GBPT,,,,,
 ^NQUSL50203000JPYN,,,,,
 ^NQUSL50203000N,,,,,
@@ -4429,7 +4320,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSL50204000CAD,,,,,
 ^NQUSL50204000EUR,,,,,
 ^NQUSL50204000JPYN,,,,,
-^NQUSL502040EUR,Nasdaq US Large Cap Industrial ,EUR,us_market,NIM,EDT
 ^NQUSL50205015AUDT,,,,,
 ^NQUSL50205015GBPN,,,,,
 ^NQUSL50205015GBPT,,,,,
@@ -4445,7 +4335,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSL50206015AUD,,,,,
 ^NQUSL50206015CADN,,,,,
 ^NQUSL50206015N,,,,,
-^NQUSL50AUD,Nasdaq US Large Cap Industrials,AUD,us_market,NIM,EDT
 ^NQUSL55201000AUD,,,,,
 ^NQUSL55201000EURN,,,,,
 ^NQUSL55201020AUDN,,,,,
@@ -4462,7 +4351,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSL60101010AUDT,,,,,
 ^NQUSL60101010N,,,,,
 ^NQUSL60101030,,,,,
-^NQUSL60101030AUD,Nasdaq US Large Cap Oil Equipme,AUD,us_market,NIM,EDT
 ^NQUSL60101030AUDT,,,,,
 ^NQUSL60101030CAD,,,,,
 ^NQUSL60101030CADN,,,,,
@@ -4618,7 +4506,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSM30202015GBPT,,,,,
 ^NQUSM30202015JPYT,,,,,
 ^NQUSM30202015T,,,,,
-^NQUSM302020EUR,Nasdaq US Mid Cap Investment Ba,EUR,us_market,NIM,EDT
 ^NQUSM30203020AUD,,,,,
 ^NQUSM30203020CADN,,,,,
 ^NQUSM30203020CADT,,,,,
@@ -4720,7 +4607,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSM40202025GBPN,,,,,
 ^NQUSM40202025JPY,,,,,
 ^NQUSM40202025JPYN,,,,,
-^NQUSM402020AUD,Nasdaq US Mid Cap Household Goo,AUD,us_market,NIM,EDT
 ^NQUSM40203050,,,,,
 ^NQUSM40203050AUDN,,,,,
 ^NQUSM40203050AUDT,,,,,
@@ -4745,7 +4631,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSM40301035JPYN,,,,,
 ^NQUSM40301035JPYT,,,,,
 ^NQUSM40301035N,,,,,
-^NQUSM4030AUDT,Nasdaq US Mid Cap Media AUD TR ,AUD,us_market,NIM,EDT
 ^NQUSM40401010CAD,,,,,
 ^NQUSM40401010CADT,,,,,
 ^NQUSM40401010EURN,,,,,
@@ -4854,7 +4739,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSM50205025JPYT,,,,,
 ^NQUSM50205025N,,,,,
 ^NQUSM50205025T,,,,,
-^NQUSM502050EURN,Nasdaq US Mid Cap Industrial Su,EUR,us_market,NIM,EDT
 ^NQUSM50206010AUD,,,,,
 ^NQUSM50206010CADN,,,,,
 ^NQUSM50206010CADT,,,,,
@@ -4898,7 +4782,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSM65102020EUR,,,,,
 ^NQUSM65102020EURN,,,,,
 ^NQUSM65102020GBPN,,,,,
-^NQUSMAUDN,NASDAQ US Mid Cap AUD NTR Index,AUD,us_market,NIM,EDT
 ^NQUSS10101010AUD,,,,,
 ^NQUSS10101010AUDN,,,,,
 ^NQUSS10101010CADT,,,,,
@@ -5097,7 +4980,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSS30203000EUR,,,,,
 ^NQUSS30203000EURT,,,,,
 ^NQUSS30203000GBP,,,,,
-^NQUSS30203000N,Nasdaq Small Cap Mortgage REITs,USD,us_market,NIM,EDT
 ^NQUSS30203000T,,,,,
 ^NQUSS30203010AUD,,,,,
 ^NQUSS30203010AUDT,,,,,
@@ -5110,7 +4992,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSS30203020EURN,,,,,
 ^NQUSS30203020EURT,,,,,
 ^NQUSS30203020GBPT,,,,,
-^NQUSS303010AUD,Nasdaq US Small Cap Life Insura,AUD,us_market,NIM,EDT
 ^NQUSS30302010AUDT,,,,,
 ^NQUSS30302010EUR,,,,,
 ^NQUSS30302010EURT,,,,,
@@ -5562,9 +5443,7 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSS50204050AUDN,,,,,
 ^NQUSS50204050EURN,,,,,
 ^NQUSS50204050EURT,,,,,
-^NQUSS50204050GBPN,Nasdaq Small Cap Machinery: Spe,GBP,us_market,NIM,EDT
 ^NQUSS50204050GBPT,,,,,
-^NQUSS502040JPY,Nasdaq US Small Cap Industrial ,JPY,us_market,NIM,EDT
 ^NQUSS50205010,,,,,
 ^NQUSS50205010AUD,,,,,
 ^NQUSS50205010AUDT,,,,,
@@ -5612,7 +5491,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSS50205030GBPT,,,,,
 ^NQUSS50205030JPY,,,,,
 ^NQUSS50205030JPYT,,,,,
-^NQUSS502050JPY,Nasdaq US Small Cap Industrial ,JPY,us_market,NIM,EDT
 ^NQUSS50206010AUDN,,,,,
 ^NQUSS50206010AUDT,,,,,
 ^NQUSS50206010CAD,,,,,
@@ -5761,11 +5639,7 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NQUSS65102030CADT,,,,,
 ^NQUSS65102030GBP,,,,,
 ^NQUSS65102030GBPN,,,,,
-^NQVWEMN,Nasdaq Victory EM 500 Vol Wt NT,USD,us_market,NIM,EDT
-^NQZA35GBP,Nasdaq South Africa Real Estate,GBP,us_market,NIM,EDT
-^NQZA45CADT,Nasdaq South Africa Consumer St,CAD,us_market,NIM,EDT
 ^NSEBANK,NIFTY BANK,INR,in_market,NSI,IST
-^NSEDIV,NIFTY50 DIV POINT,INR,in_market,NSI,IST
 ^NSEI,NIFTY 50,INR,in_market,NSI,IST
 ^NSEMDCP50,NIFTY MIDCAP 50,INR,in_market,NSI,IST
 ^NSMIDCP,NIFTY NEXT 50,INR,in_market,NSI,IST
@@ -5778,7 +5652,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^NY,NYSE U.S. 100 Index,USD,us_market,NYS,EDT
 ^NYA,NYSE COMPOSITE (DJ),USD,us_market,NYS,EDT
 ^NYFANG,NYSE FANG+ Index,USD,us_market,NYS,EDT
-^NYFANGNT,NYSE FANG+ Index (NTR),USD,us_market,NYS,EDT
 ^NYI,NYSE International 100 Index,USD,us_market,NYS,EDT
 ^NYICDX,ICE U.S. Dollar Index,USD,us_market,NYS,EDT
 ^NYL,NYSE World Leaders Index,USD,us_market,NYS,EDT
@@ -5787,7 +5660,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^OCTZ-IV,,USD,us_market,ASE,EDT
 ^OEX,S&P 100 INDEX,USD,us_market,WCB,EDT
 ^OFIN,NASDAQ Other Finance,USD,us_market,NIM,EDT
-^OMRXALL,OMRX All Index,SEK,se_market,STO,CEST
 ^OMX,OMX Stockholm 30 Index,SEK,se_market,STO,CEST
 ^OMXAFGX,OMX Affarsvarldens Generalindex,SEK,se_market,STO,CEST
 ^OMXBBGI,OMX_Baltic_Benchmark_GI,EUR,rg_market,RIS,EEST
@@ -5815,9 +5687,7 @@ symbol,name,currency,market,exchange,exchange timezone
 ^OMXTGI,XCSE:OMX Tallinn GI,EUR,us_market,NIM,EDT
 ^OMXVGI,XCSE:OMX Vilnius GI,EUR,us_market,NIM,EDT
 ^OSX,PHLX Oil Service Sector,USD,us_market,NIM,EDT
-^OVS-IV,Overlay Shares Small Cap Equity,USD,us_market,ASE,EDT
 ^OVX,CBOE Crude Oil Volatility Index,USD,us_market,WCB,EDT
-^PBUS-IV,Invesco PureBetaSM MSCI USA ETF,USD,us_market,ASE,EDT
 ^PDEA,,USD,us_market,WCB,EDT
 ^PDEF,,USD,us_market,WCB,EDT
 ^PEXL-EU,,USD,us_market,ASE,EDT
@@ -5859,7 +5729,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^QPFF-EU,,USD,us_market,ASE,EDT
 ^QPFF-IV,,USD,us_market,ASE,EDT
 ^QPFF-NV,,USD,us_market,ASE,EDT
-^QQQE-IV,Direxion NASDAQ-100 Equal Weigh,USD,us_market,ASE,EDT
 ^QTAP-IV,,USD,us_market,ASE,EDT
 ^QTUM-EU,,USD,us_market,ASE,EDT
 ^QTUM-IV,,USD,us_market,ASE,EDT
@@ -6350,7 +6219,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^SIXV,,USD,us_market,WCB,EDT
 ^SIXY,,USD,us_market,WCB,EDT
 ^SKEW,CBOE SKEW INDEX,USD,us_market,WCB,EDT
-^SLYV-EU,SPDR S&P 600 Small Cap Value ET,USD,us_market,ASE,EDT
 ^SNSR-EU,,USD,us_market,ASE,EDT
 ^SNSR-IV,,USD,us_market,ASE,EDT
 ^SNSR-NV,,USD,us_market,ASE,EDT
@@ -6385,7 +6253,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^SP500-2520,S&P 500 Consumer Durables & App,USD,us_market,SNP,EDT
 ^SP500-252010,S&P 500 Household Durables (Ind,USD,us_market,SNP,EDT
 ^SP500-252030,"S&P 500 Textiles, Apparel & Lux",USD,us_market,SNP,EDT
-^SP500-2550,S&P 500 Retailing (Industry Gro,USD,us_market,SNP,EDT
 ^SP500-255010,S&P 500 Distributors (Industry),USD,us_market,SNP,EDT
 ^SP500-255040,S&P 500 Specialty Retail (Indus,USD,us_market,SNP,EDT
 ^SP500-302010,S&P 500 Beverages (Industry),USD,us_market,SNP,EDT
@@ -6393,10 +6260,7 @@ symbol,name,currency,market,exchange,exchange timezone
 ^SP500-351020,S&P 500 Health Care Providers &,USD,us_market,SNP,EDT
 ^SP500-40,S&P 500 Financials (Sector),USD,us_market,SNP,EDT
 ^SP500-4520,S&P 500 Technology Hardware & E,USD,us_market,SNP,EDT
-^SP500EW-25,S&P 500 EQUAL WEIGHTED Consumer,USD,us_market,SNP,EDT
 ^SP500TR,S&P 500 (TR),USD,us_market,SNP,EDT
-^SP50CTUP,S&P 500 Climate Transition Inde,USD,us_market,SNP,EDT
-^SP600-40301040,S&P 600 Property & Casualty Ins,USD,us_market,SNP,EDT
 ^SP600,S&P 600,USD,us_market,SNP,EDT
 ^SP7BF10A,,USD,us_market,WCB,EDT
 ^SP7BF10D,,USD,us_market,WCB,EDT
@@ -6432,7 +6296,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^SPEG04,,USD,us_market,WCB,EDT
 ^SPEG07,,USD,us_market,WCB,EDT
 ^SPEG10,,USD,us_market,WCB,EDT
-^SPEL75EN,S&P Euro 75 EUR (Net TR),EUR,us_market,SNP,EDT
 ^SPENME,,USD,us_market,WCB,EDT
 ^SPENME01,,USD,us_market,WCB,EDT
 ^SPENME02,,USD,us_market,WCB,EDT
@@ -6448,11 +6311,8 @@ symbol,name,currency,market,exchange,exchange timezone
 ^SPENME12,,USD,us_market,WCB,EDT
 ^SPESG,,USD,us_market,WCB,EDT
 ^SPEUP,S&P EUROPE 350,EUR,us_market,SNP,EDT
-^SPG120030WMNTR,S&P Global 1200 (WM) Consumer S,USD,us_market,SNP,EDT
-^SPGLEMC,S&P GSCI Light Energy Multiple ,USD,us_market,SNP,EDT
 ^SPGSCI,S&P GSCI Index,USD,us_market,SNP,EDT
 ^SPGSIK,S&P GSCI Nickel Index,USD,us_market,SNP,EDT
-^SPGSSF,S&P GSCI Softs Index,USD,us_market,SNP,EDT
 ^SPHB5,,USD,us_market,SNP,EDT
 ^SPHB6,,USD,us_market,DJI,EDT
 ^SPHYDA,S&P High Yield Dividend Aristoc,USD,us_market,SNP,EDT
@@ -6488,8 +6348,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^SPRS04,,USD,us_market,WCB,EDT
 ^SPRS07,,USD,us_market,WCB,EDT
 ^SPRS10,,USD,us_market,WCB,EDT
-^SPSIEUP,S&P 500 Shariah Industry Exclus,USD,us_market,SNP,EDT
-^SPSUUN,S&P Select Sector Capped 20% Ut,USD,us_market,SNP,EDT
 ^SPUK,S&P UNITED KINGDOM (PDS),GBP,us_market,SNP,EDT
 ^SPWDDEKN,,EUR,us_market,SNP,EDT
 ^SPX,S&P 500 INDEX,USD,us_market,WCB,EDT
@@ -6507,7 +6365,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^SVAL-NV,,USD,us_market,ASE,EDT
 ^SVAL-TC,,USD,us_market,ASE,EDT
 ^SVRPO,,USD,us_market,WCB,EDT
-^SWAN-NV,Amplify BlackSwan Growth  and  ,USD,us_market,ASE,EDT
 ^SWANXT,,USD,us_market,WCB,EDT
 ^TAXF-EU,,USD,us_market,ASE,EDT
 ^TAXF-IV,,USD,us_market,ASE,EDT
@@ -6518,10 +6375,8 @@ symbol,name,currency,market,exchange,exchange timezone
 ^TECDAX,TECDAX TR,EUR,de_market,GER,CEST
 ^TEII,TSEC electrical subindex,TWD,tw_market,TAI,CST
 ^TFII,TSEC foods subindex,TWD,tw_market,TAI,CST
-^TFLT-TC,Global X TargetIncome Plus 2 ET,USD,us_market,ASE,EDT
 ^TFNI,TSEC finance subindex,TWD,tw_market,TAI,CST
 ^TIWI,TSEC non-finance index,TWD,tw_market,TAI,CST
-^TLH-IV,iShares Lehman 10 20 Yr Treasur,USD,us_market,ASE,EDT
 ^TLTPRO,,USD,us_market,WCB,EDT
 ^TLTPRO01,,USD,us_market,WCB,EDT
 ^TLTPRO02,,USD,us_market,WCB,EDT
@@ -6538,12 +6393,10 @@ symbol,name,currency,market,exchange,exchange timezone
 ^TMAT-IV,,USD,us_market,ASE,EDT
 ^TNX,CBOE Interest Rate 10 Year T No,USD,us24_market,NYB,EDT
 ^TPAI,TSEC paper and pulp subindex,TWD,tw_market,TAI,CST
-^TPAY-EU,ECOFIN DIGITAL PAYMENTS INFRAST,USD,us_market,ASE,EDT
 ^TPLI,TSEC plastics subindex,TWD,tw_market,TAI,CST
 ^TRAN,NASDAQ Transportation,USD,us_market,NIM,EDT
 ^TSJA-IV,,USD,us_market,ASE,EDT
 ^TSOC-IV,,USD,us_market,ASE,EDT
-^TTAI-NV,TrimTabs All Cap International ,USD,us_market,ASE,EDT
 ^TWAV3,,USD,us_market,WCB,EDT
 ^TWBV3,,USD,us_market,WCB,EDT
 ^TWII,TSEC weighted index,TWD,tw_market,TAI,CST
@@ -6568,7 +6421,6 @@ symbol,name,currency,market,exchange,exchange timezone
 ^VICE-TC,,USD,us_market,ASE,EDT
 ^VIF,CBOE Far-term VIX Index,USD,us_market,WCB,EDT
 ^VIN,CBOE Near-term VIX Index,USD,us_market,WCB,EDT
-^VIOV-TC,Vanguard S&P Small Cap 600 Valu,USD,us_market,ASE,EDT
 ^VIX,CBOE Volatility Index,USD,us_market,WCB,EDT
 ^VIX10W,,USD,us_market,WCB,EDT
 ^VIX12W,,USD,us_market,WCB,EDT

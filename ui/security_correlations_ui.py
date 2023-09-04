@@ -11,7 +11,7 @@ from dash.dependencies import Input, Output, State
 from config import DATA_DIR
 from config import PROJECT_ROOT
 from main import compute_security_correlations_and_plot
-from scripts.correlation_constants import Security
+from scripts.correlation_constants import Security, FredSeries
 from scripts.file_reading_funcs import load_saved_securities
 from scripts.plotting_functions import CorrelationPlotter
 
@@ -198,7 +198,7 @@ class SecurityDashboard:
                         #  Dropdown selection for which Security to display
                         dcc.Checklist(
                             id=self.FRED_SWITCH_ID,
-                            options=[{'label': '', 'value': 'exclude_otc'}],
+                            options=[{'label': '', 'value': 'use_fred'}],
                             value=[],
                             inline=True,
                             className='custom-switch',
@@ -403,8 +403,8 @@ class SecurityDashboard:
                 Input(self.FRED_SWITCH_ID, 'value'),
             ]
         )
-        def update_dropdown_values(fred_switch_value: List[str]):
-            is_fred_selected = 'exclude_otc' in fred_switch_value
+        def update_dropdown_values(use_fred: List[str]):
+            is_fred_selected = 'use_fred' in use_fred
 
             options = [{'label': security, 'value': security} for security in self.available_securities] if \
                 not is_fred_selected else [{'label': series, 'value': series} for series in self.fred_series]
@@ -450,6 +450,7 @@ class SecurityDashboard:
 
                 State(self.SECURITIES_INPUT_ID, 'value'),
                 Input(self.SECURITIES_DROPDOWN_ID, 'value'),
+                State(self.FRED_SWITCH_ID, 'value'),
 
                 Input(self.START_DATE_ID, 'value'),
                 Input(self.NUM_TRACES_ID, 'value'),
@@ -470,17 +471,22 @@ class SecurityDashboard:
                 State(self.MARKET_CAP_FILTER_ID, 'value'),
             ]
         )
-        def update_graph(n_clicks: int, input_symbol: Optional[str] = None, symbol: Optional[str] = None,
+        def update_graph(n_clicks: int,
+                         input_symbol: Optional[str],  # Might need to set to None
+                         dropdown_symbol: Optional[str],
+                         use_fred: List[str],
                          start_date: str = '2010', num_traces: int = 2,
                          etf_clicks: int = 1, stock_clicks: int = 1, index_clicks: int = 0,
                          detrend: Optional[list] = None, monthly: Optional[list] = None, otc_filter: bool = False,
                          sector: List[str] = None, industry_group: List[str] = None, industry: List[str] = None,
                          country: List[str] = None, state: List[str] = None, market_cap: List[str] = None) -> go.Figure:
 
+            is_fred_selected = 'use_fred' in use_fred
+
             self.current_num_traces = num_traces
             self.current_start_date = start_date
 
-            symbol = symbol.upper()
+            dropdown_symbol = dropdown_symbol.upper()
 
             etf = etf_clicks % 2 == 1
             stock = stock_clicks % 2 == 1
@@ -510,10 +516,15 @@ class SecurityDashboard:
             show_detrended = 'detrend' in detrend
             monthly_resample = 'monthly' in monthly
 
+            if is_fred_selected:
+                series = FredSeries(dropdown_symbol)
+            else:
+                series = Security(dropdown_symbol)
+
             if input_symbol:
                 # Call compute_security_correlations_and_plot if symbol is not in available securities
                 fig_list = compute_security_correlations_and_plot(
-                    symbol_list=[symbol],
+                    series_list=[series],
                     start_date=start_date,
                     end_date='2023-06-02',
                     num_traces=num_traces,
@@ -538,10 +549,10 @@ class SecurityDashboard:
                     state=state,
                     market_cap=market_cap,
                 )
-                self.current_main_security = load_saved_securities(symbol)
+                self.current_main_security = load_saved_securities(dropdown_symbol)
                 return fig_list[0]
 
-            self.current_main_security = load_saved_securities(symbol)
+            self.current_main_security = load_saved_securities(dropdown_symbol)
             plotter = CorrelationPlotter()
 
             # Load and plot the selected security, generates new plots based on all the parameters
