@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c89cd15-faa8-4d65-907e-77dd55248a3c" name="Changes" comment="Adding functionality for each year to have its own dict">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/correlation_calculator.log" beforeDir="false" afterPath="$PROJECT_DIR$/correlation_calculator.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/html_plots/AAPL_plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/html_plots/AAPL_plot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/AAPL.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/Graphs/pickled_securities_objects/AAPL.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Stock_data/FinDB/fin_db_etf_data - Copy.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Stock_data/FinDB/fin_db_indices_data - Copy.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Stock_data/FinDB/fin_db_stock_data - Copy.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Stock_data/FinDB/updated_fin_db_etf_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Stock_data/FinDB/updated_fin_db_etf_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Stock_data/FinDB/updated_fin_db_indices_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Stock_data/FinDB/updated_fin_db_indices_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Stock_data/FinDB/updated_fin_db_stock_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Stock_data/FinDB/updated_fin_db_stock_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Stock_data/all_stock_symbols.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/Stock_data/all_stock_symbols.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/files_to_delete.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/files_to_delete.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/correlation_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/correlation_constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/file_reading_funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/file_reading_funcs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/find_correlated_symbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/find_correlated_symbols.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/plotting_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/plotting_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/fred_correlations_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/fred_correlations_ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/security_correlations_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/security_correlations_ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
