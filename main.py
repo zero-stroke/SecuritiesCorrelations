@@ -84,6 +84,7 @@ def make_securities_list(symbol_list):
 
 def main():
     use_fred = False
+
     if not use_fred:
         symbol_list = []
         while True:

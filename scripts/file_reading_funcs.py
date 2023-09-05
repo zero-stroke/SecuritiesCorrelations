@@ -146,7 +146,7 @@ def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
 
 
 def is_series_repeating(series, symbol):
-    window_length = int(len(series) / (60 + np.log1p(len(series))))
+    window_length = int(len(series) / (35 + np.log1p(len(series))))
     window_length = max(window_length, 3)  # Ensure window_length is at least 1
 
     # print(f"Calculated window length: {window_length}")

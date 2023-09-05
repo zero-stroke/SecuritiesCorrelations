@@ -36,7 +36,7 @@ def plot_ticker_data(data, name):
 
 def find_repeating_intervals(series):
 
-    window_length = int(len(series) / (60 + np.log1p(len(series))))
+    window_length = int(len(series) / (35 + np.log1p(len(series))))
     window_length = max(window_length, 3)  # Ensure window_length is at least 1
 
     print(f"Calculated window length: {window_length}")
@@ -65,7 +65,7 @@ def find_repeating_intervals(series):
 
 
 if __name__ == "__main__":
-    ticker = "PG"  # Replace with your desired ticker symbol
+    ticker = "LCID"  # Replace with your desired ticker symbol
     start_date = "2010-01-01"  # Replace with your desired start date
     end_date = "2023-06-01"  # Replace with your desired end date
 
@@ -78,8 +78,15 @@ if __name__ == "__main__":
     # Step 3: Show Popup Plot
     show_popup_plot(ticker, ticker_fig)
 
-    if is_series_repeating(ticker_data):
-        print("Ticker data has repeating intervals at the following indices:")
+    return_obj = find_repeating_intervals(ticker_data)
+
+    if isinstance(return_obj, bool):
+        if return_obj:
+            print("Ticker data has repeating intervals at the following indices:")
+        else:
+            print("Ticker data doesn't contain repeating values.")
     else:
-        print("Ticker data doesn't contain repeating values.")
+        for interval in return_obj:
+            print(f"From {interval[0]} to {interval[1]}")
+
 
