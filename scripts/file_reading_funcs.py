@@ -254,7 +254,8 @@ def delete_symbol_from_metadata(symbol):
 
         # Write the modified lines back to the file
         with open(STOCKS_DIR / 'all_stock_symbols.txt', 'w') as file:
-            file.writelines(lines)
+            for line in lines:
+                file.write(line + '\n')
 
     # Check if the string exists in the 'symbol' column
     elif symbol in etf_metadata.index:
