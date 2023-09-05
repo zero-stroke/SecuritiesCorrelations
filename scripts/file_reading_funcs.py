@@ -88,7 +88,6 @@ def get_validated_security_data(symbol: str, start_date: str, end_date: str, sou
         return None
 
     if is_series_repeating(security_data, symbol):
-        logger.warning(f"{symbol} has sections with 20 or more consecutive repeated values. Deleting from metadata...")
         delete_symbol_from_metadata(symbol)
         return None
 
@@ -107,7 +106,7 @@ def series_is_empty(series, symbol, file_path, dl_data=True) -> bool:
     duplicate_columns = series.columns[series.columns.duplicated()].tolist()
     nan_only_columns = series.columns[series.isna().all()].tolist()
     if duplicate_columns or nan_only_columns:
-        logger.warning(f"Duplicate columns/NaN only columns for {symbol}. Deleting from metadata...")
+        logger.warning(f"{symbol} Duplicate columns/NaN only columns. Deleting from metadata...")
         delete_symbol_from_metadata(symbol)
         with open(DATA_DIR / 'files_to_delete.txt', 'a') as f:
             f.write(f'{symbol}\n')
@@ -116,7 +115,7 @@ def series_is_empty(series, symbol, file_path, dl_data=True) -> bool:
     # Check if the stock has data
     if series is None or series.empty or series.shape[0] == 0 or series.isna().all().all() or \
             series.dropna().nunique().nunique() == 1:
-        logger.warning(f"No data available for {symbol}. Deleting from metadata...")
+        logger.warning(f"{symbol} No data available. Deleting from metadata...")
         delete_symbol_from_metadata(symbol)
         with open(DATA_DIR / 'files_to_delete.txt', 'a') as f:
             f.write(f'{symbol}\n')
@@ -146,7 +145,7 @@ def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
     return True
 
 
-def is_series_repeating(series):
+def is_series_repeating(series, symbol):
     window_length = int(len(series) / (60 + np.log1p(len(series))))
     window_length = max(window_length, 3)  # Ensure window_length is at least 1
 
@@ -157,6 +156,10 @@ def is_series_repeating(series):
     for i in range(n - window_length + 1):
         window = series.iloc[i:i+window_length]
         if np.all(window == window.iloc[0]):
+            logger.warning(f"{symbol} has sections with {window_length} or more consecutive repeated values. "
+                           f"Deleting from metadata...")
+            with open(DATA_DIR / 'files_to_delete.txt', 'a') as f:
+                f.write(f'{symbol}\n')
             return True
 
     return False
