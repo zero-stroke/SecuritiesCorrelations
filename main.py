@@ -102,7 +102,7 @@ def main():
     else:
         securities_list = get_fred_md_series_list()
 
-    start_date = '2018'
+    start_date = '2023'
     end_date = '2023-06-02'
     num_traces = 4
     source = 'yahoo'
@@ -123,9 +123,9 @@ def main():
         use_ch=use_ch,
         use_multiprocessing=False,
 
-        etf=True,
+        etf=False,
         stock=True,
-        index=True,
+        index=False,
 
         show_detrended=show_detrended,
         monthly_resample=False,

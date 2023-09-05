@@ -241,25 +241,26 @@ def delete_symbol_from_metadata(symbol):
     stock_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv', index_col='symbol')
     index_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv', index_col='symbol')
 
-    # Check if the string exists in the 'symbol' column
-    if symbol in etf_metadata.index:
-        etf_metadata = etf_metadata.drop(symbol)
-        etf_metadata.to_csv(STOCKS_DIR / 'FinDB/updated_fin_db_etf_data.csv')
-    elif symbol in stock_metadata.index:
+    with open(STOCKS_DIR / 'all_stock_symbols.txt', 'r') as file:
+        all_symbols = file.read().splitlines()
+
+    if symbol in stock_metadata.index:
         stock_metadata = stock_metadata.drop(symbol)
 
-        with open(STOCKS_DIR / 'all_stock_symbols.txt', 'r') as file:
-            lines = file.readlines()
-
+        stock_metadata.to_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv')
+    if symbol in all_symbols:
         # Remove lines that match the string
-        lines = [line for line in lines if line.strip() != symbol]
+        lines = [line for line in all_symbols if line != symbol]
 
         # Write the modified lines back to the file
         with open(STOCKS_DIR / 'all_stock_symbols.txt', 'w') as file:
             file.writelines(lines)
 
-        stock_metadata.to_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv')
+    # Check if the string exists in the 'symbol' column
+    elif symbol in etf_metadata.index:
+        etf_metadata = etf_metadata.drop(symbol)
+        etf_metadata.to_csv(STOCKS_DIR / 'FinDB/updated_fin_db_etf_data.csv')
+
     elif symbol in index_metadata.index:
         index_metadata = index_metadata.drop(symbol)
         index_metadata.to_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv')
-
