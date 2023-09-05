@@ -78,18 +78,14 @@ def get_validated_security_data(symbol: str, start_date: str, end_date: str, sou
     if security_data is None:
         return None
 
-    # if not is_series_within_date_range(security_data, start_date, end_date):
-    #     # print(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
+    # if not is_series_continuous(security_data, symbol):
+    #     logger.warning(f"Data not continuous for {symbol}. Deleting from metadata...")
+    #     delete_symbol_from_metadata(symbol)
     #     return None
-
-    if not is_series_continuous(security_data, symbol):
-        logger.warning(f"Data not continuous for {symbol}. Deleting from metadata...")
-        delete_symbol_from_metadata(symbol)
-        return None
-
-    if is_series_repeating(security_data, symbol):
-        delete_symbol_from_metadata(symbol)
-        return None
+    #
+    # if is_series_repeating(security_data, symbol):
+    #     delete_symbol_from_metadata(symbol)
+    #     return None
 
     if not is_series_within_date_range(security_data, start_date, end_date):
         logger.warning(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
@@ -145,9 +141,40 @@ def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
     return True
 
 
-def is_series_repeating(series, symbol):
+def is_series_linear(series, symbol):
     window_length = int(len(series) / (35 + np.log1p(len(series))))
     window_length = max(window_length, 3)  # Ensure window_length is at least 1
+
+    # print(f"Calculated window length: {window_length}")
+    n = len(series)
+
+    # Iterate through series
+    for i in range(n - window_length + 1):
+        window = series.iloc[i:i+window_length]
+
+        # Check for constant values
+        if np.all(window == window.iloc[0]):
+            logger.warning(f"{symbol} has sections with {window_length} or more consecutive repeated values. "
+                           f"Deleting from metadata...")
+            with open(DATA_DIR / 'files_to_delete.txt', 'a') as f:
+                f.write(f'{symbol}\n')
+            return True
+
+        # Check for constant slope (perfectly linear)
+        differences = np.diff(window)
+        if np.all(differences == differences[0]):
+            logger.warning(f"{symbol} has sections with {window_length} or more consecutive linear values. "
+                           f"Deleting from metadata...")
+            with open(DATA_DIR / 'files_to_delete.txt', 'a') as f:
+                f.write(f'{symbol}\n')
+            return True
+
+    return False
+
+
+def is_series_repeating(series, symbol):
+    window_length = int(len(series) / (35 + np.log1p(len(series))))
+    window_length = max(window_length, 3)  # Ensure window_length is at least 3
 
     # print(f"Calculated window length: {window_length}")
     n = len(series)

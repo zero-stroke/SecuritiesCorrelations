@@ -10,25 +10,6 @@ from scripts.correlation_constants import Security, FredSeries
 from scripts.file_reading_funcs import get_validated_security_data, read_series_data, fit_data_to_time_range, \
     get_fred_md_series_data
 
-# Configure the logger at the module level
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
-
-# Create a file handler and set level to debug
-fh = logging.FileHandler('correlation_calculator.log')
-fh.setLevel(logging.DEBUG)
-
-# Create a formatter
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-
-# Create a rotating file handler and set level to debug
-fh = TimedRotatingFileHandler('correlation_calculator.log', when="midnight", interval=1, backupCount=7)
-fh.setLevel(logging.DEBUG)
-fh.setFormatter(formatter)
-
-# Add the file handler to the logger
-logger.addHandler(fh)
-
 
 def define_top_correlations(all_main_securities: Union[List['Security'], List['FredSeries']]) \
         -> Union[List['Security'], List['FredSeries']]:
@@ -78,7 +59,7 @@ class CorrelationCalculator:
         if use_multiprocessing:
             for start_date in all_start_dates:
                 self.define_correlations_for_series_list_fast(securities_list, symbols, start_date, end_date, source,
-                                                         dl_data, use_ch)
+                                                              dl_data, use_ch)
         else:
             for start_date in all_start_dates:
                 self.define_correlations_for_series_list(securities_list, symbols, start_date, end_date, source,
@@ -100,7 +81,7 @@ class CorrelationCalculator:
             symbol, security_data = self.process_symbol(symbol, start_date, end_date, source, dl_data, use_ch)
 
             if security_data is None:  # Check for None before processing
-                logger.warning(f'Skipping correlation calculation for {symbol} due to missing data.')
+                # logger.warning(f'Skipping correlation calculation for {symbol} due to missing data.')
                 continue
             i = 0
 
@@ -119,14 +100,14 @@ class CorrelationCalculator:
                     main_security_data = get_fred_md_series_data(main_security.symbol)
 
                 if main_security_data is None:
-                    logger.warning(f'{main_security.symbol} Data could not be found.')
+                    # logger.warning(f'{main_security.symbol} Data could not be found.')
                     all_main_securities.pop(i)
                     continue
 
                 main_security_data = fit_data_to_time_range(main_security_data, start_date)
 
-                # Check time range of security_data
-                new_start_date = main_security_data.index.min().strftime('%Y-%m-%d')
+                # # Check time range of security_data
+                # new_start_date = main_security_data.index.min().strftime('%Y-%m-%d')
 
                 correlation_float = self.get_correlation_for_series(main_security_data, security_data)
 
@@ -141,9 +122,9 @@ class CorrelationCalculator:
     def define_correlations_for_series_list_fast(self, all_main_securities: Union[List['Security'], List['FredSeries']],
                                                  symbols: List[str],
                                                  start_date: str, end_date:
-                                                 str, source: str, dl_data: bool, use_ch: bool) -> List['Security']:
+            str, source: str, dl_data: bool, use_ch: bool) -> List['Security']:
         if self.DEBUG:
-            symbols = ['MSFT', 'AMZN', 'SNAP', 'JPM']
+            symbols = ['UNH', 'XOM']
 
         symbols = list(set(symbols))  # This DOES change the order of symbols
 
@@ -156,7 +137,7 @@ class CorrelationCalculator:
             for symbol, security_data in results:
 
                 if security_data is None:  # Check for None before processing
-                    logger.warning(f'Skipping correlation calculation for {symbol} due to missing data.')
+                    # logger.warning(f'Skipping correlation calculation for {symbol} due to missing data.')
                     continue
                 i = 0
 
@@ -170,7 +151,7 @@ class CorrelationCalculator:
                     main_security_data = read_series_data(main_security.symbol, 'yahoo')
 
                     if main_security_data is None:
-                        logger.warning(f'{main_security.symbol} Data could not be found.')
+                        # logger.warning(f'{main_security.symbol} Data could not be found.')
                         all_main_securities.pop(i)
                         continue
 

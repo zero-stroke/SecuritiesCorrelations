@@ -8,11 +8,6 @@ from config import DATA_DIR, STOCKS_DIR
 from scripts.file_reading_funcs import is_series_repeating, read_series_data
 
 
-def download_ticker_data(symbol, starting_date, ending_date):
-    symbol_data = yf.download(symbol, start=starting_date, end=ending_date)
-    return symbol_data
-
-
 def show_popup_plot(symbol, fig):
     html_file_path = DATA_DIR / f'{symbol}_plot.html'
     fig.write_html(html_file_path, full_html=True)
