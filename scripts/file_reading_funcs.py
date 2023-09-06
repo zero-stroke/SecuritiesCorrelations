@@ -33,19 +33,66 @@ def download_yfin_data(symbol):
         return pd.Series()
 
 
+# Global cache for the entire consolidated DataFrame
+_CONSOLIDATED_DF_CACHE = None
+
+
+def get_consolidated_df():
+    """Read and cache the consolidated DataFrame."""
+    global _CONSOLIDATED_DF_CACHE
+    if _CONSOLIDATED_DF_CACHE is None:
+        file_path = STOCKS_DIR / 'combined_data.parquet'
+        _CONSOLIDATED_DF_CACHE = pd.read_parquet(file_path)
+    return _CONSOLIDATED_DF_CACHE
+
+
+@lru_cache(maxsize=None)  # Cache results indefinitely for each unique call
+def read_series_data_from_consolidated(symbol, source):
+    """Read data based on the source and data format."""
+    if source == 'yahoo':
+        df = get_consolidated_df()
+        try:
+            series = df.loc[symbol]
+        except KeyError:
+            logger.warning(f'Data for {symbol} does not exist')
+            return None
+
+        if 'Adj Close' in series.columns:
+            return series['Adj Close']
+
+    return None
+
+
+@lru_cache(maxsize=None)  # Cache results indefinitely for each unique call
+def read_series_data_slow(symbol, source):
+    """Read data based on the source and data format."""
+    if source == 'yahoo':
+        file_path = STOCKS_DIR / 'combined_data.parquet'
+        try:
+            df = pd.read_parquet(file_path)
+            series = df.loc[symbol]
+        except KeyError:
+            logger.warning(f'Data for {symbol} does not exist')
+            return None
+
+        if 'Adj Close' in series.columns:
+            return series['Adj Close']
+
+    return None
+
+
 @lru_cache(maxsize=None)  # Cache results indefinitely for each unique call
 def read_series_data(symbol, source):
     """Read data based on the source and data format."""
     if source == 'yahoo':
         file_path = STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet'
-
         try:
             series = pd.read_parquet(file_path)
         except FileNotFoundError:
             logger.warning(f'{file_path} does not exist')
             return None
 
-        if 'Adj Close' in series.columns and not series_is_empty(series, symbol, file_path):
+        if 'Adj Close' in series.columns:
             return series['Adj Close']
 
     return None
@@ -90,16 +137,8 @@ def get_validated_security_data(symbol: str, start_date: str, end_date: str, sou
     else:
         security_data = read_series_data(symbol, source)
 
-    if security_data is None:
-        return None
-
-    # if not is_series_continuous(security_data, symbol):
-    #     logger.warning(f"Data not continuous for {symbol}. Deleting from metadata...")
-    #     delete_symbol_from_metadata(symbol)
-    #     return None
-    #
-    # if is_series_repeating(security_data, symbol):
-    #     delete_symbol_from_metadata(symbol)
+    # if security_data is None:  # Can comment out because deleted all symbols that caused case
+    #     print("No security data")
     #     return None
 
     if not is_series_within_date_range(security_data, start_date, end_date):
@@ -144,6 +183,26 @@ def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
     start_month = start_date.month
     end_year = end_date.year
     end_month = end_date.month
+
+    # Check if the stock has data since 'start year' and past 'end year'
+    start_condition = series.index.min().year > start_year or (series.index.min().year == start_year and
+                                                               series.index.min().month > start_month)
+    end_condition = series.index.max().year < end_year or (series.index.max().year == end_year and
+                                                           series.index.max().month < end_month)
+
+    if start_condition or end_condition:
+        return False
+    return True
+
+
+def is_series_within_date_range_new(series, start_date: str, end_date: str) -> bool:  # TODO
+    """Check if series is within date range, takes start_date format as either YYYY or YYYY-MM-DD"""
+
+    # Extracting year and month from the start_date and end_date
+    start_year = int(start_date[:4])
+    start_month = int(start_date[5:7]) if len(start_date) > 4 else 1
+    end_year = int(end_date[:4])
+    end_month = int(end_date[5:7]) if len(end_date) > 4 else 12
 
     # Check if the stock has data since 'start year' and past 'end year'
     start_condition = series.index.min().year > start_year or (series.index.min().year == start_year and

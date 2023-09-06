@@ -128,7 +128,7 @@ def main():
         dl_data=dl_data,
         display_plot=display_plot,
         use_ch=use_ch,
-        use_multiprocessing=False,
+        use_multiprocessing=True,
 
         etf=False,
         stock=True,

@@ -23,3 +23,6 @@ scripts/__pycache__/
 *.pyc
 
 .idea/
+
+data/Stock_data/combined_data.parquet
+
