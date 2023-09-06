@@ -3,6 +3,7 @@ import traceback
 from typing import List, Union
 import pickle
 import os
+from functools import lru_cache
 
 import numpy as np
 import pandas as pd
@@ -12,7 +13,6 @@ import financedatabase as fd
 from scripts.correlation_constants import FredSeries, Security
 from scripts.clickhouse_functions import get_data_from_ch_stock_data
 from config import STOCKS_DIR, FRED_DIR, DATA_DIR
-
 
 # Configure the logger at the module level
 logger = logging.getLogger(__name__)
@@ -33,7 +33,25 @@ def download_yfin_data(symbol):
         return pd.Series()
 
 
+@lru_cache(maxsize=None)  # Cache results indefinitely for each unique call
 def read_series_data(symbol, source):
+    """Read data based on the source and data format."""
+    if source == 'yahoo':
+        file_path = STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet'
+
+        try:
+            series = pd.read_parquet(file_path)
+        except FileNotFoundError:
+            logger.warning(f'{file_path} does not exist')
+            return None
+
+        if 'Adj Close' in series.columns and not series_is_empty(series, symbol, file_path):
+            return series['Adj Close']
+
+    return None
+
+
+def read_series_data_old(symbol, source):
     """Read data based on the source and data format."""
     if source == 'yahoo':
         file_path = STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet'
@@ -41,11 +59,8 @@ def read_series_data(symbol, source):
             logger.warning(f'{file_path} does not exist')
             return None
         series = pd.read_parquet(file_path)
-        if 'Date' in series.columns:
-            series['Date'] = pd.to_datetime(series['Date'])
-            series = series.set_index('Date')['Adj Close']
-        else:
-            series.index = pd.to_datetime(series.index)
+
+        series.index = pd.to_datetime(series.index)
 
         if 'Adj Close' in series.columns and not series_is_empty(series, symbol, file_path):
             series = series['Adj Close']
@@ -121,7 +136,7 @@ def series_is_empty(series, symbol, file_path, dl_data=True) -> bool:
 
 
 def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
-    """Check if series is within date range"""
+    """Check if series is within date range, takes start_date format as either YYYY or YYYY-MM-DD"""
     start_date = pd.Timestamp(start_date)
     end_date = pd.Timestamp(end_date)
 
@@ -150,7 +165,7 @@ def is_series_linear(series, symbol):
 
     # Iterate through series
     for i in range(n - window_length + 1):
-        window = series.iloc[i:i+window_length]
+        window = series.iloc[i:i + window_length]
 
         # Check for constant values
         if np.all(window == window.iloc[0]):
@@ -181,7 +196,7 @@ def is_series_repeating(series, symbol):
 
     # Iterate through series
     for i in range(n - window_length + 1):
-        window = series.iloc[i:i+window_length]
+        window = series.iloc[i:i + window_length]
         if np.all(window == window.iloc[0]):
             logger.warning(f"{symbol} has sections with {window_length} or more consecutive repeated values. "
                            f"Deleting from metadata...")

@@ -516,15 +516,11 @@ class SecurityDashboard:
             show_detrended = 'detrend' in detrend
             monthly_resample = 'monthly' in monthly
 
-            if is_fred_selected:
-                series = FredSeries(dropdown_symbol)
-            else:
-                series = Security(dropdown_symbol)
-
             if input_symbol:
                 # Call compute_security_correlations_and_plot if symbol is not in available securities
                 fig_list = compute_security_correlations_and_plot(
-                    series_list=[series],
+                    symbol_list=[dropdown_symbol],
+                    use_fred=is_fred_selected,
                     start_date=start_date,
                     end_date='2023-06-02',
                     num_traces=num_traces,

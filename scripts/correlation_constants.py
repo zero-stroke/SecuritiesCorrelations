@@ -11,6 +11,12 @@ from unicodedata import normalize
 
 from config import STOCKS_DIR, FRED_DIR, securities_metadata
 
+# Configure the logger at the module level
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
+
 
 class DataSource(Enum):
     ETF = "etf"
@@ -27,7 +33,7 @@ class SecurityMetadata:
             # Load ETF, Stock, and Index data
             cls._instance.etf_metadata = \
                 pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_etf_data.csv', index_col='symbol')
-            cls._instance.stock_metadata =\
+            cls._instance.stock_metadata = \
                 pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv', index_col='symbol')
             cls._instance.index_metadata = \
                 pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv', index_col='symbol')
@@ -81,31 +87,30 @@ class Security:
         self.market_cap: Optional[str] = None
         self.source: Optional[str] = ''
         self.correlation: Optional[float] = None
+        self.series_data: Optional[Dict[str, pd.Series]] = {}
 
-        self.positive_correlations: Dict[str, List[Security]] =\
+        self.positive_correlations: Dict[str, List[Security]] = \
             {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
-        self.negative_correlations: Dict[str, List[Security]] =\
+        self.negative_correlations: Dict[str, List[Security]] = \
             {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
         self.all_correlations: Dict[str, Optional[Dict[str, float]]] = \
             {start_date: {} for start_date in ['2010', '2018', '2021', '2022', '2023']}
 
         self.get_symbol_name_and_type()  # Set the name and type during initialization
 
-    def get_series_data(self) -> Optional[pd.Series]:  # TRY TO DELETE LATER
-        """Reads data from file and sets it to 'series' attribute"""
+    def set_series_data(self):
+        """Reads data from file and sets it to 'series_data' dictionary with years as keys."""
         file_path = STOCKS_DIR / f'yahoo_daily/parquets/{self.symbol}.parquet'
-        if not os.path.exists(file_path):
-            print(f'{file_path} does not exist')
+        try:
+            full_series = pd.read_parquet(file_path)['Adj Close']
+        except FileNotFoundError:
+            logger.warning(f'{file_path} does not exist')
             return None
-        series = pd.read_parquet(file_path)
-        if 'Date' in series.columns:
-            series['Date'] = pd.to_datetime(series['Date'])
-            series = series.set_index('Date')['Adj Close']
-        else:
-            series.index = pd.to_datetime(series.index)
-        series = series['Adj Close']
 
-        return series
+        # Filter series for each start year and store in series_data dictionary
+        start_years = ['2010', '2018', '2021', '2022', '2023']
+        for year in start_years:
+            self.series_data[year] = full_series[full_series.index.year >= int(year)]
 
     def set_correlation(self, value: float) -> None:
         self.correlation = value
@@ -198,6 +203,7 @@ class FredSeries:
         self.tcode = row['tcode']
         self.frequency = row['frequency']
         self.latex_equation = self.get_latex_equation()
+        self.series_data = self.get_fredmd_series()
 
         self.positive_correlations: Dict[str, List[Security]] = \
             {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}

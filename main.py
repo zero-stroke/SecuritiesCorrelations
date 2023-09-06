@@ -9,7 +9,7 @@ from scripts.plotting_functions import CorrelationPlotter
 DEBUG = False
 
 
-def compute_security_correlations_and_plot(series_list: Union[List['Security'], List['FredSeries']],
+def compute_security_correlations_and_plot(symbol_list: List[str], use_fred: bool = False,
                                            start_date: str = '2010', end_date: str = '2023',
                                            num_traces: int = 2,
                                            source: str = 'yahoo', dl_data: bool = False,
@@ -22,6 +22,11 @@ def compute_security_correlations_and_plot(series_list: Union[List['Security'], 
                                            industry: List[str] = None, country: List[str] = None,
                                            state: List[str] = None, market_cap: List[str] = None):
     """Returns list of tickers from most to least correlated"""
+    if not use_fred:
+        securities_list = make_securities_list(symbol_list)
+    else:
+        securities_list = get_fred_md_series_list()
+
     start_time = time.time()
     metadata = SecurityMetadata()  # Initialize SecurityMetadata Singleton object
 
@@ -29,7 +34,7 @@ def compute_security_correlations_and_plot(series_list: Union[List['Security'], 
     symbols = metadata.build_symbol_list(etf, stock, index)
 
     calculator = CorrelationCalculator()  # Calculate all correlations for securities_list
-    securities_list = calculator.define_correlation_for_each_year(series_list, symbols, end_date,
+    securities_list = calculator.define_correlation_for_each_year(securities_list, symbols, end_date,
                                                                   source, dl_data, use_ch, use_multiprocessing)
 
     # Take the num_traces positively and negatively correlated and assign to Security
@@ -79,29 +84,30 @@ def make_securities_list(symbol_list):
     symbol_list = list(set(symbol_list))  # List of symbols to be converted into Securities
     securities_list = [Security(symbol) for symbol in symbol_list]  # Initialize Security list
 
-    return securities_list
+    # Populate series_data for each security
+    for security in securities_list:
+        security.set_series_data()
+
+    # Filter out securities with None series_data
+    filtered_securities_list = [security for security in securities_list if security.series_data is not None]
+
+    return filtered_securities_list
 
 
 def main():
-    use_fred = False
 
-    if not use_fred:
-        symbol_list = []
-        while True:
-            user_string = input("Enter symbol to add (or press return to finish): ")
-            if user_string.lower() == '':
-                break
-            symbol_list.append(user_string)
-        # symbol_list.extend(
-        #     ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
-        #      'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
-        #      'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW', 'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
-        #      'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E']
-        # )
-
-        securities_list = make_securities_list(symbol_list)
-    else:
-        securities_list = get_fred_md_series_list()
+    symbol_list = []
+    while True:
+        user_string = input("Enter symbol to add (or press return to finish): ")
+        if user_string.lower() == '':
+            break
+        symbol_list.append(user_string)
+    # symbol_list.extend(
+    #     ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
+    #      'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
+    #      'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW', 'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
+    #      'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E']
+    # )
 
     start_date = '2023'
     end_date = '2023-06-02'
@@ -113,7 +119,7 @@ def main():
     show_detrended = False
 
     compute_security_correlations_and_plot(
-        series_list=securities_list,
+        symbol_list=symbol_list,
         start_date=start_date,
         end_date=end_date,
         num_traces=num_traces,
@@ -122,10 +128,10 @@ def main():
         dl_data=dl_data,
         display_plot=display_plot,
         use_ch=use_ch,
-        use_multiprocessing=True,
+        use_multiprocessing=False,
 
-        etf=True,
-        stock=False,
+        etf=False,
+        stock=True,
         index=False,
 
         show_detrended=show_detrended,
