@@ -2,7 +2,7 @@ import time
 from typing import List, Union
 
 from scripts.correlation_constants import SecurityMetadata, Security, FredSeries
-from scripts.file_reading_funcs import pickle_securities_objects, get_fred_md_series_list
+from scripts.file_reading_funcs import pickle_securities_objects, get_fred_md_series_list, load_saved_securities
 from scripts.find_correlated_symbols import CorrelationCalculator, define_top_correlations
 from scripts.plotting_functions import CorrelationPlotter
 
@@ -40,8 +40,9 @@ def compute_security_correlations_and_plot(symbol_list: List[str], use_fred: boo
     # Take the num_traces positively and negatively correlated and assign to Security
     securities_list = define_top_correlations(securities_list)
 
-    for security in securities_list:
-        print(f'{str(security):<90}', security.positive_correlations, '\n')
+    # for security in securities_list:
+    #     print(f'{str(security):<90}', security.positive_correlations, '\n')
+    #     print(f'{str(security):<90}', security.negative_correlations, '\n')
 
     if not DEBUG:  # Pickle securities list to use later for configuring plots
         for security in securities_list:
@@ -96,19 +97,6 @@ def make_securities_list(symbol_list):
 
 def main():
 
-    symbol_list = []
-    while True:
-        user_string = input("Enter symbol to add (or press return to finish): ")
-        if user_string.lower() == '':
-            break
-        symbol_list.append(user_string)
-    # symbol_list.extend(
-    #     ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
-    #      'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
-    #      'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW', 'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
-    #      'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E']
-    # )
-
     start_date = '2023'
     end_date = '2023-06-02'
     num_traces = 4
@@ -118,8 +106,9 @@ def main():
     use_ch = False
     show_detrended = False
 
-    compute_security_correlations_and_plot(
-        symbol_list=symbol_list,
+    fig_list = compute_security_correlations_and_plot(
+        symbol_list=['F'],
+        use_fred=False,
         start_date=start_date,
         end_date=end_date,
         num_traces=num_traces,
@@ -138,6 +127,7 @@ def main():
         monthly_resample=False,
         otc_filter=False,
     )
+
 
 
 if __name__ == '__main__':

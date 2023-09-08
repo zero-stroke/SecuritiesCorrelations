@@ -5,7 +5,6 @@ from datetime import datetime
 from enum import Enum
 from typing import List, Dict, Optional, Iterable
 
-import numpy
 import pandas as pd
 from unicodedata import normalize
 
@@ -178,10 +177,13 @@ class Security:
         return hash(self.symbol)
 
     def __str__(self) -> str:
-        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}"
+        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}, Sector: {self.sector} \n"
 
     def __repr__(self) -> str:
-        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}"
+        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}, Sector: {self.sector}," \
+               f" Industry_group: {self.industry_group}, Industry: {self.industry}, Market: {self.market}, Country: " \
+               f"{self.country}, State: {self.state}, City: {self.city}, Website: {self.website}, Market Cap: " \
+               f"{self.market_cap}'\n"
 
 
 # Define Series class with data about each series. Needs self.update_time to be added
@@ -258,7 +260,7 @@ class FredSeries:
 
 class EnhancedEncoder(json.JSONEncoder):
     def default(self, obj):
-        if isinstance(obj, numpy.ndarray):
+        if hasattr(obj, 'tolist'):
             return obj.tolist()
         if isinstance(obj, datetime):
             return obj.isoformat()

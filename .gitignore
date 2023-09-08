@@ -2,16 +2,16 @@ data/*
 !data/*/
 
 data/Stock_data/debug/
-
 data/Stock_data/yahoo_daily/
 
-data/Stock_data/Graphs/html_plots
-data/Stock_data/Graphs/json_plots
-data/Stock_data/Graphs
+data/Graphs/html_plots
+data/Graphs/json_plots
 
-!folder_to_ignore/AAPL.pkl
-!folder_to_ignore/MSFT.pkl
-!folder_to_ignore/GOOG.pkl
+data/Graphs/pickled_securities_objects
+
+!data/Graphs/pickled_securities_objects/AAPL.pkl
+!data/Graphs/pickled_securities_objects/MSFT.pkl
+!data/Graphs/pickled_securities_objects/GOOG.pkl
 
 SecuritiesCorrelations.iml
 Procfile
@@ -25,4 +25,5 @@ scripts/__pycache__/
 .idea/
 
 data/Stock_data/combined_data.parquet
+tests/cache_info.log
 

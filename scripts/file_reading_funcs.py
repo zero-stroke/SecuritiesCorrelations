@@ -4,9 +4,12 @@ from typing import List, Union
 import pickle
 import os
 from functools import lru_cache
+from functools import wraps
+
 
 import numpy as np
 import pandas as pd
+
 
 import yfinance as yf
 import financedatabase as fd
@@ -17,6 +20,9 @@ from config import STOCKS_DIR, FRED_DIR, DATA_DIR
 # Configure the logger at the module level
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
+
+logging.basicConfig(filename='cache_info.log', level=logging.INFO,
+                    format='%(asctime)s - %(message)s')
 
 
 def download_yfin_data(symbol):
@@ -81,8 +87,20 @@ def read_series_data_slow(symbol, source):
     return None
 
 
-@lru_cache(maxsize=None)  # Cache results indefinitely for each unique call
-def read_series_data(symbol, source):
+def cache_info(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        logging.info(f"Function {func.__name__} called with args {args} and kwargs {kwargs}."
+                     f" Cache info: {func.cache_info()}")
+        return result
+
+    return wrapper
+
+
+@cache_info
+@lru_cache(maxsize=None)
+def read_series_data(symbol: str, source: str):
     """Read data based on the source and data format."""
     if source == 'yahoo':
         file_path = STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet'
@@ -92,8 +110,10 @@ def read_series_data(symbol, source):
             logger.warning(f'{file_path} does not exist')
             return None
 
-        if 'Adj Close' in series.columns:
+        try:
             return series['Adj Close']
+        except KeyError:
+            return None
 
     return None
 
@@ -137,12 +157,8 @@ def get_validated_security_data(symbol: str, start_date: str, end_date: str, sou
     else:
         security_data = read_series_data(symbol, source)
 
-    # if security_data is None:  # Can comment out because deleted all symbols that caused case
-    #     print("No security data")
-    #     return None
-
     if not is_series_within_date_range(security_data, start_date, end_date):
-        logger.warning(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
+        # logger.warning(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
         return None
 
     # Detrend

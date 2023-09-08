@@ -4,20 +4,18 @@ from typing import List, Optional
 
 import dash
 import dash_bootstrap_components as dbc
-import plotly.graph_objs as go
 from dash import dcc, html
 from dash.dependencies import Input, Output, State
 
 from config import DATA_DIR
 from config import PROJECT_ROOT
 from main import compute_security_correlations_and_plot
-from scripts.correlation_constants import Security, FredSeries
+from scripts.correlation_constants import Security
 from scripts.file_reading_funcs import load_saved_securities
 from scripts.plotting_functions import CorrelationPlotter
 
 
 class SecurityDashboard:
-
     external_stylesheets = [
         {
             'href': 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap',
@@ -51,18 +49,31 @@ class SecurityDashboard:
     STATE_FILTER_ID = 'state-filter'
     MARKET_CAP_FILTER_ID = 'market-cap-filter'
 
+    PLOT_ID = 'security_plot'
+
     def __init__(self, data_dir):
         self.data_dir = data_dir
         self.available_securities: List[str] = self.get_available_securities()
         self.fred_series: List[str] = self.get_all_fred_series()
         self.available_start_dates = ['2010', '2018', '2021', '2022', '2023']
-        self.current_main_security: Security = load_saved_securities(choice(self.available_securities))
+        self.main_security: Security = load_saved_securities(choice(self.available_securities))
         self.current_start_date: str = choice(self.available_start_dates)
         self.current_num_traces: int = 2
         self.initial_plot = self.load_initial_plot()  # Load initial plot
         self.app = dash.Dash(__name__, external_scripts=[PROJECT_ROOT / 'ui/custom_script.js'],
                              external_stylesheets=self.external_stylesheets, assets_folder='assets')
         self.app.scripts.config.serve_locally = True
+
+        self.start_date = self.current_start_date
+        self.num_traces = self.current_num_traces
+
+        self.sectors = self.main_security.get_unique_values('sector', self.start_date, self.num_traces)
+        self.industry_groups = self.main_security.get_unique_values('industry_group', self.start_date, self.num_traces)
+        self.industries = self.main_security.get_unique_values('industry', self.start_date, self.num_traces)
+        self.countries = self.main_security.get_unique_values('country', self.start_date, self.num_traces)
+        self.states = self.main_security.get_unique_values('state', self.start_date, self.num_traces)
+        self.market_caps = self.main_security.get_unique_values('market_cap', self.start_date, self.num_traces)
+
         self.setup_layout()
         self.setup_callbacks()
 
@@ -82,7 +93,7 @@ class SecurityDashboard:
         otc_filter = False
 
         security = load_saved_securities(random_symbol)
-        self.current_main_security = security
+        self.main_security = security
         plotter = CorrelationPlotter()
 
         fig = plotter.plot_security_correlations(
@@ -113,16 +124,7 @@ class SecurityDashboard:
         return base_series_ids
 
     def setup_layout(self):
-        main_security = self.current_main_security
-        start_date = self.current_start_date
-        num_traces = self.current_num_traces
-
-        all_sectors = main_security.get_unique_values('sector', start_date, num_traces)
-        all_industry_groups = main_security.get_unique_values('industry_group', start_date, num_traces)
-        all_industries = main_security.get_unique_values('industry', start_date, num_traces)
-        all_countries = main_security.get_unique_values('country', start_date, num_traces)
-        all_states = main_security.get_unique_values('state', start_date, num_traces)
-        all_market_caps = main_security.get_unique_values('market_cap', start_date, num_traces)
+        main_security = self.main_security
 
         sources_div_style = {
             'display': 'flex',
@@ -164,19 +166,20 @@ class SecurityDashboard:
 
         button_style = {
             'background-color': '#002A50',  # Change the background color
-            'color': 'white',              # Change the text color
-            'border': 'none',              # Remove the border
-            'outline': 'none',             # Remove the outline
-            'padding': '0.5em 1em',        # Add padding
-            'font-size': '16px',           # Change the font size
-            'cursor': 'pointer',            # Change cursor to indicate interactivity
+            'color': 'white',  # Change the text color
+            'border': 'none',  # Remove the border
+            'outline': 'none',  # Remove the outline
+            'padding': '0.5em 1em',  # Add padding
+            'font-size': '16px',  # Change the font size
+            'cursor': 'pointer',  # Change cursor to indicate interactivity
             'margin': '0'
         }
 
         dropdown_div_style = {'margin': '0.5em 3rem'}
 
         div_style = {'display': 'flex', 'justifyContent': 'flex-start', 'alignItems': 'center', 'margin': '0.5em 4em'}
-        div_style2 = {'display': 'flex', 'justifyContent': 'flex-start', 'alignItems': 'center', 'margin': '0.5em 0.1em'}
+        div_style2 = {'display': 'flex', 'justifyContent': 'flex-start', 'alignItems': 'center',
+                      'margin': '0.5em 0.1em'}
 
         self.app.layout = html.Div([
 
@@ -216,7 +219,7 @@ class SecurityDashboard:
                         id=self.START_DATE_ID,
                         options=[{'label': start_date, 'value': start_date} for
                                  start_date in self.available_start_dates],
-                        value='2010',
+                        value='2023',
                         style={
                             'width': '8rem',
                         }
@@ -227,7 +230,7 @@ class SecurityDashboard:
                 dcc.Input(  # Add this input field for num_traces
                     id=self.NUM_TRACES_ID,
                     type='number',
-                    value=2,  # Default value
+                    value=4,  # Default value
                     style={
                         'width': '4rem',
                     },
@@ -263,9 +266,8 @@ class SecurityDashboard:
                     ),
                     html.Label('Monthly Resample'),
                 ], style=div_style),
-                ], style=div_style,
+            ], style=div_style,
             ),
-
 
             # Checklist to include ETFs, Stocks, and/or Indices
             html.Div([
@@ -287,8 +289,8 @@ class SecurityDashboard:
                         html.Label('Sector Filter'),
                         dcc.Dropdown(
                             id=self.SECTOR_FILTER_ID,
-                            options=[{'label': sector, 'value': sector} for sector in all_sectors],
-                            value=all_sectors,
+                            options=[{'label': sector, 'value': sector} for sector in self.sectors],
+                            value=self.sectors,
                             multi=True,
                             style=multi_dropdown_style,
                         ),
@@ -298,8 +300,8 @@ class SecurityDashboard:
                         html.Label('Industry Group Filter'),
                         dcc.Dropdown(
                             id=self.INDUSTRY_GROUP_FILTER_ID,
-                            options=[{'label': group, 'value': group} for group in all_industry_groups],
-                            value=all_industry_groups,
+                            options=[{'label': group, 'value': group} for group in self.industry_groups],
+                            value=self.industry_groups,
                             multi=True,  # allow multiple selection
                             style=multi_dropdown_style,
                         ),
@@ -308,8 +310,8 @@ class SecurityDashboard:
                         html.Label('Industry Filter'),
                         dcc.Dropdown(
                             id=self.INDUSTRY_FILTER_ID,
-                            options=[{'label': industry, 'value': industry} for industry in all_industries],
-                            value=all_industries,
+                            options=[{'label': industry, 'value': industry} for industry in self.industries],
+                            value=self.industries,
                             multi=True,
                             style=multi_dropdown_style,
                         ),
@@ -318,8 +320,8 @@ class SecurityDashboard:
                         html.Label('Country Filter'),
                         dcc.Dropdown(
                             id=self.COUNTRY_FILTER_ID,
-                            options=[{'label': country, 'value': country} for country in all_countries],
-                            value=all_countries,
+                            options=[{'label': country, 'value': country} for country in self.countries],
+                            value=self.countries,
                             multi=True,
                             style=multi_dropdown_style,
                         ),
@@ -328,8 +330,8 @@ class SecurityDashboard:
                         html.Label('State Filter'),
                         dcc.Dropdown(
                             id=self.STATE_FILTER_ID,
-                            options=[{'label': state, 'value': state} for state in all_states],
-                            value=all_states,
+                            options=[{'label': state, 'value': state} for state in self.states],
+                            value=self.states,
                             multi=True,
                             style=multi_dropdown_style,
                         ),
@@ -339,8 +341,8 @@ class SecurityDashboard:
                         dcc.Dropdown(
                             id=self.MARKET_CAP_FILTER_ID,
                             options=[{'label': market_cap, 'value': market_cap} for market_cap in
-                                     all_market_caps],
-                            value=all_market_caps,
+                                     self.market_caps],
+                            value=self.market_caps,
                             multi=True,
                             style=multi_dropdown_style,
                         ),
@@ -360,7 +362,7 @@ class SecurityDashboard:
                 dcc.Loading(
                     id="loading",
                     children=[dcc.Graph(
-                        id='security-plot',
+                        id=self.PLOT_ID,
                         figure=self.initial_plot,
                         style={'height': '75vh'},  # adjust this value as needed
                         responsive=True,
@@ -369,13 +371,11 @@ class SecurityDashboard:
                 )
             ], style={'display': 'flex', 'flexDirection': 'column', 'height': '100%'}),
 
-
             dcc.Interval(
                 id='initial-load-interval',
                 interval=100,  # in milliseconds
                 max_intervals=1,  # stop after the first interval
             ),
-
 
         ], style={
             'font-family': 'Open Sans, sans-serif',
@@ -423,7 +423,7 @@ class SecurityDashboard:
                 Input(self.SOURCE_INDEX_ID, 'n_clicks'),
             ],
         )
-        def update_button_styles(etf_clicks, stock_clicks, index_clicks):
+        def update_button_styles(etf_clicks, stock_clicks, index_clicks):  # Makes STOCK ETF INDEX buttons change color
             selected_style = {'flex': 1, 'background-color': '#00498B', 'color': 'white'}
             not_selected_style = {'flex': 1, 'background-color': '#1e1e2a', 'color': 'white'}
 
@@ -444,7 +444,25 @@ class SecurityDashboard:
 
         # Update the graph when the "Load and Plot" button is clicked
         @self.app.callback(
-            Output('security-plot', 'figure'),
+            [
+                Output(self.PLOT_ID, 'figure'),
+                Output(self.SECURITIES_INPUT_ID, 'value'),
+                Output(self.SECURITIES_DROPDOWN_ID, 'value'),
+
+                Output(self.SECTOR_FILTER_ID, 'options'),
+                Output(self.INDUSTRY_GROUP_FILTER_ID, 'options'),
+                Output(self.INDUSTRY_FILTER_ID, 'options'),
+                Output(self.COUNTRY_FILTER_ID, 'options'),
+                Output(self.STATE_FILTER_ID, 'options'),
+                Output(self.MARKET_CAP_FILTER_ID, 'options'),
+
+                Output(self.SECTOR_FILTER_ID, 'value'),
+                Output(self.INDUSTRY_GROUP_FILTER_ID, 'value'),
+                Output(self.INDUSTRY_FILTER_ID, 'value'),
+                Output(self.COUNTRY_FILTER_ID, 'value'),
+                Output(self.STATE_FILTER_ID, 'value'),
+                Output(self.MARKET_CAP_FILTER_ID, 'value'),
+            ],
             [
                 Input(self.LOAD_PLOT_BUTTON_ID, 'n_clicks'),
 
@@ -453,7 +471,7 @@ class SecurityDashboard:
                 State(self.FRED_SWITCH_ID, 'value'),
 
                 Input(self.START_DATE_ID, 'value'),
-                Input(self.NUM_TRACES_ID, 'value'),
+                State(self.NUM_TRACES_ID, 'value'),
 
                 Input(self.SOURCE_ETF_ID, 'n_clicks'),
                 Input(self.SOURCE_STOCK_ID, 'n_clicks'),
@@ -463,23 +481,30 @@ class SecurityDashboard:
                 State(self.MONTHLY_SWITCH_ID, 'value'),
                 State(self.OTC_FILTER_ID, 'value'),
 
-                State(self.SECTOR_FILTER_ID, 'value'),
-                State(self.INDUSTRY_GROUP_FILTER_ID, 'value'),
-                State(self.INDUSTRY_FILTER_ID, 'value'),
-                State(self.COUNTRY_FILTER_ID, 'value'),
-                State(self.STATE_FILTER_ID, 'value'),
-                State(self.MARKET_CAP_FILTER_ID, 'value'),
-            ]
+                Input(self.SECTOR_FILTER_ID, 'value'),
+                Input(self.INDUSTRY_GROUP_FILTER_ID, 'value'),
+                Input(self.INDUSTRY_FILTER_ID, 'value'),
+                Input(self.COUNTRY_FILTER_ID, 'value'),
+                Input(self.STATE_FILTER_ID, 'value'),
+                Input(self.MARKET_CAP_FILTER_ID, 'value'),
+            ],
         )
         def update_graph(n_clicks: int,
                          input_symbol: Optional[str],  # Might need to set to None
                          dropdown_symbol: Optional[str],
                          use_fred: List[str],
-                         start_date: str = '2010', num_traces: int = 2,
+                         start_date: str = '2010', num_traces: int = 4,
                          etf_clicks: int = 1, stock_clicks: int = 1, index_clicks: int = 0,
                          detrend: Optional[list] = None, monthly: Optional[list] = None, otc_filter: bool = False,
                          sector: List[str] = None, industry_group: List[str] = None, industry: List[str] = None,
-                         country: List[str] = None, state: List[str] = None, market_cap: List[str] = None) -> go.Figure:
+                         country: List[str] = None, state: List[str] = None, market_cap: List[str] = None):
+
+            self.sectors = self.main_security.get_unique_values('sector', start_date, num_traces)
+            self.industry_groups = self.main_security.get_unique_values('industry_group', start_date, num_traces)
+            self.industries = self.main_security.get_unique_values('industry', start_date, num_traces)
+            self.countries = self.main_security.get_unique_values('country', start_date, num_traces)
+            self.states = self.main_security.get_unique_values('state', start_date, num_traces)
+            self.market_caps = self.main_security.get_unique_values('market_cap', start_date, num_traces)
 
             is_fred_selected = 'use_fred' in use_fred
 
@@ -519,7 +544,7 @@ class SecurityDashboard:
             if input_symbol:
                 # Call compute_security_correlations_and_plot if symbol is not in available securities
                 fig_list = compute_security_correlations_and_plot(
-                    symbol_list=[dropdown_symbol],
+                    symbol_list=[input_symbol],
                     use_fred=is_fred_selected,
                     start_date=start_date,
                     end_date='2023-06-02',
@@ -527,7 +552,7 @@ class SecurityDashboard:
 
                     source='yahoo',
                     dl_data=False,
-                    display_plot=False,
+                    display_plot=True,
                     use_ch=False,
                     use_multiprocessing=False,
 
@@ -545,15 +570,24 @@ class SecurityDashboard:
                     state=state,
                     market_cap=market_cap,
                 )
-                self.current_main_security = load_saved_securities(dropdown_symbol)
-                return fig_list[0]
+                self.main_security = load_saved_securities(input_symbol)
+                return fig_list[0], '', input_symbol, \
+                    [{'label': sector, 'value': sector} for sector in self.sectors], \
+                    [{'label': group, 'value': group} for group in self.industry_groups], \
+                    [{'label': industry, 'value': industry} for industry in self.industries], \
+                    [{'label': country, 'value': country} for country in self.countries], \
+                    [{'label': state, 'value': state} for state in self.states], \
+                    [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
+                    self.SECTOR_FILTER_ID, self.INDUSTRY_GROUP_FILTER_ID, self.INDUSTRY_FILTER_ID, \
+                    self.COUNTRY_FILTER_ID, self.STATE_FILTER_ID, self.MARKET_CAP_FILTER_ID
 
-            self.current_main_security = load_saved_securities(dropdown_symbol)
+
+            self.main_security = load_saved_securities(dropdown_symbol)
             plotter = CorrelationPlotter()
 
             # Load and plot the selected security, generates new plots based on all the parameters
             fig = plotter.plot_security_correlations(
-                main_security=self.current_main_security,
+                main_security=self.main_security,
                 start_date=start_date,
                 num_traces=num_traces,
                 display_plot=False,
@@ -574,7 +608,16 @@ class SecurityDashboard:
                 market_cap=market_cap,
             )
 
-            return fig
+            # Return the fig to be displayed, tha blank value for the input box, and the value for the dropdown
+            return fig, '', dropdown_symbol, \
+                [{'label': sector, 'value': sector} for sector in self.sectors], \
+                [{'label': group, 'value': group} for group in self.industry_groups], \
+                [{'label': industry, 'value': industry} for industry in self.industries], \
+                [{'label': country, 'value': country} for country in self.countries], \
+                [{'label': state, 'value': state} for state in self.states], \
+                [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
+                self.SECTOR_FILTER_ID, self.INDUSTRY_GROUP_FILTER_ID, self.INDUSTRY_FILTER_ID, \
+                self.COUNTRY_FILTER_ID, self.STATE_FILTER_ID, self.MARKET_CAP_FILTER_ID
 
     def run(self):
         self.app.run_server(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))

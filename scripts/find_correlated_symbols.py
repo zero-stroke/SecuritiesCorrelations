@@ -59,8 +59,13 @@ class CorrelationCalculator:
                                                               dl_data, use_ch)
         else:
             for start_date in all_start_dates:
-                self.define_correlations_for_series_list(securities_list, symbols, start_date, end_date, source,
-                                                         dl_data, use_ch)
+                if len(securities_list) == 1:
+                    print("single")
+                    self.define_correlations_for_single_series(securities_list, symbols, start_date, end_date, source,
+                                                               dl_data, use_ch)
+                else:
+                    self.define_correlations_for_series_list(securities_list, symbols, start_date, end_date, source,
+                                                             dl_data, use_ch)
 
         return securities_list
 
@@ -70,12 +75,19 @@ class CorrelationCalculator:
             -> List['Security']:
         """Main function for calculating the correlations for each Security against a list of other securities"""
         if self.DEBUG:
-            symbols = ['UNH', 'XOM']
+            symbols = ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
+                       'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
+                       'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW', 'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
+                       'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E']
 
         symbols = list(set(symbols))  # This DOES change the order of symbols
 
-        for symbol, security_data in symbols:
-            security_data = self.process_symbol(symbol, start_date, end_date, source, dl_data, use_ch)
+        for symbol in symbols:
+
+            try:
+                symbol, security_data = self.process_symbol(symbol, start_date, end_date, source, dl_data, use_ch)
+            except AttributeError:  # Better than checking if its None every time
+                continue
 
             if security_data is None:  # Check for None before processing
                 # logger.warning(f'Skipping correlation calculation for {symbol} due to missing data.')
@@ -102,6 +114,44 @@ class CorrelationCalculator:
                 i += 1
         return all_main_securities
 
+    def define_correlations_for_single_series(self, all_main_securities: Union[List['Security'], List['FredSeries']],
+                                              symbols: List[str],
+                                              start_date: str, end_date: str, source: str, dl_data: bool, use_ch: bool) \
+            -> List['Security']:
+        """Main function for calculating the correlations for each Security against a list of other securities"""
+        if self.DEBUG:
+            symbols = ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
+                       'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E']
+
+        symbols = list(set(symbols))  # This DOES change the order of symbols
+
+        main_security = all_main_securities[0]
+        main_security_data = main_security.series_data[start_date]
+
+        for symbol in symbols:
+
+            try:
+                symbol, security_data = self.process_symbol(symbol, start_date, end_date, source, dl_data, use_ch)
+            except AttributeError:  # Better than checking if its None every time
+                continue
+
+            if security_data is None:  # Check for None before processing
+                # logger.warning(f'Skipping correlation calculation for {symbol} due to missing data.')
+                continue
+            i = 0
+
+            if isinstance(main_security, Security) and symbol == main_security.symbol:
+                continue  # Skips comparison if being compared to itself
+
+            correlation_float = self.get_correlation_for_series(main_security_data, security_data)
+
+            if start_date not in main_security.all_correlations:
+                main_security.all_correlations[start_date] = {}
+
+            main_security.all_correlations[start_date][symbol] = correlation_float
+
+        return all_main_securities
+
     def define_correlations_for_series_list_fast(self, all_main_securities: Union[List['Security'], List['FredSeries']],
                                                  symbols: List[str],
                                                  start_date: str, end_date:
@@ -120,7 +170,6 @@ class CorrelationCalculator:
             for symbol, security_data in results:
 
                 if security_data is None:  # Check for None before processing
-                    print(symbol, "SKIPPED")
                     continue
                 i = 0
 
