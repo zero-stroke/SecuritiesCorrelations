@@ -39,52 +39,23 @@ def download_yfin_data(symbol):
         return pd.Series()
 
 
-# Global cache for the entire consolidated DataFrame
-_CONSOLIDATED_DF_CACHE = None
+from multiprocessing import Manager
+
+manager = Manager()
+shared_cache = manager.dict()
+cache_lock = manager.Lock()
 
 
-def get_consolidated_df():
-    """Read and cache the consolidated DataFrame."""
-    global _CONSOLIDATED_DF_CACHE
-    if _CONSOLIDATED_DF_CACHE is None:
-        file_path = STOCKS_DIR / 'combined_data.parquet'
-        _CONSOLIDATED_DF_CACHE = pd.read_parquet(file_path)
-    return _CONSOLIDATED_DF_CACHE
-
-
-@lru_cache(maxsize=None)  # Cache results indefinitely for each unique call
-def read_series_data_from_consolidated(symbol, source):
-    """Read data based on the source and data format."""
-    if source == 'yahoo':
-        df = get_consolidated_df()
-        try:
-            series = df.loc[symbol]
-        except KeyError:
-            logger.warning(f'Data for {symbol} does not exist')
-            return None
-
-        if 'Adj Close' in series.columns:
-            return series['Adj Close']
-
-    return None
-
-
-@lru_cache(maxsize=None)  # Cache results indefinitely for each unique call
-def read_series_data_slow(symbol, source):
-    """Read data based on the source and data format."""
-    if source == 'yahoo':
-        file_path = STOCKS_DIR / 'combined_data.parquet'
-        try:
-            df = pd.read_parquet(file_path)
-            series = df.loc[symbol]
-        except KeyError:
-            logger.warning(f'Data for {symbol} does not exist')
-            return None
-
-        if 'Adj Close' in series.columns:
-            return series['Adj Close']
-
-    return None
+def shared_memory_cache(func):
+    def wrapper(symbol, source):
+        key = f"{symbol}_{source}"
+        with cache_lock:
+            if key in shared_cache:
+                return shared_cache[key]
+            result = func(symbol, source)
+            shared_cache[key] = result
+        return result
+    return wrapper
 
 
 def cache_info(func):
@@ -99,7 +70,7 @@ def cache_info(func):
 
 
 @cache_info
-@lru_cache(maxsize=None)
+@shared_memory_cache
 def read_series_data(symbol: str, source: str):
     """Read data based on the source and data format."""
     if source == 'yahoo':
@@ -116,36 +87,6 @@ def read_series_data(symbol: str, source: str):
             return None
 
     return None
-
-
-def read_series_data_old(symbol, source):
-    """Read data based on the source and data format."""
-    if source == 'yahoo':
-        file_path = STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet'
-        if not os.path.exists(file_path):
-            logger.warning(f'{file_path} does not exist')
-            return None
-        series = pd.read_parquet(file_path)
-
-        series.index = pd.to_datetime(series.index)
-
-        if 'Adj Close' in series.columns and not series_is_empty(series, symbol, file_path):
-            series = series['Adj Close']
-        else:
-            return None
-
-    elif source == 'alpaca':
-        file_path = STOCKS_DIR / f'Alpaca_15m/parquets/{symbol}.parquet'
-        if not os.path.exists(file_path):
-            logger.warning(f'{file_path} does not exist')
-            return None
-        series = pd.read_parquet(file_path)
-        series['timestamp'] = pd.to_datetime(series['timestamp'])
-        series = series.set_index('timestamp')['close']
-    else:
-        raise ValueError(f"Unknown source: {source}")
-
-    return series
 
 
 def get_validated_security_data(symbol: str, start_date: str, end_date: str, source: str, dl_data: bool, use_ch: bool):
