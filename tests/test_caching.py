@@ -1,3 +1,4 @@
+import logging
 import time
 from typing import List
 
@@ -9,6 +10,13 @@ from scripts.file_reading_funcs import get_validated_security_data, read_series_
     get_fred_md_series_list
 from scripts.find_correlated_symbols import CorrelationCalculator, define_top_correlations
 from scripts.plotting_functions import CorrelationPlotter
+
+
+log_format = '%(asctime)s - %(message)s'
+date_format = '%H:%M:%S'
+
+logging.basicConfig(filename='cache_info.log', level=logging.INFO,
+                    format=log_format, datefmt=date_format, filemode='w')
 
 
 def test_caching_large(symbols_list: list, source: str):
@@ -47,7 +55,7 @@ def test_caching_large(symbols_list: list, source: str):
 
 def main_test():
     compute_security_correlations_and_plot(
-        symbol_list=['F'],
+        symbol_list=['U'],
         use_fred=False,
         start_date='2023',
         end_date='2023-06-02',
@@ -57,7 +65,7 @@ def main_test():
         dl_data=False,
         display_plot=True,
         use_ch=False,
-        use_multiprocessing=True,
+        use_multiprocessing=False,
 
         etf=False,
         stock=True,
@@ -86,12 +94,30 @@ def test_main_execution():
     duration_2 = time.time() - start_time_2
     print(f"\nSecond run took {duration_2:.2f} seconds.")
 
-    start_time_3 = time.time()
-
+    main_test()
+    main_test()
+    main_test()
+    main_test()
+    main_test()
+    main_test()
+    main_test()
+    main_test()
+    main_test()
     main_test()
 
-    duration_3 = time.time() - start_time_3
-    print(f"\nThird run took {duration_3:.2f} seconds.")
+    # start_time_3 = time.time()
+    #
+    # main_test()
+    #
+    # duration_3 = time.time() - start_time_3
+    # print(f"\nThird run took {duration_3:.2f} seconds.")
+    #
+    # start_time_4 = time.time()
+    #
+    # main_test()
+    #
+    # duration_4 = time.time() - start_time_4
+    # print(f"\nThird run took {duration_4:.2f} seconds.")
 
     # Check if the second execution is faster
     if duration_2 < duration_1:

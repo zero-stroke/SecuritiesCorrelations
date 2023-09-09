@@ -1,6 +1,6 @@
 import json
-import os
-from collections import defaultdict
+# Configure the logger at the module level
+import logging
 from datetime import datetime
 from enum import Enum
 from typing import List, Dict, Optional, Iterable
@@ -10,17 +10,8 @@ from unicodedata import normalize
 
 from config import STOCKS_DIR, FRED_DIR, securities_metadata
 
-# Configure the logger at the module level
-import logging
-
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
-
-
-class DataSource(Enum):
-    ETF = "etf"
-    STOCK = "stock"
-    INDEX = "index"
 
 
 class SecurityMetadata:
@@ -87,11 +78,13 @@ class Security:
         self.source: Optional[str] = ''
         self.correlation: Optional[float] = None
         self.series_data: Optional[Dict[str, pd.Series]] = {}
+        self.series_data_detrended: Optional[Dict[str, pd.DataFrame]] = {}
 
         self.positive_correlations: Dict[str, List[Security]] = \
             {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
         self.negative_correlations: Dict[str, List[Security]] = \
             {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
+
         self.all_correlations: Dict[str, Optional[Dict[str, float]]] = \
             {start_date: {} for start_date in ['2010', '2018', '2021', '2022', '2023']}
 
@@ -110,6 +103,8 @@ class Security:
         start_years = ['2010', '2018', '2021', '2022', '2023']
         for year in start_years:
             self.series_data[year] = full_series[full_series.index.year >= int(year)]
+            detrended_series = self.series_data[year].diff().dropna()
+            self.series_data_detrended[year] = detrended_series.to_frame(name='main')
 
     def set_correlation(self, value: float) -> None:
         self.correlation = value
@@ -176,6 +171,11 @@ class Security:
         # Make the instance hashable using its symbol attribute
         return hash(self.symbol)
 
+    def __eq__(self, other) -> bool:
+        if isinstance(other, Security):
+            return self.symbol == other.symbol
+        return False
+
     def __str__(self) -> str:
         return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source}, Sector: {self.sector} \n"
 
@@ -205,7 +205,8 @@ class FredSeries:
         self.tcode = row['tcode']
         self.frequency = row['frequency']
         self.latex_equation = self.get_latex_equation()
-        self.series_data = self.get_fredmd_series()
+        self.series_data: pd.Series = self.get_fredmd_series()
+        self.series_data_detrended: pd.DataFrame = self.series_data.diff().dropna().to_frame(name='main')
 
         self.positive_correlations: Dict[str, List[Security]] = \
             {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
@@ -250,6 +251,11 @@ class FredSeries:
     def __hash__(self):
         # Make the instance hashable using its symbol attribute
         return hash(self.symbol)
+
+    def __eq__(self, other) -> bool:
+        if isinstance(other, Security):
+            return self.symbol == other.symbol
+        return False
 
     def to_dict(self):
         return self.__dict__

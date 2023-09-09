@@ -1,4 +1,5 @@
 import logging
+import threading
 import traceback
 from typing import List, Union
 import pickle
@@ -13,83 +14,64 @@ import pandas as pd
 
 import yfinance as yf
 import financedatabase as fd
-from scripts.correlation_constants import FredSeries, Security
+from scripts.correlation_constants import FredSeries, Security, logger
 from scripts.clickhouse_functions import get_data_from_ch_stock_data
 from config import STOCKS_DIR, FRED_DIR, DATA_DIR
 
 # Configure the logger at the module level
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
+log_format = '%(asctime)s - %(message)s'
+date_format = '%H:%M:%S'
 
 logging.basicConfig(filename='cache_info.log', level=logging.INFO,
-                    format='%(asctime)s - %(message)s')
-
-
-def download_yfin_data(symbol):
-    """Download historical data for a given symbol."""
-    try:
-        print(f"Downloading data for: {symbol}")
-        df = yf.download(symbol)
-        print("SAVING PARQUET to ", STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet')
-        df.to_parquet(STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet')
-        return df
-
-    except Exception as e:
-        print(f"EXCEPTION 1: {e}\nTraceback (most recent call last:\n{traceback.format_exc()}")
-        return pd.Series()
-
+                    format=log_format, datefmt=date_format, filemode='a')
 
 from multiprocessing import Manager
 
-manager = Manager()
-shared_cache = manager.dict()
-cache_lock = manager.Lock()
+
+# def initialize_shared_objects():
+#     global shared_cache, cache_lock
+#     manager = Manager()
+#     shared_cache = manager.dict()
+#     cache_lock = manager.Lock()
 
 
-def shared_memory_cache(func):
-    def wrapper(symbol, source):
-        key = f"{symbol}_{source}"
-        with cache_lock:
-            if key in shared_cache:
-                return shared_cache[key]
-            result = func(symbol, source)
-            shared_cache[key] = result
-        return result
-    return wrapper
+cache_lock = threading.Lock()
+shared_cache = {}
 
 
 def cache_info(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
-        logging.info(f"Function {func.__name__} called with args {args} and kwargs {kwargs}."
-                     f" Cache info: {func.cache_info()}")
+        logging.info(f"Function {func.__name__}, Args {args}."
+                     f" {func.cache_info()}")
         return result
 
     return wrapper
 
 
-@cache_info
-@shared_memory_cache
 def read_series_data(symbol: str, source: str):
-    """Read data based on the source and data format."""
-    if source == 'yahoo':
-        file_path = STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet'
-        try:
-            series = pd.read_parquet(file_path)
-        except FileNotFoundError:
-            logger.warning(f'{file_path} does not exist')
-            return None
+    with cache_lock:
+        if source == 'yahoo':
+            file_path = STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet'
+            try:
+                series = pd.read_parquet(file_path)
+            except FileNotFoundError:
+                logger.warning(f'{file_path} does not exist')
+                return None
 
-        try:
-            return series['Adj Close']
-        except KeyError:
-            return None
+            try:
+                return series['Adj Close']
+            except KeyError:
+                return None
 
-    return None
+        return None
 
 
-def get_validated_security_data(symbol: str, start_date: str, end_date: str, source: str, dl_data: bool, use_ch: bool):
+@cache_info
+@lru_cache(maxsize=None)
+def get_validated_security_data(symbol: str, start_date: str, end_date: str, source: str, dl_data: bool, use_ch: bool)\
+        -> pd.DataFrame:
     """Get security data from file, make sure its within range and continuous"""
     if dl_data:
         security_data = download_yfin_data(symbol)
@@ -104,6 +86,10 @@ def get_validated_security_data(symbol: str, start_date: str, end_date: str, sou
 
     # Detrend
     security_data = security_data.diff().dropna()
+
+    security_data = security_data[security_data.index.year >= int(start_date[:4])]
+
+    security_data = security_data.to_frame(name='symbol')
 
     return security_data
 
@@ -131,7 +117,7 @@ def series_is_empty(series, symbol, file_path, dl_data=True) -> bool:
     return False
 
 
-def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
+def is_series_within_date_range_old(series, start_date: str, end_date: str) -> bool:
     """Check if series is within date range, takes start_date format as either YYYY or YYYY-MM-DD"""
     start_date = pd.Timestamp(start_date)
     end_date = pd.Timestamp(end_date)
@@ -152,7 +138,7 @@ def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
     return True
 
 
-def is_series_within_date_range_new(series, start_date: str, end_date: str) -> bool:  # TODO
+def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:  # TODO
     """Check if series is within date range, takes start_date format as either YYYY or YYYY-MM-DD"""
 
     # Extracting year and month from the start_date and end_date
@@ -323,3 +309,17 @@ def delete_symbol_from_metadata(symbol):
     elif symbol in index_metadata.index:
         index_metadata = index_metadata.drop(symbol)
         index_metadata.to_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv')
+
+
+def download_yfin_data(symbol):
+    """Download historical data for a given symbol."""
+    try:
+        print(f"Downloading data for: {symbol}")
+        df = yf.download(symbol)
+        print("SAVING PARQUET to ", STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet')
+        df.to_parquet(STOCKS_DIR / f'yahoo_daily/parquets/{symbol}.parquet')
+        return df
+
+    except Exception as e:
+        print(f"EXCEPTION 1: {e}\nTraceback (most recent call last:\n{traceback.format_exc()}")
+        return pd.Series()

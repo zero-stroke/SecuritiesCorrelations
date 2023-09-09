@@ -20,10 +20,14 @@ firebase-debug.log
 
 __pycache__/
 scripts/__pycache__/
+ui/__pycache__/
+ui/__pycache__/security_correlations_ui.cpython-310.pyc
+
 *.pyc
 
 .idea/
 
 data/Stock_data/combined_data.parquet
 tests/cache_info.log
+cache_info.log
 

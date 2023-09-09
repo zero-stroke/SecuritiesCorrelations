@@ -33,6 +33,7 @@ def compute_security_correlations_and_plot(symbol_list: List[str], use_fred: boo
     # Build list of symbols to be used for comparisons
     symbols = metadata.build_symbol_list(etf, stock, index)
 
+    # MAIN CALCULATION
     calculator = CorrelationCalculator()  # Calculate all correlations for securities_list
     securities_list = calculator.define_correlation_for_each_year(securities_list, symbols, end_date,
                                                                   source, dl_data, use_ch, use_multiprocessing)
@@ -107,7 +108,7 @@ def main():
     show_detrended = False
 
     fig_list = compute_security_correlations_and_plot(
-        symbol_list=['F'],
+        symbol_list=['F', 'GME'],
         use_fred=False,
         start_date=start_date,
         end_date=end_date,
@@ -117,7 +118,7 @@ def main():
         dl_data=dl_data,
         display_plot=display_plot,
         use_ch=use_ch,
-        use_multiprocessing=True,
+        use_multiprocessing=False,
 
         etf=False,
         stock=True,

@@ -57,7 +57,7 @@ class SecurityDashboard:
         self.fred_series: List[str] = self.get_all_fred_series()
         self.available_start_dates = ['2010', '2018', '2021', '2022', '2023']
         self.main_security: Security = load_saved_securities(choice(self.available_securities))
-        self.current_start_date: str = choice(self.available_start_dates)
+        self.current_start_date: str = '2023'
         self.current_num_traces: int = 2
         self.initial_plot = self.load_initial_plot()  # Load initial plot
         self.app = dash.Dash(__name__, external_scripts=[PROJECT_ROOT / 'ui/custom_script.js'],
@@ -572,15 +572,14 @@ class SecurityDashboard:
                 )
                 self.main_security = load_saved_securities(input_symbol)
                 return fig_list[0], '', input_symbol, \
-                    [{'label': sector, 'value': sector} for sector in self.sectors], \
-                    [{'label': group, 'value': group} for group in self.industry_groups], \
-                    [{'label': industry, 'value': industry} for industry in self.industries], \
-                    [{'label': country, 'value': country} for country in self.countries], \
-                    [{'label': state, 'value': state} for state in self.states], \
-                    [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
-                    self.SECTOR_FILTER_ID, self.INDUSTRY_GROUP_FILTER_ID, self.INDUSTRY_FILTER_ID, \
-                    self.COUNTRY_FILTER_ID, self.STATE_FILTER_ID, self.MARKET_CAP_FILTER_ID
-
+                       [{'label': sector, 'value': sector} for sector in self.sectors], \
+                       [{'label': group, 'value': group} for group in self.industry_groups], \
+                       [{'label': industry, 'value': industry} for industry in self.industries], \
+                       [{'label': country, 'value': country} for country in self.countries], \
+                       [{'label': state, 'value': state} for state in self.states], \
+                       [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
+                       self.SECTOR_FILTER_ID, self.INDUSTRY_GROUP_FILTER_ID, self.INDUSTRY_FILTER_ID, \
+                       self.COUNTRY_FILTER_ID, self.STATE_FILTER_ID, self.MARKET_CAP_FILTER_ID
 
             self.main_security = load_saved_securities(dropdown_symbol)
             plotter = CorrelationPlotter()
@@ -610,19 +609,18 @@ class SecurityDashboard:
 
             # Return the fig to be displayed, tha blank value for the input box, and the value for the dropdown
             return fig, '', dropdown_symbol, \
-                [{'label': sector, 'value': sector} for sector in self.sectors], \
-                [{'label': group, 'value': group} for group in self.industry_groups], \
-                [{'label': industry, 'value': industry} for industry in self.industries], \
-                [{'label': country, 'value': country} for country in self.countries], \
-                [{'label': state, 'value': state} for state in self.states], \
-                [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
-                self.SECTOR_FILTER_ID, self.INDUSTRY_GROUP_FILTER_ID, self.INDUSTRY_FILTER_ID, \
-                self.COUNTRY_FILTER_ID, self.STATE_FILTER_ID, self.MARKET_CAP_FILTER_ID
+                   [{'label': sector, 'value': sector} for sector in self.sectors], \
+                   [{'label': group, 'value': group} for group in self.industry_groups], \
+                   [{'label': industry, 'value': industry} for industry in self.industries], \
+                   [{'label': country, 'value': country} for country in self.countries], \
+                   [{'label': state, 'value': state} for state in self.states], \
+                   [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
+                   self.SECTOR_FILTER_ID, self.INDUSTRY_GROUP_FILTER_ID, self.INDUSTRY_FILTER_ID, \
+                   self.COUNTRY_FILTER_ID, self.STATE_FILTER_ID, self.MARKET_CAP_FILTER_ID
 
     def run(self):
         self.app.run_server(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
 
 
-# Usage
 dashboard = SecurityDashboard(DATA_DIR)
 dashboard.run()
