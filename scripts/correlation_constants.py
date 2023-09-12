@@ -3,6 +3,7 @@ import json
 import logging
 from datetime import datetime
 from enum import Enum
+from multiprocessing import Manager
 from typing import List, Dict, Optional, Iterable
 
 import pandas as pd
@@ -12,6 +13,31 @@ from config import STOCKS_DIR, FRED_DIR, securities_metadata
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
+
+
+class SharedMemoryCache:
+    def __init__(self):
+        manager = Manager()
+        self.data_dict = manager.dict()
+        self.hits = manager.Value('i', 0)  # Create a shared integer with initial value 0
+        self.misses = manager.Value('i', 0)  # Create a shared integer with initial value 0
+
+    def set(self, symbol, data):
+        self.data_dict[symbol] = data
+
+    def get(self, symbol):
+        data = self.data_dict.get(symbol, None)
+        if data is not None:
+            self.hits.value += 1
+        else:
+            self.misses.value += 1
+        return data
+
+    def get_hits(self):
+        return self.hits.value
+
+    def get_misses(self):
+        return self.misses.value
 
 
 class SecurityMetadata:

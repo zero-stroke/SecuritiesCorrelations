@@ -1,13 +1,12 @@
-import multiprocessing
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
-from typing import List, Union
 import logging
+from multiprocessing import Pool, cpu_count
+from typing import List, Union
 
 import pandas as pd
 
 from scripts.correlation_constants import Security, FredSeries
-from scripts.file_reading_funcs import get_validated_security_data
-
+from scripts.file_reading_funcs import original_get_validated_security_data
+from multiprocessing import Manager
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
@@ -51,85 +50,116 @@ def define_top_correlations(all_main_securities: Union[List['Security'], List['F
     return all_main_securities
 
 
-class CorrelationCalculator:
-    def __init__(self):
-        self.DEBUG = False
+def process_symbol(args):
+    self, cache, symbol, start_date, end_date, source, dl_data, use_ch, all_main_securities = args
+    security_data = self.get_validated_security_data(cache, symbol, start_date, end_date, source, dl_data, use_ch)
+    if security_data is None:
+        return
 
-    def define_correlation_for_each_year(self, securities_list, symbols, end_date,
+    result_list = []
+    for single_main_security in all_main_securities:
+        if isinstance(single_main_security, Security) and symbol == single_main_security.symbol:
+            continue
+
+        main_security_data_detrended = single_main_security.series_data_detrended[start_date]
+        corr_float = self.get_correlation_for_series(main_security_data_detrended, security_data)
+        if corr_float is not None:
+            result_list.append((single_main_security, symbol, corr_float))
+
+    return result_list
+
+
+class CorrelationCalculator:
+    def __init__(self, symbols, cache):
+        self.DEBUG = False
+        self.symbols = ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX',
+                        'CHD', 'TSLA',
+                        'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
+                        'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW',
+                        'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
+                        'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E'] \
+            if self.DEBUG else symbols
+        self.cache = cache
+
+    def define_correlation_for_each_year(self, securities_list, end_date,
                                          source, dl_data, use_ch, use_multiprocessing):
 
-        all_start_dates = ['2023']
+        all_start_dates = ['2023', '2022']
 
         if use_multiprocessing:
             for start_date in all_start_dates:
-                self.define_correlations_for_series_list_fast(securities_list, symbols, start_date, end_date, source,
+                self.define_correlations_for_series_list_fast(securities_list, start_date, end_date, source,
                                                               dl_data, use_ch)
         else:
             for start_date in all_start_dates:
-                self.define_correlations_for_series_list(securities_list, symbols, start_date, end_date, source,
+                self.define_correlations_for_series_list(securities_list, start_date, end_date, source,
                                                          dl_data, use_ch)
 
         return securities_list
 
-    # def define_correlations_for_series_list_fast(self, all_main_securities: Union[List['Security'], List['FredSeries']],
-    #                                              symbols: List[str],
-    #                                              start_date: str, end_date:
-    #         str, source: str, dl_data: bool, use_ch: bool) -> List['Security']:
-    #     if self.DEBUG:
-    #         symbols = ['UNH', 'XOM']
-    #
-    #     symbols = list(set(symbols))  # This DOES change the order of symbols
-    #
-    #     max_workers = 1 if (dl_data or self.DEBUG) else (multiprocessing.cpu_count() // 4)
-    #
-    #     with ProcessPoolExecutor(max_workers=max_workers) as executor:
-    #         results = executor.map(self.process_symbol, symbols, [start_date] * len(symbols), [end_date] * len(symbols),
-    #                                [source] * len(symbols), [dl_data] * len(symbols), [use_ch] * len(symbols))
-    #
-    #         for symbol, security_data in results:
-    #
-    #             if security_data is None:  # Check for None before processing
-    #                 continue
-    #             i = 0
-    #
-    #             while i < len(all_main_securities):  # Loop to go through all the securities_main Securities
-    #
-    #                 main_security = all_main_securities[i]
-    #
-    #                 if isinstance(main_security, Security) and symbol == main_security.symbol:
-    #                     i += 1
-    #                     continue  # Skips comparison if being compared to itself
-    #
-    #                 main_security_data = main_security.series_data[start_date]
-    #
-    #                 correlation_float = self.get_correlation_for_series(main_security_data, security_data)
-    #
-    #                 if start_date not in main_security.all_correlations:
-    #                     main_security.all_correlations[start_date] = {}
-    #
-    #                 main_security.all_correlations[start_date][symbol] = correlation_float
-    #
-    #                 i += 1
-    #     return all_main_securities
+    def define_correlations_for_series_list_fast(self, all_main_securities, start_date, end_date, source, dl_data,
+                                                 use_ch):
+
+        args = [(self, self.cache, symbol, start_date, end_date, source, dl_data, use_ch, all_main_securities) for symbol in self.symbols]
+
+        # Use multiprocessing to speed up the computation
+        with Pool(cpu_count() // 3) as pool:
+            all_results = pool.map(process_symbol, args)
+
+        # Update the correlations in main_security objects
+        for results in all_results:
+            if results:
+                for main_security, symbol, correlation_float in results:
+                    if start_date not in main_security.all_correlations:
+                        main_security.all_correlations[start_date] = {}
+                    main_security.all_correlations[start_date][symbol] = correlation_float
+
+        return all_main_securities
+
+    @staticmethod
+    def get_validated_security_data(cache, symbol, start_date, end_date, source, dl_data, use_ch):
+        # Check if data exists in cache
+        data = cache.get(symbol)
+        if data is not None:
+            # print(f"Cache hit for {symbol}. Total hits: {cache.get_hits()}, Total misses: {cache.get_misses()}")
+            return data
+
+        # If not in cache, compute the data and store it in the cache
+        data = original_get_validated_security_data(symbol, start_date, end_date, source, dl_data, use_ch)
+        if data is not None:
+            cache.set(symbol, data)
+        # print(f"Cache miss for {symbol}. Total hits: {cache.get_hits()}, Total misses: {cache.get_misses()}")
+        return data
+
+    def get_correlation_for_series(self, main_security_data_detrended: pd.DataFrame,
+                                   security_data: pd.DataFrame) -> float:
+        aligned_main, aligned_symbol = main_security_data_detrended.align(security_data, join='inner', axis=0)
+
+        # After aligning, ensure column names are retained
+        aligned_main.columns = main_security_data_detrended.columns
+        aligned_symbol.columns = security_data.columns
+
+        correlation = self.compute_correlation(aligned_main['main'], aligned_symbol['symbol'])
+
+        return correlation
+
+    @staticmethod
+    def compute_correlation(series_data1: pd.Series, series_data2: pd.Series) -> float:
+        return series_data1.corr(series_data2)
 
     def define_correlations_for_series_list(self, all_main_securities: Union[List['Security'], List['FredSeries']],
-                                            symbols: List[str],
                                             start_date: str, end_date: str, source: str, dl_data: bool, use_ch: bool) \
             -> List['Security']:
         """Main function for calculating the correlations for each Security against a list of other securities"""
-        if self.DEBUG:
-            symbols = ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX', 'CHD', 'TSLA',
-                       'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
-                       'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW', 'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
-                       'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E']
 
-        symbols = set(symbols)  # This changes the order of symbols
+        symbols = set(self.symbols)  # This changes the order of symbols
         all_main_securities_set = set(all_main_securities)
 
         for symbol in symbols:
 
             try:
-                security_data = get_validated_security_data(symbol, start_date, end_date, source, dl_data, use_ch)
+                security_data = original_get_validated_security_data(symbol, start_date, end_date, source, dl_data,
+                                                                     use_ch)
             except AttributeError:  # Better than checking if its None every time
                 continue
 
@@ -153,23 +183,8 @@ class CorrelationCalculator:
 
         return all_main_securities
 
-    def get_correlation_for_series(self, main_security_data_detrended: pd.DataFrame, security_data: pd.DataFrame) -> float:
-        aligned_main, aligned_symbol = main_security_data_detrended.align(security_data, join='inner', axis=0)
-
-        # After aligning, ensure column names are retained
-        aligned_main.columns = main_security_data_detrended.columns
-        aligned_symbol.columns = security_data.columns
-
-        correlation = self.compute_correlation(aligned_main['main'], aligned_symbol['symbol'])
-
-        return correlation
-
-    @staticmethod
-    def compute_correlation(series_data1: pd.Series, series_data2: pd.Series) -> float:
-        return series_data1.corr(series_data2)
-
 
 if __name__ == '__main__':
-    manager = CorrelationCalculator()
+    pass
     # Call the desired methods on the manager instance
     # manager.define_correlations_for_series_list(...)

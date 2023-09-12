@@ -1,7 +1,7 @@
 import time
 from typing import List, Union
 
-from scripts.correlation_constants import SecurityMetadata, Security, FredSeries
+from scripts.correlation_constants import SecurityMetadata, Security, FredSeries, SharedMemoryCache
 from scripts.file_reading_funcs import pickle_securities_objects, get_fred_md_series_list, load_saved_securities
 from scripts.find_correlated_symbols import CorrelationCalculator, define_top_correlations
 from scripts.plotting_functions import CorrelationPlotter
@@ -20,7 +20,8 @@ def compute_security_correlations_and_plot(symbol_list: List[str], use_fred: boo
                                            otc_filter: bool = True,
                                            sector: List[str] = None, industry_group: List[str] = None,
                                            industry: List[str] = None, country: List[str] = None,
-                                           state: List[str] = None, market_cap: List[str] = None):
+                                           state: List[str] = None, market_cap: List[str] = None,
+                                           cache: SharedMemoryCache = None):
     """Returns list of tickers from most to least correlated"""
     if not use_fred:
         securities_list = make_securities_list(symbol_list)
@@ -34,8 +35,8 @@ def compute_security_correlations_and_plot(symbol_list: List[str], use_fred: boo
     symbols = metadata.build_symbol_list(etf, stock, index)
 
     # MAIN CALCULATION
-    calculator = CorrelationCalculator()  # Calculate all correlations for securities_list
-    securities_list = calculator.define_correlation_for_each_year(securities_list, symbols, end_date,
+    calculator = CorrelationCalculator(symbols, cache)  # Calculate all correlations for securities_list
+    securities_list = calculator.define_correlation_for_each_year(securities_list, end_date,
                                                                   source, dl_data, use_ch, use_multiprocessing)
 
     # Take the num_traces positively and negatively correlated and assign to Security

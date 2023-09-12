@@ -70,7 +70,8 @@ def read_series_data(symbol: str, source: str):
 
 @cache_info
 @lru_cache(maxsize=None)
-def get_validated_security_data(symbol: str, start_date: str, end_date: str, source: str, dl_data: bool, use_ch: bool)\
+def original_get_validated_security_data(symbol: str, start_date: str, end_date: str, source: str, dl_data: bool,
+                                         use_ch: bool)\
         -> pd.DataFrame:
     """Get security data from file, make sure its within range and continuous"""
     if dl_data:
@@ -115,27 +116,6 @@ def series_is_empty(series, symbol, file_path, dl_data=True) -> bool:
         return True
 
     return False
-
-
-def is_series_within_date_range_old(series, start_date: str, end_date: str) -> bool:
-    """Check if series is within date range, takes start_date format as either YYYY or YYYY-MM-DD"""
-    start_date = pd.Timestamp(start_date)
-    end_date = pd.Timestamp(end_date)
-
-    start_year = start_date.year
-    start_month = start_date.month
-    end_year = end_date.year
-    end_month = end_date.month
-
-    # Check if the stock has data since 'start year' and past 'end year'
-    start_condition = series.index.min().year > start_year or (series.index.min().year == start_year and
-                                                               series.index.min().month > start_month)
-    end_condition = series.index.max().year < end_year or (series.index.max().year == end_year and
-                                                           series.index.max().month < end_month)
-
-    if start_condition or end_condition:
-        return False
-    return True
 
 
 def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:  # TODO

@@ -1,11 +1,16 @@
 import logging
 import time
+from typing import List
 
 from tqdm import tqdm
 
-from main import compute_security_correlations_and_plot
-from scripts.file_reading_funcs import original_get_validated_security_data, read_series_data
-from scripts.correlation_constants import SharedMemoryCache
+from main import make_securities_list, compute_security_correlations_and_plot
+from scripts.correlation_constants import SecurityMetadata
+from scripts.file_reading_funcs import original_get_validated_security_data, read_series_data, pickle_securities_objects, \
+    get_fred_md_series_list
+from scripts.find_correlated_symbols import CorrelationCalculator, define_top_correlations
+from scripts.plotting_functions import CorrelationPlotter
+
 
 log_format = '%(asctime)s - %(message)s'
 date_format = '%H:%M:%S'
@@ -48,7 +53,7 @@ def test_caching_large(symbols_list: list, source: str):
         print("Caching may not be working correctly.")
 
 
-def main_test(cache):
+def main_test():
     compute_security_correlations_and_plot(
         symbol_list=['U'],
         use_fred=False,
@@ -69,17 +74,14 @@ def main_test(cache):
         show_detrended=False,
         monthly_resample=False,
         otc_filter=False,
-
-        cache=cache
     )
 
 
 def test_main_execution():
-    cache = SharedMemoryCache()
     # First execution
     start_time_1 = time.time()
 
-    main_test(cache)
+    main_test()
 
     duration_1 = time.time() - start_time_1
     print(f"\nFirst run took {duration_1:.2f} seconds.")
@@ -87,10 +89,13 @@ def test_main_execution():
     # Second execution
     start_time_2 = time.time()
 
-    main_test(cache)
+    main_test()
 
     duration_2 = time.time() - start_time_2
     print(f"\nSecond run took {duration_2:.2f} seconds.")
+
+
+    main_test()
 
     # start_time_3 = time.time()
     #
@@ -115,4 +120,3 @@ def test_main_execution():
 
 if __name__ == '__main__':
     test_main_execution()
-
