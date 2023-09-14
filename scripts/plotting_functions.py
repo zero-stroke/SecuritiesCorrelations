@@ -22,7 +22,7 @@ class CorrelationPlotter:
                            etf: bool = False, stock: bool = True, index: bool = False, monthly: bool = False, sector:
                            List[str] = None, industry_group: List[str] = None, industry: List[str] = None,
                            country: List[str] = None, state: List[str] = None,
-                           market_cap: List[str] = None, otc_filter: bool = True):
+                           market_cap: List[str] = None, otc_filter: bool = False):
         """Adds num_traces # of traces of securities to plotly fig. Flags for displaying detrended and monthly data."""
         added_count = 0
         for security in securities:
@@ -81,11 +81,12 @@ class CorrelationPlotter:
                                    industry: List[str] = None, country: List[str] = None, state: List[str] = None,
                                    market_cap: List[str] = None):
         """Plotting the base series against its correlated series"""
-        main_security_data = read_series_data(main_security.symbol, 'yahoo')  # Prepare securities_main series
+        main_security_data = main_security.series_data[start_date[:4]]
 
         # Make sure the securities_main security is normalized based on its data from the start date
-        main_security_data = fit_data_to_time_range(main_security_data, start_date)
         main_security_data = CorrelationPlotter.normalize_data(main_security_data)
+        if monthly:
+            main_security_data = main_security_data.resample('MS').first()
 
         if show_detrended:
             main_security_data = main_security_data.diff().dropna()
@@ -160,64 +161,6 @@ class CorrelationPlotter:
 
 if __name__ == '__main__':
     # Assuming you have some dummy data or test data
-    metadata = SecurityMetadata()
-    mock_security = Security('TSLA', metadata)
-    mock_start_date = "2021-01-01"
+    pass
 
-    plotter = CorrelationPlotter()
-    plotter.plot_security_correlations(mock_security, mock_start_date, num_traces=5, display_plot=True,
-                                       show_detrended=False)
 
-#
-# def plot_fred_md_correlations(base_series_obj, symbols_and_descriptions, source, start_date, data_format,
-#                               monthly, display_plot, show_detrended):
-#     """Plotting the base series against its correlated series"""
-#
-#     # Retrieve the series data directly from the FredSeries object.
-#     base_series = base_series_obj.series_data
-#
-#     if monthly:
-#         base_series = base_series.resample('MS').first()
-#
-#     if show_detrended:
-#         base_series = base_series.diff().dropna()
-#
-#     num_rows = len(symbols_and_descriptions)
-#
-#     fig = make_subplots(rows=num_rows, cols=1)
-#     base_series = normalize(base_series)
-#
-#     for i, (symbols, symbol_descriptions) in enumerate(symbols_and_descriptions.items(), start=1):
-#         fig.add_trace(go.Scatter(x=base_series.index, y=base_series, mode='lines', name=base_series_obj.fred_md_id),
-#                       row=i, col=1)
-#         add_traces_to_plot(fig, symbols, symbol_descriptions, source, i, data_format, monthly, show_detrended)
-#
-#     # Get the title directly from the FredSeries object.
-#     title = base_series_obj.name
-#
-#     fig.update_layout(
-#         title_text=title,
-#         plot_bgcolor='#2a2a3b',  # Dark violet background
-#         paper_bgcolor='#1e1e2a',  # Even darker violet for the surrounding paper
-#         font=dict(color='#e0e0e0'),  # Light font color for contrast
-#         xaxis=dict(gridcolor='#4a4a5a'),  # Grid color
-#         yaxis=dict(gridcolor='#4a4a5a'),  # Grid color
-#     )
-#
-#     # Loop through each x-axis and set the range
-#     for i in range(1, num_rows + 1):
-#         fig['layout'][f'xaxis{i}'].update(range=[start_date, base_series.index[-1]])
-#
-#     if display_plot:
-#         # Write the plot as html for immediate display.
-#         html_file_path = DATA_DIR / f'Graphs/{base_series_obj.symbol}_correlations.html'
-#         fig.write_html(html_file_path, full_html=True)
-#         subprocess.run(["cmd", "/c", "firefox2", "--kiosk", html_file_path])
-#
-#     if not DEBUG:
-#         # Write the plot as a json file to be displayed using plotly dash.
-#         json_file_path = DATA_DIR / f'Graphs/{base_series_obj.symbol}_correlations.json'
-#         with open(json_file_path, 'w') as f:
-#             json.dump(fig.to_dict(), f, cls=EnhancedEncoder)
-#
-#     return fig

@@ -3,6 +3,16 @@ data/*
 
 data/Stock_data/debug/
 data/Stock_data/yahoo_daily/
+!data/Stock_data/yahoo_daily/AAPL.csv
+!data/Stock_data/yahoo_daily/MSFT.csv
+!data/Stock_data/yahoo_daily/GOOG.csv
+!data/Stock_data/yahoo_daily/META.csv
+!data/Stock_data/yahoo_daily/AMZN.csv
+!data/Stock_data/yahoo_daily/MDB.csv
+!data/Stock_data/yahoo_daily/ORCL.csv
+!data/Stock_data/yahoo_daily/ADBE.csv
+!data/Stock_data/yahoo_daily/SPY.csv
+!data/Stock_data/yahoo_daily/DIA.csv
 
 data/Graphs/html_plots
 data/Graphs/json_plots
@@ -29,4 +39,5 @@ ui/__pycache__/security_correlations_ui.cpython-310.pyc
 data/Stock_data/combined_data.parquet
 tests/cache_info.log
 cache_info.log
+
 

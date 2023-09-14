@@ -14,7 +14,7 @@ logging.basicConfig(filename='cache_info.log', level=logging.INFO,
                     format=log_format, datefmt=date_format, filemode='w')
 
 
-def test_caching_large(symbols_list: list, source: str):
+def test_caching_large_simple(symbols_list: list, source: str):
     # Cache the results for all symbols initially
     for symbol in tqdm(symbols_list, desc="Caching results"):
         original_get_validated_security_data(symbol, '2022', '2023-06-02', source, dl_data=False, use_ch=False)
@@ -48,7 +48,7 @@ def test_caching_large(symbols_list: list, source: str):
         print("Caching may not be working correctly.")
 
 
-def main_test(cache):
+def main_test(cache_param):
     compute_security_correlations_and_plot(
         symbol_list=['U'],
         use_fred=False,
@@ -70,41 +70,23 @@ def main_test(cache):
         monthly_resample=False,
         otc_filter=False,
 
-        cache=cache
+        cache=cache_param
     )
 
 
-def test_main_execution():
+if __name__ == '__main__':
     cache = SharedMemoryCache()
     # First execution
     start_time_1 = time.time()
-
     main_test(cache)
-
     duration_1 = time.time() - start_time_1
     print(f"\nFirst run took {duration_1:.2f} seconds.")
 
     # Second execution
     start_time_2 = time.time()
-
     main_test(cache)
-
     duration_2 = time.time() - start_time_2
     print(f"\nSecond run took {duration_2:.2f} seconds.")
-
-    # start_time_3 = time.time()
-    #
-    # main_test()
-    #
-    # duration_3 = time.time() - start_time_3
-    # print(f"\nThird run took {duration_3:.2f} seconds.")
-    #
-    # start_time_4 = time.time()
-    #
-    # main_test()
-    #
-    # duration_4 = time.time() - start_time_4
-    # print(f"\nThird run took {duration_4:.2f} seconds.")
 
     # Check if the second execution is faster
     if duration_2 < duration_1:
@@ -112,7 +94,4 @@ def test_main_execution():
     else:
         print("\nThe second run wasn't significantly faster. Caching might not be working as intended or the time difference is marginal.")
 
-
-if __name__ == '__main__':
-    test_main_execution()
 

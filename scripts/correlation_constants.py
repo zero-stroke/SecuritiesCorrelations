@@ -231,8 +231,8 @@ class FredSeries:
         self.tcode = row['tcode']
         self.frequency = row['frequency']
         self.latex_equation = self.get_latex_equation()
-        self.series_data: pd.Series = self.get_fredmd_series()
-        self.series_data_detrended: pd.DataFrame = self.series_data.diff().dropna().to_frame(name='main')
+        self.series_data: pd.Series = {}
+        self.series_data_detrended: pd.DataFrame = {}
 
         self.positive_correlations: Dict[str, List[Security]] = \
             {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
@@ -240,6 +240,7 @@ class FredSeries:
             {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
         self.all_correlations: Dict[str, Optional[Dict[str, float]]] = \
             {start_date: {} for start_date in ['2010', '2018', '2021', '2022', '2023']}
+        self.set_fredmd_series()
 
     def get_latex_equation(self):
         latex_eq_dict = {
@@ -263,7 +264,7 @@ class FredSeries:
                 + f" frequency={self.frequency})"
         )
 
-    def get_fredmd_series(self):
+    def set_fredmd_series(self):
         """For getting a series from the FRED-MD dataset"""
         md_data = pd.read_csv(FRED_DIR / 'FRED_MD/MD_2023-08-02.csv')
         md_data = md_data.rename(columns={'sasdate': 'Date'})
@@ -272,7 +273,27 @@ class FredSeries:
         # Extract the 'series_id' column for correlation
         md_data = md_data.set_index('Date')[self.fred_md_id]
 
+        start_years = ['2010', '2018', '2021', '2022', '2023']
+        for year in start_years:
+            self.series_data[year] = md_data[md_data.index.year >= int(year)]
+            detrended_series = self.series_data[year].diff().dropna()
+            self.series_data_detrended[year] = detrended_series.to_frame(name='main')
+
         return md_data
+
+    def get_unique_values(self, attribute_name: str, start_date, num_traces) -> List[str]:
+        """Returns a list of a correlation_list's unique values for a given attribute"""
+        unique_values = set()
+
+        # Get values from positive_correlations
+        unique_values.update(getattr(security, attribute_name) for security in
+                             self.positive_correlations[start_date][:num_traces] if getattr(security, attribute_name))
+
+        # Get values from negative_correlations
+        unique_values.update(getattr(security, attribute_name) for security in
+                             self.negative_correlations[start_date][:num_traces] if getattr(security, attribute_name))
+
+        return list(unique_values)
 
     def __hash__(self):
         # Make the instance hashable using its symbol attribute

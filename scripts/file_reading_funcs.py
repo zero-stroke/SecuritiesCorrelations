@@ -1,7 +1,7 @@
 import logging
 import threading
 import traceback
-from typing import List, Union
+from typing import List, Union, Set
 import pickle
 import os
 from functools import lru_cache
@@ -50,6 +50,7 @@ def cache_info(func):
     return wrapper
 
 
+@lru_cache(maxsize=None)
 def read_series_data(symbol: str, source: str):
     with cache_lock:
         if source == 'yahoo':
@@ -220,7 +221,7 @@ def load_saved_securities(symbol: str) -> Union[Security, FredSeries]:
         print(f"No saved data found for symbol: {symbol}")
 
 
-def get_fred_md_series_list() -> List[FredSeries]:
+def get_fred_md_series_list() -> Set[FredSeries]:
     """Create list of FredSeries objects from fred_md_metadata csv"""
     fred_md_metadata = pd.read_csv(FRED_DIR / 'fred_md_metadata.csv')
 
@@ -228,7 +229,7 @@ def get_fred_md_series_list() -> List[FredSeries]:
     valid_rows = fred_md_metadata[pd.notnull(fred_md_metadata['fred_md_id']) & (fred_md_metadata['fred_md_id'] != '')]
 
     # Create a list of FredSeries objects using the 'fred_md_id' from the valid rows
-    fred_series_list = [FredSeries(row['fred_md_id']) for _, row in valid_rows.iterrows()]
+    fred_series_list = {FredSeries(row['fred_md_id']) for _, row in valid_rows.iterrows()}
 
     return fred_series_list
 

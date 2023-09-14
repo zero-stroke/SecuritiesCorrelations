@@ -1,6 +1,6 @@
 import logging
 from multiprocessing import Pool, cpu_count
-from typing import List, Union
+from typing import List, Union, Set
 
 import pandas as pd
 
@@ -14,7 +14,7 @@ logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for dev
 
 def define_top_correlations(all_main_securities: Union[List['Security'], List['FredSeries']]) \
         -> Union[List['Security'], List['FredSeries']]:
-    num_symbols = 40
+    num_symbols = 100
 
     # Define the correlation attributes and their corresponding positive and negative correlation attributes
     correlation_start_dates = ['2010', '2018', '2021', '2022', '2023']
@@ -62,7 +62,9 @@ def process_symbol(args):
             continue
 
         main_security_data_detrended = single_main_security.series_data_detrended[start_date]
+
         corr_float = self.get_correlation_for_series(main_security_data_detrended, security_data)
+
         if corr_float is not None:
             result_list.append((single_main_security, symbol, corr_float))
 
@@ -70,6 +72,8 @@ def process_symbol(args):
 
 
 class CorrelationCalculator:
+    """Calculates correlations between different series. symbols attribute is generally thousands long,
+all_main_securities is generally only a few securities long"""
     def __init__(self, symbols, cache):
         self.DEBUG = False
         self.symbols = ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX',
@@ -84,12 +88,12 @@ class CorrelationCalculator:
     def define_correlation_for_each_year(self, securities_list, end_date,
                                          source, dl_data, use_ch, use_multiprocessing):
 
-        all_start_dates = ['2023', '2022']
+        all_start_dates = {'2023'}
 
         if use_multiprocessing:
             for start_date in all_start_dates:
-                self.define_correlations_for_series_list_fast(securities_list, start_date, end_date, source,
-                                                              dl_data, use_ch)
+                self.define_correlations_for_series_list_multiprocessing(securities_list, start_date, end_date, source,
+                                                                         dl_data, use_ch)
         else:
             for start_date in all_start_dates:
                 self.define_correlations_for_series_list(securities_list, start_date, end_date, source,
@@ -97,13 +101,14 @@ class CorrelationCalculator:
 
         return securities_list
 
-    def define_correlations_for_series_list_fast(self, all_main_securities, start_date, end_date, source, dl_data,
-                                                 use_ch):
+    def define_correlations_for_series_list_multiprocessing(self, all_main_securities, start_date, end_date, source,
+                                                            dl_data, use_ch):
 
-        args = [(self, self.cache, symbol, start_date, end_date, source, dl_data, use_ch, all_main_securities) for symbol in self.symbols]
+        args = [(self, self.cache, symbol, start_date, end_date, source, dl_data, use_ch, all_main_securities)
+                for symbol in self.symbols]
 
         # Use multiprocessing to speed up the computation
-        with Pool(cpu_count() // 3) as pool:
+        with Pool(cpu_count() // 4) as pool:
             all_results = pool.map(process_symbol, args)
 
         # Update the correlations in main_security objects
@@ -147,19 +152,18 @@ class CorrelationCalculator:
     def compute_correlation(series_data1: pd.Series, series_data2: pd.Series) -> float:
         return series_data1.corr(series_data2)
 
-    def define_correlations_for_series_list(self, all_main_securities: Union[List['Security'], List['FredSeries']],
+    def define_correlations_for_series_list(self, all_main_securities: Union[Set['Security'], Set['FredSeries']],
                                             start_date: str, end_date: str, source: str, dl_data: bool, use_ch: bool) \
-            -> List['Security']:
+            -> Set['Security']:
         """Main function for calculating the correlations for each Security against a list of other securities"""
 
         symbols = set(self.symbols)  # This changes the order of symbols
         all_main_securities_set = set(all_main_securities)
 
         for symbol in symbols:
-
             try:
-                security_data = original_get_validated_security_data(symbol, start_date, end_date, source, dl_data,
-                                                                     use_ch)
+                security_data = original_get_validated_security_data(symbol, start_date, end_date, source,
+                                                                     dl_data, use_ch)
             except AttributeError:  # Better than checking if its None every time
                 continue
 
