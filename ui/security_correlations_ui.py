@@ -56,7 +56,7 @@ class SecurityDashboard:
         self.cache = SharedMemoryCache()
         self.available_securities: Set[str] = self.get_available_securities()
         if not self.available_securities:
-            compute_security_correlations_and_plot(self.cache, ['GME'])
+            compute_security_correlations_and_plot(cache=self.cache, symbol_list=['GME'])
         self.fred_series: List[str] = self.get_all_fred_series()
         self.available_start_dates = ['2010', '2018', '2021', '2022', '2023']
         self.main_security: Security = load_saved_securities('GME')
@@ -76,6 +76,9 @@ class SecurityDashboard:
         self.show_detrended = []
         self.monthly_resample = []
         self.otc_filter = []
+
+        self.displayed_positive_correlations: Set[Security] = set()
+        self.displayed_negative_correlations: Set[Security] = set()
 
         self.sectors = self.main_security.get_unique_values('sector', self.start_date, self.num_traces)
         self.industry_groups = self.main_security.get_unique_values('industry_group', self.start_date, self.num_traces)
@@ -181,7 +184,7 @@ class SecurityDashboard:
         }
 
         multi_dropdown_div_style = {
-            'margin': '1em'
+            'margin': '0.3em 1em'
         }
 
         button_style = {
@@ -206,6 +209,7 @@ class SecurityDashboard:
             html.Div([
                 html.Div([
                     dbc.Input(id=self.SECURITIES_INPUT_ID, type='text', placeholder='Enter new...', debounce=True,
+                              n_submit=0,
                               style={
                                   'width': '9rem',
                               }),
@@ -488,12 +492,15 @@ class SecurityDashboard:
             [
                 Input(self.LOAD_PLOT_BUTTON_ID, 'n_clicks'),
 
+                Input(self.SECURITIES_INPUT_ID, 'n_submit'),
                 State(self.SECURITIES_INPUT_ID, 'value'),
+
                 Input(self.SECURITIES_DROPDOWN_ID, 'value'),
+
                 State(self.FRED_SWITCH_ID, 'value'),
 
                 Input(self.START_DATE_ID, 'value'),
-                State(self.NUM_TRACES_ID, 'value'),
+                Input(self.NUM_TRACES_ID, 'value'),
 
                 Input(self.SOURCE_ETF_ID, 'n_clicks'),
                 Input(self.SOURCE_STOCK_ID, 'n_clicks'),
@@ -512,6 +519,7 @@ class SecurityDashboard:
             ],
         )
         def update_graph(n_clicks: int,
+                         n_submit: int,
                          input_symbol: Optional[str] = self.input_symbol,
                          dropdown_symbol: Optional[str] = self.dropdown_symbol,
                          use_fred=None,
@@ -520,9 +528,24 @@ class SecurityDashboard:
                          detrend_plot=None,
                          monthly=None,
                          otc_filter=None,
-                         selected_sectors: List[str] = None, selected_industry_groups: List[str] = None,
-                         selected_industries: List[str] = None, selected_countries: List[str] = None,
-                         selected_states: List[str] = None, selected_market_caps: List[str] = None):
+                         selected_sectors=None,
+                         selected_industry_groups=None,
+                         selected_industries=None,
+                         selected_countries=None,
+                         selected_states=None,
+                         selected_market_caps=None):
+            if selected_market_caps is None:
+                selected_market_caps = self.market_caps
+            if selected_states is None:
+                selected_states = self.states
+            if selected_countries is None:
+                selected_countries = self.countries
+            if selected_industries is None:
+                selected_industries = self.industries
+            if selected_industry_groups is None:
+                selected_industry_groups = self.industry_groups
+            if selected_sectors is None:
+                selected_sectors = self.sectors
             if otc_filter is None:
                 otc_filter = self.otc_filter
             if monthly is None:
@@ -593,13 +616,23 @@ class SecurityDashboard:
                             ctx.triggered_id != self.SECURITIES_DROPDOWN_ID
                             and ctx.triggered_id != self.NUM_TRACES_ID
                             and ctx.triggered_id != self.START_DATE_ID
+                            and ctx.triggered_id != self.NUM_TRACES_ID
+
                             and ctx.triggered_id != self.SOURCE_ETF_ID
                             and ctx.triggered_id != self.SOURCE_STOCK_ID
                             and ctx.triggered_id != self.SOURCE_INDEX_ID
+
                             and ctx.triggered_id != self.DETREND_SWITCH_ID
                             and ctx.triggered_id != self.MONTHLY_SWITCH_ID
                             and ctx.triggered_id != self.OTC_FILTER_ID
-                    )
+
+                            and ctx.triggered_id != self.SECTOR_FILTER_ID
+                            and ctx.triggered_id != self.INDUSTRY_GROUP_FILTER_ID
+                            and ctx.triggered_id != self.INDUSTRY_FILTER_ID
+                            and ctx.triggered_id != self.COUNTRY_FILTER_ID
+                            and ctx.triggered_id != self.STATE_FILTER_ID
+                            and ctx.triggered_id != self.MARKET_CAP_FILTER_ID
+                        )
                     and ctx.triggered_id != 'initial-load-interval.n_intervals'
             ):
                 raise dash.exceptions.PreventUpdate
@@ -609,14 +642,29 @@ class SecurityDashboard:
 
             self.otc_filter = otc_filter  #
 
-            if input_symbol or (use_fred and dropdown_symbol not in self.available_securities) or\
+            # Is the current plot simply being modified or should a whole new plot be loaded
+            loading_new_security = False if dropdown_symbol == self.main_security.symbol else True
+
+            # Does plot need to be computed from scratch
+            recompute_plot = False
+            if input_symbol or (use_fred and dropdown_symbol not in self.available_securities) or \
                     (n_clicks is not None and no_changes_have_been_made) \
                     or len(self.main_security.positive_correlations[start_date]) == 0:
+                recompute_plot = True
+
+            # New dropdown security's pkl file exists, but selected year is not yet created
+            security_exists_but_year_doesnt = False
+            if not recompute_plot and loading_new_security and dropdown_symbol in self.available_securities:
+                test_security = load_saved_securities(dropdown_symbol)
+                if len(test_security.positive_correlations[self.start_date]) == 0:
+                    security_exists_but_year_doesnt = True
+
+            if recompute_plot or security_exists_but_year_doesnt:
                 print('Load')
                 print(len(self.main_security.positive_correlations[start_date]))
                 for key, value in self.main_security.positive_correlations.items():
-                    print(value[:3])
-                # Three Cases
+                    print(key, value[:2])
+                # Five Cases where we need to recompute
                 # Pressing "Load and Plot" with no other buttons to recalculate a plot
                 # Manually inputting a symbol to plot
                 # Selecting a FRED plot from dropdown that hasn't been loaded yet
@@ -639,16 +687,18 @@ class SecurityDashboard:
                     use_ch=False,
                     use_multiprocessing=False,
 
-                    etf=self.etf,
-                    stock=self.stock,
-                    index=self.index,
+                    etf=True,
+                    stock=True,
+                    index=True,
 
                     show_detrended=self.show_detrended,
                     monthly_resample=self.monthly_resample,
                     otc_filter=self.otc_filter,
                 )
                 self.main_security = load_saved_securities(param_symbol)
-                update_filter_options(start_date, num_traces)
+
+                # Once self.main_security is updated, then we can call update_filter_options
+                update_filter_options()
                 if not use_fred and param_symbol not in self.available_securities:
                     self.available_securities.add(param_symbol)
 
@@ -662,16 +712,15 @@ class SecurityDashboard:
                        self.sectors, self.industry_groups, self.industries, \
                        self.countries, self.states, self.market_caps
 
-            loading_new_security = False if dropdown_symbol == self.main_security.symbol else True
             print(f'{dropdown_symbol} != {self.main_security.symbol} is {loading_new_security}')
             plotter = CorrelationPlotter()
             self.main_security = load_saved_securities(dropdown_symbol)
 
             if loading_new_security:
-                print('loading a new security, dropdown:', dropdown_symbol, 'self.main.symbol: ',
+                print('Loading new plot, dropdown:', dropdown_symbol, 'self.main.symbol: ',
                       self.main_security.symbol)
                 # If loading a new security from disk, make filter options and values set to the new security's options
-                update_filter_options(start_date, num_traces)
+                update_filter_options()
                 fig = plotter.plot_security_correlations(
                     main_security=self.main_security,
                     start_date=self.start_date,
@@ -698,7 +747,10 @@ class SecurityDashboard:
                 print('Keeping current plot, dropdown:', dropdown_symbol, 'self.main.symbol:',
                       self.main_security.symbol)
                 # Update the filter options based on new num_traces
-                update_filter_options(start_date, num_traces)
+                update_displayed_correlations(self.start_date, self.num_traces, self.etf, self.stock, self.index,
+                                              self.sectors, self.industry_groups, self.industries,
+                                              self.countries, self.states, self.market_caps, self.otc_filter)
+                update_filter_options()
                 # Modify current plot
                 fig = plotter.plot_security_correlations(
                     main_security=self.main_security,
@@ -733,13 +785,71 @@ class SecurityDashboard:
                    self.sectors, self.industry_groups, self.industries, \
                    self.countries, self.states, self.market_caps
 
-        def update_filter_options(start_date, num_traces):
-            self.sectors = self.main_security.get_unique_values('sector', start_date, num_traces)
-            self.industry_groups = self.main_security.get_unique_values('industry_group', start_date, num_traces)
-            self.industries = self.main_security.get_unique_values('industry', start_date, num_traces)
-            self.countries = self.main_security.get_unique_values('country', start_date, num_traces)
-            self.states = self.main_security.get_unique_values('state', start_date, num_traces)
-            self.market_caps = self.main_security.get_unique_values('market_cap', start_date, num_traces)
+        def get_unique_values(attribute_name: str) -> Set[str]:
+            """Returns a list of a correlation_list's unique values for a given attribute"""
+            unique_values = set()
+
+            # Get values from positive_correlations
+            unique_values.update(getattr(security, attribute_name) for security in
+                                 self.displayed_positive_correlations if getattr(security, attribute_name))
+
+            # Get values from negative_correlations
+            unique_values.update(getattr(security, attribute_name) for security in
+                                 self.displayed_negative_correlations if getattr(security, attribute_name))
+
+            return unique_values
+
+        def update_filter_options():
+            self.sectors = get_unique_values('sector')
+            self.industry_groups = get_unique_values('industry_group')
+            self.industries = get_unique_values('industry')
+            self.countries = get_unique_values('country')
+            self.states = get_unique_values('state')
+            self.market_caps = get_unique_values('market_cap')
+
+        def update_displayed_correlations(start_date, num_traces: int,
+                                          etf: bool, stock: bool,
+                                          index: bool, sector: List[str],
+                                          industry_group: List[str], industry: List[str],
+                                          country: List[str], state: List[str],
+                                          market_cap: List[str], otc_filter: bool):
+            """Updates the displayed correlation sets"""
+            correlation_list = [self.main_security.positive_correlations, self.main_security.negative_correlations]
+            displayed_correlation_list = [self.displayed_positive_correlations, self.displayed_negative_correlations]
+
+            for correlation_set, displayed_set in zip(correlation_list, displayed_correlation_list):
+                added_count = 0
+                for security in correlation_set[start_date]:
+                    if added_count >= num_traces:
+                        break
+
+                    if security.source == 'etf' and not etf:
+                        continue
+                    elif security.source == 'stock' and not stock:
+                        continue
+                    elif security.source == 'index' and not index:
+                        continue
+
+                    if security.source == 'stock':
+                        if sector is not None and security.sector not in sector:
+                            continue
+                        if industry_group is not None and security.industry_group not in industry_group:
+                            continue
+                        if industry is not None and security.industry not in industry:
+                            continue
+                        if country is not None and security.country not in country:
+                            continue
+                        if state is not None and security.state not in state:
+                            continue
+                        if market_cap is not None and security.market_cap not in market_cap:
+                            continue
+
+                        if otc_filter and 'OTC ' in security.market:  # If otc_filter and market contains 'OTC ' in it, skip
+                            continue
+
+                    displayed_set.add(security)
+
+                    added_count += 1
 
     def run(self):
         self.app.run_server(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))

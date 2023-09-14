@@ -1,0 +1,525 @@
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: ['detrend']
+monthly: []
+otc_filter: []
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: []
+monthly: []
+otc_filter: []
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: ['detrend']
+monthly: []
+otc_filter: []
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: []
+monthly: []
+otc_filter: []
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: ['detrend']
+monthly: []
+otc_filter: []
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: ['detrend']
+monthly: []
+otc_filter: []
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: ['detrend']
+monthly: []
+otc_filter: []
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: True
+etf: True
+stock: True
+index: True
+show_detrended: []
+monthly: []
+otc_filter: []
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: ['detrend']
+monthly: []
+otc_filter: []
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: ['detrend']
+monthly: []
+otc_filter: ['exclude_otc']
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: ['detrend']
+monthly: []
+otc_filter: []
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: []
+monthly: []
+otc_filter: []
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None
+
+main_security: Symbol: GME, Name: GameStop Corp., Source: stock, Sector: Consumer Discretionary 
+
+start_date: 2023
+num_traces: 2
+display_plot: False
+etf: True
+stock: True
+index: True
+show_detrended: False
+monthly: False
+otc_filter: False
+sector: None
+industry_group: None
+industry: None
+country: None
+state: None
+market_cap: None

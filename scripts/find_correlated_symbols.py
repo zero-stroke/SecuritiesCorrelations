@@ -1,4 +1,5 @@
 import logging
+from concurrent.futures import ThreadPoolExecutor
 from multiprocessing import Pool, cpu_count
 from typing import List, Union, Set
 
@@ -74,6 +75,7 @@ def process_symbol(args):
 class CorrelationCalculator:
     """Calculates correlations between different series. symbols attribute is generally thousands long,
 all_main_securities is generally only a few securities long"""
+
     def __init__(self, symbols, cache):
         self.DEBUG = False
         self.symbols = ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX',
@@ -184,6 +186,47 @@ all_main_securities is generally only a few securities long"""
                     main_security.all_correlations[start_date] = {}
 
                 main_security.all_correlations[start_date][symbol] = correlation_float
+
+        return all_main_securities
+
+    def worker(self, symbol, all_main_securities_set, start_date, end_date, source, dl_data, use_ch):
+        try:
+            security_data = original_get_validated_security_data(symbol, start_date, end_date, source, dl_data, use_ch)
+        except AttributeError:
+            return
+
+        for main_security in all_main_securities_set:
+            if isinstance(main_security, Security) and symbol == main_security.symbol:
+                continue
+
+            main_security_data_detrended = main_security.series_data_detrended[start_date]
+
+            try:
+                correlation_float = self.get_correlation_for_series(main_security_data_detrended, security_data)
+            except TypeError:
+                logger.warning(f'Skipping correlation calculation for {symbol} due to missing data.')
+                continue
+
+            if start_date not in main_security.all_correlations:
+                main_security.all_correlations[start_date] = {}
+
+            main_security.all_correlations[start_date][symbol] = correlation_float
+
+    def define_correlations_for_series_list_multithread(self, all_main_securities: Set['Security'] | Set['FredSeries'],
+                                                        start_date: str, end_date: str, source: str, dl_data: bool,
+                                                        use_ch: bool) -> Set['Security']:
+
+        symbols = set(self.symbols)
+        all_main_securities_set = set(all_main_securities)
+
+        # Define the number of threads; can be adjusted based on performance
+        num_threads = cpu_count() // 4  # For instance, use 8 threads or the number of symbols, whichever is smaller
+
+        # Using ThreadPoolExecutor to run worker functions in parallel
+        with ThreadPoolExecutor(max_workers=num_threads) as executor:
+            executor.map(self.worker, symbols, [all_main_securities_set] * len(symbols), [start_date] * len(symbols),
+                         [end_date] * len(symbols), [source] * len(symbols), [dl_data] * len(symbols),
+                         [use_ch] * len(symbols))
 
         return all_main_securities
 

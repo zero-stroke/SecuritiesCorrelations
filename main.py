@@ -9,7 +9,7 @@ from scripts.plotting_functions import CorrelationPlotter
 DEBUG = False
 
 
-def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_security: Security,
+def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_security: Security = None,
                                            symbol_list: List[str] = None, use_fred: bool = False,
                                            start_date: str = '2023', end_date: str = '2023-06-02',
                                            num_traces: int = 2,
@@ -57,7 +57,7 @@ def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_securit
 
     if not DEBUG:  # Pickle securities list to use later for configuring plots
         for security in securities_list:
-            if security.symbol == old_security.symbol:
+            if old_security is not None and security.symbol == old_security.symbol:
                 for date in ['2010', '2018', '2021', '2022', '2023']:
                     if len(security.positive_correlations[date]) == 0 and \
                             len(old_security.positive_correlations[date]) != 0:

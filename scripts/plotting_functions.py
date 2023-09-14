@@ -81,6 +81,18 @@ class CorrelationPlotter:
                                    industry: List[str] = None, country: List[str] = None, state: List[str] = None,
                                    market_cap: List[str] = None):
         """Plotting the base series against its correlated series"""
+
+        args_dict = locals().copy()
+        args_dict.pop('self')  # Remove 'self' from the dictionary
+
+        with open('debug_file.txt', 'a') as f:
+            f.write('\n')
+
+        # Write the arguments to a file for debugging
+        with open('debug_file.txt', 'a') as f:
+            for key, value in args_dict.items():
+                f.write(f'{key}: {value}\n')
+
         main_security_data = main_security.series_data[start_date[:4]]
 
         # Make sure the securities_main security is normalized based on its data from the start date
