@@ -63,7 +63,7 @@ def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_securit
                             len(old_security.positive_correlations[date]) != 0:
                         security.positive_correlations[date] = old_security.positive_correlations[date]
                         security.negative_correlations[date] = old_security.negative_correlations[date]
-            pickle_securities_objects(security)
+            pickle_securities_objects(security, use_fred)
 
     plotter = CorrelationPlotter()
     fig_list = []  # List of figures from plotly

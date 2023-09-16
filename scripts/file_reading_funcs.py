@@ -201,9 +201,11 @@ def is_series_continuous(series, symbol: str) -> bool:
     return True
 
 
-def pickle_securities_objects(security: Union[Security, FredSeries]):
+def pickle_securities_objects(security: Security | FredSeries, use_fred: bool):
     """Pickles a security object to re-use the calculations"""
     file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{security.symbol}.pkl'
+    if use_fred:
+        file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{security.symbol}_fred.pkl'
     # Save dict of base security id's, and symbols that correlate with them for later use
     with open(file_path, 'wb') as pickle_file:
         pickle.dump(security, pickle_file)

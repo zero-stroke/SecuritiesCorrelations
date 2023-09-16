@@ -1,0 +1,4573 @@
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: True
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 7
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 8
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 9
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 10
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 10
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 10
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 10
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 10
+etf: False
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 10
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 10
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 11
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 12
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 13
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 14
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 15
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 15
+etf: False
+stock: True
+index: True
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 15
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 14
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 13
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 12
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2010
+num_traces: 11
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 1
+etf: False
+stock: True
+index: False
+sector: ['Information Technology']
+industry_group: ['Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Health Care']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Biotechnology']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Financials', 'Information Technology', 'Health Care', 'Industrials']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Machinery', 'Electronic Equipment, Instruments & Components', 'Biotechnology', 'Capital Markets']
+country: ['Canada', 'United States']
+state: ['WI', 'CA', 'FL', 'BC']
+market_cap: ['Small Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Financials', 'Missing', 'Energy', 'Industrials', 'Information Technology', 'Health Care']
+industry_group: ['Missing', 'Energy', 'Diversified Financials', 'Technology Hardware & Equipment', 'Capital Goods', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing', 'Energy Equipment & Services', 'Capital Markets', 'Biotechnology', 'Machinery']
+country: ['Missing', 'Canada', 'United States']
+state: ['Missing', 'BC', 'CA', 'WI', 'nan', 'FL']
+market_cap: ['Mid Cap', 'Small Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Financials', 'Missing', 'Energy', 'Industrials', 'nan', 'Information Technology', 'Health Care']
+industry_group: ['Missing', 'Energy', 'Diversified Financials', 'nan', 'Technology Hardware & Equipment', 'Capital Goods', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing', 'Energy Equipment & Services', 'Capital Markets', 'Biotechnology', 'Pharmaceuticals', 'nan', 'Machinery']
+country: ['Missing', 'Canada', 'United Kingdom', 'United States']
+state: ['Missing', 'BC', 'CA', 'WI', 'nan', 'FL']
+market_cap: ['Mid Cap', 'Small Cap', 'Large Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Financials', 'Missing', 'Energy', 'Industrials', 'Information Technology', 'Health Care']
+industry_group: ['Missing', 'Energy', 'Diversified Financials', 'Technology Hardware & Equipment', 'Capital Goods', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing', 'Energy Equipment & Services', 'Capital Markets', 'Biotechnology', 'Machinery']
+country: ['Missing', 'Canada', 'United States']
+state: ['Missing', 'BC', 'CA', 'WI', 'nan', 'FL']
+market_cap: ['Mid Cap', 'Small Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 1
+etf: False
+stock: True
+index: False
+sector: ['Financials', 'Information Technology', 'Health Care', 'Industrials']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Machinery', 'Electronic Equipment, Instruments & Components', 'Biotechnology', 'Capital Markets']
+country: ['Canada', 'United States']
+state: ['WI', 'CA', 'FL', 'BC']
+market_cap: ['Small Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Health Care']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Biotechnology']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 1
+etf: False
+stock: True
+index: False
+sector: ['Financials', 'Information Technology', 'Health Care', 'Industrials']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Machinery', 'Electronic Equipment, Instruments & Components', 'Biotechnology', 'Capital Markets']
+country: ['Canada', 'United States']
+state: ['WI', 'CA', 'FL', 'BC']
+market_cap: ['Small Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Health Care']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Biotechnology']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Financials', 'Information Technology', 'Health Care', 'Industrials']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Machinery', 'Electronic Equipment, Instruments & Components', 'Biotechnology', 'Capital Markets']
+country: ['Canada', 'United States']
+state: ['WI', 'CA', 'FL', 'BC']
+market_cap: ['Small Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002163855AB60>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000171F761ADA0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000171F761ADA0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: ['Information Technology', 'Financials', 'Health Care', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Capital Goods', 'Diversified Financials']
+industry: ['Biotechnology', 'Capital Markets', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['Canada', 'United States']
+state: ['WI', 'BC', 'CA', 'FL']
+market_cap: ['Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000171F761ADA0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Energy', 'Industrials', 'Missing', 'Information Technology']
+industry_group: ['Energy', 'Capital Goods', 'Missing', 'Technology Hardware & Equipment']
+industry: ['Energy Equipment & Services', 'Missing', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing', 'Canada']
+state: ['nan', 'BC', 'Missing', 'WI']
+market_cap: ['Small Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Health Care', 'Industrials', 'nan', 'Information Technology', 'Missing', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'nan', 'Missing', 'Technology Hardware & Equipment', 'Diversified Financials', 'Energy', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Energy Equipment & Services', 'nan', 'Pharmaceuticals', 'Missing', 'Biotechnology', 'Capital Markets', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing', 'Canada', 'United Kingdom']
+state: ['FL', 'nan', 'BC', 'Missing', 'WI', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Health Care', 'nan', 'Industrials', 'Information Technology', 'Missing', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'nan', 'Missing', 'Technology Hardware & Equipment', 'Diversified Financials', 'Energy', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Energy Equipment & Services', 'nan', 'Pharmaceuticals', 'Missing', 'Biotechnology', 'Capital Markets', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing', 'Canada', 'United Kingdom']
+state: ['FL', 'nan', 'BC', 'Missing', 'WI', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 7
+etf: False
+stock: True
+index: False
+sector: ['Health Care', 'Industrials', 'nan', 'Information Technology', 'Missing', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'nan', 'Missing', 'Technology Hardware & Equipment', 'Diversified Financials', 'Energy', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Energy Equipment & Services', 'nan', 'Pharmaceuticals', 'Missing', 'Biotechnology', 'Capital Markets', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing', 'Canada', 'United Kingdom']
+state: ['FL', 'nan', 'BC', 'Missing', 'WI', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 7
+etf: False
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Information Technology', 'Missing', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'nan', 'Missing', 'Technology Hardware & Equipment', 'Diversified Financials', 'Energy', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Energy Equipment & Services', 'nan', 'Pharmaceuticals', 'Missing', 'Biotechnology', 'Capital Markets', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing', 'Canada', 'United Kingdom']
+state: ['FL', 'nan', 'BC', 'Missing', 'WI', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 7
+etf: False
+stock: True
+index: False
+sector: ['Health Care', 'Industrials', 'Information Technology', 'Missing', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Missing', 'Technology Hardware & Equipment', 'Diversified Financials', 'Energy', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Energy Equipment & Services', 'Pharmaceuticals', 'Missing', 'Biotechnology', 'Capital Markets', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['Canada', 'Missing', 'United Kingdom', 'Switzerland', 'United States']
+state: ['FL', 'nan', 'BC', 'Missing', 'WI', 'CA']
+market_cap: ['Small Cap', 'Mid Cap', 'Nano Cap', 'Large Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Health Care', 'Industrials', 'nan', 'Information Technology', 'Missing', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'nan', 'Missing', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'Energy', 'Software & Services']
+industry: ['Energy Equipment & Services', 'nan', 'Software', 'Pharmaceuticals', 'Missing', 'Electrical Equipment', 'Biotechnology', 'Capital Markets', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['Canada', 'Missing', 'United Kingdom', 'Switzerland', 'United States']
+state: ['FL', 'WA', 'nan', 'BC', 'Missing', 'WI', 'CT', 'CA', 'NJ', 'IL']
+market_cap: ['Small Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Large Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Health Care', 'Industrials', 'nan', 'Information Technology', 'Missing', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'nan', 'Missing', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'Energy', 'Software & Services']
+industry: ['Energy Equipment & Services', 'nan', 'Software', 'Pharmaceuticals', 'Missing', 'Electrical Equipment', 'Biotechnology', 'Capital Markets', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['Canada', 'Missing', 'United Kingdom', 'Switzerland', 'United States']
+state: ['FL', 'WA', 'nan', 'BC', 'Missing', 'WI', 'CT', 'CA', 'IL']
+market_cap: ['Small Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Large Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Health Care', 'nan', 'Industrials', 'Information Technology', 'Missing', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'nan', 'Missing', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'Energy', 'Software & Services']
+industry: ['Energy Equipment & Services', 'nan', 'Software', 'Pharmaceuticals', 'Missing', 'Biotechnology', 'Capital Markets', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['Canada', 'Missing', 'United Kingdom', 'Switzerland', 'United States']
+state: ['FL', 'WA', 'nan', 'BC', 'Missing', 'WI', 'CA']
+market_cap: ['Small Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Large Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Health Care', 'Industrials', 'nan', 'Information Technology', 'Missing', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'nan', 'Missing', 'Technology Hardware & Equipment', 'Diversified Financials', 'Energy', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Energy Equipment & Services', 'nan', 'Pharmaceuticals', 'Missing', 'Biotechnology', 'Capital Markets', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing', 'Canada', 'United Kingdom']
+state: ['FL', 'nan', 'BC', 'Missing', 'WI', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Health Care', 'Industrials', 'Information Technology', 'Missing', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Missing', 'Technology Hardware & Equipment', 'Diversified Financials', 'Energy', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Energy Equipment & Services', 'Missing', 'Biotechnology', 'Capital Markets', 'Machinery', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing', 'Canada']
+state: ['FL', 'nan', 'BC', 'Missing', 'WI', 'CA']
+market_cap: ['Small Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FD77226DA0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022D4B85AE90>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022D4B85AE90>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022D4B85AE90>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: ['Health Care', 'Financials', 'Information Technology', 'Industrials']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials']
+industry: ['Electronic Equipment, Instruments & Components', 'Biotechnology', 'Capital Markets', 'Machinery']
+country: ['Canada', 'United States']
+state: ['FL', 'BC', 'CA', 'WI']
+market_cap: ['Small Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022D4B85AE90>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022D4B85AE90>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: ['Health Care', 'Financials', 'Information Technology', 'Industrials']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials']
+industry: ['Electronic Equipment, Instruments & Components', 'Biotechnology', 'Capital Markets', 'Machinery']
+country: ['Canada', 'United States']
+state: ['FL', 'BC', 'CA', 'WI']
+market_cap: ['Small Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022D4B85AE90>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: False
+index: False
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022D4B85AE90>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022D4B85AE90>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022D4B85AE90>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: False
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: False
+index: False
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Health Care', 'Financials', 'Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Capital Goods', 'Diversified Financials']
+industry: ['Biotechnology', 'Machinery', 'Capital Markets', 'Electronic Equipment, Instruments & Components']
+country: ['Canada', 'United States']
+state: ['BC', 'CA', 'WI', 'FL']
+market_cap: ['Small Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2010
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2010
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2018
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components', 'Automobiles', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: False
+index: True
+sector: ['Missing', 'Information Technology', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components', 'Automobiles', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components', 'Automobiles', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components', 'Automobiles', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components', 'Automobiles', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 7
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 8
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 9
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 10
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 11
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 10
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 9
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 8
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 7
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components', 'Automobiles', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components', 'Automobiles', 'Textiles, Apparel & Luxury Goods']
+country: ['China', 'Missing', 'United States']
+state: ['OH', 'WI', 'Missing', 'nan']
+market_cap: ['Micro Cap', 'Nano Cap']
+otc_filter: ['exclude_otc']
+ctx: <dash._callback_context.CallbackContext object at 0x00000267DFF86EF0>
+
+start_date: 2021
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001FDB44BAE60>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: ['Consumer Staples', 'Information Technology']
+industry_group: ['Semiconductors & Semiconductor Equipment', 'Food & Staples Retailing']
+industry: ['Semiconductors & Semiconductor Equipment', 'Food & Staples Retailing']
+country: ['United States']
+state: ['CA', 'IL', 'NJ', 'WA']
+market_cap: ['Large Cap', 'Mid Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: False
+stock: True
+index: True
+sector: ['Consumer Staples', 'Information Technology']
+industry_group: ['Semiconductors & Semiconductor Equipment', 'Food & Staples Retailing']
+industry: ['Semiconductors & Semiconductor Equipment', 'Food & Staples Retailing']
+country: ['United States']
+state: ['CA', 'IL', 'NJ', 'WA']
+market_cap: ['Large Cap', 'Mid Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: False
+stock: False
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Semiconductors & Semiconductor Equipment', 'Missing']
+industry: ['Semiconductors & Semiconductor Equipment', 'Missing']
+country: ['United States', 'Missing']
+state: ['CA', 'Missing']
+market_cap: ['Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: False
+index: False
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: False
+stock: False
+index: True
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: False
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: False
+index: False
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: False
+stock: False
+index: True
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: False
+stock: False
+index: False
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: False
+index: False
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: False
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 7
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 8
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 7
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2021
+num_traces: 7
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020E0D546B60>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 1
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 1
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 0
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 1
+etf: True
+stock: True
+index: True
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E9AC6880A0>
+
+start_date: 2023
+num_traces: 1
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2010
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2010
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2018
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2010
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2010
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: False
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing']
+industry_group: ['Missing']
+industry: ['Missing']
+country: ['Missing']
+state: ['Missing']
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001882CD280A0>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000024881668850>
+
+start_date: 2021
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Consumer Durables & Apparel', 'Technology Hardware & Equipment', 'Automobiles & Components', 'Missing']
+industry: ['Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components']
+country: ['China', 'United States', 'Missing']
+state: ['WI', 'OH', 'Missing', 'nan']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000024881668850>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Consumer Durables & Apparel', 'Technology Hardware & Equipment', 'Automobiles & Components', 'Missing']
+industry: ['Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components']
+country: ['China', 'United States', 'Missing']
+state: ['nan', 'WI', 'OH', 'Missing']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000024881668850>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Consumer Durables & Apparel', 'Technology Hardware & Equipment', 'Automobiles & Components', 'Missing']
+industry: ['Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components']
+country: ['China', 'United States', 'Missing']
+state: ['nan', 'WI', 'OH', 'Missing']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000024881668850>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Consumer Durables & Apparel', 'Technology Hardware & Equipment', 'Automobiles & Components', 'Missing']
+industry: ['Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components']
+country: ['China', 'United States', 'Missing']
+state: ['nan', 'WI', 'OH', 'Missing']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000024881668850>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Consumer Durables & Apparel', 'Technology Hardware & Equipment', 'Automobiles & Components', 'Missing']
+industry: ['Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components']
+country: ['China', 'United States', 'Missing']
+state: ['nan', 'WI', 'OH', 'Missing']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000024881668850>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing', 'Consumer Discretionary']
+industry_group: ['Consumer Durables & Apparel', 'Technology Hardware & Equipment', 'Automobiles & Components', 'Missing']
+industry: ['Automobiles', 'Missing', 'Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components']
+country: ['China', 'United States', 'Missing']
+state: ['nan', 'WI', 'OH', 'Missing']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000024881668850>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Missing', 'Automobiles & Components']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 7
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 8
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 9
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 10
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 11
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 12
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 13
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 14
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 15
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 16
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2021
+num_traces: 17
+etf: True
+stock: True
+index: True
+sector: ['Consumer Discretionary', 'Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Automobiles & Components', 'Missing']
+industry: ['Textiles, Apparel & Luxury Goods', 'Electronic Equipment, Instruments & Components', 'Missing', 'Automobiles']
+country: ['United States', 'China', 'Missing']
+state: ['nan', 'WI', 'Missing', 'OH']
+market_cap: ['Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000027206469360>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 7
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 8
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 9
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 10
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 11
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 12
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 13
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 14
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 15
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 16
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 17
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 18
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001A741A49360>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 7
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 1
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000169079A93C0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000020F098C93C0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000023EE48393C0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000017F920913C0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000017F920913C0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000156C53B9480>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000156C53B9480>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000156C53B9480>
+
+start_date: 2023
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000156C53B9480>
+
+start_date: 2023
+num_traces: 6
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000156C53B9480>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001DFAFDC94E0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001DFAFDC94E0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002C9574B94E0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002C9574B94E0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002C9574B94E0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: False
+sector: ['Industrials', 'Missing', 'Energy', 'Information Technology']
+industry_group: ['Energy', 'Missing', 'Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing', 'Machinery', 'Energy Equipment & Services']
+country: ['Canada', 'Missing', 'United States']
+state: ['WI', 'Missing', 'BC', 'nan']
+market_cap: ['Nano Cap', 'Mid Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002C9574B94E0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001DE0C911510>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001DE0C911510>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001DE0C911510>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001DE0C911510>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001DE0C911510>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000028275EF9510>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000028275EF9510>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001772C231510>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001772C231510>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001772C231510>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001772C231510>
+
+start_date: 2023
+num_traces: 6
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001772C231510>
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001772C231510>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Missing', 'Consumer Discretionary', 'Health Care', 'nan', 'Information Technology', 'Financials', 'Industrials']
+industry_group: ['Missing', 'Technology Hardware & Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Diversified Financials', 'nan', 'Automobiles & Components']
+industry: ['Missing', 'Automobiles', 'Electronic Equipment, Instruments & Components', 'nan', 'Health Care Equipment & Supplies', 'Diversified Financial Services', 'Aerospace & Defense']
+country: ['Switzerland', 'Missing', 'United States']
+state: ['Missing', 'WI', 'CA', 'NY', 'nan']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Health Care', 'nan', 'Information Technology', 'Energy', 'Financials', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Energy', 'Health Care Equipment & Services', 'Capital Goods', 'Software & Services', 'nan', 'Diversified Financials', 'Automobiles & Components']
+industry: ['Diversified Financial Services', 'Automobiles', 'Capital Markets', 'Energy Equipment & Services', 'Electronic Equipment, Instruments & Components', 'nan', 'Software', 'Health Care Equipment & Supplies', 'Aerospace & Defense']
+country: ['Canada', 'Switzerland', 'United States']
+state: ['MA', 'WA', 'WI', 'CA', 'NY', 'nan']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Health Care', 'nan', 'Information Technology', 'Energy', 'Financials', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Energy', 'Health Care Equipment & Services', 'Capital Goods', 'nan', 'Diversified Financials', 'Automobiles & Components']
+industry: ['Diversified Financial Services', 'Automobiles', 'Energy Equipment & Services', 'Electronic Equipment, Instruments & Components', 'nan', 'Health Care Equipment & Supplies', 'Aerospace & Defense']
+country: ['Canada', 'Switzerland', 'United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'nan', 'Information Technology', 'Energy', 'Financials', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Energy', 'Capital Goods', 'Diversified Financials', 'nan', 'Automobiles & Components']
+industry: ['Automobiles', 'Energy Equipment & Services', 'Electronic Equipment, Instruments & Components', 'nan', 'Diversified Financial Services', 'Aerospace & Defense']
+country: ['Switzerland', 'United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 7
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 8
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 7
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 1
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 7
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 8
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 9
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 10
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 10
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 10
+etf: False
+stock: True
+index: False
+sector: ['Missing', 'Consumer Discretionary', 'nan', 'Information Technology', 'Energy', 'Industrials']
+industry_group: ['Missing', 'Technology Hardware & Equipment', 'Capital Goods', 'Software & Services', 'Automobiles & Components', 'nan', 'Energy']
+industry: ['Electrical Equipment', 'Missing', 'Automobiles', 'Energy Equipment & Services', 'Electronic Equipment, Instruments & Components', 'nan', 'Software']
+country: ['Canada', 'Missing', 'United States']
+state: ['WA', 'Missing', 'WI', 'CT', 'nan']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 9
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Health Care', 'nan', 'Utilities', 'Information Technology', 'Energy', 'Financials', 'Industrials']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Technology Hardware & Equipment', 'Energy', 'Retailing', 'Health Care Equipment & Services', 'Capital Goods', 'Software & Services', 'Insurance', 'nan', 'Diversified Financials', 'Automobiles & Components', 'Utilities']
+industry: ['Electrical Equipment', 'Diversified Financial Services', 'Pharmaceuticals', 'Automobiles', 'Electric Utilities', 'Capital Markets', 'Energy Equipment & Services', 'Insurance', 'Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'nan', 'Software', 'Internet & Direct Marketing Retail', 'Auto Components', 'Aerospace & Defense', 'Specialty Retail']
+country: ['Germany', 'France', 'Canada', 'Switzerland', 'United States', 'Bermuda', 'South Korea']
+state: ['MA', 'WA', 'TX', 'WI', 'CA', 'CT', 'nan', 'NY', 'IL']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 8
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Health Care', 'nan', 'Utilities', 'Information Technology', 'Energy', 'Financials', 'Industrials']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Technology Hardware & Equipment', 'Energy', 'Retailing', 'Health Care Equipment & Services', 'Capital Goods', 'Software & Services', 'Insurance', 'nan', 'Diversified Financials', 'Automobiles & Components', 'Utilities']
+industry: ['Electrical Equipment', 'Diversified Financial Services', 'Pharmaceuticals', 'Automobiles', 'Electric Utilities', 'Capital Markets', 'Energy Equipment & Services', 'Insurance', 'Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'nan', 'Software', 'Auto Components', 'Aerospace & Defense', 'Specialty Retail']
+country: ['France', 'Canada', 'Switzerland', 'Bermuda', 'United States', 'South Korea']
+state: ['MA', 'WA', 'TX', 'WI', 'CA', 'CT', 'nan', 'NY', 'IL']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 7
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Health Care', 'nan', 'Information Technology', 'Energy', 'Financials', 'Industrials']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Technology Hardware & Equipment', 'Energy', 'Health Care Equipment & Services', 'Capital Goods', 'Software & Services', 'Insurance', 'nan', 'Diversified Financials', 'Automobiles & Components']
+industry: ['Electrical Equipment', 'Diversified Financial Services', 'Pharmaceuticals', 'Automobiles', 'Capital Markets', 'Energy Equipment & Services', 'Insurance', 'Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'nan', 'Software', 'Auto Components', 'Aerospace & Defense']
+country: ['France', 'Canada', 'Switzerland', 'Bermuda', 'United States']
+state: ['MA', 'WA', 'TX', 'WI', 'CA', 'CT', 'nan', 'NY', 'IL']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Health Care', 'nan', 'Information Technology', 'Energy', 'Financials', 'Industrials']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Technology Hardware & Equipment', 'Energy', 'Health Care Equipment & Services', 'Capital Goods', 'Software & Services', 'Insurance', 'nan', 'Diversified Financials', 'Automobiles & Components']
+industry: ['Electrical Equipment', 'Diversified Financial Services', 'Pharmaceuticals', 'Automobiles', 'Capital Markets', 'Energy Equipment & Services', 'Insurance', 'Electronic Equipment, Instruments & Components', 'nan', 'Software', 'Health Care Equipment & Supplies', 'Aerospace & Defense']
+country: ['France', 'Canada', 'Switzerland', 'Bermuda', 'United States']
+state: ['MA', 'WA', 'WI', 'CA', 'CT', 'nan', 'NY']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Health Care', 'nan', 'Information Technology', 'Energy', 'Financials', 'Industrials']
+industry_group: ['Pharmaceuticals, Biotechnology & Life Sciences', 'Technology Hardware & Equipment', 'Energy', 'Health Care Equipment & Services', 'Capital Goods', 'Software & Services', 'nan', 'Diversified Financials', 'Automobiles & Components']
+industry: ['Electrical Equipment', 'Diversified Financial Services', 'Pharmaceuticals', 'Automobiles', 'Capital Markets', 'Energy Equipment & Services', 'Electronic Equipment, Instruments & Components', 'nan', 'Software', 'Health Care Equipment & Supplies', 'Aerospace & Defense']
+country: ['Canada', 'Switzerland', 'United States', 'France']
+state: ['MA', 'WA', 'WI', 'CA', 'CT', 'nan', 'NY']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Health Care', 'nan', 'Information Technology', 'Energy', 'Financials', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Energy', 'Health Care Equipment & Services', 'Capital Goods', 'Software & Services', 'nan', 'Diversified Financials', 'Automobiles & Components']
+industry: ['Diversified Financial Services', 'Automobiles', 'Capital Markets', 'Energy Equipment & Services', 'Electronic Equipment, Instruments & Components', 'nan', 'Software', 'Health Care Equipment & Supplies', 'Aerospace & Defense']
+country: ['Canada', 'Switzerland', 'United States']
+state: ['MA', 'WA', 'WI', 'CA', 'NY', 'nan']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Health Care', 'nan', 'Information Technology', 'Energy', 'Financials', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Energy', 'Health Care Equipment & Services', 'Capital Goods', 'nan', 'Diversified Financials', 'Automobiles & Components']
+industry: ['Diversified Financial Services', 'Automobiles', 'Energy Equipment & Services', 'Electronic Equipment, Instruments & Components', 'nan', 'Health Care Equipment & Supplies', 'Aerospace & Defense']
+country: ['Canada', 'Switzerland', 'United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'nan', 'Information Technology', 'Energy', 'Financials', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Energy', 'Capital Goods', 'Diversified Financials', 'nan', 'Automobiles & Components']
+industry: ['Automobiles', 'Energy Equipment & Services', 'Electronic Equipment, Instruments & Components', 'nan', 'Diversified Financial Services', 'Aerospace & Defense']
+country: ['Switzerland', 'United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Large Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 1
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Financials', 'Industrials', 'Consumer Discretionary']
+industry_group: ['Technology Hardware & Equipment', 'Automobiles & Components', 'Diversified Financials', 'Capital Goods']
+industry: ['Diversified Financial Services', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Automobiles']
+country: ['United States']
+state: ['NY', 'WI', 'nan', 'CA']
+market_cap: ['Small Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 0
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 1
+etf: False
+stock: True
+index: False
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: []
+industry_group: []
+industry: []
+country: []
+state: []
+market_cap: []
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001E11ABBD6C0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: True
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials', 'Missing']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Aerospace & Defense', 'Missing']
+country: ['United States', 'Missing']
+state: ['WI', 'CA', 'Missing']
+market_cap: ['Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials', 'Consumer Discretionary', 'Financials']
+industry_group: ['Diversified Financials', 'Automobiles & Components', 'Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Electronic Equipment, Instruments & Components', 'Aerospace & Defense', 'Diversified Financial Services', 'Automobiles']
+country: ['United States']
+state: ['WI', 'CA', 'nan', 'NY']
+market_cap: ['Large Cap', 'Small Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Diversified Financials', 'nan', 'Automobiles & Components', 'Energy']
+industry: ['Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Automobiles']
+country: ['Switzerland', 'United States']
+state: ['WI', 'CA', 'nan', 'NY']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Diversified Financials', 'nan', 'Health Care Equipment & Services', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Automobiles']
+country: ['Canada', 'Switzerland', 'United States']
+state: ['WI', 'CA', 'nan', 'NY']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Software', 'Capital Markets', 'Automobiles']
+country: ['Canada', 'Switzerland', 'United States']
+state: ['MA', 'CA', 'nan', 'NY', 'WI', 'WA']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 7
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment']
+country: ['Canada', 'Switzerland', 'United States', 'France']
+state: ['MA', 'CA', 'nan', 'NY', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 8
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Insurance', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment', 'Insurance']
+country: ['Bermuda', 'Switzerland', 'France', 'Canada', 'United States']
+state: ['MA', 'CA', 'nan', 'NY', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 9
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Insurance', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Auto Components', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment', 'Insurance']
+country: ['Bermuda', 'Switzerland', 'France', 'Canada', 'United States']
+state: ['MA', 'CA', 'nan', 'NY', 'TX', 'IL', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 10
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Utilities', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Utilities', 'Insurance', 'Retailing', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Specialty Retail', 'Auto Components', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Electric Utilities', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment', 'Insurance']
+country: ['Bermuda', 'Switzerland', 'France', 'Canada', 'South Korea', 'United States']
+state: ['MA', 'CA', 'nan', 'NY', 'TX', 'IL', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 11
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Utilities', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Utilities', 'Insurance', 'Retailing', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Specialty Retail', 'Auto Components', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Internet & Direct Marketing Retail', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Electric Utilities', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment', 'Insurance']
+country: ['Bermuda', 'Germany', 'France', 'Switzerland', 'Canada', 'South Korea', 'United States']
+state: ['MA', 'CA', 'nan', 'NY', 'TX', 'IL', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 12
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Utilities', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Banks', 'Health Care Equipment & Services', 'Utilities', 'Insurance', 'Retailing', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Specialty Retail', 'Auto Components', 'Thrifts & Mortgage Finance', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Internet & Direct Marketing Retail', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Electric Utilities', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment', 'Insurance']
+country: ['Bermuda', 'Germany', 'France', 'Switzerland', 'Canada', 'South Korea', 'United States']
+state: ['MA', 'CA', 'VA', 'nan', 'NY', 'TX', 'IL', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 11
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'Missing', 'nan', 'Industrials', 'Utilities', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'Missing', 'nan', 'Software & Services', 'Banks', 'Health Care Equipment & Services', 'Utilities', 'Insurance', 'Retailing', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Specialty Retail', 'Auto Components', 'Missing', 'Thrifts & Mortgage Finance', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Internet & Direct Marketing Retail', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Electric Utilities', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment', 'Insurance']
+country: ['Bermuda', 'Germany', 'Missing', 'France', 'Switzerland', 'Canada', 'South Korea', 'United States']
+state: ['MA', 'Missing', 'CA', 'VA', 'nan', 'NY', 'TX', 'IL', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 10
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Utilities', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Banks', 'Health Care Equipment & Services', 'Utilities', 'Insurance', 'Retailing', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Specialty Retail', 'Auto Components', 'Thrifts & Mortgage Finance', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Internet & Direct Marketing Retail', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Electric Utilities', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment', 'Insurance']
+country: ['Bermuda', 'Germany', 'France', 'Switzerland', 'Canada', 'South Korea', 'United States']
+state: ['MA', 'CA', 'VA', 'nan', 'NY', 'TX', 'IL', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 9
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Utilities', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Utilities', 'Insurance', 'Retailing', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Specialty Retail', 'Auto Components', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Internet & Direct Marketing Retail', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Electric Utilities', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment', 'Insurance']
+country: ['Bermuda', 'Germany', 'France', 'Switzerland', 'Canada', 'South Korea', 'United States']
+state: ['MA', 'CA', 'nan', 'NY', 'TX', 'IL', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 8
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Utilities', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Utilities', 'Insurance', 'Retailing', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Specialty Retail', 'Auto Components', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Electric Utilities', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment', 'Insurance']
+country: ['Bermuda', 'Switzerland', 'France', 'Canada', 'South Korea', 'United States']
+state: ['MA', 'CA', 'nan', 'NY', 'TX', 'IL', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 7
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Insurance', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Auto Components', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment', 'Insurance']
+country: ['Bermuda', 'Switzerland', 'France', 'Canada', 'United States']
+state: ['MA', 'CA', 'nan', 'NY', 'TX', 'IL', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Insurance', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment', 'Insurance']
+country: ['Bermuda', 'Switzerland', 'France', 'Canada', 'United States']
+state: ['MA', 'CA', 'nan', 'NY', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Pharmaceuticals', 'Software', 'Capital Markets', 'Automobiles', 'Electrical Equipment']
+country: ['Canada', 'Switzerland', 'United States', 'France']
+state: ['MA', 'CA', 'nan', 'NY', 'WI', 'WA', 'CT']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Diversified Financials', 'nan', 'Software & Services', 'Health Care Equipment & Services', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Software', 'Capital Markets', 'Automobiles']
+country: ['Canada', 'Switzerland', 'United States']
+state: ['MA', 'CA', 'nan', 'NY', 'WI', 'WA']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Health Care', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Diversified Financials', 'nan', 'Health Care Equipment & Services', 'Automobiles & Components', 'Energy']
+industry: ['Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Automobiles']
+country: ['Canada', 'Switzerland', 'United States']
+state: ['WI', 'CA', 'nan', 'NY']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Consumer Discretionary', 'nan', 'Industrials', 'Financials', 'Energy']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Diversified Financials', 'nan', 'Automobiles & Components', 'Energy']
+industry: ['Electronic Equipment, Instruments & Components', 'nan', 'Energy Equipment & Services', 'Aerospace & Defense', 'Diversified Financial Services', 'Automobiles']
+country: ['Switzerland', 'United States']
+state: ['WI', 'CA', 'nan', 'NY']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 1
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials', 'Consumer Discretionary', 'Financials']
+industry_group: ['Diversified Financials', 'Automobiles & Components', 'Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Electronic Equipment, Instruments & Components', 'Aerospace & Defense', 'Diversified Financial Services', 'Automobiles']
+country: ['United States']
+state: ['WI', 'CA', 'nan', 'NY']
+market_cap: ['Large Cap', 'Small Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials']
+industry_group: ['Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Electronic Equipment, Instruments & Components', 'Aerospace & Defense']
+country: ['United States']
+state: ['WI', 'CA']
+market_cap: ['Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Industrials', 'Consumer Discretionary', 'Financials']
+industry_group: ['Diversified Financials', 'Automobiles & Components', 'Technology Hardware & Equipment', 'Capital Goods']
+industry: ['Electronic Equipment, Instruments & Components', 'Aerospace & Defense', 'Diversified Financial Services', 'Automobiles']
+country: ['United States']
+state: ['WI', 'CA', 'nan', 'NY']
+market_cap: ['Large Cap', 'Small Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C25A0CD6F0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: True
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000011004395F30>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Missing', 'Information Technology']
+industry_group: ['Missing', 'Technology Hardware & Equipment']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000011004395F30>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Financials', 'Information Technology']
+industry_group: ['Automobiles & Components', 'Technology Hardware & Equipment', 'Capital Goods', 'Diversified Financials']
+industry: ['Electronic Equipment, Instruments & Components', 'Diversified Financial Services', 'Automobiles', 'Aerospace & Defense']
+country: ['United States']
+state: ['nan', 'NY', 'WI', 'CA']
+market_cap: ['Large Cap', 'Mid Cap', 'Small Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000011004395F30>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000298DB3D9570>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Electronic Equipment, Instruments & Components', 'Missing']
+country: ['Missing', 'United States']
+state: ['Missing', 'WI']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000298DB3D9570>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Financials', 'Industrials']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Diversified Financials', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Diversified Financial Services', 'Automobiles', 'Aerospace & Defense']
+country: ['United States']
+state: ['nan', 'NY', 'CA', 'WI']
+market_cap: ['Small Cap', 'Nano Cap', 'Mid Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000298DB3D9570>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Financials', 'Industrials']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Diversified Financials', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Diversified Financial Services', 'Automobiles', 'Aerospace & Defense']
+country: ['United States']
+state: ['nan', 'NY', 'CA', 'WI']
+market_cap: ['Small Cap', 'Nano Cap', 'Mid Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000298DB3D9570>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Financials', 'Industrials']
+industry_group: ['Capital Goods', 'Technology Hardware & Equipment', 'Diversified Financials', 'Automobiles & Components']
+industry: ['Electronic Equipment, Instruments & Components', 'Diversified Financial Services', 'Automobiles', 'Aerospace & Defense']
+country: ['United States']
+state: ['nan', 'NY', 'CA', 'WI']
+market_cap: ['Small Cap', 'Nano Cap', 'Mid Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000298DB3D9570>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Financials', 'Industrials', 'Information Technology', 'nan', 'Energy']
+industry_group: ['Diversified Financials', 'Capital Goods', 'nan', 'Energy', 'Automobiles & Components', 'Technology Hardware & Equipment']
+industry: ['Energy Equipment & Services', 'nan', 'Automobiles', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Diversified Financial Services']
+country: ['Switzerland', 'United States']
+state: ['nan', 'NY', 'CA', 'WI']
+market_cap: ['Small Cap', 'Micro Cap', 'Nano Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000298DB3D9570>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Financials', 'Industrials', 'nan', 'Energy']
+industry_group: ['Diversified Financials', 'Capital Goods', 'nan', 'Energy', 'Automobiles & Components', 'Technology Hardware & Equipment']
+industry: ['Energy Equipment & Services', 'nan', 'Automobiles', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components', 'Diversified Financial Services']
+country: ['Switzerland', 'United States']
+state: ['nan', 'NY', 'CA', 'WI']
+market_cap: ['Small Cap', 'Micro Cap', 'Nano Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000298DB3D9570>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001D64C8F61A0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Missing']
+industry: ['Missing', 'Electronic Equipment, Instruments & Components']
+country: ['United States', 'Missing']
+state: ['WI', 'Missing']
+market_cap: ['Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001D64C8F61A0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Financials']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'Capital Goods', 'Automobiles & Components']
+industry: ['Diversified Financial Services', 'Automobiles', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['NY', 'WI', 'CA', 'nan']
+market_cap: ['Nano Cap', 'Mid Cap', 'Small Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001D64C8F61A0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Industrials', 'Financials']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'Capital Goods', 'Automobiles & Components']
+industry: ['Diversified Financial Services', 'Automobiles', 'Aerospace & Defense', 'Electronic Equipment, Instruments & Components']
+country: ['United States']
+state: ['NY', 'WI', 'CA', 'nan']
+market_cap: ['Nano Cap', 'Mid Cap', 'Small Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001D64C8F61A0>
