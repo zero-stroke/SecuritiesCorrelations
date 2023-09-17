@@ -2,7 +2,9 @@ data/*
 !data/*/
 
 data/Stock_data/debug/
-data/Stock_data/yahoo_daily/
+data/Stock_data/yahoo_daily/*
+data/Stock_data/yahoo_daily/parquets/*
+
 !data/Stock_data/yahoo_daily/parquets/AAPL.parquet
 !data/Stock_data/yahoo_daily/parquets/MSFT.parquet
 !data/Stock_data/yahoo_daily/parquets/GOOG.parquet
@@ -27,11 +29,11 @@ data/Stock_data/yahoo_daily/
 !data/Stock_data/yahoo_daily/parquets/COIN.parquet
 !data/Stock_data/yahoo_daily/parquets/CLX.parquet
 
-data/Graphs/html_plots/
-data/Graphs/json_plots/
+data/Graphs/html_plots/*
+data/Graphs/json_plots/*
 data/Stock_data/example_data/
 
-data/Stock_data/FinDB/
+data/Stock_data/FinDB/*
 
 !data/Stock_data/FinDB/updated_fin_db_etf_data.csv
 !data/Stock_data/FinDB/updated_fin_db_indices_data.csv
