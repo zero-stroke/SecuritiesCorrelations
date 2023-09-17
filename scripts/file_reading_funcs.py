@@ -84,7 +84,7 @@ def original_get_validated_security_data(symbol: str, start_date: str, end_date:
 
     if not is_series_within_date_range(security_data, start_date, end_date):
         # logger.warning(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
-        return None
+        raise AttributeError("None")
 
     # Detrend
     security_data = security_data.diff().dropna()
