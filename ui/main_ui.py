@@ -1,6 +1,10 @@
 import os
+import sys
+
+sys.path.append('./')
+
 from random import choice
-from typing import List, Optional, Set
+from typing import List, Optional
 
 import dash
 import dash_bootstrap_components as dbc
