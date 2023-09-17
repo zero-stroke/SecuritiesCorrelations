@@ -3,6 +3,8 @@ data/*
 
 data/Stock_data/debug/
 data/Stock_data/yahoo_daily/*
+
+!data/Stock_data/yahoo_daily/parquets
 data/Stock_data/yahoo_daily/parquets/*
 
 !data/Stock_data/yahoo_daily/parquets/AAPL.parquet
@@ -28,6 +30,39 @@ data/Stock_data/yahoo_daily/parquets/*
 !data/Stock_data/yahoo_daily/parquets/F.parquet
 !data/Stock_data/yahoo_daily/parquets/COIN.parquet
 !data/Stock_data/yahoo_daily/parquets/CLX.parquet
+!data/Stock_data/yahoo_daily/parquets/PLTR.parquet
+!data/Stock_data/yahoo_daily/parquets/U.parquet
+!data/Stock_data/yahoo_daily/parquets/PATH.parquet
+!data/Stock_data/yahoo_daily/parquets/TGT.parquet
+!data/Stock_data/yahoo_daily/parquets/WMT.parquet
+!data/Stock_data/yahoo_daily/parquets/COST.parquet
+!data/Stock_data/yahoo_daily/parquets/TSLA.parquet
+!data/Stock_data/yahoo_daily/parquets/LMT.parquet
+!data/Stock_data/yahoo_daily/parquets/CCL.parquet
+!data/Stock_data/yahoo_daily/parquets/CALM.parquet
+!data/Stock_data/yahoo_daily/parquets/TSN.parquet
+!data/Stock_data/yahoo_daily/parquets/SNOW.parquet
+!data/Stock_data/yahoo_daily/parquets/DASH.parquet
+!data/Stock_data/yahoo_daily/parquets/BABA.parquet
+!data/Stock_data/yahoo_daily/parquets/QQQ.parquet
+!data/Stock_data/yahoo_daily/parquets/ARKQ.parquet
+!data/Stock_data/yahoo_daily/parquets/ARKK.parquet
+!data/Stock_data/yahoo_daily/parquets/ARKW.parquet
+!data/Stock_data/yahoo_daily/parquets/DDGO.parquet
+!data/Stock_data/yahoo_daily/parquets/PINS.parquet
+!data/Stock_data/yahoo_daily/parquets/MELI.parquet
+!data/Stock_data/yahoo_daily/parquets/SE.parquet
+!data/Stock_data/yahoo_daily/parquets/SONY.parquet
+!data/Stock_data/yahoo_daily/parquets/SOLO.parquet
+!data/Stock_data/yahoo_daily/parquets/MARA.parquet
+!data/Stock_data/yahoo_daily/parquets/GERN.parquet
+!data/Stock_data/yahoo_daily/parquets/PFE.parquet
+!data/Stock_data/yahoo_daily/parquets/MCD.parquet
+!data/Stock_data/yahoo_daily/parquets/KO.parquet
+!data/Stock_data/yahoo_daily/parquets/COP.parquet
+!data/Stock_data/yahoo_daily/parquets/XOM.parquet
+!data/Stock_data/yahoo_daily/parquets/BP.parquet
+!data/Stock_data/yahoo_daily/parquets/BEP.parquet
 
 data/Graphs/html_plots/*
 data/Graphs/json_plots/*
@@ -39,11 +74,7 @@ data/Stock_data/FinDB/*
 !data/Stock_data/FinDB/updated_fin_db_indices_data.csv
 !data/Stock_data/FinDB/updated_fin_db_stock_data.csv
 
-#data/Graphs/pickled_securities_objects/
-#
-#!data/Graphs/pickled_securities_objects/AAPL.pkl
-#!data/Graphs/pickled_securities_objects/MSFT.pkl
-#!data/Graphs/pickled_securities_objects/GOOG.pkl
+data/Stock_data/combined_data.parquet
 
 SecuritiesCorrelations.iml
 Procfile
@@ -61,8 +92,11 @@ ui/debug_file.txt2
 
 .idea/
 
-data/Stock_data/combined_data.parquet
 tests/cache_info.log
 cache_info.log
 
-
+#data/Graphs/pickled_securities_objects/
+#
+#!data/Graphs/pickled_securities_objects/AAPL.pkl
+#!data/Graphs/pickled_securities_objects/MSFT.pkl
+#!data/Graphs/pickled_securities_objects/GOOG.pkl
