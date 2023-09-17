@@ -27,11 +27,11 @@ data/Stock_data/yahoo_daily/
 !data/Stock_data/yahoo_daily/parquets/COIN.parquet
 !data/Stock_data/yahoo_daily/parquets/CLX.parquet
 
-data/Graphs/html_plots
-data/Graphs/json_plots
-data/Stock_data/example_data
+data/Graphs/html_plots/
+data/Graphs/json_plots/
+data/Stock_data/example_data/
 
-data/Stock_data/FinDB
+data/Stock_data/FinDB/
 
 !data/Stock_data/FinDB/updated_fin_db_etf_data.csv
 !data/Stock_data/FinDB/updated_fin_db_indices_data.csv
