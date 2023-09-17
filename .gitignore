@@ -29,6 +29,13 @@ data/Stock_data/yahoo_daily/
 
 data/Graphs/html_plots
 data/Graphs/json_plots
+data/Stock_data/example_data
+
+data/Stock_data/FinDB
+
+!data/Stock_data/FinDB/updated_fin_db_etf_data.csv
+!data/Stock_data/FinDB/updated_fin_db_indices_data.csv
+!data/Stock_data/FinDB/updated_fin_db_stock_data.csv
 
 #data/Graphs/pickled_securities_objects/
 #
@@ -45,6 +52,8 @@ __pycache__/
 scripts/__pycache__/
 ui/__pycache__/
 ui/__pycache__/security_correlations_ui.cpython-310.pyc
+ui/debug_file.txt
+ui/debug_file.txt2
 
 *.pyc
 
