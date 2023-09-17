@@ -6,8 +6,24 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 from config import DATA_DIR
-from scripts.correlation_constants import Security, EnhancedEncoder, SecurityMetadata
+from scripts.correlation_constants import Security, EnhancedEncoder, SecurityMetadata, FredSeries
 from scripts.file_reading_funcs import read_series_data, fit_data_to_time_range
+
+
+def set_comment_text(main_security):
+    if isinstance(main_security, FredSeries):
+        comment_text = f'{main_security.source_title}, {main_security.source_link}, {main_security.release_title}, ' \
+                       f'{main_security.release_link}'
+    elif isinstance(main_security, Security):
+        if main_security.source == 'stock':
+            comment_text = f"Sector: {main_security.sector},    Industry Group: {main_security.industry_group},    " \
+                           f"Industry: {main_security.industry},     Market: {main_security.market}"
+        else:
+            return ''
+    else:
+        return "Unknown type"
+
+    return comment_text
 
 
 class CorrelationPlotter:
@@ -116,7 +132,9 @@ class CorrelationPlotter:
                 fig.add_trace(go.Scatter(x=main_security_data.index, y=main_security_data, mode='lines',
                                          name=main_security.symbol, line=dict(color=self.MAIN_SERIES_COLOR)), row=i, col=1)
                 self.add_traces_to_plot(fig, correlations, start_date, i, num_traces, show_detrended, monthly)
-
+                
+        comment_text = set_comment_text(main_security)
+        
         # Aesthetic configurations
         fig.update_layout(
             title_text=main_security.name,
@@ -125,6 +143,22 @@ class CorrelationPlotter:
             font=dict(color='#e0e0e0'),  # Light font color for contrast
             xaxis=dict(gridcolor='#4a4a5a'),  # Grid color
             yaxis=dict(gridcolor='#4a4a5a'),  # Grid color
+        )
+
+        fig.add_annotation (
+            text='Inverse Correlations',
+            showarrow=False,
+            xref="paper", yref="paper",
+            x=0, y=0.47,
+            font=dict(size=16),
+        )
+
+        fig.add_annotation (
+            text=comment_text,
+            showarrow=False,
+            xref="paper", yref="paper",
+            x=0, y=-0.1,
+            font=dict(size=14),
         )
 
         # Set x-axis range for all subplots

@@ -4571,3 +4571,1179 @@ state: ['NY', 'WI', 'CA', 'nan']
 market_cap: ['Nano Cap', 'Mid Cap', 'Small Cap', 'Large Cap']
 otc_filter: []
 ctx: <dash._callback_context.CallbackContext object at 0x000001D64C8F61A0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 7
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 8
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 8
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 8
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 8
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services', 'Missing']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 8
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care', 'Information Technology']
+industry_group: ['Utilities', 'Banks', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services', 'Missing']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 7
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care', 'Information Technology']
+industry_group: ['Utilities', 'Banks', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services', 'Missing']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 6
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 5
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 4
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 3
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 1
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Consumer Durables & Apparel', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Capital Goods', 'Technology Hardware & Equipment', 'Food & Staples Retailing', 'Energy', 'Automobiles & Components', 'Media & Entertainment', 'Software & Services']
+industry: ['Aerospace & Defense', 'IT Services', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Machinery', 'Household Durables', 'Hotels, Restaurants & Leisure', 'Media', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Consumer Finance', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Interactive Media & Services', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Energy Equipment & Services', 'Electric Utilities', 'Entertainment', 'Household Products', 'Biotechnology', 'Insurance', 'Diversified Financial Services', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Textiles, Apparel & Luxury Goods', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Health Care Providers & Services', 'Health Care Equipment & Supplies']
+country: ['United Kingdom', 'South Africa', 'Canada', 'Peru', 'nan', 'Bermuda', 'Netherlands', 'Switzerland', 'Germany', 'Norway', 'France', 'Australia', 'Missing', 'China', 'South Korea', 'United States']
+state: ['MI', 'MA', 'CA', 'CT', 'Missing', 'AZ', 'UT', 'DC', 'BC', 'CO', 'WA', 'MD', 'NY', 'VIC', 'nan', 'ON', 'WI', 'PA', 'GA', 'TX', 'KS', 'IL', 'IN', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Food, Beverage & Tobacco', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Commercial & Professional Services', 'Capital Goods', 'Food & Staples Retailing', 'Technology Hardware & Equipment', 'Energy', 'Automobiles & Components', 'Software & Services']
+industry: ['Aerospace & Defense', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Hotels, Restaurants & Leisure', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Oil, Gas & Consumable Fuels', 'Health Care Technology', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Professional Services', 'Thrifts & Mortgage Finance', 'Energy Equipment & Services', 'Electric Utilities', 'Household Products', 'Biotechnology', 'Insurance', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Beverages', 'Health Care Providers & Services', 'Health Care Equipment & Supplies', 'Industrial Conglomerates']
+country: ['Singapore', 'South Africa', 'United Kingdom', 'Canada', 'Sweden', 'nan', 'Israel', 'Bermuda', 'Netherlands', 'Bahamas', 'Luxembourg', 'Germany', 'Australia', 'Missing', 'China', 'Cayman Islands', 'United States']
+state: ['MI', 'MA', 'CA', 'AB', 'MO', 'Missing', 'DC', 'BC', 'WA', 'MD', 'NY', 'VIC', 'MN', 'nan', 'ON', 'WI', 'DE', 'GA', 'TX', 'IL', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Mega Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Consumer Discretionary', 'Industrials', 'Real Estate', 'Utilities', 'nan', 'Information Technology', 'Consumer Staples', 'Energy', 'Missing', 'Financials', 'Materials', 'Communication Services', 'Health Care']
+industry_group: ['Utilities', 'Banks', 'Missing', 'Materials', 'Food, Beverage & Tobacco', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Consumer Services', 'Household & Personal Products', 'Retailing', 'Insurance', 'Diversified Financials', 'nan', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Commercial & Professional Services', 'Capital Goods', 'Food & Staples Retailing', 'Technology Hardware & Equipment', 'Energy', 'Automobiles & Components', 'Software & Services']
+industry: ['Aerospace & Defense', 'Automobiles', 'Capital Markets', 'Specialty Retail', 'Hotels, Restaurants & Leisure', 'Banks', 'Electronic Equipment, Instruments & Components', 'Electrical Equipment', 'Missing', 'Oil, Gas & Consumable Fuels', 'Health Care Technology', 'Metals & Mining', 'Internet & Direct Marketing Retail', 'Professional Services', 'Thrifts & Mortgage Finance', 'Energy Equipment & Services', 'Electric Utilities', 'Household Products', 'Biotechnology', 'Insurance', 'Technology Hardware, Storage & Peripherals', 'Software', 'nan', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Semiconductors & Semiconductor Equipment', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Auto Components', 'Beverages', 'Health Care Providers & Services', 'Health Care Equipment & Supplies', 'Industrial Conglomerates']
+country: ['Singapore', 'South Africa', 'United Kingdom', 'Canada', 'Sweden', 'nan', 'Israel', 'Bermuda', 'Netherlands', 'Bahamas', 'Luxembourg', 'Germany', 'Australia', 'Missing', 'China', 'Cayman Islands', 'United States']
+state: ['MI', 'MA', 'CA', 'AB', 'MO', 'Missing', 'DC', 'BC', 'WA', 'MD', 'NY', 'VIC', 'MN', 'nan', 'ON', 'WI', 'DE', 'GA', 'TX', 'IL', 'NV', 'VA', 'NC', 'OH', 'FL']
+market_cap: ['Large Cap', 'Nano Cap', 'Mid Cap', 'Mega Cap', 'Micro Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000157237593C0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'Communication Services', 'Missing', 'Materials', 'Consumer Staples', 'Consumer Discretionary', 'Energy', 'Industrials', 'Financials', 'Real Estate', 'Utilities', 'nan', 'Health Care']
+industry_group: ['Health Care Equipment & Services', 'Food & Staples Retailing', 'Retailing', 'Automobiles & Components', 'Household & Personal Products', 'Telecommunication Services', 'Insurance', 'Consumer Services', 'Media & Entertainment', 'Diversified Financials', 'Technology Hardware & Equipment', 'Missing', 'Capital Goods', 'Software & Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Materials', 'Energy', 'Consumer Durables & Apparel', 'Utilities', 'Real Estate', 'nan']
+industry: ['Food & Staples Retailing', 'Media', 'Machinery', 'Internet & Direct Marketing Retail', 'Health Care Providers & Services', 'Interactive Media & Services', 'Diversified Telecommunication Services', 'Insurance', 'Auto Components', 'Entertainment', 'Electronic Equipment, Instruments & Components', 'Metals & Mining', 'Technology Hardware, Storage & Peripherals', 'Textiles, Apparel & Luxury Goods', 'Communications Equipment', 'Energy Equipment & Services', 'Missing', 'Construction & Engineering', 'Hotels, Restaurants & Leisure', 'Specialty Retail', 'Consumer Finance', 'Software', 'Biotechnology', 'Aerospace & Defense', 'Health Care Equipment & Supplies', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Pharmaceuticals', 'Electrical Equipment', 'Capital Markets', 'Equity Real Estate Investment Trusts (REITs)', 'Household Durables', 'IT Services', 'Electric Utilities', 'Diversified Financial Services', 'Thrifts & Mortgage Finance', 'nan', 'Household Products', 'Automobiles']
+country: ['Missing', 'South Korea', 'Norway', 'United Kingdom', 'Netherlands', 'Australia', 'Peru', 'Bermuda', 'Germany', 'United States', 'China', 'Canada', 'South Africa', 'Switzerland', 'France', 'nan']
+state: ['VA', 'UT', 'ON', 'TX', 'VIC', 'MI', 'IN', 'OH', 'CT', 'NY', 'CO', 'PA', 'IL', 'NC', 'Missing', 'FL', 'AZ', 'NV', 'MA', 'DC', 'BC', 'MD', 'KS', 'WI', 'nan', 'GA', 'WA', 'CA']
+market_cap: ['Large Cap', 'Small Cap', 'Micro Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000189CE44D3C0>
+
+start_date: 2023
+num_traces: 2
+etf: False
+stock: True
+index: False
+sector: ['Information Technology', 'Communication Services', 'Missing', 'Materials', 'Consumer Staples', 'Consumer Discretionary', 'Energy', 'Industrials', 'Financials', 'Real Estate', 'Utilities', 'nan', 'Health Care']
+industry_group: ['Health Care Equipment & Services', 'Food & Staples Retailing', 'Retailing', 'Automobiles & Components', 'Household & Personal Products', 'Telecommunication Services', 'Insurance', 'Consumer Services', 'Media & Entertainment', 'Diversified Financials', 'Technology Hardware & Equipment', 'Missing', 'Capital Goods', 'Software & Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Materials', 'Energy', 'Consumer Durables & Apparel', 'Utilities', 'Real Estate', 'nan']
+industry: ['Food & Staples Retailing', 'Media', 'Machinery', 'Internet & Direct Marketing Retail', 'Health Care Providers & Services', 'Interactive Media & Services', 'Diversified Telecommunication Services', 'Insurance', 'Auto Components', 'Entertainment', 'Electronic Equipment, Instruments & Components', 'Metals & Mining', 'Technology Hardware, Storage & Peripherals', 'Textiles, Apparel & Luxury Goods', 'Communications Equipment', 'Energy Equipment & Services', 'Missing', 'Construction & Engineering', 'Hotels, Restaurants & Leisure', 'Specialty Retail', 'Consumer Finance', 'Software', 'Biotechnology', 'Aerospace & Defense', 'Health Care Equipment & Supplies', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Pharmaceuticals', 'Electrical Equipment', 'Capital Markets', 'Equity Real Estate Investment Trusts (REITs)', 'Household Durables', 'IT Services', 'Electric Utilities', 'Diversified Financial Services', 'Thrifts & Mortgage Finance', 'nan', 'Household Products', 'Automobiles']
+country: ['Missing', 'South Korea', 'Norway', 'United Kingdom', 'Netherlands', 'Australia', 'Peru', 'Bermuda', 'Germany', 'United States', 'China', 'Canada', 'South Africa', 'Switzerland', 'France', 'nan']
+state: ['VA', 'UT', 'ON', 'TX', 'VIC', 'MI', 'IN', 'OH', 'CT', 'NY', 'CO', 'PA', 'IL', 'NC', 'Missing', 'FL', 'AZ', 'NV', 'MA', 'DC', 'BC', 'MD', 'KS', 'WI', 'nan', 'GA', 'WA', 'CA']
+market_cap: ['Large Cap', 'Small Cap', 'Micro Cap', 'Nano Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000189CE44D3C0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Consumer Discretionary', 'Energy', 'Materials', 'nan', 'Health Care', 'Missing', 'Consumer Staples', 'Real Estate', 'Utilities', 'Financials', 'Communication Services', 'Industrials']
+industry_group: ['Banks', 'Commercial & Professional Services', 'nan', 'Energy', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Food & Staples Retailing', 'Health Care Equipment & Services', 'Consumer Services', 'Transportation', 'Household & Personal Products', 'Media & Entertainment', 'Insurance', 'Telecommunication Services', 'Software & Services', 'Capital Goods', 'Retailing', 'Diversified Financials', 'Materials', 'Missing', 'Automobiles & Components', 'Food, Beverage & Tobacco', 'Real Estate', 'Utilities']
+industry: ['Professional Services', 'Electric Utilities', 'Thrifts & Mortgage Finance', 'Diversified Telecommunication Services', 'Banks', 'Diversified Financial Services', 'Media', 'Specialty Retail', 'Airlines', 'Gas Utilities', 'Energy Equipment & Services', 'nan', 'Health Care Providers & Services', 'Consumer Finance', 'Automobiles', 'Food & Staples Retailing', 'Interactive Media & Services', 'Household Products', 'Beverages', 'Health Care Technology', 'Biotechnology', 'Internet & Direct Marketing Retail', 'Software', 'IT Services', 'Insurance', 'Aerospace & Defense', 'Capital Markets', 'Communications Equipment', 'Building Products', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Equipment & Supplies', 'Independent Power and Renewable Electricity Producers', 'Oil, Gas & Consumable Fuels', 'Chemicals', 'Construction & Engineering', 'Missing', 'Hotels, Restaurants & Leisure', 'Metals & Mining', 'Real Estate Management & Development']
+country: ['United Kingdom', 'Panama', 'Taiwan', 'New Zealand', 'Bermuda', 'United States', 'France', 'China', 'Missing', 'Italy', 'Israel', 'Netherlands', 'nan', 'Canada', 'Hong Kong']
+state: ['NE', 'ON', 'WA', 'HI', 'NJ', 'KY', 'nan', 'CO', 'TX', 'PA', 'NY', 'MA', 'CA', 'PR', 'SC', 'WV', 'CT', 'GA', 'LA', 'OH', 'NH', 'AZ', 'WI', 'ID', 'IL', 'UT', 'NV', 'DE', 'MD', 'VA', 'OK', 'MO', 'NM', 'TN', 'Missing', 'MN', 'FL', 'BC']
+market_cap: ['Large Cap', 'Mid Cap', 'Mega Cap', 'Micro Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000209080ADA50>
+
+start_date: 2010
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Information Technology', 'Utilities', 'nan', 'Industrials', 'Materials', 'Consumer Staples', 'Missing', 'Energy', 'Communication Services', 'Consumer Discretionary', 'Financials', 'Real Estate']
+industry_group: ['Telecommunication Services', 'Utilities', 'Capital Goods', 'Automobiles & Components', 'Missing', 'Household & Personal Products', 'Commercial & Professional Services', 'Retailing', 'Media & Entertainment', 'Software & Services', 'Diversified Financials', 'Semiconductors & Semiconductor Equipment', 'nan', 'Transportation', 'Health Care Equipment & Services', 'Consumer Durables & Apparel', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Materials', 'Insurance', 'Banks', 'Real Estate', 'Food & Staples Retailing', 'Energy', 'Consumer Services']
+industry: ['Pharmaceuticals', 'Professional Services', 'Hotels, Restaurants & Leisure', 'Transportation Infrastructure', 'Textiles, Apparel & Luxury Goods', 'Biotechnology', 'Metals & Mining', 'Energy Equipment & Services', 'Missing', 'Aerospace & Defense', 'Health Care Providers & Services', 'Entertainment', 'Diversified Financial Services', 'Electric Utilities', 'Diversified Telecommunication Services', 'Machinery', 'Thrifts & Mortgage Finance', 'Equity Real Estate Investment Trusts (REITs)', 'Internet & Direct Marketing Retail', 'Semiconductors & Semiconductor Equipment', 'nan', 'Electronic Equipment, Instruments & Components', 'Auto Components', 'Electrical Equipment', 'Automobiles', 'Household Durables', 'Real Estate Management & Development', 'Technology Hardware, Storage & Peripherals', 'Household Products', 'Construction & Engineering', 'Software', 'Capital Markets', 'Insurance', 'Banks', 'Health Care Equipment & Supplies', 'Chemicals', 'Food & Staples Retailing']
+country: ['Ireland', 'South Africa', 'Missing', 'Canada', 'Cayman Islands', 'China', 'Jersey', 'Singapore', 'Switzerland', 'nan', 'France', 'Germany', 'United Kingdom', 'Hong Kong', 'Brazil', 'United States', 'Bermuda', 'Netherlands']
+state: ['PA', 'CA', 'CO', 'OH', 'GA', 'MI', 'TX', 'PR', 'QC', 'Missing', 'NV', 'VA', 'LA', 'DE', 'nan', 'TN', 'IL', 'CT', 'MD', 'NY', 'MN', 'DC', 'UT', 'BC', 'FL', 'NJ', 'SC', 'WI', 'MA', 'KS']
+market_cap: ['Small Cap', 'Micro Cap', 'Large Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C769DDDA80>
+
+start_date: 2022
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Real Estate', 'Financials', 'Missing', 'Energy', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Technology Hardware & Equipment', 'nan', 'Media & Entertainment', 'Telecommunication Services', 'Diversified Financials', 'Insurance', 'Missing', 'Health Care Equipment & Services', 'Energy', 'Software & Services', 'Capital Goods', 'Transportation', 'Semiconductors & Semiconductor Equipment', 'Consumer Durables & Apparel', 'Food & Staples Retailing', 'Real Estate', 'Retailing', 'Consumer Services', 'Materials', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Household & Personal Products', 'Utilities', 'Banks', 'Automobiles & Components']
+industry: ['nan', 'Internet & Direct Marketing Retail', 'Chemicals', 'Entertainment', 'Insurance', 'Health Care Equipment & Supplies', 'Household Products', 'Metals & Mining', 'Textiles, Apparel & Luxury Goods', 'Electrical Equipment', 'Capital Markets', 'Household Durables', 'Missing', 'Health Care Providers & Services', 'Electronic Equipment, Instruments & Components', 'Diversified Telecommunication Services', 'Equity Real Estate Investment Trusts (REITs)', 'Transportation Infrastructure', 'Energy Equipment & Services', 'Machinery', 'Semiconductors & Semiconductor Equipment', 'Food & Staples Retailing', 'Biotechnology', 'Technology Hardware, Storage & Peripherals', 'Aerospace & Defense', 'Real Estate Management & Development', 'Automobiles', 'Electric Utilities', 'Diversified Financial Services', 'Pharmaceuticals', 'Hotels, Restaurants & Leisure', 'Auto Components', 'Professional Services', 'Thrifts & Mortgage Finance', 'Banks', 'Construction & Engineering', 'Software']
+country: ['Switzerland', 'Ireland', 'Canada', 'China', 'nan', 'United Kingdom', 'France', 'Cayman Islands', 'Hong Kong', 'Jersey', 'Singapore', 'Missing', 'South Africa', 'Netherlands', 'United States', 'Germany', 'Bermuda', 'Brazil']
+state: ['OH', 'QC', 'DC', 'nan', 'IL', 'VA', 'NY', 'MA', 'PR', 'Missing', 'TX', 'KS', 'SC', 'NV', 'TN', 'DE', 'CA', 'CT', 'BC', 'PA', 'CO', 'GA', 'MI', 'MN', 'UT', 'FL', 'NJ', 'MD', 'LA', 'WI']
+market_cap: ['Nano Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2022
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Real Estate', 'Financials', 'Missing', 'Energy', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Technology Hardware & Equipment', 'nan', 'Media & Entertainment', 'Telecommunication Services', 'Diversified Financials', 'Insurance', 'Missing', 'Health Care Equipment & Services', 'Energy', 'Software & Services', 'Transportation', 'Capital Goods', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Real Estate', 'Retailing', 'Materials', 'Consumer Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Household & Personal Products', 'Utilities', 'Banks', 'Automobiles & Components']
+industry: ['Consumer Finance', 'Gas Utilities', 'nan', 'Internet & Direct Marketing Retail', 'Chemicals', 'Insurance', 'Health Care Equipment & Supplies', 'Beverages', 'Independent Power and Renewable Electricity Producers', 'Household Products', 'IT Services', 'Metals & Mining', 'Capital Markets', 'Oil, Gas & Consumable Fuels', 'Missing', 'Health Care Providers & Services', 'Communications Equipment', 'Diversified Telecommunication Services', 'Banks', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Technology', 'Energy Equipment & Services', 'Food & Staples Retailing', 'Media', 'Biotechnology', 'Aerospace & Defense', 'Airlines', 'Real Estate Management & Development', 'Automobiles', 'Electric Utilities', 'Diversified Financial Services', 'Interactive Media & Services', 'Hotels, Restaurants & Leisure', 'Building Products', 'Professional Services', 'Thrifts & Mortgage Finance', 'Specialty Retail', 'Construction & Engineering', 'Software']
+country: ['Canada', 'Israel', 'Taiwan', 'China', 'nan', 'Hong Kong', 'France', 'United Kingdom', 'Missing', 'Italy', 'Netherlands', 'United States', 'New Zealand', 'Bermuda', 'Panama']
+state: ['NM', 'OH', 'AZ', 'nan', 'WV', 'MO', 'ON', 'IL', 'OK', 'NE', 'HI', 'VA', 'NY', 'MA', 'PR', 'Missing', 'TX', 'WA', 'ID', 'SC', 'NV', 'TN', 'DE', 'CA', 'CT', 'PA', 'BC', 'CO', 'GA', 'KY', 'MN', 'UT', 'NH', 'FL', 'NJ', 'MD', 'LA', 'WI']
+market_cap: ['Nano Cap', 'Mega Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2022
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Real Estate', 'Financials', 'Missing', 'Energy', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Technology Hardware & Equipment', 'nan', 'Media & Entertainment', 'Telecommunication Services', 'Diversified Financials', 'Insurance', 'Missing', 'Health Care Equipment & Services', 'Energy', 'Software & Services', 'Transportation', 'Capital Goods', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Real Estate', 'Retailing', 'Materials', 'Consumer Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Household & Personal Products', 'Utilities', 'Banks', 'Automobiles & Components']
+industry: ['Consumer Finance', 'Gas Utilities', 'nan', 'Internet & Direct Marketing Retail', 'Chemicals', 'Insurance', 'Health Care Equipment & Supplies', 'Beverages', 'Independent Power and Renewable Electricity Producers', 'Household Products', 'IT Services', 'Metals & Mining', 'Capital Markets', 'Oil, Gas & Consumable Fuels', 'Missing', 'Health Care Providers & Services', 'Communications Equipment', 'Diversified Telecommunication Services', 'Banks', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Technology', 'Energy Equipment & Services', 'Food & Staples Retailing', 'Media', 'Biotechnology', 'Aerospace & Defense', 'Airlines', 'Real Estate Management & Development', 'Automobiles', 'Electric Utilities', 'Diversified Financial Services', 'Interactive Media & Services', 'Hotels, Restaurants & Leisure', 'Building Products', 'Professional Services', 'Thrifts & Mortgage Finance', 'Specialty Retail', 'Construction & Engineering', 'Software']
+country: ['Canada', 'Israel', 'Taiwan', 'China', 'nan', 'Hong Kong', 'France', 'United Kingdom', 'Missing', 'Italy', 'Netherlands', 'United States', 'New Zealand', 'Bermuda', 'Panama']
+state: ['NM', 'OH', 'AZ', 'nan', 'WV', 'MO', 'ON', 'IL', 'OK', 'NE', 'HI', 'VA', 'NY', 'MA', 'PR', 'Missing', 'TX', 'WA', 'ID', 'SC', 'NV', 'TN', 'DE', 'CA', 'CT', 'PA', 'BC', 'CO', 'GA', 'KY', 'MN', 'UT', 'NH', 'FL', 'NJ', 'MD', 'LA', 'WI']
+market_cap: ['Nano Cap', 'Mega Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2022
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Real Estate', 'Financials', 'Missing', 'Energy', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Technology Hardware & Equipment', 'nan', 'Media & Entertainment', 'Telecommunication Services', 'Diversified Financials', 'Insurance', 'Missing', 'Health Care Equipment & Services', 'Energy', 'Software & Services', 'Transportation', 'Capital Goods', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Real Estate', 'Retailing', 'Materials', 'Consumer Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Household & Personal Products', 'Utilities', 'Banks', 'Automobiles & Components']
+industry: ['Consumer Finance', 'Gas Utilities', 'nan', 'Internet & Direct Marketing Retail', 'Chemicals', 'Insurance', 'Health Care Equipment & Supplies', 'Beverages', 'Independent Power and Renewable Electricity Producers', 'Household Products', 'IT Services', 'Metals & Mining', 'Capital Markets', 'Oil, Gas & Consumable Fuels', 'Missing', 'Health Care Providers & Services', 'Communications Equipment', 'Diversified Telecommunication Services', 'Banks', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Technology', 'Energy Equipment & Services', 'Food & Staples Retailing', 'Media', 'Biotechnology', 'Aerospace & Defense', 'Airlines', 'Real Estate Management & Development', 'Automobiles', 'Electric Utilities', 'Diversified Financial Services', 'Interactive Media & Services', 'Hotels, Restaurants & Leisure', 'Building Products', 'Professional Services', 'Thrifts & Mortgage Finance', 'Specialty Retail', 'Construction & Engineering', 'Software']
+country: ['Canada', 'Israel', 'Taiwan', 'China', 'nan', 'Hong Kong', 'France', 'United Kingdom', 'Missing', 'Italy', 'Netherlands', 'United States', 'New Zealand', 'Bermuda', 'Panama']
+state: ['NM', 'OH', 'AZ', 'nan', 'WV', 'MO', 'ON', 'IL', 'OK', 'NE', 'HI', 'VA', 'NY', 'MA', 'PR', 'Missing', 'TX', 'WA', 'ID', 'SC', 'NV', 'TN', 'DE', 'CA', 'CT', 'PA', 'BC', 'CO', 'GA', 'KY', 'MN', 'UT', 'NH', 'FL', 'NJ', 'MD', 'LA', 'WI']
+market_cap: ['Nano Cap', 'Mega Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2022
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Real Estate', 'Financials', 'Missing', 'Energy', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Technology Hardware & Equipment', 'nan', 'Media & Entertainment', 'Telecommunication Services', 'Diversified Financials', 'Insurance', 'Missing', 'Health Care Equipment & Services', 'Energy', 'Software & Services', 'Transportation', 'Capital Goods', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Real Estate', 'Retailing', 'Materials', 'Consumer Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Household & Personal Products', 'Utilities', 'Banks', 'Automobiles & Components']
+industry: ['Consumer Finance', 'Gas Utilities', 'nan', 'Internet & Direct Marketing Retail', 'Chemicals', 'Insurance', 'Health Care Equipment & Supplies', 'Beverages', 'Independent Power and Renewable Electricity Producers', 'Household Products', 'IT Services', 'Metals & Mining', 'Capital Markets', 'Oil, Gas & Consumable Fuels', 'Missing', 'Health Care Providers & Services', 'Communications Equipment', 'Diversified Telecommunication Services', 'Banks', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Technology', 'Energy Equipment & Services', 'Food & Staples Retailing', 'Media', 'Biotechnology', 'Aerospace & Defense', 'Airlines', 'Real Estate Management & Development', 'Automobiles', 'Electric Utilities', 'Diversified Financial Services', 'Interactive Media & Services', 'Hotels, Restaurants & Leisure', 'Building Products', 'Professional Services', 'Thrifts & Mortgage Finance', 'Specialty Retail', 'Construction & Engineering', 'Software']
+country: ['Canada', 'Israel', 'Taiwan', 'China', 'nan', 'Hong Kong', 'France', 'United Kingdom', 'Missing', 'Italy', 'Netherlands', 'United States', 'New Zealand', 'Bermuda', 'Panama']
+state: ['NM', 'OH', 'AZ', 'nan', 'WV', 'MO', 'ON', 'IL', 'OK', 'NE', 'HI', 'VA', 'NY', 'MA', 'PR', 'Missing', 'TX', 'WA', 'ID', 'SC', 'NV', 'TN', 'DE', 'CA', 'CT', 'PA', 'BC', 'CO', 'GA', 'KY', 'MN', 'UT', 'NH', 'FL', 'NJ', 'MD', 'LA', 'WI']
+market_cap: ['Nano Cap', 'Mega Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2022
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Real Estate', 'Financials', 'Missing', 'Energy', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Technology Hardware & Equipment', 'nan', 'Media & Entertainment', 'Telecommunication Services', 'Diversified Financials', 'Insurance', 'Missing', 'Health Care Equipment & Services', 'Energy', 'Software & Services', 'Transportation', 'Capital Goods', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Real Estate', 'Retailing', 'Materials', 'Consumer Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Household & Personal Products', 'Utilities', 'Banks', 'Automobiles & Components']
+industry: ['Consumer Finance', 'Gas Utilities', 'nan', 'Internet & Direct Marketing Retail', 'Chemicals', 'Insurance', 'Health Care Equipment & Supplies', 'Beverages', 'Independent Power and Renewable Electricity Producers', 'Household Products', 'IT Services', 'Metals & Mining', 'Capital Markets', 'Oil, Gas & Consumable Fuels', 'Missing', 'Health Care Providers & Services', 'Communications Equipment', 'Diversified Telecommunication Services', 'Banks', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Technology', 'Energy Equipment & Services', 'Food & Staples Retailing', 'Media', 'Biotechnology', 'Aerospace & Defense', 'Airlines', 'Real Estate Management & Development', 'Automobiles', 'Electric Utilities', 'Diversified Financial Services', 'Interactive Media & Services', 'Hotels, Restaurants & Leisure', 'Building Products', 'Professional Services', 'Thrifts & Mortgage Finance', 'Specialty Retail', 'Construction & Engineering', 'Software']
+country: ['Canada', 'Israel', 'Taiwan', 'China', 'nan', 'Hong Kong', 'France', 'United Kingdom', 'Missing', 'Italy', 'Netherlands', 'United States', 'New Zealand', 'Bermuda', 'Panama']
+state: ['NM', 'OH', 'AZ', 'nan', 'WV', 'MO', 'ON', 'IL', 'OK', 'NE', 'HI', 'VA', 'NY', 'MA', 'PR', 'Missing', 'TX', 'WA', 'ID', 'SC', 'NV', 'TN', 'DE', 'CA', 'CT', 'PA', 'BC', 'CO', 'GA', 'KY', 'MN', 'UT', 'NH', 'FL', 'NJ', 'MD', 'LA', 'WI']
+market_cap: ['Nano Cap', 'Mega Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2022
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Real Estate', 'Financials', 'Missing', 'Energy', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Technology Hardware & Equipment', 'nan', 'Media & Entertainment', 'Telecommunication Services', 'Diversified Financials', 'Insurance', 'Missing', 'Health Care Equipment & Services', 'Energy', 'Software & Services', 'Transportation', 'Capital Goods', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Real Estate', 'Retailing', 'Materials', 'Consumer Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Household & Personal Products', 'Utilities', 'Banks', 'Automobiles & Components']
+industry: ['Consumer Finance', 'Gas Utilities', 'nan', 'Internet & Direct Marketing Retail', 'Chemicals', 'Insurance', 'Health Care Equipment & Supplies', 'Beverages', 'Independent Power and Renewable Electricity Producers', 'Household Products', 'IT Services', 'Metals & Mining', 'Capital Markets', 'Oil, Gas & Consumable Fuels', 'Missing', 'Health Care Providers & Services', 'Communications Equipment', 'Diversified Telecommunication Services', 'Banks', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Technology', 'Energy Equipment & Services', 'Food & Staples Retailing', 'Media', 'Biotechnology', 'Aerospace & Defense', 'Airlines', 'Real Estate Management & Development', 'Automobiles', 'Electric Utilities', 'Diversified Financial Services', 'Interactive Media & Services', 'Hotels, Restaurants & Leisure', 'Building Products', 'Professional Services', 'Thrifts & Mortgage Finance', 'Specialty Retail', 'Construction & Engineering', 'Software']
+country: ['Canada', 'Israel', 'Taiwan', 'China', 'nan', 'Hong Kong', 'France', 'United Kingdom', 'Missing', 'Italy', 'Netherlands', 'United States', 'New Zealand', 'Bermuda', 'Panama']
+state: ['NM', 'OH', 'AZ', 'nan', 'WV', 'MO', 'ON', 'IL', 'OK', 'NE', 'HI', 'VA', 'NY', 'MA', 'PR', 'Missing', 'TX', 'WA', 'ID', 'SC', 'NV', 'TN', 'DE', 'CA', 'CT', 'PA', 'BC', 'CO', 'GA', 'KY', 'MN', 'UT', 'NH', 'FL', 'NJ', 'MD', 'LA', 'WI']
+market_cap: ['Nano Cap', 'Mega Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2022
+num_traces: 2
+etf: True
+stock: False
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Real Estate', 'Financials', 'Missing', 'Energy', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Technology Hardware & Equipment', 'nan', 'Media & Entertainment', 'Telecommunication Services', 'Diversified Financials', 'Insurance', 'Missing', 'Health Care Equipment & Services', 'Energy', 'Software & Services', 'Transportation', 'Capital Goods', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Real Estate', 'Retailing', 'Materials', 'Consumer Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Household & Personal Products', 'Utilities', 'Banks', 'Automobiles & Components']
+industry: ['Consumer Finance', 'Gas Utilities', 'nan', 'Internet & Direct Marketing Retail', 'Chemicals', 'Insurance', 'Health Care Equipment & Supplies', 'Beverages', 'Independent Power and Renewable Electricity Producers', 'Household Products', 'IT Services', 'Metals & Mining', 'Capital Markets', 'Oil, Gas & Consumable Fuels', 'Missing', 'Health Care Providers & Services', 'Communications Equipment', 'Diversified Telecommunication Services', 'Banks', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Technology', 'Energy Equipment & Services', 'Food & Staples Retailing', 'Media', 'Biotechnology', 'Aerospace & Defense', 'Airlines', 'Real Estate Management & Development', 'Automobiles', 'Electric Utilities', 'Diversified Financial Services', 'Interactive Media & Services', 'Hotels, Restaurants & Leisure', 'Building Products', 'Professional Services', 'Thrifts & Mortgage Finance', 'Specialty Retail', 'Construction & Engineering', 'Software']
+country: ['Canada', 'Israel', 'Taiwan', 'China', 'nan', 'Hong Kong', 'France', 'United Kingdom', 'Missing', 'Italy', 'Netherlands', 'United States', 'New Zealand', 'Bermuda', 'Panama']
+state: ['NM', 'OH', 'AZ', 'nan', 'WV', 'MO', 'ON', 'IL', 'OK', 'NE', 'HI', 'VA', 'NY', 'MA', 'PR', 'Missing', 'TX', 'WA', 'ID', 'SC', 'NV', 'TN', 'DE', 'CA', 'CT', 'PA', 'BC', 'CO', 'GA', 'KY', 'MN', 'UT', 'NH', 'FL', 'NJ', 'MD', 'LA', 'WI']
+market_cap: ['Nano Cap', 'Mega Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2022
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Real Estate', 'Financials', 'Missing', 'Energy', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Technology Hardware & Equipment', 'nan', 'Media & Entertainment', 'Telecommunication Services', 'Diversified Financials', 'Insurance', 'Missing', 'Health Care Equipment & Services', 'Energy', 'Software & Services', 'Transportation', 'Capital Goods', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Real Estate', 'Retailing', 'Materials', 'Consumer Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Household & Personal Products', 'Utilities', 'Banks', 'Automobiles & Components']
+industry: ['Consumer Finance', 'Gas Utilities', 'nan', 'Internet & Direct Marketing Retail', 'Chemicals', 'Insurance', 'Health Care Equipment & Supplies', 'Beverages', 'Independent Power and Renewable Electricity Producers', 'Household Products', 'IT Services', 'Metals & Mining', 'Capital Markets', 'Oil, Gas & Consumable Fuels', 'Missing', 'Health Care Providers & Services', 'Communications Equipment', 'Diversified Telecommunication Services', 'Banks', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Technology', 'Energy Equipment & Services', 'Food & Staples Retailing', 'Media', 'Biotechnology', 'Aerospace & Defense', 'Airlines', 'Real Estate Management & Development', 'Automobiles', 'Electric Utilities', 'Diversified Financial Services', 'Interactive Media & Services', 'Hotels, Restaurants & Leisure', 'Building Products', 'Professional Services', 'Thrifts & Mortgage Finance', 'Specialty Retail', 'Construction & Engineering', 'Software']
+country: ['Canada', 'Israel', 'Taiwan', 'China', 'nan', 'Hong Kong', 'France', 'United Kingdom', 'Missing', 'Italy', 'Netherlands', 'United States', 'New Zealand', 'Bermuda', 'Panama']
+state: ['NM', 'OH', 'AZ', 'nan', 'WV', 'MO', 'ON', 'IL', 'OK', 'NE', 'HI', 'VA', 'NY', 'MA', 'PR', 'Missing', 'TX', 'WA', 'ID', 'SC', 'NV', 'TN', 'DE', 'CA', 'CT', 'PA', 'BC', 'CO', 'GA', 'KY', 'MN', 'UT', 'NH', 'FL', 'NJ', 'MD', 'LA', 'WI']
+market_cap: ['Nano Cap', 'Mega Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2022
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Real Estate', 'Financials', 'Missing', 'Energy', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Technology Hardware & Equipment', 'nan', 'Media & Entertainment', 'Telecommunication Services', 'Diversified Financials', 'Insurance', 'Missing', 'Health Care Equipment & Services', 'Energy', 'Software & Services', 'Transportation', 'Capital Goods', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Real Estate', 'Retailing', 'Materials', 'Consumer Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Household & Personal Products', 'Utilities', 'Banks', 'Automobiles & Components']
+industry: ['Consumer Finance', 'Gas Utilities', 'nan', 'Internet & Direct Marketing Retail', 'Chemicals', 'Insurance', 'Health Care Equipment & Supplies', 'Beverages', 'Independent Power and Renewable Electricity Producers', 'Household Products', 'IT Services', 'Metals & Mining', 'Capital Markets', 'Oil, Gas & Consumable Fuels', 'Missing', 'Health Care Providers & Services', 'Communications Equipment', 'Diversified Telecommunication Services', 'Banks', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Technology', 'Energy Equipment & Services', 'Food & Staples Retailing', 'Media', 'Biotechnology', 'Aerospace & Defense', 'Airlines', 'Real Estate Management & Development', 'Automobiles', 'Electric Utilities', 'Diversified Financial Services', 'Interactive Media & Services', 'Hotels, Restaurants & Leisure', 'Building Products', 'Professional Services', 'Thrifts & Mortgage Finance', 'Specialty Retail', 'Construction & Engineering', 'Software']
+country: ['Canada', 'Israel', 'Taiwan', 'China', 'nan', 'Hong Kong', 'France', 'United Kingdom', 'Missing', 'Italy', 'Netherlands', 'United States', 'New Zealand', 'Bermuda', 'Panama']
+state: ['NM', 'OH', 'AZ', 'nan', 'WV', 'MO', 'ON', 'IL', 'OK', 'NE', 'HI', 'VA', 'NY', 'MA', 'PR', 'Missing', 'TX', 'WA', 'ID', 'SC', 'NV', 'TN', 'DE', 'CA', 'CT', 'PA', 'BC', 'CO', 'GA', 'KY', 'MN', 'UT', 'NH', 'FL', 'NJ', 'MD', 'LA', 'WI']
+market_cap: ['Nano Cap', 'Mega Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2022
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'nan', 'Real Estate', 'Financials', 'Missing', 'Energy', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Technology Hardware & Equipment', 'nan', 'Media & Entertainment', 'Telecommunication Services', 'Diversified Financials', 'Insurance', 'Missing', 'Health Care Equipment & Services', 'Energy', 'Software & Services', 'Transportation', 'Capital Goods', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Real Estate', 'Retailing', 'Materials', 'Consumer Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Household & Personal Products', 'Utilities', 'Banks', 'Automobiles & Components']
+industry: ['Consumer Finance', 'Gas Utilities', 'nan', 'Internet & Direct Marketing Retail', 'Chemicals', 'Insurance', 'Health Care Equipment & Supplies', 'Beverages', 'Independent Power and Renewable Electricity Producers', 'Household Products', 'IT Services', 'Metals & Mining', 'Capital Markets', 'Oil, Gas & Consumable Fuels', 'Missing', 'Health Care Providers & Services', 'Communications Equipment', 'Diversified Telecommunication Services', 'Banks', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Technology', 'Energy Equipment & Services', 'Food & Staples Retailing', 'Media', 'Biotechnology', 'Aerospace & Defense', 'Airlines', 'Real Estate Management & Development', 'Automobiles', 'Electric Utilities', 'Diversified Financial Services', 'Interactive Media & Services', 'Hotels, Restaurants & Leisure', 'Building Products', 'Professional Services', 'Thrifts & Mortgage Finance', 'Specialty Retail', 'Construction & Engineering', 'Software']
+country: ['Canada', 'Israel', 'Taiwan', 'China', 'nan', 'Hong Kong', 'France', 'United Kingdom', 'Missing', 'Italy', 'Netherlands', 'United States', 'New Zealand', 'Bermuda', 'Panama']
+state: ['NM', 'OH', 'AZ', 'nan', 'WV', 'MO', 'ON', 'IL', 'OK', 'NE', 'HI', 'VA', 'NY', 'MA', 'PR', 'Missing', 'TX', 'WA', 'ID', 'SC', 'NV', 'TN', 'DE', 'CA', 'CT', 'PA', 'BC', 'CO', 'GA', 'KY', 'MN', 'UT', 'NH', 'FL', 'NJ', 'MD', 'LA', 'WI']
+market_cap: ['Nano Cap', 'Mega Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2022
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'Financials', 'Missing', 'Materials', 'Utilities', 'Information Technology', 'Consumer Staples', 'Consumer Discretionary', 'Communication Services']
+industry_group: ['Software & Services', 'Capital Goods', 'Transportation', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Technology Hardware & Equipment', 'Consumer Durables & Apparel', 'Food & Staples Retailing', 'Media & Entertainment', 'Telecommunication Services', 'Retailing', 'Missing', 'Diversified Financials', 'Materials', 'Utilities', 'Automobiles & Components']
+industry: ['Internet & Direct Marketing Retail', 'Entertainment', 'Metals & Mining', 'Textiles, Apparel & Luxury Goods', 'Capital Markets', 'Missing', 'Electronic Equipment, Instruments & Components', 'Diversified Telecommunication Services', 'Construction Materials', 'Machinery', 'Food & Staples Retailing', 'Biotechnology', 'Marine', 'Electric Utilities', 'Diversified Financial Services', 'Pharmaceuticals', 'Auto Components', 'Professional Services', 'Specialty Retail', 'Construction & Engineering', 'Software']
+country: ['Canada', 'Israel', 'Taiwan', 'China', 'Greece', 'Singapore', 'Missing', 'United States', 'Germany']
+state: ['MI', 'QC', 'OH', 'nan', 'NY', 'MA', 'FL', 'Missing', 'KS', 'CA', 'TX', 'NJ', 'MO', 'ID', 'BC', 'WI']
+market_cap: ['Nano Cap', 'Mega Cap', 'Mid Cap', 'Micro Cap', 'Large Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000022E964C5A80>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Energy', 'Health Care', 'Materials', 'Information Technology', 'Utilities', 'Real Estate', 'Missing', 'Financials', 'nan', 'Consumer Discretionary', 'Consumer Staples', 'Communication Services', 'Industrials']
+industry_group: ['Energy', 'Capital Goods', 'Consumer Durables & Apparel', 'Telecommunication Services', 'Health Care Equipment & Services', 'Retailing', 'Diversified Financials', 'Media & Entertainment', 'Food & Staples Retailing', 'Utilities', 'Household & Personal Products', 'Materials', 'Commercial & Professional Services', 'Insurance', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Consumer Services', 'Software & Services', 'Automobiles & Components', 'Transportation', 'Technology Hardware & Equipment', 'Real Estate', 'Missing', 'nan', 'Banks', 'Semiconductors & Semiconductor Equipment']
+industry: ['Household Products', 'Oil, Gas & Consumable Fuels', 'Health Care Equipment & Supplies', 'Electrical Equipment', 'Food & Staples Retailing', 'Software', 'Hotels, Restaurants & Leisure', 'Diversified Telecommunication Services', 'Aerospace & Defense', 'Construction Materials', 'Biotechnology', 'Electronic Equipment, Instruments & Components', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Beverages', 'Diversified Financial Services', 'Missing', 'Thrifts & Mortgage Finance', 'Banks', 'Capital Markets', 'Electric Utilities']
+country: ['United States', 'France', 'United Kingdom', 'Hong Kong', 'Germany', 'Ireland', 'Singapore', 'Missing', 'China', 'Brazil', 'Jersey', 'Netherlands', 'nan', 'Cayman Islands', 'Bermuda', 'Canada', 'South Africa', 'Switzerland']
+state: ['PA', 'TN', 'CA', 'MA', 'GA', 'OH', 'UT', 'NJ', 'NV', 'LA', 'DE', 'NY', 'WI', 'MI', 'IL', 'MN', 'TX', 'MD', 'CO', 'QC', 'PR', 'KS', 'SC', 'DC', 'FL', 'Missing', 'nan', 'VA', 'BC', 'CT']
+market_cap: ['Large Cap', 'Nano Cap', 'Small Cap', 'Micro Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001C990625A80>
+
+start_date: 2010
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Industrials', 'Consumer Staples', 'Real Estate', 'Health Care', 'Energy', 'Consumer Discretionary', 'Information Technology', 'nan', 'Materials', 'Communication Services', 'Financials', 'Missing']
+industry_group: ['Real Estate', 'Energy', 'Media & Entertainment', 'Utilities', 'Food & Staples Retailing', 'Transportation', 'Telecommunication Services', 'Capital Goods', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Software & Services', 'Semiconductors & Semiconductor Equipment', 'Commercial & Professional Services', 'Automobiles & Components', 'Health Care Equipment & Services', 'Household & Personal Products', 'Consumer Services', 'Materials', 'Diversified Financials', 'Consumer Durables & Apparel', 'Banks', 'Retailing', 'nan', 'Technology Hardware & Equipment', 'Missing', 'Insurance']
+industry: ['Entertainment', 'Real Estate Management & Development', 'Pharmaceuticals', 'Biotechnology', 'Textiles, Apparel & Luxury Goods', 'Technology Hardware, Storage & Peripherals', 'Health Care Equipment & Supplies', 'Electronic Equipment, Instruments & Components', 'Hotels, Restaurants & Leisure', 'Electrical Equipment', 'Auto Components', 'Transportation Infrastructure', 'Food & Staples Retailing', 'Metals & Mining', 'Automobiles', 'Equity Real Estate Investment Trusts (REITs)', 'Electric Utilities', 'Household Durables', 'Thrifts & Mortgage Finance', 'Construction & Engineering', 'Household Products', 'Semiconductors & Semiconductor Equipment', 'Chemicals', 'Machinery', 'Aerospace & Defense', 'Diversified Financial Services', 'Diversified Telecommunication Services', 'Internet & Direct Marketing Retail', 'Energy Equipment & Services', 'Health Care Providers & Services', 'Professional Services', 'Banks', 'Capital Markets', 'nan', 'Software', 'Missing', 'Insurance']
+country: ['Hong Kong', 'Switzerland', 'France', 'Bermuda', 'Germany', 'Cayman Islands', 'United States', 'nan', 'Canada', 'United Kingdom', 'South Africa', 'Ireland', 'Singapore', 'China', 'Brazil', 'Jersey', 'Missing', 'Netherlands']
+state: ['FL', 'TN', 'PA', 'DC', 'NY', 'PR', 'CO', 'MN', 'MD', 'WI', 'VA', 'GA', 'IL', 'NV', 'OH', 'CT', 'MI', 'LA', 'SC', 'CA', 'QC', 'TX', 'DE', 'KS', 'NJ', 'nan', 'MA', 'BC', 'UT', 'Missing']
+market_cap: ['Small Cap', 'Nano Cap', 'Mid Cap', 'Large Cap', 'Micro Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000126A8479A80>
+
+start_date: 2010
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Industrials', 'Energy', 'Real Estate', 'Financials', 'Information Technology', 'Consumer Discretionary', 'Health Care', 'Materials', 'Consumer Staples', 'nan', 'Utilities', 'Communication Services', 'Missing']
+industry_group: ['Technology Hardware & Equipment', 'Transportation', 'Insurance', 'Energy', 'Media & Entertainment', 'Household & Personal Products', 'Diversified Financials', 'Telecommunication Services', 'Utilities', 'Health Care Equipment & Services', 'Consumer Durables & Apparel', 'Commercial & Professional Services', 'Consumer Services', 'Materials', 'nan', 'Food & Staples Retailing', 'Capital Goods', 'Banks', 'Automobiles & Components', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Retailing', 'Real Estate', 'Semiconductors & Semiconductor Equipment', 'Software & Services', 'Missing']
+industry: ['Machinery', 'Equity Real Estate Investment Trusts (REITs)', 'Electronic Equipment, Instruments & Components', 'Health Care Equipment & Supplies', 'Real Estate Management & Development', 'Professional Services', 'Diversified Financial Services', 'Electric Utilities', 'Thrifts & Mortgage Finance', 'Banks', 'Biotechnology', 'Construction & Engineering', 'Capital Markets', 'Energy Equipment & Services', 'Pharmaceuticals', 'Auto Components', 'Food & Staples Retailing', 'Technology Hardware, Storage & Peripherals', 'Diversified Telecommunication Services', 'Electrical Equipment', 'Household Durables', 'Metals & Mining', 'Chemicals', 'Health Care Providers & Services', 'Insurance', 'Semiconductors & Semiconductor Equipment', 'Aerospace & Defense', 'Textiles, Apparel & Luxury Goods', 'Internet & Direct Marketing Retail', 'Household Products', 'Missing', 'Hotels, Restaurants & Leisure', 'Automobiles', 'Transportation Infrastructure', 'nan', 'Entertainment', 'Software']
+country: ['Brazil', 'Germany', 'China', 'South Africa', 'Singapore', 'United Kingdom', 'Canada', 'Hong Kong', 'Ireland', 'Jersey', 'Switzerland', 'Bermuda', 'nan', 'Cayman Islands', 'Netherlands', 'France', 'Missing', 'United States']
+state: ['PA', 'CA', 'MA', 'LA', 'PR', 'UT', 'MI', 'WI', 'KS', 'VA', 'SC', 'QC', 'NJ', 'BC', 'OH', 'nan', 'NV', 'TX', 'TN', 'FL', 'CT', 'DC', 'NY', 'CO', 'DE', 'IL', 'MD', 'GA', 'MN', 'Missing']
+market_cap: ['Micro Cap', 'Mid Cap', 'Small Cap', 'Large Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001696242DAB0>
+
+start_date: 2018
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Consumer Staples', 'Financials', 'Materials', 'Information Technology', 'Real Estate', 'Energy', 'Industrials', 'Communication Services', 'Missing', 'Utilities', 'nan', 'Health Care', 'Consumer Discretionary']
+industry_group: ['Health Care Equipment & Services', 'Retailing', 'Transportation', 'Technology Hardware & Equipment', 'Commercial & Professional Services', 'Automobiles & Components', 'Banks', 'Consumer Services', 'Telecommunication Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Food & Staples Retailing', 'Capital Goods', 'Media & Entertainment', 'Insurance', 'Semiconductors & Semiconductor Equipment', 'Utilities', 'Software & Services', 'Diversified Financials', 'Materials', 'Real Estate', 'Energy', 'Household & Personal Products', 'Consumer Durables & Apparel', 'Missing', 'nan']
+industry: ['Automobiles', 'Banks', 'nan', 'Transportation Infrastructure', 'Real Estate Management & Development', 'Professional Services', 'Internet & Direct Marketing Retail', 'Biotechnology', 'Energy Equipment & Services', 'Chemicals', 'Technology Hardware, Storage & Peripherals', 'Construction & Engineering', 'Household Durables', 'Diversified Financial Services', 'Semiconductors & Semiconductor Equipment', 'Machinery', 'Hotels, Restaurants & Leisure', 'Electrical Equipment', 'Health Care Equipment & Supplies', 'Auto Components', 'Household Products', 'Pharmaceuticals', 'Metals & Mining', 'Insurance', 'Missing', 'Textiles, Apparel & Luxury Goods', 'Health Care Providers & Services', 'Thrifts & Mortgage Finance', 'Food & Staples Retailing', 'Equity Real Estate Investment Trusts (REITs)', 'Electronic Equipment, Instruments & Components', 'Aerospace & Defense', 'Diversified Telecommunication Services', 'Capital Markets', 'Software', 'Electric Utilities', 'Entertainment']
+country: ['France', 'Netherlands', 'Switzerland', 'Canada', 'Brazil', 'Missing', 'China', 'United Kingdom', 'South Africa', 'Bermuda', 'Jersey', 'Cayman Islands', 'nan', 'Singapore', 'Hong Kong', 'Ireland', 'United States', 'Germany']
+state: ['CO', 'QC', 'MN', 'NY', 'CT', 'MD', 'BC', 'UT', 'GA', 'PR', 'OH', 'TN', 'FL', 'KS', 'WI', 'TX', 'NJ', 'MA', 'PA', 'IL', 'NV', 'MI', 'DC', 'LA', 'Missing', 'DE', 'VA', 'SC', 'nan', 'CA']
+market_cap: ['Micro Cap', 'Large Cap', 'Small Cap', 'Mid Cap', 'Nano Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000170E9C05AB0>
+
+start_date: 2022
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['nan', 'Information Technology', 'Materials', 'Financials', 'Communication Services', 'Utilities', 'Real Estate', 'Energy', 'Health Care', 'Missing', 'Consumer Discretionary', 'Industrials', 'Consumer Staples']
+industry_group: ['Banks', 'nan', 'Utilities', 'Technology Hardware & Equipment', 'Materials', 'Real Estate', 'Media & Entertainment', 'Semiconductors & Semiconductor Equipment', 'Automobiles & Components', 'Consumer Services', 'Energy', 'Retailing', 'Consumer Durables & Apparel', 'Insurance', 'Missing', 'Diversified Financials', 'Health Care Equipment & Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Commercial & Professional Services', 'Food & Staples Retailing', 'Household & Personal Products', 'Capital Goods', 'Transportation', 'Telecommunication Services', 'Software & Services']
+industry: ['Banks', 'Food & Staples Retailing', 'Transportation Infrastructure', 'Equity Real Estate Investment Trusts (REITs)', 'Missing', 'Electrical Equipment', 'Biotechnology', 'Energy Equipment & Services', 'Software', 'Entertainment', 'Metals & Mining', 'Insurance', 'Chemicals', 'Thrifts & Mortgage Finance', 'Semiconductors & Semiconductor Equipment', 'Health Care Providers & Services', 'Aerospace & Defense', 'Technology Hardware, Storage & Peripherals', 'Machinery', 'Hotels, Restaurants & Leisure', 'Capital Markets', 'Household Durables', 'Electric Utilities', 'Electronic Equipment, Instruments & Components', 'Auto Components', 'Diversified Telecommunication Services', 'Diversified Financial Services', 'Health Care Equipment & Supplies', 'Household Products', 'Pharmaceuticals', 'Construction & Engineering', 'Internet & Direct Marketing Retail', 'nan', 'Real Estate Management & Development', 'Professional Services', 'Textiles, Apparel & Luxury Goods', 'Automobiles']
+country: ['China', 'Brazil', 'Jersey', 'nan', 'Singapore', 'France', 'Bermuda', 'Canada', 'South Africa', 'United States', 'Hong Kong', 'Switzerland', 'Cayman Islands', 'Ireland', 'Missing', 'Germany', 'Netherlands', 'United Kingdom']
+state: ['nan', 'DE', 'IL', 'WI', 'MA', 'OH', 'DC', 'BC', 'CO', 'UT', 'CA', 'SC', 'KS', 'LA', 'PA', 'QC', 'PR', 'NY', 'MI', 'TX', 'GA', 'TN', 'Missing', 'CT', 'MN', 'NV', 'VA', 'FL', 'NJ', 'MD']
+market_cap: ['Nano Cap', 'Small Cap', 'Large Cap', 'Micro Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000248166C9AB0>
+
+start_date: 2021
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Communication Services', 'Missing', 'nan', 'Utilities', 'Energy', 'Financials', 'Real Estate', 'Information Technology', 'Health Care', 'Industrials', 'Consumer Discretionary', 'Consumer Staples', 'Materials']
+industry_group: ['Banks', 'Software & Services', 'Food & Staples Retailing', 'Consumer Durables & Apparel', 'Diversified Financials', 'Health Care Equipment & Services', 'Automobiles & Components', 'Telecommunication Services', 'Materials', 'Household & Personal Products', 'Missing', 'Media & Entertainment', 'Utilities', 'Transportation', 'Insurance', 'Real Estate', 'Semiconductors & Semiconductor Equipment', 'Capital Goods', 'Consumer Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Energy', 'Technology Hardware & Equipment', 'Retailing', 'nan', 'Commercial & Professional Services']
+industry: ['Food & Staples Retailing', 'Missing', 'Biotechnology', 'Entertainment', 'Software', 'Metals & Mining', 'Professional Services', 'Specialty Retail', 'Capital Markets', 'Machinery', 'Electric Utilities', 'Electronic Equipment, Instruments & Components', 'Auto Components', 'Diversified Telecommunication Services', 'Marine', 'Pharmaceuticals', 'Construction & Engineering', 'Internet & Direct Marketing Retail', 'Construction Materials', 'Diversified Financial Services', 'Textiles, Apparel & Luxury Goods']
+country: ['Germany', 'Missing', 'Ireland', 'United Kingdom', 'South Africa', 'Cayman Islands', 'Hong Kong', 'Netherlands', 'Canada', 'Switzerland', 'Singapore', 'Brazil', 'France', 'Bermuda', 'nan', 'Jersey', 'China', 'United States']
+state: ['UT', 'MN', 'SC', 'WI', 'DE', 'TN', 'CA', 'KS', 'Missing', 'GA', 'FL', 'NJ', 'BC', 'CT', 'MD', 'QC', 'LA', 'NY', 'VA', 'DC', 'TX', 'OH', 'PA', 'IL', 'MA', 'PR', 'NV', 'CO', 'nan', 'MI']
+market_cap: ['Large Cap', 'Nano Cap', 'Small Cap', 'Micro Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000248166C9AB0>
+
+start_date: 2018
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Communication Services', 'Materials', 'Real Estate', 'Energy', 'nan', 'Industrials', 'Consumer Staples', 'Utilities', 'Consumer Discretionary', 'Information Technology', 'Financials', 'Missing', 'Health Care']
+industry_group: ['Real Estate', 'Materials', 'Banks', 'Telecommunication Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Utilities', 'Consumer Services', 'Media & Entertainment', 'Health Care Equipment & Services', 'Commercial & Professional Services', 'Consumer Durables & Apparel', 'Missing', 'Transportation', 'nan', 'Technology Hardware & Equipment', 'Automobiles & Components', 'Semiconductors & Semiconductor Equipment', 'Food & Staples Retailing', 'Capital Goods', 'Energy', 'Retailing', 'Diversified Financials', 'Software & Services', 'Insurance', 'Household & Personal Products']
+industry: ['Machinery', 'Biotechnology', 'Diversified Financial Services', 'Internet & Direct Marketing Retail', 'Electric Utilities', 'Pharmaceuticals', 'Missing', 'nan', 'Electrical Equipment', 'Software', 'Textiles, Apparel & Luxury Goods', 'Entertainment', 'Health Care Providers & Services', 'Technology Hardware, Storage & Peripherals', 'Semiconductors & Semiconductor Equipment', 'Energy Equipment & Services', 'Thrifts & Mortgage Finance', 'Metals & Mining', 'Insurance', 'Chemicals', 'Banks', 'Capital Markets', 'Professional Services', 'Equity Real Estate Investment Trusts (REITs)', 'Construction & Engineering', 'Household Products', 'Hotels, Restaurants & Leisure', 'Real Estate Management & Development', 'Household Durables', 'Transportation Infrastructure', 'Automobiles', 'Auto Components', 'Health Care Equipment & Supplies', 'Aerospace & Defense', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Electronic Equipment, Instruments & Components']
+country: ['Brazil', 'Hong Kong', 'United States', 'Cayman Islands', 'nan', 'France', 'Germany', 'United Kingdom', 'Switzerland', 'Ireland', 'South Africa', 'Canada', 'Netherlands', 'China', 'Jersey', 'Missing', 'Singapore', 'Bermuda']
+state: ['CA', 'DE', 'OH', 'KS', 'PA', 'MD', 'CT', 'CO', 'QC', 'BC', 'MA', 'LA', 'IL', 'UT', 'Missing', 'MI', 'NJ', 'VA', 'nan', 'FL', 'WI', 'MN', 'TX', 'GA', 'NY', 'DC', 'NV', 'SC', 'PR', 'TN']
+market_cap: ['Large Cap', 'Mid Cap', 'Micro Cap', 'Nano Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000023A55331AB0>
+
+start_date: 2010
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Health Care', 'Industrials', 'Consumer Discretionary', 'Real Estate', 'Missing', 'Energy', 'nan', 'Materials', 'Financials', 'Consumer Staples', 'Communication Services', 'Information Technology', 'Utilities']
+industry_group: ['Missing', 'Software & Services', 'Transportation', 'nan', 'Retailing', 'Utilities', 'Household & Personal Products', 'Real Estate', 'Telecommunication Services', 'Consumer Durables & Apparel', 'Semiconductors & Semiconductor Equipment', 'Insurance', 'Health Care Equipment & Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Banks', 'Capital Goods', 'Diversified Financials', 'Automobiles & Components', 'Media & Entertainment', 'Energy', 'Technology Hardware & Equipment', 'Materials', 'Food & Staples Retailing', 'Consumer Services']
+industry: ['Machinery', 'Biotechnology', 'Internet & Direct Marketing Retail', 'Pharmaceuticals', 'Missing', 'Electrical Equipment', 'Software', 'Textiles, Apparel & Luxury Goods', 'Health Care Technology', 'Entertainment', 'Technology Hardware, Storage & Peripherals', 'Semiconductors & Semiconductor Equipment', 'Metals & Mining', 'Insurance', 'Air Freight & Logistics', 'Independent Power and Renewable Electricity Producers', 'Interactive Media & Services', 'Banks', 'Professional Services', 'Building Products', 'Equity Real Estate Investment Trusts (REITs)', 'Household Products', 'Hotels, Restaurants & Leisure', 'IT Services', 'Paper & Forest Products', 'Household Durables', 'Multi-Utilities', 'Transportation Infrastructure', 'Automobiles', 'Auto Components', 'Water Utilities', 'Health Care Equipment & Supplies', 'Aerospace & Defense', 'Food & Staples Retailing', 'Diversified Telecommunication Services', 'Electronic Equipment, Instruments & Components', 'Consumer Finance', 'Communications Equipment', 'Oil, Gas & Consumable Fuels', 'Specialty Retail']
+country: ['France', 'Hong Kong', 'China', 'Singapore', 'Netherlands', 'Cayman Islands', 'Switzerland', 'Brazil', 'Canada', 'Missing', 'United Kingdom', 'United States', 'Bermuda', 'nan', 'Germany', 'South Africa', 'Jersey', 'Ireland']
+state: ['SC', 'Missing', 'WI', 'CO', 'nan', 'NV', 'VA', 'CA', 'OH', 'MA', 'DC', 'MD', 'CT', 'PR', 'NY', 'PA', 'DE', 'TX', 'IL', 'KS', 'UT', 'QC', 'BC', 'FL', 'MN', 'GA', 'TN', 'MI', 'NJ', 'LA']
+market_cap: ['Nano Cap', 'Large Cap', 'Micro Cap', 'Mid Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000023A55331AB0>
+
+start_date: 2010
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Real Estate', 'Missing', 'Consumer Staples', 'Energy', 'Financials', 'Communication Services', 'nan', 'Health Care', 'Utilities', 'Materials', 'Industrials', 'Consumer Discretionary', 'Information Technology']
+industry_group: ['Consumer Durables & Apparel', 'Software & Services', 'Household & Personal Products', 'Insurance', 'Transportation', 'Automobiles & Components', 'nan', 'Technology Hardware & Equipment', 'Commercial & Professional Services', 'Diversified Financials', 'Food & Staples Retailing', 'Missing', 'Energy', 'Materials', 'Health Care Equipment & Services', 'Consumer Services', 'Telecommunication Services', 'Capital Goods', 'Real Estate', 'Banks', 'Media & Entertainment', 'Retailing', 'Utilities', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Semiconductors & Semiconductor Equipment']
+industry: ['Insurance', 'Transportation Infrastructure', 'Electronic Equipment, Instruments & Components', 'Semiconductors & Semiconductor Equipment', 'Equity Real Estate Investment Trusts (REITs)', 'Health Care Providers & Services', 'Aerospace & Defense', 'Energy Equipment & Services', 'Machinery', 'Professional Services', 'Biotechnology', 'Real Estate Management & Development', 'Internet & Direct Marketing Retail', 'Health Care Equipment & Supplies', 'Diversified Financial Services', 'Electrical Equipment', 'Missing', 'Software', 'Household Products', 'Chemicals', 'Pharmaceuticals', 'Entertainment', 'Electric Utilities', 'Construction & Engineering', 'Household Durables', 'nan', 'Metals & Mining', 'Auto Components', 'Automobiles', 'Thrifts & Mortgage Finance', 'Banks', 'Textiles, Apparel & Luxury Goods', 'Diversified Telecommunication Services', 'Food & Staples Retailing', 'Capital Markets', 'Hotels, Restaurants & Leisure', 'Technology Hardware, Storage & Peripherals']
+country: ['South Africa', 'United Kingdom', 'Netherlands', 'Cayman Islands', 'France', 'United States', 'Germany', 'Canada', 'Missing', 'Bermuda', 'Hong Kong', 'Singapore', 'Ireland', 'nan', 'Jersey', 'China', 'Brazil', 'Switzerland']
+state: ['TN', 'LA', 'SC', 'OH', 'PR', 'MN', 'DC', 'nan', 'MI', 'DE', 'VA', 'BC', 'CA', 'CO', 'TX', 'GA', 'NV', 'PA', 'Missing', 'NY', 'MA', 'KS', 'WI', 'IL', 'CT', 'UT', 'FL', 'QC', 'NJ', 'MD']
+market_cap: ['Small Cap', 'Micro Cap', 'Mid Cap', 'Nano Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002338C031AB0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: False
+sector: ['Information Technology', 'nan', 'Industrials', 'Communication Services', 'Consumer Discretionary', 'Health Care', 'Consumer Staples', 'Materials', 'Financials', 'Missing', 'Real Estate', 'Utilities', 'Energy']
+industry_group: ['Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Utilities', 'Energy', 'Health Care Equipment & Services', 'Real Estate', 'Consumer Services', 'Commercial & Professional Services', 'Diversified Financials', 'Capital Goods', 'nan', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Food & Staples Retailing', 'Automobiles & Components', 'Semiconductors & Semiconductor Equipment', 'Technology Hardware & Equipment', 'Software & Services', 'Household & Personal Products', 'Materials', 'Media & Entertainment', 'Telecommunication Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Aerospace & Defense', 'Electrical Equipment', 'Oil, Gas & Consumable Fuels', 'Internet & Direct Marketing Retail', 'Commercial Services & Supplies', 'Banks', 'Pharmaceuticals', 'Biotechnology', 'Automobiles', 'Communications Equipment', 'Chemicals', 'Household Products', 'Thrifts & Mortgage Finance', 'Tobacco', 'Diversified Telecommunication Services', 'Equity Real Estate Investment Trusts (REITs)', 'Construction & Engineering', 'nan', 'Electric Utilities', 'Software', 'Missing', 'Food & Staples Retailing', 'Metals & Mining', 'Semiconductors & Semiconductor Equipment', 'Interactive Media & Services', 'Machinery', 'Diversified Financial Services', 'Consumer Finance', 'Health Care Equipment & Supplies', 'Hotels, Restaurants & Leisure']
+country: ['United Kingdom', 'nan', 'Norway', 'United States', 'Canada', 'Denmark', 'South Korea', 'Missing', 'Australia', 'Chile', 'Germany', 'Netherlands']
+state: ['GA', 'MI', 'MD', 'TX', 'DC', 'BC', 'NV', 'ON', 'NY', 'KS', 'WI', 'VA', 'PR', 'nan', 'CT', 'NJ', 'NC', 'OH', 'CO', 'Missing', 'DE', 'NM', 'MA', 'CA', 'WA', 'IL']
+market_cap: ['Mid Cap', 'Micro Cap', 'Nano Cap', 'Small Cap', 'Mega Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001698C2BDAB0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'nan', 'Industrials', 'Communication Services', 'Consumer Discretionary', 'Health Care', 'Consumer Staples', 'Materials', 'Financials', 'Missing', 'Real Estate', 'Utilities', 'Energy']
+industry_group: ['Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Utilities', 'Energy', 'Health Care Equipment & Services', 'Real Estate', 'Consumer Services', 'Commercial & Professional Services', 'Diversified Financials', 'Capital Goods', 'nan', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Food & Staples Retailing', 'Automobiles & Components', 'Semiconductors & Semiconductor Equipment', 'Technology Hardware & Equipment', 'Software & Services', 'Household & Personal Products', 'Materials', 'Media & Entertainment', 'Telecommunication Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Aerospace & Defense', 'Electrical Equipment', 'Oil, Gas & Consumable Fuels', 'Internet & Direct Marketing Retail', 'Commercial Services & Supplies', 'Banks', 'Pharmaceuticals', 'Biotechnology', 'Automobiles', 'Communications Equipment', 'Chemicals', 'Household Products', 'Thrifts & Mortgage Finance', 'Tobacco', 'Diversified Telecommunication Services', 'Equity Real Estate Investment Trusts (REITs)', 'Construction & Engineering', 'nan', 'Electric Utilities', 'Software', 'Missing', 'Food & Staples Retailing', 'Metals & Mining', 'Semiconductors & Semiconductor Equipment', 'Interactive Media & Services', 'Machinery', 'Diversified Financial Services', 'Consumer Finance', 'Health Care Equipment & Supplies', 'Hotels, Restaurants & Leisure']
+country: ['United Kingdom', 'nan', 'Norway', 'United States', 'Canada', 'Denmark', 'South Korea', 'Missing', 'Australia', 'Chile', 'Germany', 'Netherlands']
+state: ['GA', 'MI', 'MD', 'TX', 'DC', 'BC', 'NV', 'ON', 'NY', 'KS', 'WI', 'VA', 'PR', 'nan', 'CT', 'NJ', 'NC', 'OH', 'CO', 'Missing', 'DE', 'NM', 'MA', 'CA', 'WA', 'IL']
+market_cap: ['Mid Cap', 'Micro Cap', 'Nano Cap', 'Small Cap', 'Mega Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001698C2BDAB0>
+
+start_date: 2010
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'nan', 'Industrials', 'Communication Services', 'Consumer Discretionary', 'Health Care', 'Consumer Staples', 'Materials', 'Financials', 'Missing', 'Real Estate', 'Utilities', 'Energy']
+industry_group: ['Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Utilities', 'Energy', 'Health Care Equipment & Services', 'Real Estate', 'Consumer Services', 'Commercial & Professional Services', 'Diversified Financials', 'Capital Goods', 'nan', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Food & Staples Retailing', 'Automobiles & Components', 'Semiconductors & Semiconductor Equipment', 'Technology Hardware & Equipment', 'Software & Services', 'Household & Personal Products', 'Materials', 'Media & Entertainment', 'Telecommunication Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Aerospace & Defense', 'Electrical Equipment', 'Oil, Gas & Consumable Fuels', 'Internet & Direct Marketing Retail', 'Commercial Services & Supplies', 'Banks', 'Pharmaceuticals', 'Biotechnology', 'Automobiles', 'Communications Equipment', 'Chemicals', 'Household Products', 'Thrifts & Mortgage Finance', 'Tobacco', 'Diversified Telecommunication Services', 'Equity Real Estate Investment Trusts (REITs)', 'Construction & Engineering', 'nan', 'Electric Utilities', 'Software', 'Missing', 'Food & Staples Retailing', 'Metals & Mining', 'Semiconductors & Semiconductor Equipment', 'Interactive Media & Services', 'Machinery', 'Diversified Financial Services', 'Consumer Finance', 'Health Care Equipment & Supplies', 'Hotels, Restaurants & Leisure']
+country: ['United Kingdom', 'nan', 'Norway', 'United States', 'Canada', 'Denmark', 'South Korea', 'Missing', 'Australia', 'Chile', 'Germany', 'Netherlands']
+state: ['GA', 'MI', 'MD', 'TX', 'DC', 'BC', 'NV', 'ON', 'NY', 'KS', 'WI', 'VA', 'PR', 'nan', 'CT', 'NJ', 'NC', 'OH', 'CO', 'Missing', 'DE', 'NM', 'MA', 'CA', 'WA', 'IL']
+market_cap: ['Mid Cap', 'Micro Cap', 'Nano Cap', 'Small Cap', 'Mega Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001698C2BDAB0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'nan', 'Industrials', 'Communication Services', 'Consumer Discretionary', 'Consumer Staples', 'Health Care', 'Materials', 'Financials', 'Missing', 'Real Estate', 'Utilities', 'Energy']
+industry_group: ['Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Utilities', 'Energy', 'Health Care Equipment & Services', 'Real Estate', 'Consumer Services', 'Commercial & Professional Services', 'Diversified Financials', 'Consumer Durables & Apparel', 'Capital Goods', 'nan', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Food & Staples Retailing', 'Automobiles & Components', 'Technology Hardware & Equipment', 'Software & Services', 'Household & Personal Products', 'Insurance', 'Materials', 'Media & Entertainment', 'Transportation', 'Telecommunication Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Aerospace & Defense', 'Distributors', 'Gas Utilities', 'Health Care Providers & Services', 'Oil, Gas & Consumable Fuels', 'Internet & Direct Marketing Retail', 'Commercial Services & Supplies', 'Electrical Equipment', 'Banks', 'Pharmaceuticals', 'Construction Materials', 'Entertainment', 'Beverages', 'Biotechnology', 'Automobiles', 'Communications Equipment', 'Chemicals', 'Professional Services', 'Transportation Infrastructure', 'Household Products', 'Capital Markets', 'Building Products', 'Technology Hardware, Storage & Peripherals', 'Multi-Utilities', 'Tobacco', 'Specialty Retail', 'Diversified Telecommunication Services', 'Equity Real Estate Investment Trusts (REITs)', 'nan', 'Electric Utilities', 'Software', 'Road & Rail', 'Textiles, Apparel & Luxury Goods', 'Health Care Technology', 'Missing', 'Food & Staples Retailing', 'Metals & Mining', 'IT Services', 'Household Durables', 'Interactive Media & Services', 'Insurance', 'Media', 'Consumer Finance', 'Water Utilities', 'Health Care Equipment & Supplies', 'Hotels, Restaurants & Leisure']
+country: ['Finland', 'Bermuda', 'Mexico', 'United Kingdom', 'Brazil', 'Switzerland', 'Ireland', 'United States', 'Sweden', 'China', 'Canada', 'India', 'South Korea', 'Missing', 'Taiwan']
+state: ['ND', 'GA', 'MI', 'UT', 'MD', 'TX', 'DC', 'BC', 'DF', 'KY', 'ON', 'AB', 'AZ', 'FL', 'NY', 'MO', 'SP', 'WI', 'VA', 'PA', 'nan', 'CT', 'NJ', 'NC', 'OH', 'CO', 'Missing', 'DE', 'IN', 'MA', 'SC', 'CA', 'WA', 'OK', 'IL', 'AR', 'LA', 'AL', 'MN']
+market_cap: ['Mid Cap', 'Micro Cap', 'Nano Cap', 'Small Cap', 'Mega Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001698C2BDAB0>
+
+start_date: 2010
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'nan', 'Industrials', 'Communication Services', 'Consumer Discretionary', 'Consumer Staples', 'Health Care', 'Materials', 'Financials', 'Missing', 'Real Estate', 'Utilities', 'Energy']
+industry_group: ['Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Utilities', 'Energy', 'Health Care Equipment & Services', 'Real Estate', 'Consumer Services', 'Commercial & Professional Services', 'Diversified Financials', 'Consumer Durables & Apparel', 'Capital Goods', 'nan', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Food & Staples Retailing', 'Automobiles & Components', 'Technology Hardware & Equipment', 'Software & Services', 'Household & Personal Products', 'Insurance', 'Materials', 'Media & Entertainment', 'Transportation', 'Telecommunication Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Aerospace & Defense', 'Distributors', 'Gas Utilities', 'Health Care Providers & Services', 'Oil, Gas & Consumable Fuels', 'Internet & Direct Marketing Retail', 'Commercial Services & Supplies', 'Electrical Equipment', 'Banks', 'Pharmaceuticals', 'Construction Materials', 'Entertainment', 'Beverages', 'Biotechnology', 'Automobiles', 'Communications Equipment', 'Chemicals', 'Professional Services', 'Transportation Infrastructure', 'Household Products', 'Capital Markets', 'Building Products', 'Technology Hardware, Storage & Peripherals', 'Multi-Utilities', 'Tobacco', 'Specialty Retail', 'Diversified Telecommunication Services', 'Equity Real Estate Investment Trusts (REITs)', 'nan', 'Electric Utilities', 'Software', 'Road & Rail', 'Textiles, Apparel & Luxury Goods', 'Health Care Technology', 'Missing', 'Food & Staples Retailing', 'Metals & Mining', 'IT Services', 'Household Durables', 'Interactive Media & Services', 'Insurance', 'Media', 'Consumer Finance', 'Water Utilities', 'Health Care Equipment & Supplies', 'Hotels, Restaurants & Leisure']
+country: ['Finland', 'Bermuda', 'Mexico', 'United Kingdom', 'Brazil', 'Switzerland', 'Ireland', 'United States', 'Sweden', 'China', 'Canada', 'India', 'South Korea', 'Missing', 'Taiwan']
+state: ['ND', 'GA', 'MI', 'UT', 'MD', 'TX', 'DC', 'BC', 'DF', 'KY', 'ON', 'AB', 'AZ', 'FL', 'NY', 'MO', 'SP', 'WI', 'VA', 'PA', 'nan', 'CT', 'NJ', 'NC', 'OH', 'CO', 'Missing', 'DE', 'IN', 'MA', 'SC', 'CA', 'WA', 'OK', 'IL', 'AR', 'LA', 'AL', 'MN']
+market_cap: ['Mid Cap', 'Micro Cap', 'Nano Cap', 'Small Cap', 'Mega Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001698C2BDAB0>
+
+start_date: 2010
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'nan', 'Industrials', 'Communication Services', 'Consumer Discretionary', 'Consumer Staples', 'Health Care', 'Materials', 'Financials', 'Missing', 'Real Estate', 'Utilities', 'Energy']
+industry_group: ['Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Utilities', 'Energy', 'Health Care Equipment & Services', 'Real Estate', 'Consumer Services', 'Commercial & Professional Services', 'Diversified Financials', 'Consumer Durables & Apparel', 'Capital Goods', 'nan', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Food & Staples Retailing', 'Automobiles & Components', 'Technology Hardware & Equipment', 'Software & Services', 'Household & Personal Products', 'Insurance', 'Materials', 'Media & Entertainment', 'Transportation', 'Telecommunication Services']
+industry: ['Diversified Telecommunication Services', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Diversified Financial Services', 'Electric Utilities', 'Household Products', 'Banks', 'Biotechnology', 'Semiconductors & Semiconductor Equipment', 'Consumer Finance', 'Electrical Equipment', 'nan', 'Pharmaceuticals', 'Food & Staples Retailing', 'Hotels, Restaurants & Leisure', 'Metals & Mining', 'Electronic Equipment, Instruments & Components', 'Equity Real Estate Investment Trusts (REITs)', 'Chemicals', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Health Care Equipment & Supplies', 'Software', 'Machinery', 'Commercial Services & Supplies', 'Oil, Gas & Consumable Fuels', 'Construction & Engineering', 'Tobacco', 'Aerospace & Defense', 'Automobiles', 'Missing']
+country: ['Finland', 'Bermuda', 'Mexico', 'United Kingdom', 'Brazil', 'Switzerland', 'Ireland', 'United States', 'Sweden', 'China', 'Canada', 'India', 'South Korea', 'Missing', 'Taiwan']
+state: ['ND', 'GA', 'MI', 'UT', 'MD', 'TX', 'DC', 'BC', 'DF', 'KY', 'ON', 'AB', 'AZ', 'FL', 'NY', 'MO', 'SP', 'WI', 'VA', 'PA', 'nan', 'CT', 'NJ', 'NC', 'OH', 'CO', 'Missing', 'DE', 'IN', 'MA', 'SC', 'CA', 'WA', 'OK', 'IL', 'AR', 'LA', 'AL', 'MN']
+market_cap: ['Mid Cap', 'Micro Cap', 'Nano Cap', 'Small Cap', 'Mega Cap', 'Large Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001CBCC9A5AB0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['nan', 'Utilities', 'Health Care', 'Industrials', 'Communication Services', 'Financials', 'Materials', 'Consumer Discretionary', 'Information Technology', 'Consumer Staples', 'Real Estate', 'Energy', 'Missing']
+industry_group: ['Telecommunication Services', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Technology Hardware & Equipment', 'nan', 'Food & Staples Retailing', 'Capital Goods', 'Automobiles & Components', 'Diversified Financials', 'Energy', 'Food, Beverage & Tobacco', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Retailing', 'Utilities', 'Household & Personal Products', 'Media & Entertainment', 'Materials', 'Commercial & Professional Services', 'Consumer Services', 'Software & Services', 'Missing']
+industry: ['Diversified Telecommunication Services', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Electric Utilities', 'Insurance', 'Household Products', 'Banks', 'Biotechnology', 'Consumer Finance', 'Electrical Equipment', 'Health Care Providers & Services', 'nan', 'Capital Markets', 'Food & Staples Retailing', 'Media', 'Building Products', 'Pharmaceuticals', 'Hotels, Restaurants & Leisure', 'Entertainment', 'Technology Hardware, Storage & Peripherals', 'Water Utilities', 'Metals & Mining', 'Transportation Infrastructure', 'Specialty Retail', 'Electronic Equipment, Instruments & Components', 'Equity Real Estate Investment Trusts (REITs)', 'Road & Rail', 'Chemicals', 'Construction Materials', 'Multi-Utilities', 'Health Care Technology', 'Interactive Media & Services', 'Health Care Equipment & Supplies', 'Distributors', 'Software', 'Professional Services', 'Beverages', 'Household Durables', 'IT Services', 'Commercial Services & Supplies', 'Gas Utilities', 'Oil, Gas & Consumable Fuels', 'Tobacco', 'Aerospace & Defense', 'Textiles, Apparel & Luxury Goods', 'Automobiles', 'Missing']
+country: ['nan', 'South Korea', 'United States', 'Chile', 'Australia', 'Canada', 'Germany', 'United Kingdom', 'Denmark', 'Netherlands', 'Norway', 'Missing']
+state: ['TX', 'WA', 'MA', 'NM', 'NC', 'PR', 'KS', 'nan', 'MI', 'GA', 'OH', 'BC', 'CT', 'NJ', 'CO', 'IL', 'NV', 'DC', 'DE', 'ON', 'WI', 'NY', 'VA', 'CA', 'MD', 'Missing']
+market_cap: ['Large Cap', 'Mid Cap', 'Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001CBCC9A5AB0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['nan', 'Utilities', 'Health Care', 'Industrials', 'Communication Services', 'Financials', 'Materials', 'Consumer Discretionary', 'Information Technology', 'Consumer Staples', 'Real Estate', 'Energy', 'Missing']
+industry_group: ['Telecommunication Services', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Technology Hardware & Equipment', 'nan', 'Food & Staples Retailing', 'Capital Goods', 'Automobiles & Components', 'Diversified Financials', 'Energy', 'Food, Beverage & Tobacco', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Retailing', 'Utilities', 'Household & Personal Products', 'Media & Entertainment', 'Materials', 'Commercial & Professional Services', 'Consumer Services', 'Software & Services', 'Missing']
+industry: ['Diversified Telecommunication Services', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Diversified Financial Services', 'Electric Utilities', 'Household Products', 'Banks', 'Biotechnology', 'Semiconductors & Semiconductor Equipment', 'Consumer Finance', 'Electrical Equipment', 'nan', 'Pharmaceuticals', 'Food & Staples Retailing', 'Hotels, Restaurants & Leisure', 'Metals & Mining', 'Electronic Equipment, Instruments & Components', 'Equity Real Estate Investment Trusts (REITs)', 'Chemicals', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Health Care Equipment & Supplies', 'Software', 'Machinery', 'Commercial Services & Supplies', 'Oil, Gas & Consumable Fuels', 'Construction & Engineering', 'Tobacco', 'Aerospace & Defense', 'Automobiles', 'Missing']
+country: ['nan', 'South Korea', 'United States', 'Chile', 'Australia', 'Canada', 'Germany', 'United Kingdom', 'Denmark', 'Netherlands', 'Norway', 'Missing']
+state: ['TX', 'WA', 'MA', 'NM', 'NC', 'PR', 'KS', 'nan', 'MI', 'GA', 'OH', 'BC', 'CT', 'NJ', 'CO', 'IL', 'NV', 'DC', 'DE', 'ON', 'WI', 'NY', 'VA', 'CA', 'MD', 'Missing']
+market_cap: ['Large Cap', 'Mid Cap', 'Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001CBCC9A5AB0>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['nan', 'Utilities', 'Health Care', 'Industrials', 'Communication Services', 'Financials', 'Materials', 'Consumer Discretionary', 'Information Technology', 'Consumer Staples', 'Real Estate', 'Energy', 'Missing']
+industry_group: ['Telecommunication Services', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Technology Hardware & Equipment', 'nan', 'Food & Staples Retailing', 'Capital Goods', 'Automobiles & Components', 'Diversified Financials', 'Energy', 'Food, Beverage & Tobacco', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Real Estate', 'Retailing', 'Utilities', 'Household & Personal Products', 'Media & Entertainment', 'Materials', 'Commercial & Professional Services', 'Consumer Services', 'Software & Services', 'Missing']
+industry: ['Food & Staples Retailing', 'Oil, Gas & Consumable Fuels', 'nan', 'Hotels, Restaurants & Leisure', 'Semiconductors & Semiconductor Equipment', 'Diversified Financial Services', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Electric Utilities', 'Commercial Services & Supplies', 'Diversified Telecommunication Services', 'Banks', 'Electrical Equipment', 'Health Care Equipment & Supplies', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Metals & Mining', 'Interactive Media & Services', 'Automobiles', 'Tobacco', 'Household Products', 'Machinery', 'Aerospace & Defense', 'Thrifts & Mortgage Finance', 'Consumer Finance', 'Electronic Equipment, Instruments & Components', 'Missing', 'Software', 'Construction & Engineering', 'Chemicals', 'Biotechnology']
+country: ['nan', 'South Korea', 'United States', 'Chile', 'Australia', 'Canada', 'Germany', 'United Kingdom', 'Denmark', 'Netherlands', 'Norway', 'Missing']
+state: ['TX', 'WA', 'MA', 'NM', 'NC', 'PR', 'KS', 'nan', 'MI', 'GA', 'OH', 'BC', 'CT', 'NJ', 'CO', 'IL', 'NV', 'DC', 'DE', 'ON', 'WI', 'NY', 'VA', 'CA', 'MD', 'Missing']
+market_cap: ['Large Cap', 'Mid Cap', 'Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002375EE55AB0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Consumer Discretionary', 'Real Estate', 'Communication Services', 'Missing', 'Consumer Staples', 'Utilities', 'Energy', 'Industrials', 'Financials', 'Health Care', 'nan', 'Materials']
+industry_group: ['Food & Staples Retailing', 'Automobiles & Components', 'Media & Entertainment', 'Energy', 'Technology Hardware & Equipment', 'Diversified Financials', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Consumer Services', 'Commercial & Professional Services', 'Banks', 'Utilities', 'Capital Goods', 'Household & Personal Products', 'Materials', 'Real Estate', 'Software & Services', 'Food, Beverage & Tobacco', 'Retailing', 'Missing', 'nan', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Food & Staples Retailing', 'Oil, Gas & Consumable Fuels', 'nan', 'Hotels, Restaurants & Leisure', 'Semiconductors & Semiconductor Equipment', 'Diversified Financial Services', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Electric Utilities', 'Commercial Services & Supplies', 'Diversified Telecommunication Services', 'Banks', 'Electrical Equipment', 'Health Care Equipment & Supplies', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Metals & Mining', 'Interactive Media & Services', 'Automobiles', 'Tobacco', 'Household Products', 'Machinery', 'Aerospace & Defense', 'Thrifts & Mortgage Finance', 'Consumer Finance', 'Electronic Equipment, Instruments & Components', 'Missing', 'Software', 'Construction & Engineering', 'Chemicals', 'Biotechnology']
+country: ['Denmark', 'Netherlands', 'United States', 'Missing', 'Germany', 'Norway', 'Australia', 'United Kingdom', 'Chile', 'Canada', 'nan', 'South Korea']
+state: ['OH', 'WA', 'MA', 'GA', 'MI', 'NV', 'DC', 'CA', 'WI', 'DE', 'PR', 'ON', 'KS', 'IL', 'BC', 'NM', 'TX', 'NJ', 'NC', 'Missing', 'NY', 'MD', 'CO', 'CT', 'nan', 'VA']
+market_cap: ['Small Cap', 'Mega Cap', 'Nano Cap', 'Large Cap', 'Micro Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002375EE55AB0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Consumer Discretionary', 'Real Estate', 'Communication Services', 'Missing', 'Consumer Staples', 'Utilities', 'Energy', 'Industrials', 'Financials', 'Health Care', 'nan', 'Materials']
+industry_group: ['Food & Staples Retailing', 'Automobiles & Components', 'Media & Entertainment', 'Energy', 'Technology Hardware & Equipment', 'Diversified Financials', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Consumer Services', 'Commercial & Professional Services', 'Banks', 'Utilities', 'Capital Goods', 'Household & Personal Products', 'Materials', 'Real Estate', 'Software & Services', 'Food, Beverage & Tobacco', 'Retailing', 'Missing', 'nan', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Food & Staples Retailing', 'Oil, Gas & Consumable Fuels', 'nan', 'Hotels, Restaurants & Leisure', 'Semiconductors & Semiconductor Equipment', 'Diversified Financial Services', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Electric Utilities', 'Commercial Services & Supplies', 'Diversified Telecommunication Services', 'Banks', 'Electrical Equipment', 'Health Care Equipment & Supplies', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Metals & Mining', 'Interactive Media & Services', 'Automobiles', 'Tobacco', 'Household Products', 'Machinery', 'Aerospace & Defense', 'Thrifts & Mortgage Finance', 'Consumer Finance', 'Electronic Equipment, Instruments & Components', 'Missing', 'Software', 'Construction & Engineering', 'Chemicals', 'Biotechnology']
+country: ['Denmark', 'Netherlands', 'United States', 'Missing', 'Germany', 'Norway', 'Australia', 'United Kingdom', 'Chile', 'Canada', 'nan', 'South Korea']
+state: ['OH', 'WA', 'MA', 'GA', 'MI', 'NV', 'DC', 'CA', 'WI', 'DE', 'PR', 'ON', 'KS', 'IL', 'BC', 'NM', 'TX', 'NJ', 'NC', 'Missing', 'NY', 'MD', 'CO', 'CT', 'nan', 'VA']
+market_cap: ['Small Cap', 'Mega Cap', 'Nano Cap', 'Large Cap', 'Micro Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002375EE55AB0>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Consumer Discretionary', 'Real Estate', 'Communication Services', 'Missing', 'Consumer Staples', 'Utilities', 'Energy', 'Industrials', 'Financials', 'Health Care', 'nan', 'Materials']
+industry_group: ['Food & Staples Retailing', 'Automobiles & Components', 'Media & Entertainment', 'Energy', 'Technology Hardware & Equipment', 'Diversified Financials', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Consumer Services', 'Commercial & Professional Services', 'Banks', 'Utilities', 'Capital Goods', 'Household & Personal Products', 'Materials', 'Real Estate', 'Software & Services', 'Food, Beverage & Tobacco', 'Retailing', 'Missing', 'nan', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Food & Staples Retailing', 'Oil, Gas & Consumable Fuels', 'nan', 'Hotels, Restaurants & Leisure', 'Semiconductors & Semiconductor Equipment', 'Diversified Financial Services', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Electric Utilities', 'Commercial Services & Supplies', 'Diversified Telecommunication Services', 'Banks', 'Electrical Equipment', 'Health Care Equipment & Supplies', 'Equity Real Estate Investment Trusts (REITs)', 'Pharmaceuticals', 'Metals & Mining', 'Interactive Media & Services', 'Automobiles', 'Tobacco', 'Household Products', 'Machinery', 'Aerospace & Defense', 'Thrifts & Mortgage Finance', 'Consumer Finance', 'Electronic Equipment, Instruments & Components', 'Missing', 'Software', 'Construction & Engineering', 'Chemicals', 'Biotechnology']
+country: ['Denmark', 'Netherlands', 'United States', 'Missing', 'Germany', 'Norway', 'Australia', 'United Kingdom', 'Chile', 'Canada', 'nan', 'South Korea']
+state: ['OH', 'WA', 'MA', 'GA', 'MI', 'NV', 'DC', 'CA', 'WI', 'DE', 'PR', 'ON', 'KS', 'IL', 'BC', 'NM', 'TX', 'NJ', 'NC', 'Missing', 'NY', 'MD', 'CO', 'CT', 'nan', 'VA']
+market_cap: ['Small Cap', 'Mega Cap', 'Nano Cap', 'Large Cap', 'Micro Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000002375EE55AB0>
+
+start_date: 2023
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Information Technology', 'Consumer Discretionary', 'Real Estate', 'Communication Services', 'Missing', 'Consumer Staples', 'Utilities', 'Energy', 'Industrials', 'Financials', 'Health Care', 'nan', 'Materials']
+industry_group: ['Food & Staples Retailing', 'Automobiles & Components', 'Media & Entertainment', 'Energy', 'Technology Hardware & Equipment', 'Diversified Financials', 'Telecommunication Services', 'Semiconductors & Semiconductor Equipment', 'Health Care Equipment & Services', 'Consumer Services', 'Commercial & Professional Services', 'Banks', 'Utilities', 'Capital Goods', 'Household & Personal Products', 'Materials', 'Real Estate', 'Software & Services', 'Food, Beverage & Tobacco', 'Retailing', 'Missing', 'nan', 'Pharmaceuticals, Biotechnology & Life Sciences']
+industry: ['Oil, Gas & Consumable Fuels', 'Semiconductors & Semiconductor Equipment', 'Internet & Direct Marketing Retail', 'Household Products', 'Equity Real Estate Investment Trusts (REITs)', 'Interactive Media & Services', 'Software', 'Diversified Telecommunication Services', 'Consumer Finance', 'Aerospace & Defense', 'Diversified Financial Services', 'Biotechnology', 'Automobiles', 'Missing', 'Commercial Services & Supplies', 'nan', 'Electric Utilities', 'Banks', 'Electronic Equipment, Instruments & Components', 'Tobacco', 'Construction & Engineering', 'Thrifts & Mortgage Finance', 'Chemicals', 'Food & Staples Retailing', 'Health Care Equipment & Supplies', 'Metals & Mining', 'Machinery', 'Pharmaceuticals', 'Communications Equipment', 'Hotels, Restaurants & Leisure', 'Electrical Equipment']
+country: ['Denmark', 'Netherlands', 'United States', 'Missing', 'Germany', 'Norway', 'Australia', 'United Kingdom', 'Chile', 'Canada', 'nan', 'South Korea']
+state: ['OH', 'WA', 'MA', 'GA', 'MI', 'NV', 'DC', 'CA', 'WI', 'DE', 'PR', 'ON', 'KS', 'IL', 'BC', 'NM', 'TX', 'NJ', 'NC', 'Missing', 'NY', 'MD', 'CO', 'CT', 'nan', 'VA']
+market_cap: ['Small Cap', 'Mega Cap', 'Nano Cap', 'Large Cap', 'Micro Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000028A65AC5AB0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Consumer Staples', 'Industrials', 'Consumer Discretionary', 'Real Estate', 'Utilities', 'nan', 'Health Care', 'Materials', 'Communication Services', 'Financials', 'Energy', 'Missing', 'Information Technology']
+industry_group: ['Semiconductors & Semiconductor Equipment', 'Consumer Services', 'Materials', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Energy', 'Food, Beverage & Tobacco', 'Missing', 'Diversified Financials', 'Retailing', 'Utilities', 'nan', 'Technology Hardware & Equipment', 'Banks', 'Food & Staples Retailing', 'Real Estate', 'Capital Goods', 'Health Care Equipment & Services', 'Automobiles & Components', 'Household & Personal Products', 'Software & Services', 'Media & Entertainment', 'Commercial & Professional Services', 'Telecommunication Services']
+industry: ['Oil, Gas & Consumable Fuels', 'Semiconductors & Semiconductor Equipment', 'Internet & Direct Marketing Retail', 'Household Products', 'Equity Real Estate Investment Trusts (REITs)', 'Interactive Media & Services', 'Software', 'Diversified Telecommunication Services', 'Consumer Finance', 'Aerospace & Defense', 'Diversified Financial Services', 'Biotechnology', 'Automobiles', 'Missing', 'Commercial Services & Supplies', 'nan', 'Electric Utilities', 'Banks', 'Electronic Equipment, Instruments & Components', 'Tobacco', 'Construction & Engineering', 'Thrifts & Mortgage Finance', 'Chemicals', 'Food & Staples Retailing', 'Health Care Equipment & Supplies', 'Metals & Mining', 'Machinery', 'Pharmaceuticals', 'Communications Equipment', 'Hotels, Restaurants & Leisure', 'Electrical Equipment']
+country: ['Denmark', 'Netherlands', 'South Korea', 'Norway', 'nan', 'United States', 'Germany', 'Canada', 'United Kingdom', 'Chile', 'Australia', 'Missing']
+state: ['NC', 'CA', 'WA', 'WI', 'PR', 'TX', 'DC', 'NJ', 'NV', 'CT', 'MI', 'OH', 'KS', 'Missing', 'GA', 'nan', 'MD', 'IL', 'NY', 'MA', 'CO', 'NM', 'BC', 'VA', 'ON', 'DE']
+market_cap: ['Large Cap', 'Micro Cap', 'Small Cap', 'Mid Cap', 'Nano Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000028A65AC5AB0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Consumer Staples', 'Industrials', 'Consumer Discretionary', 'Real Estate', 'Utilities', 'nan', 'Health Care', 'Materials', 'Communication Services', 'Financials', 'Energy', 'Missing', 'Information Technology']
+industry_group: ['Semiconductors & Semiconductor Equipment', 'Consumer Services', 'Materials', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Energy', 'Food, Beverage & Tobacco', 'Missing', 'Diversified Financials', 'Retailing', 'Utilities', 'nan', 'Technology Hardware & Equipment', 'Banks', 'Food & Staples Retailing', 'Real Estate', 'Capital Goods', 'Health Care Equipment & Services', 'Automobiles & Components', 'Household & Personal Products', 'Software & Services', 'Media & Entertainment', 'Commercial & Professional Services', 'Telecommunication Services']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Denmark', 'Netherlands', 'South Korea', 'Norway', 'nan', 'United States', 'Germany', 'Canada', 'United Kingdom', 'Chile', 'Australia', 'Missing']
+state: ['NC', 'CA', 'WA', 'WI', 'PR', 'TX', 'DC', 'NJ', 'NV', 'CT', 'MI', 'OH', 'KS', 'Missing', 'GA', 'nan', 'MD', 'IL', 'NY', 'MA', 'CO', 'NM', 'BC', 'VA', 'ON', 'DE']
+market_cap: ['Large Cap', 'Micro Cap', 'Small Cap', 'Mid Cap', 'Nano Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 1
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 2
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 6
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 7
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 8
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 9
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 10
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 9
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 8
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Health Care Equipment & Supplies', 'Aerospace & Defense', 'nan', 'Chemicals', 'Electronic Equipment, Instruments & Components', 'Construction & Engineering', 'Equity Real Estate Investment Trusts (REITs)', 'Oil, Gas & Consumable Fuels', 'Thrifts & Mortgage Finance', 'Interactive Media & Services', 'Internet & Direct Marketing Retail', 'Communications Equipment', 'Food & Staples Retailing', 'Consumer Finance', 'Semiconductors & Semiconductor Equipment', 'Banks', 'Metals & Mining', 'Electrical Equipment', 'Electric Utilities', 'Hotels, Restaurants & Leisure', 'Pharmaceuticals', 'Software', 'Diversified Telecommunication Services', 'Biotechnology', 'Machinery', 'Missing', 'Diversified Financial Services', 'Automobiles', 'Tobacco', 'Commercial Services & Supplies', 'Household Products']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x00000167AA955AB0>
+
+start_date: 2023
+num_traces: 7
+etf: True
+stock: True
+index: True
+sector: ['Utilities', 'Real Estate', 'Missing', 'Consumer Discretionary', 'Communication Services', 'Energy', 'Materials', 'Industrials', 'Financials', 'Consumer Staples', 'nan', 'Health Care', 'Information Technology']
+industry_group: ['Diversified Financials', 'Technology Hardware & Equipment', 'nan', 'Health Care Equipment & Services', 'Utilities', 'Retailing', 'Capital Goods', 'Materials', 'Food & Staples Retailing', 'Food, Beverage & Tobacco', 'Banks', 'Semiconductors & Semiconductor Equipment', 'Real Estate', 'Consumer Services', 'Software & Services', 'Media & Entertainment', 'Telecommunication Services', 'Commercial & Professional Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Missing', 'Automobiles & Components', 'Energy', 'Household & Personal Products']
+industry: ['Interactive Media & Services', 'Aerospace & Defense', 'Software', 'Thrifts & Mortgage Finance', 'Hotels, Restaurants & Leisure', 'Biotechnology', 'Food & Staples Retailing', 'Missing', 'Electrical Equipment', 'Electronic Equipment, Instruments & Components', 'Commercial Services & Supplies', 'Semiconductors & Semiconductor Equipment', 'Tobacco', 'Metals & Mining', 'Automobiles', 'Chemicals', 'Electric Utilities', 'Internet & Direct Marketing Retail', 'Health Care Equipment & Supplies', 'Equity Real Estate Investment Trusts (REITs)', 'Diversified Telecommunication Services', 'Communications Equipment', 'Consumer Finance', 'Household Products', 'Diversified Financial Services', 'nan', 'Banks', 'Pharmaceuticals', 'Oil, Gas & Consumable Fuels', 'Machinery', 'Construction & Engineering']
+country: ['Australia', 'Denmark', 'Missing', 'United Kingdom', 'Canada', 'nan', 'United States', 'Germany', 'South Korea', 'Chile', 'Netherlands', 'Norway']
+state: ['BC', 'NY', 'MD', 'NC', 'nan', 'NJ', 'ON', 'CT', 'GA', 'PR', 'VA', 'CO', 'OH', 'IL', 'MA', 'CA', 'NV', 'KS', 'DE', 'WA', 'DC', 'NM', 'Missing', 'WI', 'TX', 'MI']
+market_cap: ['Micro Cap', 'Nano Cap', 'Mega Cap', 'Small Cap', 'Large Cap', 'Mid Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000021BC6671AB0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Communication Services', 'Information Technology', 'Energy', 'Health Care', 'Missing', 'Materials', 'Consumer Staples', 'nan', 'Consumer Discretionary', 'Utilities', 'Industrials', 'Real Estate', 'Financials']
+industry_group: ['Household & Personal Products', 'Materials', 'Health Care Equipment & Services', 'Consumer Services', 'Retailing', 'Energy', 'Food & Staples Retailing', 'Missing', 'Commercial & Professional Services', 'Media & Entertainment', 'Food, Beverage & Tobacco', 'Real Estate', 'Diversified Financials', 'Semiconductors & Semiconductor Equipment', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'nan', 'Utilities', 'Automobiles & Components', 'Banks', 'Capital Goods', 'Software & Services', 'Telecommunication Services']
+industry: ['Interactive Media & Services', 'Aerospace & Defense', 'Software', 'Thrifts & Mortgage Finance', 'Hotels, Restaurants & Leisure', 'Biotechnology', 'Food & Staples Retailing', 'Missing', 'Electrical Equipment', 'Electronic Equipment, Instruments & Components', 'Commercial Services & Supplies', 'Semiconductors & Semiconductor Equipment', 'Tobacco', 'Metals & Mining', 'Automobiles', 'Chemicals', 'Electric Utilities', 'Internet & Direct Marketing Retail', 'Health Care Equipment & Supplies', 'Equity Real Estate Investment Trusts (REITs)', 'Diversified Telecommunication Services', 'Communications Equipment', 'Consumer Finance', 'Household Products', 'Diversified Financial Services', 'nan', 'Banks', 'Pharmaceuticals', 'Oil, Gas & Consumable Fuels', 'Machinery', 'Construction & Engineering']
+country: ['Netherlands', 'Missing', 'Denmark', 'nan', 'Chile', 'Canada', 'Australia', 'United Kingdom', 'United States', 'South Korea', 'Germany', 'Norway']
+state: ['NY', 'PR', 'NV', 'OH', 'VA', 'NC', 'KS', 'Missing', 'IL', 'MI', 'WA', 'CA', 'BC', 'GA', 'MA', 'WI', 'DE', 'ON', 'TX', 'NM', 'CT', 'DC', 'NJ', 'nan', 'MD', 'CO']
+market_cap: ['Large Cap', 'Nano Cap', 'Micro Cap', 'Mid Cap', 'Small Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000021BC6671AB0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Communication Services', 'Information Technology', 'Energy', 'Health Care', 'Missing', 'Materials', 'Consumer Staples', 'nan', 'Consumer Discretionary', 'Utilities', 'Industrials', 'Real Estate', 'Financials']
+industry_group: ['Household & Personal Products', 'Materials', 'Health Care Equipment & Services', 'Consumer Services', 'Retailing', 'Energy', 'Food & Staples Retailing', 'Missing', 'Commercial & Professional Services', 'Media & Entertainment', 'Food, Beverage & Tobacco', 'Real Estate', 'Diversified Financials', 'Semiconductors & Semiconductor Equipment', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'nan', 'Utilities', 'Automobiles & Components', 'Banks', 'Capital Goods', 'Software & Services', 'Telecommunication Services']
+industry: ['Interactive Media & Services', 'Aerospace & Defense', 'Software', 'Thrifts & Mortgage Finance', 'Hotels, Restaurants & Leisure', 'Biotechnology', 'Food & Staples Retailing', 'Missing', 'Electrical Equipment', 'Electronic Equipment, Instruments & Components', 'Commercial Services & Supplies', 'Semiconductors & Semiconductor Equipment', 'Tobacco', 'Metals & Mining', 'Automobiles', 'Chemicals', 'Electric Utilities', 'Internet & Direct Marketing Retail', 'Health Care Equipment & Supplies', 'Equity Real Estate Investment Trusts (REITs)', 'Diversified Telecommunication Services', 'Communications Equipment', 'Consumer Finance', 'Household Products', 'Diversified Financial Services', 'nan', 'Banks', 'Pharmaceuticals', 'Oil, Gas & Consumable Fuels', 'Machinery', 'Construction & Engineering']
+country: ['Netherlands', 'Missing', 'Denmark', 'nan', 'Chile', 'Canada', 'Australia', 'United Kingdom', 'United States', 'South Korea', 'Germany', 'Norway']
+state: ['NY', 'PR', 'NV', 'OH', 'VA', 'NC', 'KS', 'Missing', 'IL', 'MI', 'WA', 'CA', 'BC', 'GA', 'MA', 'WI', 'DE', 'ON', 'TX', 'NM', 'CT', 'DC', 'NJ', 'nan', 'MD', 'CO']
+market_cap: ['Large Cap', 'Nano Cap', 'Micro Cap', 'Mid Cap', 'Small Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x0000021BC6671AB0>
+
+
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Communication Services', 'Information Technology', 'Energy', 'Health Care', 'Missing', 'Materials', 'Consumer Staples', 'nan', 'Consumer Discretionary', 'Utilities', 'Industrials', 'Real Estate', 'Financials']
+industry_group: ['Household & Personal Products', 'Materials', 'Health Care Equipment & Services', 'Consumer Services', 'Retailing', 'Energy', 'Food & Staples Retailing', 'Missing', 'Commercial & Professional Services', 'Media & Entertainment', 'Food, Beverage & Tobacco', 'Real Estate', 'Diversified Financials', 'Semiconductors & Semiconductor Equipment', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'nan', 'Utilities', 'Automobiles & Components', 'Banks', 'Capital Goods', 'Software & Services', 'Telecommunication Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Household Products', 'Software', 'Pharmaceuticals', 'Banks', 'Tobacco', 'Food & Staples Retailing', 'Equity Real Estate Investment Trusts (REITs)', 'Chemicals', 'Consumer Finance', 'Health Care Equipment & Supplies', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Interactive Media & Services', 'Metals & Mining', 'Construction & Engineering', 'Electrical Equipment', 'Semiconductors & Semiconductor Equipment', 'Oil, Gas & Consumable Fuels', 'Electric Utilities', 'Automobiles', 'Missing', 'Machinery', 'Aerospace & Defense', 'Commercial Services & Supplies', 'Hotels, Restaurants & Leisure', 'Diversified Telecommunication Services', 'nan', 'Thrifts & Mortgage Finance', 'Biotechnology', 'Diversified Financial Services']
+country: ['Netherlands', 'Missing', 'Denmark', 'nan', 'Chile', 'Canada', 'Australia', 'United Kingdom', 'United States', 'South Korea', 'Germany', 'Norway']
+state: ['NY', 'PR', 'NV', 'OH', 'VA', 'NC', 'KS', 'Missing', 'IL', 'MI', 'WA', 'CA', 'BC', 'GA', 'MA', 'WI', 'DE', 'ON', 'TX', 'NM', 'CT', 'DC', 'NJ', 'nan', 'MD', 'CO']
+market_cap: ['Large Cap', 'Nano Cap', 'Micro Cap', 'Mid Cap', 'Small Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001901620DAB0>
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Communication Services', 'Information Technology', 'Energy', 'Health Care', 'Missing', 'Materials', 'Consumer Staples', 'nan', 'Consumer Discretionary', 'Utilities', 'Industrials', 'Real Estate', 'Financials']
+industry_group: ['Household & Personal Products', 'Materials', 'Health Care Equipment & Services', 'Consumer Services', 'Retailing', 'Energy', 'Food & Staples Retailing', 'Missing', 'Commercial & Professional Services', 'Media & Entertainment', 'Food, Beverage & Tobacco', 'Real Estate', 'Diversified Financials', 'Semiconductors & Semiconductor Equipment', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'nan', 'Utilities', 'Automobiles & Components', 'Banks', 'Capital Goods', 'Software & Services', 'Telecommunication Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Household Products', 'Software', 'Pharmaceuticals', 'Banks', 'Tobacco', 'Food & Staples Retailing', 'Equity Real Estate Investment Trusts (REITs)', 'Chemicals', 'Consumer Finance', 'Health Care Equipment & Supplies', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Interactive Media & Services', 'Metals & Mining', 'Construction & Engineering', 'Electrical Equipment', 'Semiconductors & Semiconductor Equipment', 'Oil, Gas & Consumable Fuels', 'Electric Utilities', 'Automobiles', 'Missing', 'Machinery', 'Aerospace & Defense', 'Commercial Services & Supplies', 'Hotels, Restaurants & Leisure', 'Diversified Telecommunication Services', 'nan', 'Thrifts & Mortgage Finance', 'Biotechnology', 'Diversified Financial Services']
+country: ['Netherlands', 'Missing', 'Denmark', 'nan', 'Chile', 'Canada', 'Australia', 'United Kingdom', 'United States', 'South Korea', 'Germany', 'Norway']
+state: ['NY', 'PR', 'NV', 'OH', 'VA', 'NC', 'KS', 'Missing', 'IL', 'MI', 'WA', 'CA', 'BC', 'GA', 'MA', 'WI', 'DE', 'ON', 'TX', 'NM', 'CT', 'DC', 'NJ', 'nan', 'MD', 'CO']
+market_cap: ['Large Cap', 'Nano Cap', 'Micro Cap', 'Mid Cap', 'Small Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001901620DAB0>
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Communication Services', 'Information Technology', 'Energy', 'Health Care', 'Missing', 'Materials', 'Consumer Staples', 'nan', 'Consumer Discretionary', 'Utilities', 'Industrials', 'Real Estate', 'Financials']
+industry_group: ['Household & Personal Products', 'Materials', 'Health Care Equipment & Services', 'Consumer Services', 'Retailing', 'Energy', 'Food & Staples Retailing', 'Missing', 'Commercial & Professional Services', 'Media & Entertainment', 'Food, Beverage & Tobacco', 'Real Estate', 'Diversified Financials', 'Semiconductors & Semiconductor Equipment', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'nan', 'Utilities', 'Automobiles & Components', 'Banks', 'Capital Goods', 'Software & Services', 'Telecommunication Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Household Products', 'Software', 'Pharmaceuticals', 'Banks', 'Tobacco', 'Food & Staples Retailing', 'Equity Real Estate Investment Trusts (REITs)', 'Chemicals', 'Consumer Finance', 'Health Care Equipment & Supplies', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Interactive Media & Services', 'Metals & Mining', 'Construction & Engineering', 'Electrical Equipment', 'Semiconductors & Semiconductor Equipment', 'Oil, Gas & Consumable Fuels', 'Electric Utilities', 'Automobiles', 'Missing', 'Machinery', 'Aerospace & Defense', 'Commercial Services & Supplies', 'Hotels, Restaurants & Leisure', 'Diversified Telecommunication Services', 'nan', 'Thrifts & Mortgage Finance', 'Biotechnology', 'Diversified Financial Services']
+country: ['Netherlands', 'Missing', 'Denmark', 'nan', 'Chile', 'Canada', 'Australia', 'United Kingdom', 'United States', 'South Korea', 'Germany', 'Norway']
+state: ['NY', 'PR', 'NV', 'OH', 'VA', 'NC', 'KS', 'Missing', 'IL', 'MI', 'WA', 'CA', 'BC', 'GA', 'MA', 'WI', 'DE', 'ON', 'TX', 'NM', 'CT', 'DC', 'NJ', 'nan', 'MD', 'CO']
+market_cap: ['Large Cap', 'Nano Cap', 'Micro Cap', 'Mid Cap', 'Small Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001901620DAB0>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Communication Services', 'Information Technology', 'Energy', 'Health Care', 'Missing', 'Materials', 'Consumer Staples', 'nan', 'Consumer Discretionary', 'Utilities', 'Industrials', 'Real Estate', 'Financials']
+industry_group: ['Household & Personal Products', 'Materials', 'Health Care Equipment & Services', 'Consumer Services', 'Retailing', 'Energy', 'Food & Staples Retailing', 'Missing', 'Commercial & Professional Services', 'Media & Entertainment', 'Food, Beverage & Tobacco', 'Real Estate', 'Diversified Financials', 'Semiconductors & Semiconductor Equipment', 'Technology Hardware & Equipment', 'Pharmaceuticals, Biotechnology & Life Sciences', 'nan', 'Utilities', 'Automobiles & Components', 'Banks', 'Capital Goods', 'Software & Services', 'Telecommunication Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Household Products', 'Software', 'Pharmaceuticals', 'Banks', 'Tobacco', 'Food & Staples Retailing', 'Equity Real Estate Investment Trusts (REITs)', 'Chemicals', 'Consumer Finance', 'Health Care Equipment & Supplies', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Interactive Media & Services', 'Metals & Mining', 'Construction & Engineering', 'Electrical Equipment', 'Semiconductors & Semiconductor Equipment', 'Oil, Gas & Consumable Fuels', 'Electric Utilities', 'Automobiles', 'Missing', 'Machinery', 'Aerospace & Defense', 'Commercial Services & Supplies', 'Hotels, Restaurants & Leisure', 'Diversified Telecommunication Services', 'nan', 'Thrifts & Mortgage Finance', 'Biotechnology', 'Diversified Financial Services']
+country: ['Netherlands', 'Missing', 'Denmark', 'nan', 'Chile', 'Canada', 'Australia', 'United Kingdom', 'United States', 'South Korea', 'Germany', 'Norway']
+state: ['NY', 'PR', 'NV', 'OH', 'VA', 'NC', 'KS', 'Missing', 'IL', 'MI', 'WA', 'CA', 'BC', 'GA', 'MA', 'WI', 'DE', 'ON', 'TX', 'NM', 'CT', 'DC', 'NJ', 'nan', 'MD', 'CO']
+market_cap: ['Large Cap', 'Nano Cap', 'Micro Cap', 'Mid Cap', 'Small Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001901620DAB0>
+
+start_date: 2023
+num_traces: 3
+etf: True
+stock: True
+index: True
+sector: ['Energy', 'Information Technology', 'Consumer Staples', 'nan', 'Missing', 'Utilities', 'Industrials', 'Health Care', 'Real Estate', 'Consumer Discretionary', 'Financials', 'Communication Services', 'Materials']
+industry_group: ['Software & Services', 'Diversified Financials', 'Household & Personal Products', 'Capital Goods', 'Utilities', 'Automobiles & Components', 'Banks', 'Food & Staples Retailing', 'Technology Hardware & Equipment', 'Energy', 'Media & Entertainment', 'Commercial & Professional Services', 'Semiconductors & Semiconductor Equipment', 'Missing', 'Materials', 'Retailing', 'Food, Beverage & Tobacco', 'nan', 'Telecommunication Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Health Care Equipment & Services', 'Real Estate', 'Consumer Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Household Products', 'Software', 'Pharmaceuticals', 'Banks', 'Tobacco', 'Food & Staples Retailing', 'Equity Real Estate Investment Trusts (REITs)', 'Chemicals', 'Consumer Finance', 'Health Care Equipment & Supplies', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Interactive Media & Services', 'Metals & Mining', 'Construction & Engineering', 'Electrical Equipment', 'Semiconductors & Semiconductor Equipment', 'Oil, Gas & Consumable Fuels', 'Electric Utilities', 'Automobiles', 'Missing', 'Machinery', 'Aerospace & Defense', 'Commercial Services & Supplies', 'Hotels, Restaurants & Leisure', 'Diversified Telecommunication Services', 'nan', 'Thrifts & Mortgage Finance', 'Biotechnology', 'Diversified Financial Services']
+country: ['Australia', 'Norway', 'Germany', 'United States', 'nan', 'Missing', 'Denmark', 'South Korea', 'United Kingdom', 'Canada', 'Netherlands', 'Chile']
+state: ['VA', 'NV', 'TX', 'WA', 'NC', 'DE', 'MI', 'CA', 'MD', 'ON', 'IL', 'NY', 'KS', 'WI', 'Missing', 'OH', 'NM', 'CO', 'nan', 'NJ', 'MA', 'DC', 'CT', 'PR', 'BC', 'GA']
+market_cap: ['Micro Cap', 'Nano Cap', 'Large Cap', 'Mid Cap', 'Small Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001901620DAB0>
+
+start_date: 2023
+num_traces: 4
+etf: True
+stock: True
+index: True
+sector: ['Energy', 'Information Technology', 'Consumer Staples', 'nan', 'Missing', 'Utilities', 'Industrials', 'Health Care', 'Real Estate', 'Consumer Discretionary', 'Financials', 'Communication Services', 'Materials']
+industry_group: ['Software & Services', 'Diversified Financials', 'Household & Personal Products', 'Capital Goods', 'Utilities', 'Automobiles & Components', 'Banks', 'Food & Staples Retailing', 'Technology Hardware & Equipment', 'Energy', 'Media & Entertainment', 'Commercial & Professional Services', 'Semiconductors & Semiconductor Equipment', 'Missing', 'Materials', 'Retailing', 'Food, Beverage & Tobacco', 'nan', 'Telecommunication Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Health Care Equipment & Services', 'Real Estate', 'Consumer Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Household Products', 'Software', 'Pharmaceuticals', 'Banks', 'Tobacco', 'Food & Staples Retailing', 'Equity Real Estate Investment Trusts (REITs)', 'Chemicals', 'Consumer Finance', 'Health Care Equipment & Supplies', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Interactive Media & Services', 'Metals & Mining', 'Construction & Engineering', 'Electrical Equipment', 'Semiconductors & Semiconductor Equipment', 'Oil, Gas & Consumable Fuels', 'Electric Utilities', 'Automobiles', 'Missing', 'Machinery', 'Aerospace & Defense', 'Commercial Services & Supplies', 'Hotels, Restaurants & Leisure', 'Diversified Telecommunication Services', 'nan', 'Thrifts & Mortgage Finance', 'Biotechnology', 'Diversified Financial Services']
+country: ['Australia', 'Norway', 'Germany', 'United States', 'nan', 'Missing', 'Denmark', 'South Korea', 'United Kingdom', 'Canada', 'Netherlands', 'Chile']
+state: ['VA', 'NV', 'TX', 'WA', 'NC', 'DE', 'MI', 'CA', 'MD', 'ON', 'IL', 'NY', 'KS', 'WI', 'Missing', 'OH', 'NM', 'CO', 'nan', 'NJ', 'MA', 'DC', 'CT', 'PR', 'BC', 'GA']
+market_cap: ['Micro Cap', 'Nano Cap', 'Large Cap', 'Mid Cap', 'Small Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001901620DAB0>
+
+start_date: 2023
+num_traces: 5
+etf: True
+stock: True
+index: True
+sector: ['Energy', 'Information Technology', 'Consumer Staples', 'nan', 'Missing', 'Utilities', 'Industrials', 'Health Care', 'Real Estate', 'Consumer Discretionary', 'Financials', 'Communication Services', 'Materials']
+industry_group: ['Software & Services', 'Diversified Financials', 'Household & Personal Products', 'Capital Goods', 'Utilities', 'Automobiles & Components', 'Banks', 'Food & Staples Retailing', 'Technology Hardware & Equipment', 'Energy', 'Media & Entertainment', 'Commercial & Professional Services', 'Semiconductors & Semiconductor Equipment', 'Missing', 'Materials', 'Retailing', 'Food, Beverage & Tobacco', 'nan', 'Telecommunication Services', 'Pharmaceuticals, Biotechnology & Life Sciences', 'Health Care Equipment & Services', 'Real Estate', 'Consumer Services']
+industry: ['Electronic Equipment, Instruments & Components', 'Household Products', 'Software', 'Pharmaceuticals', 'Banks', 'Tobacco', 'Food & Staples Retailing', 'Equity Real Estate Investment Trusts (REITs)', 'Chemicals', 'Consumer Finance', 'Health Care Equipment & Supplies', 'Communications Equipment', 'Internet & Direct Marketing Retail', 'Interactive Media & Services', 'Metals & Mining', 'Construction & Engineering', 'Electrical Equipment', 'Semiconductors & Semiconductor Equipment', 'Oil, Gas & Consumable Fuels', 'Electric Utilities', 'Automobiles', 'Missing', 'Machinery', 'Aerospace & Defense', 'Commercial Services & Supplies', 'Hotels, Restaurants & Leisure', 'Diversified Telecommunication Services', 'nan', 'Thrifts & Mortgage Finance', 'Biotechnology', 'Diversified Financial Services']
+country: ['Australia', 'Norway', 'Germany', 'United States', 'nan', 'Missing', 'Denmark', 'South Korea', 'United Kingdom', 'Canada', 'Netherlands', 'Chile']
+state: ['VA', 'NV', 'TX', 'WA', 'NC', 'DE', 'MI', 'CA', 'MD', 'ON', 'IL', 'NY', 'KS', 'WI', 'Missing', 'OH', 'NM', 'CO', 'nan', 'NJ', 'MA', 'DC', 'CT', 'PR', 'BC', 'GA']
+market_cap: ['Micro Cap', 'Nano Cap', 'Large Cap', 'Mid Cap', 'Small Cap', 'Mega Cap']
+otc_filter: []
+ctx: <dash._callback_context.CallbackContext object at 0x000001901620DAB0>

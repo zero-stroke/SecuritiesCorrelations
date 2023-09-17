@@ -3,24 +3,38 @@ data/*
 
 data/Stock_data/debug/
 data/Stock_data/yahoo_daily/
-!data/Stock_data/yahoo_daily/AAPL.csv
-!data/Stock_data/yahoo_daily/MSFT.csv
-!data/Stock_data/yahoo_daily/GOOG.csv
-!data/Stock_data/yahoo_daily/META.csv
-!data/Stock_data/yahoo_daily/AMZN.csv
-!data/Stock_data/yahoo_daily/MDB.csv
-!data/Stock_data/yahoo_daily/ORCL.csv
-!data/Stock_data/yahoo_daily/ADBE.csv
-!data/Stock_data/yahoo_daily/SPY.csv
-!data/Stock_data/yahoo_daily/DIA.csv
+!data/Stock_data/yahoo_daily/parquets/AAPL.parquet
+!data/Stock_data/yahoo_daily/parquets/MSFT.parquet
+!data/Stock_data/yahoo_daily/parquets/GOOG.parquet
+!data/Stock_data/yahoo_daily/parquets/META.parquet
+!data/Stock_data/yahoo_daily/parquets/AMZN.parquet
+!data/Stock_data/yahoo_daily/parquets/MDB.parquet
+!data/Stock_data/yahoo_daily/parquets/ORCL.parquet
+!data/Stock_data/yahoo_daily/parquets/ADBE.parquet
+!data/Stock_data/yahoo_daily/parquets/SPY.parquet
+!data/Stock_data/yahoo_daily/parquets/DIA.parquet
+!data/Stock_data/yahoo_daily/parquets/XRT.parquet
+!data/Stock_data/yahoo_daily/parquets/KOSS.parquet
+!data/Stock_data/yahoo_daily/parquets/SPCE.parquet
+!data/Stock_data/yahoo_daily/parquets/JPM.parquet
+!data/Stock_data/yahoo_daily/parquets/MVIS.parquet
+!data/Stock_data/yahoo_daily/parquets/AMD.parquet
+!data/Stock_data/yahoo_daily/parquets/PG.parquet
+!data/Stock_data/yahoo_daily/parquets/PLUG.parquet
+!data/Stock_data/yahoo_daily/parquets/LCID.parquet
+!data/Stock_data/yahoo_daily/parquets/JNJ.parquet
+!data/Stock_data/yahoo_daily/parquets/F.parquet
+!data/Stock_data/yahoo_daily/parquets/COIN.parquet
+!data/Stock_data/yahoo_daily/parquets/CLX.parquet
 
 data/Graphs/html_plots
 data/Graphs/json_plots
-data/Graphs/pickled_securities_objects/
 
-!data/Graphs/pickled_securities_objects/AAPL.pkl
-!data/Graphs/pickled_securities_objects/MSFT.pkl
-!data/Graphs/pickled_securities_objects/GOOG.pkl
+#data/Graphs/pickled_securities_objects/
+#
+#!data/Graphs/pickled_securities_objects/AAPL.pkl
+#!data/Graphs/pickled_securities_objects/MSFT.pkl
+#!data/Graphs/pickled_securities_objects/GOOG.pkl
 
 SecuritiesCorrelations.iml
 Procfile

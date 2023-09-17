@@ -179,17 +179,17 @@ class Security:
             index_data = index_metadata.loc[self.symbol]
             self.set_properties_from_metadata(index_data, 'index')
 
-    def get_unique_values(self, attribute_name: str, start_date, num_traces) -> List[str]:
+    def get_unique_values(self, attribute_name: str, start_date) -> List[str]:
         """Returns a list of a correlation_list's unique values for a given attribute"""
         unique_values = set()
 
         # Get values from positive_correlations
         unique_values.update(getattr(security, attribute_name) for security in
-                             self.positive_correlations[start_date][:num_traces] if getattr(security, attribute_name))
+                             self.positive_correlations[start_date] if getattr(security, attribute_name))
 
         # Get values from negative_correlations
         unique_values.update(getattr(security, attribute_name) for security in
-                             self.negative_correlations[start_date][:num_traces] if getattr(security, attribute_name))
+                             self.negative_correlations[start_date] if getattr(security, attribute_name))
 
         return list(unique_values)
 
@@ -281,17 +281,17 @@ class FredSeries:
 
         return md_data
 
-    def get_unique_values(self, attribute_name: str, start_date, num_traces) -> List[str]:
+    def get_unique_values(self, attribute_name: str, start_date) -> List[str]:
         """Returns a list of a correlation_list's unique values for a given attribute"""
         unique_values = set()
 
         # Get values from positive_correlations
         unique_values.update(getattr(security, attribute_name) for security in
-                             self.positive_correlations[start_date][:num_traces] if getattr(security, attribute_name))
+                             self.positive_correlations[start_date] if getattr(security, attribute_name))
 
         # Get values from negative_correlations
         unique_values.update(getattr(security, attribute_name) for security in
-                             self.negative_correlations[start_date][:num_traces] if getattr(security, attribute_name))
+                             self.negative_correlations[start_date] if getattr(security, attribute_name))
 
         return list(unique_values)
 

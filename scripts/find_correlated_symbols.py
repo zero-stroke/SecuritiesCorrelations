@@ -90,7 +90,7 @@ all_main_securities is generally only a few securities long"""
     def define_correlation_for_each_year(self, securities_list, end_date,
                                          source, dl_data, use_ch, use_multiprocessing):
 
-        all_start_dates = {'2023'}
+        all_start_dates = ['2023', '2022', '2021']
 
         if use_multiprocessing:
             for start_date in all_start_dates:

@@ -55,12 +55,15 @@ class SecurityDashboard:
     def __init__(self, data_dir):
         self.data_dir = data_dir
         self.cache = SharedMemoryCache()
-        self.available_securities: List[str] = self.get_available_securities()
-        if not self.available_securities:
+
+        self.available_securities: List[str] = self.get_available_securities()  # Doesn't include FRED series
+        self.all_available_securities: List[str] = self.get_all_available_securities()  # Includes FRED series
+        self.fred_indicators: List[str] = self.get_all_fred_indicators()
+
+        if not self.available_securities:  # If there is nothing saved to disk
             compute_security_correlations_and_plot(cache=self.cache, symbol_list=['GME'])
-        self.fred_series: List[str] = self.get_all_fred_series()
         self.available_start_dates = ['2010', '2018', '2021', '2022', '2023']
-        self.main_security: Security = load_saved_securities('GME')
+        self.main_security: Security = load_saved_securities('GME', False)
 
         self.input_symbol = self.main_security.symbol
         self.dropdown_symbol = self.main_security.symbol
@@ -82,12 +85,12 @@ class SecurityDashboard:
         self.displayed_positively_correlated: List[Security] = []
         self.displayed_negatively_correlated: List[Security] = []
 
-        self.sectors: List[str] = self.main_security.get_unique_values('sector', self.start_date, self.num_traces)
-        self.industry_groups = self.main_security.get_unique_values('industry_group', self.start_date, self.num_traces)
-        self.industries = self.main_security.get_unique_values('industry', self.start_date, self.num_traces)
-        self.countries = self.main_security.get_unique_values('country', self.start_date, self.num_traces)
-        self.states = self.main_security.get_unique_values('state', self.start_date, self.num_traces)
-        self.market_caps = self.main_security.get_unique_values('market_cap', self.start_date, self.num_traces)
+        self.sectors: List[str] = self.main_security.get_unique_values('sector', self.start_date)
+        self.industry_groups = self.main_security.get_unique_values('industry_group', self.start_date)
+        self.industries = self.main_security.get_unique_values('industry', self.start_date)
+        self.countries = self.main_security.get_unique_values('country', self.start_date)
+        self.states = self.main_security.get_unique_values('state', self.start_date)
+        self.market_caps = self.main_security.get_unique_values('market_cap', self.start_date)
 
         self.plot = self.load_initial_plot()  # Load initial plot
         self.app = dash.Dash(__name__, external_scripts=[PROJECT_ROOT / 'ui/custom_script.js'],
@@ -100,7 +103,7 @@ class SecurityDashboard:
     def pick_random_security(self):
         random_security = None
         while random_security is not Security:
-            random_security = load_saved_securities(choice(list(self.available_securities)))
+            random_security = load_saved_securities(choice(list(self.available_securities)), self.use_fred)
             print(random_security)
         return random_security
 
@@ -142,7 +145,11 @@ class SecurityDashboard:
         return [file.split('.')[0] for file in os.listdir(self.data_dir / 'Graphs/pickled_securities_objects/') if
                 file.endswith('.pkl') and not file.endswith('_fred.pkl')]
 
-    def get_all_fred_series(self) -> List[str]:
+    def get_all_available_securities(self) -> List[str]:
+        return [file.split('.')[0] for file in os.listdir(self.data_dir / 'Graphs/pickled_securities_objects/') if
+                file.endswith('.pkl')]
+
+    def get_all_fred_indicators(self) -> List[str]:
         with open(self.data_dir / 'FRED/FRED_original_series.txt', 'r') as file:
             base_series_ids = [line.strip() for line in file]
 
@@ -547,7 +554,7 @@ class SecurityDashboard:
             ctx = dash.callback_context
 
             if self.dropdown_symbol != dropdown_symbol:
-                print(f"self.dropdown_symbol: {self.dropdown_symbol} != dropdown_symbol: {dropdown_symbol}")
+                print(f"self.dropdown_symbol: {self.dropdown_symbol} != dropdown_symbol: {dropdown_symbol} oi")
 
             if self.use_fred != use_fred:
                 print(f"self.use_fred: {self.use_fred} != use_fred: {use_fred}")
@@ -607,7 +614,7 @@ class SecurityDashboard:
 
                 self.dropdown_options = [{'label': security, 'value': security} for security in
                                          self.available_securities] \
-                    if not is_fred_selected else [{'label': series, 'value': series} for series in self.fred_series]
+                    if not is_fred_selected else [{'label': series, 'value': series} for series in self.fred_indicators]
 
                 return self.plot, '', self.dropdown_symbol, self.dropdown_options, \
                     [{'label': sector, 'value': sector} for sector in self.sectors], \
@@ -652,15 +659,16 @@ class SecurityDashboard:
 
             # Does plot need to be computed from scratch
             recompute_plot = False
-            if input_symbol or (use_fred and dropdown_symbol not in self.available_securities) or \
+            if input_symbol or (use_fred and f"{dropdown_symbol}_fred" not in self.all_available_securities) or \
                     (n_clicks is not None and no_changes_have_been_made) \
                     or len(self.main_security.positive_correlations[start_date]) == 0:
+                print(use_fred, dropdown_symbol, self.all_available_securities, "n_clicks: ", n_clicks)
                 recompute_plot = True
 
             # New dropdown security's pkl file exists, but selected year is not yet created
             security_exists_but_year_doesnt = False
-            if not recompute_plot and loading_new_plot and dropdown_symbol in self.available_securities:
-                test_security = load_saved_securities(dropdown_symbol)
+            if not recompute_plot and loading_new_plot and dropdown_symbol in self.all_available_securities:
+                test_security = load_saved_securities(dropdown_symbol, self.use_fred)
                 if len(test_security.positive_correlations[self.start_date]) == 0:
                     security_exists_but_year_doesnt = True
 
@@ -669,7 +677,7 @@ class SecurityDashboard:
                 print(len(self.main_security.positive_correlations[start_date]))
                 for key, value in self.main_security.positive_correlations.items():
                     print(key, value[:2])
-                # Five Cases where we need to recompute
+                # Four Cases where we need to recompute
                 # Pressing "Load and Plot" with no other buttons to recalculate a plot
                 # Manually inputting a symbol to plot
                 # Selecting a FRED plot from dropdown that hasn't been loaded yet
@@ -692,21 +700,24 @@ class SecurityDashboard:
                     use_ch=False,
                     use_multiprocessing=False,
 
-                    etf=True,
-                    stock=True,
-                    index=True,
+                    etf=self.etf,
+                    stock=self.stock,
+                    index=self.index,
 
                     show_detrended=self.show_detrended,
                     monthly_resample=self.monthly_resample,
                     otc_filter=self.otc_filter,
                 )
-                self.main_security = load_saved_securities(param_symbol)
+                self.main_security = load_saved_securities(param_symbol, self.use_fred)
 
                 # Once self.main_security is updated, then we can call update_filter_options
                 update_filter_options()
                 if not use_fred and param_symbol not in self.available_securities:
                     self.available_securities.append(param_symbol)
+                    self.all_available_securities.append(param_symbol)
                     self.dropdown_options = self.available_securities
+                elif use_fred and param_symbol not in self.all_available_securities:
+                    self.all_available_securities.append(param_symbol)
 
                 self.dropdown_symbol = param_symbol
                 self.plot = fig_list[0]
@@ -723,12 +734,12 @@ class SecurityDashboard:
 
             print(f'{dropdown_symbol} != {self.main_security.symbol} is {loading_new_plot}')
             plotter = CorrelationPlotter()
-            self.main_security = load_saved_securities(dropdown_symbol)
+            self.main_security = load_saved_securities(dropdown_symbol, self.use_fred)
 
             if loading_new_plot:
                 print('Loading new plot, dropdown:', dropdown_symbol, 'self.main.symbol: ',
                       self.main_security.symbol)
-                # If loading a new security from disk, make filter options and values set to the new security's options
+                # If loading a security from disk, make filter options and values set to the new security's options
                 update_filter_options()
                 fig = plotter.plot_security_correlations(
                     main_security=self.main_security,
@@ -742,7 +753,7 @@ class SecurityDashboard:
 
                     show_detrended=self.show_detrended,
                     monthly=self.monthly_resample,
-                    otc_filter=False,
+                    otc_filter=self.otc_filter,
                 )
 
                 self.plot = fig
@@ -819,32 +830,19 @@ class SecurityDashboard:
                        selected_countries, selected_states, selected_market_caps
 
         def update_filter_options():
-            self.sectors = get_unique_values('sector')
+            self.sectors = self.main_security.get_unique_values('sector', self.start_date)
+
             print("\nSectors: \n", self.sectors)
             for security in self.displayed_positively_correlated:
                 print(f'Symbol: {security.symbol}, Source: {security.source}, Sector: {security.sector}')
 
             print("Options for sector dropdown:\n", [{'label': sector, 'value': sector} for sector in self.sectors])
 
-            self.industry_groups = get_unique_values('industry_group')
-            self.industries = get_unique_values('industry')
-            self.countries = get_unique_values('country')
-            self.states = get_unique_values('state')
-            self.market_caps = get_unique_values('market_cap')
-
-        def get_unique_values(attribute_name: str) -> List[str]:
-            """Returns a list of a correlation_list's unique values for a given attribute"""
-            unique_values = set()
-
-            # Get values from positive_correlations
-            unique_values.update(getattr(security, attribute_name) for security in
-                                 self.displayed_positively_correlated if getattr(security, attribute_name))
-
-            # Get values from negative_correlations
-            unique_values.update(getattr(security, attribute_name) for security in
-                                 self.displayed_negatively_correlated if getattr(security, attribute_name))
-
-            return list(unique_values)
+            self.industry_groups = self.main_security.get_unique_values('industry_group', self.start_date)
+            self.industries = self.main_security.get_unique_values('industry', self.start_date)
+            self.countries = self.main_security.get_unique_values('country', self.start_date)
+            self.states = self.main_security.get_unique_values('state', self.start_date)
+            self.market_caps = self.main_security.get_unique_values('market_cap', self.start_date)
 
         def filter_displayed_correlations(start_date, num_traces: int,
                                           etf: bool, stock: bool,
