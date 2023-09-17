@@ -131,6 +131,7 @@ ui/__pycache__/
 ui/__pycache__/security_correlations_ui.cpython-310.pyc
 ui/debug_file.txt
 ui/debug_file.txt2
+ui/correlation_calculator.log
 
 *.pyc
 
@@ -138,6 +139,8 @@ ui/debug_file.txt2
 
 tests/cache_info.log
 cache_info.log
+
+securcorr
 
 #data/Graphs/pickled_securities_objects/
 #
