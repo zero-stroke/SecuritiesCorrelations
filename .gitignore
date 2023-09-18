@@ -172,8 +172,6 @@ ui/debug_file.txt
 ui/debug_file.txt2
 ui/correlation_calculator.log
 
-*.pyc
-
 .idea/
 
 tests/cache_info.log
@@ -196,3 +194,5 @@ data/Graphs/json_plots/*
 !data/Graphs/json_plots/.gitkeep
 
 *.iml
+*.pyc
+*.log
