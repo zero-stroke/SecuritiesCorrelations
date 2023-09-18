@@ -58,7 +58,7 @@ Introduce machine learning models to identify potential market anomalies.
 Feel free to fork the repository and submit pull requests for any enhancements or bug fixes. We appreciate your contribution!
 
 ## License:
-This project is open source and available under the MIT License.
+This project is open source and available under the GNU General Public License.
 
 ![GME Plot](ui/screenshots/GME_default.png)
 
