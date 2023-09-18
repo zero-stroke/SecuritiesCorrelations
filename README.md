@@ -59,5 +59,7 @@ Feel free to fork the repository and submit pull requests for any enhancements o
 This project is open source and available under the MIT License.
 
 ![GME Plot](ui/screenshots/GME_default.png)
+
 ![Dropdown Filters](ui/screenshots/GME_filters.png)
+
 ![RPI Plot with 12 traces shown](ui/screenshots/RPI_12traces_2010.png)
