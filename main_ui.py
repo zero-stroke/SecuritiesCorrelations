@@ -1,8 +1,6 @@
 import os
 import sys
 
-sys.path.append('./')
-
 from random import choice
 from typing import List, Optional
 
@@ -98,7 +96,7 @@ class SecurityDashboard:
 
         self.plot = self.load_initial_plot()  # Load initial plot
         self.app = dash.Dash(__name__, external_scripts=[PROJECT_ROOT / 'ui/custom_script.js'],
-                             external_stylesheets=self.external_stylesheets, assets_folder='assets')
+                             external_stylesheets=self.external_stylesheets, assets_folder='ui/assets')
         self.app.scripts.config.serve_locally = True
 
         self.setup_layout()
@@ -392,7 +390,7 @@ class SecurityDashboard:
 
             # Button to load the plot
             html.Button(
-                'Load and Plot',
+                'Reload',
                 id=self.LOAD_PLOT_BUTTON_ID,
                 style=button_style,
             ),
@@ -473,6 +471,10 @@ class SecurityDashboard:
                 Output(self.SECURITIES_INPUT_ID, 'value'),
                 Output(self.SECURITIES_DROPDOWN_ID, 'value'),
                 Output(self.SECURITIES_DROPDOWN_ID, 'options'),
+
+                Output(self.SOURCE_ETF_ID, 'n_clicks'),
+                Output(self.SOURCE_STOCK_ID, 'n_clicks'),
+                Output(self.SOURCE_INDEX_ID, 'n_clicks'),
 
                 Output(self.SECTOR_FILTER_ID, 'options'),
                 Output(self.INDUSTRY_GROUP_FILTER_ID, 'options'),
@@ -620,7 +622,11 @@ class SecurityDashboard:
                                          self.available_securities] \
                     if not is_fred_selected else [{'label': series, 'value': series} for series in self.fred_indicators]
 
-                return self.plot, '', self.dropdown_symbol, self.dropdown_options, \
+                self.etf = True
+                self.stock = True
+                self.index = True
+
+                return self.plot, '', self.dropdown_symbol, self.dropdown_options, 1, 1, 1, \
                     [{'label': sector, 'value': sector} for sector in self.sectors], \
                     [{'label': group, 'value': group} for group in self.industry_groups], \
                     [{'label': industry, 'value': industry} for industry in self.industries], \
@@ -656,7 +662,15 @@ class SecurityDashboard:
                     )
                     and ctx.triggered_id != 'initial-load-interval.n_intervals'
             ):
-                raise dash.exceptions.PreventUpdate
+                return self.plot, '', self.dropdown_symbol, self.dropdown_options, 1, 1, 1, \
+                       [{'label': sector, 'value': sector} for sector in self.sectors], \
+                       [{'label': group, 'value': group} for group in self.industry_groups], \
+                       [{'label': industry, 'value': industry} for industry in self.industries], \
+                       [{'label': country, 'value': country} for country in self.countries], \
+                       [{'label': state, 'value': state} for state in self.states], \
+                       [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
+                       self.sectors, self.industry_groups, self.industries, \
+                       self.countries, self.states, self.market_caps
 
             # Is the current plot simply being modified or should a whole new plot be loaded
             loading_new_plot = False if dropdown_symbol == self.main_security.symbol else True
@@ -676,11 +690,13 @@ class SecurityDashboard:
                 if len(test_security.positive_correlations[self.start_date]) == 0:
                     security_exists_but_year_doesnt = True
 
+                    print(len(test_security.positive_correlations[start_date]))
+                    for key, value in test_security.positive_correlations.items():
+                        print(key, value[:2])
+
             if recompute_plot or security_exists_but_year_doesnt:
                 print('Load', recompute_plot, security_exists_but_year_doesnt)
-                print(len(self.main_security.positive_correlations[start_date]))
-                for key, value in self.main_security.positive_correlations.items():
-                    print(key, value[:2])
+
                 # Four Cases where we need to recompute
                 # Pressing "Load and Plot" with no other buttons to recalculate a plot
                 # Manually inputting a symbol to plot
@@ -704,15 +720,19 @@ class SecurityDashboard:
                     use_ch=False,
                     use_multiprocessing=False,
 
-                    etf=self.etf,
-                    stock=self.stock,
-                    index=self.index,
+                    etf=True,
+                    stock=True,
+                    index=True,
 
                     show_detrended=self.show_detrended,
                     monthly_resample=self.monthly_resample,
                     otc_filter=self.otc_filter,
                 )
                 self.main_security = load_saved_securities(param_symbol, self.use_fred)
+
+                print(len(self.main_security.positive_correlations[start_date]))
+                for key, value in self.main_security.positive_correlations.items():
+                    print(key, value[:2])
 
                 # Once self.main_security is updated, then we can call update_filter_options
                 update_filter_options()
@@ -726,7 +746,11 @@ class SecurityDashboard:
                 self.dropdown_symbol = param_symbol
                 self.plot = fig_list[0]
 
-                return self.plot, '', self.dropdown_symbol, self.dropdown_options, \
+                self.etf = True
+                self.stock = True
+                self.index = True
+
+                return self.plot, '', self.dropdown_symbol, self.dropdown_options, 1, 1, 1, \
                        [{'label': sector, 'value': sector} for sector in self.sectors], \
                        [{'label': group, 'value': group} for group in self.industry_groups], \
                        [{'label': industry, 'value': industry} for industry in self.industries], \
@@ -762,8 +786,12 @@ class SecurityDashboard:
 
                 self.plot = fig
 
+                self.etf = True
+                self.stock = True
+                self.index = True
+
                 # Return the fig to be displayed, tha blank value for the input box, and the value for the dropdown
-                return self.plot, '', self.dropdown_symbol, self.dropdown_options, \
+                return self.plot, '', self.dropdown_symbol, self.dropdown_options, 1, 1, 1, \
                        [{'label': sector, 'value': sector} for sector in self.sectors], \
                        [{'label': group, 'value': group} for group in self.industry_groups], \
                        [{'label': industry, 'value': industry} for industry in self.industries], \
@@ -823,7 +851,8 @@ class SecurityDashboard:
                 self.plot = fig
 
                 # Return the fig to be displayed, tha blank value for the input box, and the value for the dropdown
-                return self.plot, '', self.dropdown_symbol, self.dropdown_options, \
+                return self.plot, '', self.dropdown_symbol, self.dropdown_options, etf_clicks, stock_clicks, \
+                       index_clicks, \
                        [{'label': sector, 'value': sector} for sector in self.sectors], \
                        [{'label': group, 'value': group} for group in self.industry_groups], \
                        [{'label': industry, 'value': industry} for industry in self.industries], \
@@ -859,7 +888,7 @@ class SecurityDashboard:
             args_dict = locals().copy()
             args_dict.pop('self')  # Remove 'self' from the dictionary
 
-            with open('debug_file.txt2', 'a') as f:
+            with open('debug_file.txt', 'a') as f:
                 f.write('\n')
 
             with open('debug_file.txt2', 'a') as f:
