@@ -12,7 +12,7 @@ The SecuritiesCorrelations project is a tool that provides insights into the cor
 4. Customizable Plots: The tool provides the ability to detrend data, resample on a monthly basis, and exclude OTC data for a more refined analysis.
 
 5. Advanced Correlation Analysis: The scripts directory contains various Python scripts to compute correlations, read files, and plot data.
-
+    
 ## Setup
 The 'mini' branch will run on its own, but it is a limited version that only considers about 100 securities, mainly stocks. 
 
@@ -51,9 +51,8 @@ Integrate more data sources to provide a comprehensive analysis.
 
 Be able to calculate correlations for more recent timeframes, e.g. for the  last month using 15-minute resolution data.
 
-Add forecasting capabilities to predict future correlations.
+Add anomaly detection.
 
-Introduce machine learning models to identify potential market anomalies.
 ## Contributing:
 Feel free to fork the repository and submit pull requests for any enhancements or bug fixes. We appreciate your contribution!
 
