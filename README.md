@@ -14,7 +14,9 @@ The SecuritiesCorrelations project is a tool that provides insights into the cor
 5. Advanced Correlation Analysis: The scripts directory contains various Python scripts to compute correlations, read files, and plot data.
 
 ## Setup
-The 'mini' branch will run on its own, but it is a limited version that only considers about 100 securities, mainly stocks. For the 'main' branch you need to download a folder with 2gb of parquets from https://drive.google.com/drive/folders/1qMu7B6GzY_V7xWOgMbucciTM0ffjd97k?usp=drive_link and place it in the data/yahoo_daily/ folder so that every Stock, ETF, and Index has data.   
+The 'mini' branch will run on its own, but it is a limited version that only considers about 100 securities, mainly stocks. 
+
+For the 'main' branch you need to download a folder with 2gb of parquets from https://drive.google.com/drive/folders/1W8n0o0Nrj4bJgsXEk1uneZqqyqk0bJfP?usp=drive_link and place it in the data/yahoo_daily/ folder so that every Stock, ETF, and Index has data.   
 
 ## Running the Dashboard:
 To launch the interactive dashboard, navigate to the root directory of the project and run:
