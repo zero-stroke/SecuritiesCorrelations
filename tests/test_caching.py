@@ -3,7 +3,7 @@ import time
 
 from tqdm import tqdm
 
-from main import compute_security_correlations_and_plot
+from batch_calculate import compute_security_correlations_and_plot
 from scripts.file_reading_funcs import original_get_validated_security_data, read_series_data
 from scripts.correlation_constants import SharedMemoryCache
 

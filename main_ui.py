@@ -11,7 +11,7 @@ from dash.dependencies import Input, Output, State
 
 from config import DATA_DIR
 from config import PROJECT_ROOT
-from main import compute_security_correlations_and_plot
+from batch_calculate import compute_security_correlations_and_plot
 from scripts.correlation_constants import Security, SharedMemoryCache
 from scripts.file_reading_funcs import load_saved_securities
 from scripts.plotting_functions import CorrelationPlotter

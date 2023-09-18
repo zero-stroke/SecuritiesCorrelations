@@ -4,7 +4,7 @@ from typing import List
 
 from tqdm import tqdm
 
-from main import make_securities_list, compute_security_correlations_and_plot
+from batch_calculate import make_securities_list, compute_security_correlations_and_plot
 from scripts.correlation_constants import SecurityMetadata
 from scripts.file_reading_funcs import original_get_validated_security_data, read_series_data, pickle_securities_objects, \
     get_fred_md_series_list

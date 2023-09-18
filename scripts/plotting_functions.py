@@ -6,18 +6,19 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 from config import DATA_DIR
-from scripts.correlation_constants import Security, EnhancedEncoder, SecurityMetadata, FredSeries
+from scripts.correlation_constants import Security, EnhancedEncoder, FredSeries
 from scripts.file_reading_funcs import read_series_data, fit_data_to_time_range
 
 
 def set_comment_text(main_security):
     if isinstance(main_security, FredSeries):
-        comment_text = f'{main_security.source_title}, {main_security.source_link}, {main_security.release_title}, ' \
-                       f'{main_security.release_link}'
+        comment_text = f'Source: {main_security.source_title},    {main_security.source_link},    ' \
+                       f'Release: {main_security.release_title},    {main_security.release_link}'
     elif isinstance(main_security, Security):
         if main_security.source == 'stock':
             comment_text = f"Sector: {main_security.sector},    Industry Group: {main_security.industry_group},    " \
-                           f"Industry: {main_security.industry},     Market: {main_security.market}"
+                           f"Industry: {main_security.industry},     Country: {main_security.country}",     \
+                           f"State: {main_security.state},    Market: {main_security.market}"
         else:
             return ''
     else:
