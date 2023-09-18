@@ -182,11 +182,12 @@ cache_info.log
 temp_file.txt
 debug_file.txt
 debug_file2.txt
+debug_file2.txt2
 
 securcorr
 
-data/Graphs/pickled_securities_objects/*
-!data/Graphs/pickled_securities_objects/.gitkeep
+#data/Graphs/pickled_securities_objects/*
+#!data/Graphs/pickled_securities_objects/.gitkeep
 
 data/Graphs/html_plots/*
 !data/Graphs/html_plots/.gitkeep
