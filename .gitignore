@@ -108,8 +108,6 @@ data/Stock_data/yahoo_daily/parquets/*
 !data/Stock_data/yahoo_daily/parquets/NOW.parquet
 !data/Stock_data/yahoo_daily/parquets/RACE.parquet
 
-data/Graphs/html_plots/*
-data/Graphs/json_plots/*
 data/Stock_data/example_data/
 
 data/Stock_data/FinDB/*
@@ -149,3 +147,8 @@ securcorr
 data/Graphs/pickled_securities_objects/*
 !data/Graphs/pickled_securities_objects/.gitkeep
 
+data/Graphs/html_plots/*
+!data/Graphs/html_plots/.gitkeep
+
+data/Graphs/json_plots/*
+!data/Graphs/json_plots/.gitkeep
