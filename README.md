@@ -53,7 +53,6 @@ Be able to calculate correlations for more recent timeframes, e.g. for the  last
 
 Add anomaly detection.
 
-Introduce machine learning models to identify potential market anomalies.
 ## Contributing:
 Feel free to fork the repository and submit pull requests for any enhancements or bug fixes. We appreciate your contribution!
 
