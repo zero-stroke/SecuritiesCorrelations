@@ -14,16 +14,16 @@ The SecuritiesCorrelations project is a tool that provides insights into the cor
 5. Advanced Correlation Analysis: The scripts directory contains various Python scripts to compute correlations, read files, and plot data.
 
 ## Setup
-The 'mini' branch will run on its own, but it is a limited version that only considers about 100 securities, mainly stocks. For the 'main' branch you need to download a folder with 2gb of parquets from https://drive.google.com/drive/folders/1qMu7B6GzY_V7xWOgMbucciTM0ffjd97k?usp=drive_link and place it in the data/yahoo_daily folder so that every Stock, ETF, and Index has data.   
+The 'mini' branch will run on its own, but it is a limited version that only considers about 100 securities, mainly stocks. For the 'main' branch you need to download a folder with 2gb of parquets from https://drive.google.com/drive/folders/1qMu7B6GzY_V7xWOgMbucciTM0ffjd97k?usp=drive_link and place it in the data/yahoo_daily/ folder so that every Stock, ETF, and Index has data.   
 
 ## Running the Dashboard:
 To launch the interactive dashboard, navigate to the root directory of the project and run:
 
-python ui/main_ui.py
-This will start the Dash server and the dashboard will be accessible at http://127.0.0.1:8080/. 
+python main_ui.py
+This will start the Dash server and the dashboard will be accessible in your browser at localhost:8080. 
 
 First time calculations will take a minute, but subsequent calculations will only take a few seconds due to caching data retrieval. Once a calculation is made it should be saved to data/Graphs/pickled_security_correlations/.
-Entering in a ticker into the top "Enter New..." box will always calculate the correlation from scratch. You can also do this by clicking "Reload"  
+Entering a ticker into the top "Enter New..." box will always calculate the correlation from scratch. You can also do this by clicking "Reload"  
 
 FRED button makes the dropdown show different macroeconomic indicators form the FRED-MD dataset that can be selected from.
 
