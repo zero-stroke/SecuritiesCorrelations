@@ -140,6 +140,10 @@ ui/correlation_calculator.log
 tests/cache_info.log
 cache_info.log
 
+temp_file.txt
+debug_file.txt
+debug_file2.txt
+
 securcorr
 
 #data/Graphs/pickled_securities_objects/

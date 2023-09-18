@@ -1,5 +1,5 @@
 # SecuritiesCorrelations
-The SecuritiesCorrelations project is a comprehensive tool that provides insights into the correlations between different securities. Leveraging rich datasets, the project offers interactive visualizations and detailed analysis of securities' relationships, helping users understand market dynamics and make informed decisions.
+The SecuritiesCorrelations project is a tool that provides insights into the correlations between different securities. The project offers interactive visualizations and analysis of securities' relationships, helping users understand market dynamics.
 
 
 ## Main Features:
@@ -20,11 +20,37 @@ The 'mini' branch will run on its own, but it is a limited version that only con
 To launch the interactive dashboard, navigate to the root directory of the project and run:
 
 python ui/main_ui.py
-This will start the Dash server and the dashboard will be accessible at http://127.0.0.1:8080/.
+This will start the Dash server and the dashboard will be accessible at http://127.0.0.1:8080/. 
+
+First time calculations will take a minute, but subsequent calculations will only take a few seconds due to caching data retrieval. Once a calculation is made it should be saved to data/Graphs/pickled_security_correlations/.
+Entering in a ticker into the top "Enter New..." box will always calculate the correlation from scratch. You can also do this by clicking "Reload"  
+
+FRED button makes the dropdown show different macroeconomic indicators form the FRED-MD dataset that can be selected from.
+
+The year button will adjust from which starting point the correlation calculation begins. 
+
+The input next to the year is the number of stocks to include in the plot.
+
+'Exclude OTC' will exclude Pink Sheet Stocks.
+
+'Detrend' will show the data as detrended (it is always calculated as detrended) so the user can get a better visualization of the correlation.
+
+'Monthly Resample' will show the data resampled into monthly granularity, mainly to help with visualizing FRED-MD data which is only available monthly anyways.
+
+Stock Filters is a list of filters that will only apply to stocks. Metadata is taken from FinanceDB, which has accurate information for the majority of stocks but occasionally has "Missing" or "nan" values.
+
+### Tips:
+Click on a security in the legend to hide it from the graph.
+
+Modifying the plot using anything other than the filter options will reset the filters.
 
 ## Future Enhancements:
 Integrate more data sources to provide a comprehensive analysis.
+
+Be able to calculate correlations for more recent timeframes, e.g. for the  last month using 15-minute resolution data.
+
 Add forecasting capabilities to predict future correlations.
+
 Introduce machine learning models to identify potential market anomalies.
 ## Contributing:
 Feel free to fork the repository and submit pull requests for any enhancements or bug fixes. We appreciate your contribution!
@@ -32,3 +58,6 @@ Feel free to fork the repository and submit pull requests for any enhancements o
 ## License:
 This project is open source and available under the MIT License.
 
+![GME Plot](ui/screenshots/GME_default.png)
+![Dropdown Filters](ui/screenshots/GME_filters.png)
+![RPI Plot with 12 traces shown](ui/screenshots/RPI_12traces_2010.png)
