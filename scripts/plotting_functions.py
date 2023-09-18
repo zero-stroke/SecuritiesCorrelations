@@ -17,7 +17,7 @@ def set_comment_text(main_security):
     elif isinstance(main_security, Security):
         if main_security.source == 'stock':
             comment_text = f"Sector: {main_security.sector},    Industry Group: {main_security.industry_group},    " \
-                           f"Industry: {main_security.industry},     Country: {main_security.country}",     \
+                           f"Industry: {main_security.industry},     Country: {main_security.country},    " \
                            f"State: {main_security.state},    Market: {main_security.market}"
         else:
             return ''

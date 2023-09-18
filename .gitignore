@@ -107,6 +107,47 @@ data/Stock_data/yahoo_daily/parquets/*
 !data/Stock_data/yahoo_daily/parquets/GS.parquet
 !data/Stock_data/yahoo_daily/parquets/NOW.parquet
 !data/Stock_data/yahoo_daily/parquets/RACE.parquet
+!data/Stock_data/yahoo_daily/parquets/DHR.parquet
+!data/Stock_data/yahoo_daily/parquets/TMO.parquet
+!data/Stock_data/yahoo_daily/parquets/BMY.parquet
+!data/Stock_data/yahoo_daily/parquets/NEE.parquet
+!data/Stock_data/yahoo_daily/parquets/SO.parquet
+!data/Stock_data/yahoo_daily/parquets/K.parquet
+!data/Stock_data/yahoo_daily/parquets/DLTR.parquet
+!data/Stock_data/yahoo_daily/parquets/MDT.parquet
+!data/Stock_data/yahoo_daily/parquets/ABT.parquet
+!data/Stock_data/yahoo_daily/parquets/AZN.parquet
+!data/Stock_data/yahoo_daily/parquets/CSCO.parquet
+!data/Stock_data/yahoo_daily/parquets/FI.parquet
+!data/Stock_data/yahoo_daily/parquets/LYG.parquet
+!data/Stock_data/yahoo_daily/parquets/SAP.parquet
+!data/Stock_data/yahoo_daily/parquets/FTNT.parquet
+!data/Stock_data/yahoo_daily/parquets/TU.parquet
+!data/Stock_data/yahoo_daily/parquets/LOW.parquet
+!data/Stock_data/yahoo_daily/parquets/HD.parquet
+!data/Stock_data/yahoo_daily/parquets/CMG.parquet
+!data/Stock_data/yahoo_daily/parquets/BRK-A.parquet
+!data/Stock_data/yahoo_daily/parquets/IBN.parquet
+!data/Stock_data/yahoo_daily/parquets/IBM.parquet
+!data/Stock_data/yahoo_daily/parquets/TER.parquet
+!data/Stock_data/yahoo_daily/parquets/TSM.parquet
+!data/Stock_data/yahoo_daily/parquets/AXN.parquet
+!data/Stock_data/yahoo_daily/parquets/QCOM.parquet
+!data/Stock_data/yahoo_daily/parquets/ADI.parquet
+!data/Stock_data/yahoo_daily/parquets/INFY.parquet
+!data/Stock_data/yahoo_daily/parquets/LAZR.parquet
+!data/Stock_data/yahoo_daily/parquets/AMAT.parquet
+!data/Stock_data/yahoo_daily/parquets/LRXC.parquet
+!data/Stock_data/yahoo_daily/parquets/UBER.parquet
+!data/Stock_data/yahoo_daily/parquets/SHOP.parquet
+!data/Stock_data/yahoo_daily/parquets/TTD.parquet
+!data/Stock_data/yahoo_daily/parquets/AMX.parquet
+!data/Stock_data/yahoo_daily/parquets/CP.parquet
+!data/Stock_data/yahoo_daily/parquets/CNI.parquet
+!data/Stock_data/yahoo_daily/parquets/CSX.parquet
+!data/Stock_data/yahoo_daily/parquets/SNY.parquet
+!data/Stock_data/yahoo_daily/parquets/DUK.parquet
+!data/Stock_data/yahoo_daily/parquets/BHP.parquet
 
 data/Stock_data/example_data/
 
@@ -152,3 +193,5 @@ data/Graphs/html_plots/*
 
 data/Graphs/json_plots/*
 !data/Graphs/json_plots/.gitkeep
+
+*.iml
