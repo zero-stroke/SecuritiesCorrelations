@@ -18,6 +18,12 @@ from scripts.file_reading_funcs import load_saved_securities
 from scripts.plotting_functions import CorrelationPlotter
 
 
+def get_all_fred_series_ids() -> List[str]:
+    fred_md_metadata = pd.read_csv(FRED_DIR / 'fred_md_metadata.csv')
+
+    return fred_md_metadata[fred_md_metadata['fred_md_id'].notna()]['fred_md_id'].tolist()
+
+
 class SecurityDashboard:
     external_scripts = [
         # 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML',
@@ -66,7 +72,7 @@ class SecurityDashboard:
 
         self.available_securities: List[str] = self.get_available_securities()  # Doesn't include FRED series
         self.all_available_securities: List[str] = self.get_all_available_securities()  # Includes FRED series
-        self.fred_indicators: List[str] = self.get_all_fred_series_ids()
+        self.fred_indicators: List[str] = get_all_fred_series_ids()
 
         if not self.available_securities:  # If there is nothing saved to disk
             compute_security_correlations_and_plot(cache=self.cache, symbol_list=['GME'])
@@ -157,11 +163,6 @@ class SecurityDashboard:
     def get_all_available_securities(self) -> List[str]:
         return [file.split('.')[0] for file in os.listdir(self.data_dir / 'Graphs/pickled_securities_objects/') if
                 file.endswith('.pkl')]
-
-    def get_all_fred_series_ids(self) -> List[str]:
-        fred_md_metadata = pd.read_csv(FRED_DIR / 'fred_md_metadata.csv')
-
-        return fred_md_metadata[fred_md_metadata['fred_md_id'].notna()]['fred_md_id'].tolist()
 
     def setup_layout(self):
         main_security = self.main_security
