@@ -6,10 +6,11 @@ from typing import List, Optional
 
 import dash
 import dash_bootstrap_components as dbc
+import pandas as pd
 from dash import dcc, html
 from dash.dependencies import Input, Output, State
 
-from config import DATA_DIR
+from config import DATA_DIR, FRED_DIR
 from config import PROJECT_ROOT
 from batch_calculate import compute_security_correlations_and_plot
 from scripts.correlation_constants import Security, SharedMemoryCache
@@ -18,6 +19,10 @@ from scripts.plotting_functions import CorrelationPlotter
 
 
 class SecurityDashboard:
+    external_scripts = [
+        # 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML',
+        PROJECT_ROOT / 'ui/custom_script.js'
+    ]
     external_stylesheets = [
         {
             'href': 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap',
@@ -53,6 +58,7 @@ class SecurityDashboard:
     MARKET_CAP_FILTER_ID = 'market-cap-filter'
 
     PLOT_ID = 'security_plot'
+    LATEX_ID = 'latex_equation'
 
     def __init__(self, data_dir):
         self.data_dir = data_dir
@@ -60,7 +66,7 @@ class SecurityDashboard:
 
         self.available_securities: List[str] = self.get_available_securities()  # Doesn't include FRED series
         self.all_available_securities: List[str] = self.get_all_available_securities()  # Includes FRED series
-        self.fred_indicators: List[str] = self.get_all_fred_indicators()
+        self.fred_indicators: List[str] = self.get_all_fred_series_ids()
 
         if not self.available_securities:  # If there is nothing saved to disk
             compute_security_correlations_and_plot(cache=self.cache, symbol_list=['GME'])
@@ -70,6 +76,7 @@ class SecurityDashboard:
         self.input_symbol = self.main_security.symbol
         self.dropdown_symbol = self.main_security.symbol
         self.dropdown_options = self.available_securities
+        self.latex_equation = ''
 
         self.use_fred = []
 
@@ -95,7 +102,7 @@ class SecurityDashboard:
         self.market_caps = self.main_security.get_unique_values('market_cap', self.start_date)
 
         self.plot = self.load_initial_plot()  # Load initial plot
-        self.app = dash.Dash(__name__, external_scripts=[PROJECT_ROOT / 'ui/custom_script.js'],
+        self.app = dash.Dash(__name__, external_scripts=self.external_scripts,
                              external_stylesheets=self.external_stylesheets, assets_folder='ui/assets')
         self.app.scripts.config.serve_locally = True
 
@@ -151,11 +158,10 @@ class SecurityDashboard:
         return [file.split('.')[0] for file in os.listdir(self.data_dir / 'Graphs/pickled_securities_objects/') if
                 file.endswith('.pkl')]
 
-    def get_all_fred_indicators(self) -> List[str]:
-        with open(self.data_dir / 'FRED/FRED_original_series.txt', 'r') as file:
-            base_series_ids = [line.strip() for line in file]
+    def get_all_fred_series_ids(self) -> List[str]:
+        fred_md_metadata = pd.read_csv(FRED_DIR / 'fred_md_metadata.csv')
 
-        return base_series_ids
+        return fred_md_metadata[fred_md_metadata['fred_md_id'].notna()]['fred_md_id'].tolist()
 
     def setup_layout(self):
         main_security = self.main_security
@@ -405,7 +411,20 @@ class SecurityDashboard:
                         responsive=True,
                     )],
                     type="circle",
-                )
+                ),
+                dcc.Markdown(
+                    id=self.LATEX_ID,
+                    children='',
+                             style={
+                                 'position': 'absolute',
+                                 'bottom': '9.5em',  # Adjust as needed to align with your annotation
+                                 'right': '4.5em',  # Adjusted from 'right' to 'left' to align with the left edge
+                                 'backgroundColor': 'transparent',  # Make background transparent
+                                 'padding': '5px',
+                                 'borderRadius': '5px'
+                             },
+                             mathjax=True
+                             )
             ], style={'display': 'flex', 'flexDirection': 'column', 'height': '100%'}),
 
             dcc.Interval(
@@ -471,6 +490,7 @@ class SecurityDashboard:
                 Output(self.SECURITIES_INPUT_ID, 'value'),
                 Output(self.SECURITIES_DROPDOWN_ID, 'value'),
                 Output(self.SECURITIES_DROPDOWN_ID, 'options'),
+                Output(self.LATEX_ID, 'children'),
 
                 Output(self.SOURCE_ETF_ID, 'n_clicks'),
                 Output(self.SOURCE_STOCK_ID, 'n_clicks'),
@@ -626,7 +646,7 @@ class SecurityDashboard:
                 self.stock = True
                 self.index = True
 
-                return self.plot, '', self.dropdown_symbol, self.dropdown_options, 1, 1, 1, \
+                return self.plot, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
                     [{'label': sector, 'value': sector} for sector in self.sectors], \
                     [{'label': group, 'value': group} for group in self.industry_groups], \
                     [{'label': industry, 'value': industry} for industry in self.industries], \
@@ -662,7 +682,7 @@ class SecurityDashboard:
                     )
                     and ctx.triggered_id != 'initial-load-interval.n_intervals'
             ):
-                return self.plot, '', self.dropdown_symbol, self.dropdown_options, 1, 1, 1, \
+                return self.plot, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
                        [{'label': sector, 'value': sector} for sector in self.sectors], \
                        [{'label': group, 'value': group} for group in self.industry_groups], \
                        [{'label': industry, 'value': industry} for industry in self.industries], \
@@ -750,7 +770,12 @@ class SecurityDashboard:
                 self.stock = True
                 self.index = True
 
-                return self.plot, '', self.dropdown_symbol, self.dropdown_options, 1, 1, 1, \
+                if use_fred:
+                    self.latex_equation = self.main_security.latex_equation
+                else:
+                    self.latex_equation = ''
+
+                return self.plot, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
                        [{'label': sector, 'value': sector} for sector in self.sectors], \
                        [{'label': group, 'value': group} for group in self.industry_groups], \
                        [{'label': industry, 'value': industry} for industry in self.industries], \
@@ -790,8 +815,13 @@ class SecurityDashboard:
                 self.stock = True
                 self.index = True
 
+                if use_fred:
+                    self.latex_equation = self.main_security.latex_equation
+                else:
+                    self.latex_equation = ''
+
                 # Return the fig to be displayed, tha blank value for the input box, and the value for the dropdown
-                return self.plot, '', self.dropdown_symbol, self.dropdown_options, 1, 1, 1, \
+                return self.plot, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
                        [{'label': sector, 'value': sector} for sector in self.sectors], \
                        [{'label': group, 'value': group} for group in self.industry_groups], \
                        [{'label': industry, 'value': industry} for industry in self.industries], \
@@ -851,8 +881,8 @@ class SecurityDashboard:
                 self.plot = fig
 
                 # Return the fig to be displayed, tha blank value for the input box, and the value for the dropdown
-                return self.plot, '', self.dropdown_symbol, self.dropdown_options, etf_clicks, stock_clicks, \
-                       index_clicks, \
+                return self.plot, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, \
+                       etf_clicks, stock_clicks, index_clicks, \
                        [{'label': sector, 'value': sector} for sector in self.sectors], \
                        [{'label': group, 'value': group} for group in self.industry_groups], \
                        [{'label': industry, 'value': industry} for industry in self.industries], \

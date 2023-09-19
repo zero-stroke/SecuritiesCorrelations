@@ -10,19 +10,29 @@ from scripts.correlation_constants import Security, EnhancedEncoder, FredSeries
 from scripts.file_reading_funcs import read_series_data, fit_data_to_time_range
 
 
-def set_comment_text(main_security):
-    if isinstance(main_security, FredSeries):
-        comment_text = f'Source: {main_security.source_title},    {main_security.source_link},    ' \
-                       f'Release: {main_security.release_title},    {main_security.release_link}'
-    elif isinstance(main_security, Security):
+def set_comment_text(main_security: FredSeries | Security) -> str:
+    is_fred_object = isinstance(main_security, FredSeries)
+    if is_fred_object:
+        # Remove "http://www." prefix from source_link and release_link
+        source_link_cleaned = main_security.source_link.replace("http://www.", "")
+        source_link_cleaned = source_link_cleaned.replace("https://www.", "")
+
+        release_link_cleaned = main_security.release_link
+
+        if type(main_security.release_link) == str:
+            release_link_cleaned = release_link_cleaned.replace("http://www.", "")
+            release_link_cleaned = release_link_cleaned.replace("https://www.", "")
+
+        comment_text = f'Source: {main_security.source_title},    {source_link_cleaned},    ' \
+                       f'Release: {main_security.release_title},    {release_link_cleaned},    ' \
+                       f'Transformation Method: '
+    else:
         if main_security.source == 'stock':
             comment_text = f"Sector: {main_security.sector},    Industry Group: {main_security.industry_group},    " \
                            f"Industry: {main_security.industry},     Country: {main_security.country},    " \
                            f"State: {main_security.state},    Market: {main_security.market}"
         else:
             return ''
-    else:
-        return "Unknown type"
 
     return comment_text
 

@@ -3,7 +3,7 @@ from typing import List, Union
 
 from scripts.correlation_constants import SecurityMetadata, Security, FredSeries, SharedMemoryCache
 from scripts.file_reading_funcs import pickle_securities_objects, get_fred_md_series_list, load_saved_securities
-from scripts.find_correlated_symbols import CorrelationCalculator, define_top_correlations
+from scripts.calculate_correlations import CorrelationCalculator, define_top_correlations
 from scripts.plotting_functions import CorrelationPlotter
 
 DEBUG = False

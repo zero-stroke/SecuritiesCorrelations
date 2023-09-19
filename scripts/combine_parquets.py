@@ -1,3 +1,4 @@
+# Unused file that was an experimental way to speed up file i/o operations
 import pandas as pd
 from config import STOCKS_DIR
 

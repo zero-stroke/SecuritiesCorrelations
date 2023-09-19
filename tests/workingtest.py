@@ -8,7 +8,7 @@ from batch_calculate import make_securities_list, compute_security_correlations_
 from scripts.correlation_constants import SecurityMetadata
 from scripts.file_reading_funcs import original_get_validated_security_data, read_series_data, pickle_securities_objects, \
     get_fred_md_series_list
-from scripts.find_correlated_symbols import CorrelationCalculator, define_top_correlations
+from scripts.calculate_correlations import CorrelationCalculator, define_top_correlations
 from scripts.plotting_functions import CorrelationPlotter
 
 
