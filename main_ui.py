@@ -401,7 +401,7 @@ class SecurityDashboard:
                     children=[dcc.Graph(
                         id=self.PLOT_ID,
                         figure=self.plot,
-                        style={'height': '75vh'},  # adjust this value as needed
+                        style={'height': '60vh'},  # adjust this value as needed
                         responsive=True,
                     )],
                     type="circle",
