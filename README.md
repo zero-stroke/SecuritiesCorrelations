@@ -14,9 +14,9 @@ The SecuritiesCorrelations project is a tool that provides insights into the cor
 5. Advanced Correlation Analysis: The scripts directory contains various Python scripts to compute correlations, read files, and plot data.
     
 ## Setup
-Make sure python is installed, preferably > 3.10, and run setup.bat. Once the environment has been created, running run.bat will start the interface. 
+Make sure python is installed, preferably ≥ 3.10, and run setup.bat. Once the environment has been created, running run.bat will start the interface. 
 
-The 'mini' branch will run on its own, but it is a limited version that only considers about 100 securities, mainly stocks. 'mini' can be cloned with git clone -b mini <link> 
+The 'mini' branch will run on its own, but it is a limited version that only considers about 100 securities, mainly stocks. 'mini' can be cloned with `git clone -b mini <link>` 
 
 For the 'main' branch you need to download a folder with 2gb of parquets from https://drive.google.com/drive/folders/1W8n0o0Nrj4bJgsXEk1uneZqqyqk0bJfP?usp=drive_link and place it in the data/yahoo_daily/ folder so that every Stock, ETF, and Index has data.   
 
@@ -53,7 +53,7 @@ Integrate more data sources to provide a comprehensive analysis.
 
 Be able to calculate correlations for more recent timeframes, e.g. for the  last month using 15-minute resolution data.
 
-Database to query for pkl files so that calculations are no necessary for non-recent correlations. 
+Database to query for .pkl files so that calculations are no necessary for non-recent correlations. 
 
 Add anomaly detection.
 
