@@ -53,6 +53,8 @@ Integrate more data sources to provide a comprehensive analysis.
 
 Be able to calculate correlations for more recent timeframes, e.g. for the  last month using 15-minute resolution data.
 
+Database to query for pkl files so that calculations are no necessary for non-recent correlations. 
+
 Add anomaly detection.
 
 ## Contributing:
