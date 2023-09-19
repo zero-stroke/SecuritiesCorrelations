@@ -891,7 +891,7 @@ class SecurityDashboard:
             with open('debug_file.txt', 'a') as f:
                 f.write('\n')
 
-            with open('debug_file.txt2', 'a') as f:
+            with open('debug_file2.txt', 'a') as f:
                 for key, value in args_dict.items():
                     f.write(f'{key}: {value}\n')
 
