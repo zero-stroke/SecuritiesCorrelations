@@ -45,7 +45,7 @@ def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_securit
     else:
         securities_list = calculator.define_correlations_for_series_list(securities_list, start_date, end_date,
                                                                          source, dl_data, use_ch)
-        with open('temp_file.txt', 'a') as f:
+        with open('scripts/temp_file.txt', 'a') as f:
             f.write(f'{securities_list, start_date, end_date, source, dl_data, use_ch}')
 
     # Take the num_traces positively and negatively correlated and assign to Security

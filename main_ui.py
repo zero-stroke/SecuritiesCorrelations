@@ -919,10 +919,10 @@ class SecurityDashboard:
             args_dict = locals().copy()
             args_dict.pop('self')  # Remove 'self' from the dictionary
 
-            with open('debug_file.txt', 'a') as f:
+            with open('ui/debug_file.txt', 'a') as f:
                 f.write('\n')
 
-            with open('debug_file2.txt', 'a') as f:
+            with open('ui/debug_file2.txt', 'a') as f:
                 for key, value in args_dict.items():
                     f.write(f'{key}: {value}\n')
 
