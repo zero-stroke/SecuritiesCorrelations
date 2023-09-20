@@ -14,7 +14,7 @@ The SecuritiesCorrelations project is a tool that provides insights into the cor
 ## Setup
 Make sure python is installed, preferably ≥ 3.10, and run setup.bat. Once the environment has been created, running run.bat will start the interface. 
 
-The 'mini' branch will run on its own, but it is a limited version that only considers about 100 securities, mainly stocks. 'mini' can be cloned with `git clone -b mini <link>` 
+The 'mini' branch will run on its own, but it is a limited version that only considers about 100 securities, mainly stocks. 'mini' can be cloned with `git clone -b mini https://github.com/zayricch/SecuritiesCorrelations.git` 
 
 For the 'main' branch you need to download a folder with 2gb of parquets from https://drive.google.com/drive/folders/1W8n0o0Nrj4bJgsXEk1uneZqqyqk0bJfP?usp=drive_link and place it in the data/yahoo_daily/ folder so that every Stock, ETF, and Index has data.   
 
