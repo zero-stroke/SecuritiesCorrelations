@@ -11,7 +11,7 @@ from dash import dcc, html
 from dash.dependencies import Input, Output, State
 
 from config import DATA_DIR, FRED_DIR
-from config import PROJECT_ROOT
+from config import BASE_DIR
 from batch_calculate import compute_security_correlations_and_plot
 from scripts.correlation_constants import Security, SharedMemoryCache
 from scripts.file_reading_funcs import load_saved_securities
@@ -27,7 +27,6 @@ def get_all_fred_series_ids() -> List[str]:
 class SecurityDashboard:
     external_scripts = [
         # 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML',
-        PROJECT_ROOT / 'ui/custom_script.js'
     ]
     external_stylesheets = [
         {
