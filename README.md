@@ -5,13 +5,11 @@ The SecuritiesCorrelations project is a tool that provides insights into the cor
 ## Main Features:
 1. Interactive Dashboard: The main_ui.py script provides an interactive dashboard built with Dash, allowing users to visualize correlations between securities.
 
-2. Data Integration: The project integrates data from multiple sources, including FRED, FinDB, and Yahoo daily stock data.
+2. Filtering Capabilities: Users can apply various filters to narrow down their analysis, such as ETF, Stock, Index, and more.
 
-3. Filtering Capabilities: Users can apply various filters to narrow down their analysis, such as ETF, Stock, Index, and more.
+3. Customizable Plots: The tool provides the ability to detrend data, resample on a monthly basis, and exclude OTC data for a more refined analysis.
 
-4. Customizable Plots: The tool provides the ability to detrend data, resample on a monthly basis, and exclude OTC data for a more refined analysis.
-
-5. Advanced Correlation Analysis: The scripts directory contains various Python scripts to compute correlations, read files, and plot data.
+4. Advanced Correlation Analysis: The scripts directory contains various Python scripts to compute correlations, read files, and plot data.
     
 ## Setup
 Make sure python is installed, preferably ≥ 3.10, and run setup.bat. Once the environment has been created, running run.bat will start the interface. 
