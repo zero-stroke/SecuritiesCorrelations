@@ -1,11 +1,11 @@
-import yfinance as yf
-import pandas as pd
 import subprocess
-from pathlib import Path
+import subprocess
+
 import numpy as np
 import plotly.express as px
-from config import DATA_DIR, STOCKS_DIR
-from scripts.file_reading_funcs import is_series_repeating, read_series_data
+
+from config import DATA_DIR
+from scripts.file_reading_funcs import read_series_data
 
 
 def show_popup_plot(symbol, fig):

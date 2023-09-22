@@ -220,7 +220,10 @@ class FredSeries:
 
         # Fetch the data for the given fred_md_id from fred_md_metadata.csv
         fred_md_metadata = pd.read_csv(FRED_DIR / 'fred_md_metadata.csv')
-        row = fred_md_metadata[fred_md_metadata['fred_md_id'] == fred_md_id].iloc[0]
+        try:
+            row = fred_md_metadata[fred_md_metadata['fred_md_id'] == fred_md_id].iloc[0]
+        except IndexError:
+            raise IndexError(f'{fred_md_id} does not exist. Maybe you forgot to put an \'x\' at the end')
 
         self.api_id = row['api_id']
         self.name = row['title']

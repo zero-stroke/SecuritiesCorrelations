@@ -9,13 +9,16 @@ app = dash.Dash(__name__)
 
 available_securities = ['AAPL', 'GOOG', 'MSFT']
 
+
 def load_initial_plot():
     fig = go.Figure(data=[
         go.Bar(name='SF Zoo', x=available_securities, y=[10, 11, 12]),
     ])
     return fig
 
+
 initial_plot = load_initial_plot()
+
 
 app.layout = html.Div([
     dcc.Input(id='security-input', type='text', value=''),

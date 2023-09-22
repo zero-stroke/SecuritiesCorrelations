@@ -7,13 +7,11 @@ import os
 from functools import lru_cache
 from functools import wraps
 
-
 import numpy as np
 import pandas as pd
-
-
 import yfinance as yf
 import financedatabase as fd
+
 from scripts.correlation_constants import FredSeries, Security, logger
 from scripts.clickhouse_functions import get_data_from_ch_stock_data
 from config import STOCKS_DIR, FRED_DIR, DATA_DIR
@@ -74,7 +72,7 @@ def read_series_data(symbol: str, source: str):
 def original_get_validated_security_data(symbol: str, start_date: str, end_date: str, source: str, dl_data: bool,
                                          use_ch: bool)\
         -> pd.DataFrame:
-    """Get security data from file, make sure its within range and continuous"""
+    """Get security data from file, make sure it's within range and continuous"""
     if dl_data:
         security_data = download_yfin_data(symbol)
     elif use_ch:
@@ -82,6 +80,19 @@ def original_get_validated_security_data(symbol: str, start_date: str, end_date:
     else:
         security_data = read_series_data(symbol, source)
 
+    # Data validation steps, most do not need to be used on every run
+    # # DELETES SERIES FROM METADATA FILE
+    # if series_is_empty(security_data, symbol):
+    #     raise AttributeError(f"{symbol:<6} is empty. Skipping...")
+    #
+    # # Takes up a lot of time
+    # if is_series_repeating(security_data, symbol):
+    #     raise AttributeError(f"{symbol:<6} isn't continuous. Skipping...")
+    #
+    # if not is_series_continuous(security_data, symbol):
+    #     raise AttributeError(f"{symbol:<6} isn't continuous. Skipping...")
+
+    # Only one that is necessary during all runs
     if not is_series_within_date_range(security_data, start_date, end_date):
         # logger.warning(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
         raise AttributeError(f"{symbol:<6} hasn't been on the market for the required duration. Skipping...")
@@ -96,7 +107,7 @@ def original_get_validated_security_data(symbol: str, start_date: str, end_date:
     return security_data
 
 
-def series_is_empty(series, symbol, file_path, dl_data=True) -> bool:
+def series_is_empty(series, symbol) -> bool:
     # Check for duplicate column names and NaN only columns
     duplicate_columns = series.columns[series.columns.duplicated()].tolist()
     nan_only_columns = series.columns[series.isna().all()].tolist()
@@ -308,3 +319,9 @@ def download_yfin_data(symbol):
     except Exception as e:
         print(f"EXCEPTION 1: {e}\nTraceback (most recent call last:\n{traceback.format_exc()}")
         return pd.Series()
+
+
+def download_findb_data():
+    indices = fd.Indices()
+    indices.select().to_csv(STOCKS_DIR / 'FinDB/fin_db_indices2.csv')
+

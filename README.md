@@ -46,6 +46,8 @@ Click on a security in the legend to hide it from the graph.
 
 Modifying the plot using anything other than the filter options will reset the filters.
 
+In rare circumstances localhost:8080 might not work for you due to the port being in use by another process. In this case find `port=int(os.environ.get('PORT', 8080)))` at the bottom of main_ui.py and change the port to another number. 
+
 ## Future Enhancements:
 Integrate more data sources to provide a comprehensive analysis.
 

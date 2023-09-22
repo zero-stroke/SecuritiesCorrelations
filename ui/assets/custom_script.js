@@ -1,7 +1,12 @@
-document.addEventListener('DOMContentLoaded', function(){
-    document.getElementById(SECURITIES_INPUT_ID).onkeypress = function(e){
-        if (e.keyCode === 13) {
-            document.getElementById(LOAD_PLOT_BUTTON_ID).click();
-        }
-    };
-});
+// document.addEventListener('keydown', function(event) {
+//     if (event.key === 'Insert') {
+//         console.log("Insert key pressed");
+//         // Get the hidden div
+//         const counterDiv = document.getElementById('insert-counter');
+//
+//         // Increment its content
+//         let newCount = parseInt(counterDiv.textContent || '0') + 1;
+//         counterDiv.textContent = String(newCount);
+//     }
+// });
+//

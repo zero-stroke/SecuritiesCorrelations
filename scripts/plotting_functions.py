@@ -65,7 +65,7 @@ class CorrelationPlotter:
                 trace_series = trace_series.diff().dropna()
 
             fig.add_trace(go.Scatter(x=trace_series.index, y=trace_series, mode='lines',
-                                     name=f'{symbol} - {name}'), row=row, col=1)
+                                     name=f'{security.correlation:.3}  {symbol} - {name}'), row=row, col=1)
 
     @staticmethod
     def add_traces_to_plot(fig, securities: List[Security], start_date, row: int, num_traces: int, show_detrended: bool,
@@ -92,7 +92,7 @@ class CorrelationPlotter:
                 trace_series = trace_series.diff().dropna()
 
             fig.add_trace(go.Scatter(x=trace_series.index, y=trace_series, mode='lines',
-                                     name=f'{symbol} - {name}'), row=row, col=1)
+                                     name=f'{security.correlation:.3}  {symbol} - {name}'), row=row, col=1)
 
             added_count += 1
 
@@ -135,13 +135,15 @@ class CorrelationPlotter:
             for i, correlations in enumerate([displayed_positive_correlations, displayed_negative_correlations],
                                              start=1):
                 fig.add_trace(go.Scatter(x=main_security_data.index, y=main_security_data, mode='lines',
-                                         name=main_security.symbol, line=dict(color=self.MAIN_SERIES_COLOR)), row=i, col=1)
+                                         name=main_security.symbol, line=dict(color=self.MAIN_SERIES_COLOR)),
+                              row=i, col=1)
                 self.add_traces_to_plot_ui(fig, correlations, start_date, i, show_detrended, monthly)
         else:
             for i, correlations in enumerate([main_security.positive_correlations[start_date],
                                               main_security.negative_correlations[start_date]], start=1):
                 fig.add_trace(go.Scatter(x=main_security_data.index, y=main_security_data, mode='lines',
-                                         name=main_security.symbol, line=dict(color=self.MAIN_SERIES_COLOR)), row=i, col=1)
+                                         name=main_security.symbol, line=dict(color=self.MAIN_SERIES_COLOR)),
+                              row=i, col=1)
                 self.add_traces_to_plot(fig, correlations, start_date, i, num_traces, show_detrended, monthly)
                 
         comment_text = set_comment_text(main_security)
@@ -187,13 +189,6 @@ class CorrelationPlotter:
         return fig
 
     @staticmethod
-    def save_plot(symbol: str, fig, start_date: str):
-        # Graphs/json_plots/AAPL_2010_plot.json
-        json_file_path = DATA_DIR / f'Graphs/json_plots/{symbol}_plot.json'
-        with open(json_file_path, 'w') as f:
-            json.dump(fig.to_dict(), f, cls=EnhancedEncoder)
-
-    @staticmethod
     def show_popup_plot(symbol: str, fig):
         html_file_path = DATA_DIR / f'Graphs/html_plots/{symbol}_plot.html'
         fig.write_html(html_file_path, full_html=True)
@@ -217,6 +212,13 @@ class CorrelationPlotter:
             padding = '&nbsp;' * (max_length - len(name))
             name = name + padding
         return name
+
+
+def save_plot(symbol: str, fig):
+    # Graphs/json_plots/AAPL_2010_plot.json
+    json_file_path = DATA_DIR / f'Graphs/json_plots/{symbol}_plot.json'
+    with open(json_file_path, 'w') as f:
+        json.dump(fig.to_dict(), f, cls=EnhancedEncoder)
 
 
 if __name__ == '__main__':

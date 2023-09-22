@@ -1,5 +1,7 @@
+import json
 import os
 import sys
+import copy
 
 from random import choice
 from typing import List, Optional
@@ -9,13 +11,16 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 from dash import dcc, html
 from dash.dependencies import Input, Output, State
+import plotly.graph_objs as go
 
 from config import DATA_DIR, FRED_DIR
 from config import BASE_DIR
 from batch_calculate import compute_security_correlations_and_plot
+from scripts.calculate_correlations import get_correlation_for_series
 from scripts.correlation_constants import Security, SharedMemoryCache
-from scripts.file_reading_funcs import load_saved_securities
-from scripts.plotting_functions import CorrelationPlotter
+from scripts.file_reading_funcs import load_saved_securities, read_series_data, original_get_validated_security_data, \
+    fit_data_to_time_range
+from scripts.plotting_functions import CorrelationPlotter, save_plot
 
 
 def get_all_fred_series_ids() -> List[str]:
@@ -27,6 +32,7 @@ def get_all_fred_series_ids() -> List[str]:
 class SecurityDashboard:
     external_scripts = [
         # 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML',
+        # 'ui/custom_script.js'
     ]
     external_stylesheets = [
         {
@@ -42,6 +48,7 @@ class SecurityDashboard:
     SECURITIES_DROPDOWN_ID = 'security-dropdown'
 
     FRED_SWITCH_ID = 'fred_switch'
+    ADD_TRACE_ID = 'add_trace'
 
     START_DATE_ID = 'start_date_dropdown'
     NUM_TRACES_ID = 'num_traces_id'
@@ -84,6 +91,7 @@ class SecurityDashboard:
         self.latex_equation = ''
 
         self.use_fred = []
+        self.add_trace = []
 
         self.etf: bool = True
         self.stock: bool = True
@@ -107,6 +115,8 @@ class SecurityDashboard:
         self.market_caps = self.main_security.get_unique_values('market_cap', self.start_date)
 
         self.plot = self.load_initial_plot()  # Load initial plot
+        self.detrended_plot = None
+        self.monthly_plot = None
         self.app = dash.Dash(__name__, external_scripts=self.external_scripts,
                              external_stylesheets=self.external_stylesheets, assets_folder='ui/assets')
         self.app.scripts.config.serve_locally = True
@@ -225,11 +235,24 @@ class SecurityDashboard:
 
             html.Div([
                 html.Div([
-                    dbc.Input(id=self.SECURITIES_INPUT_ID, type='text', placeholder='Enter new...', debounce=True,
-                              n_submit=0,
-                              style={
-                                  'width': '9rem',
-                              }),
+                    html.Div([
+                        dbc.Input(id=self.SECURITIES_INPUT_ID, type='text', placeholder='Enter new...', debounce=True,
+                                  n_submit=0,
+                                  style={
+                                      'width': '9rem',
+                                  }
+                                  ),
+                        dcc.Checklist(
+                            id=self.ADD_TRACE_ID,
+                            options=[{'label': '', 'value': 'add_trace'}],
+                            value=self.use_fred,
+                            inline=True,
+                            className='custom-switch',
+                            style=item_style,  # Apply item_style to the element
+                            labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
+                        ),
+                        html.Label('Add trace'),
+                    ], style=div_style2),
                     html.Div([
                         dcc.Dropdown(
                             id=self.SECURITIES_DROPDOWN_ID,
@@ -239,7 +262,7 @@ class SecurityDashboard:
                                 'width': '9rem',
                             },
                         ),
-                        #  Dropdown selection for which Security to display
+                        #  Changes dropdown options from being regular stocks to being fred-md series
                         dcc.Checklist(
                             id=self.FRED_SWITCH_ID,
                             options=[{'label': '', 'value': 'use_fred'}],
@@ -407,7 +430,7 @@ class SecurityDashboard:
                     children=[dcc.Graph(
                         id=self.PLOT_ID,
                         figure=self.plot,
-                        style={'height': '60vh'},  # adjust this value as needed
+                        style={'height': '60vh'},  # adjust this value depending on screen's resolution, 70 for 1440p
                         responsive=True,
                     )],
                     type="circle",
@@ -415,16 +438,16 @@ class SecurityDashboard:
                 dcc.Markdown(
                     id=self.LATEX_ID,
                     children='',
-                             style={
-                                 'position': 'absolute',
-                                 'bottom': '9.5em',  # Adjust as needed to align with your annotation
-                                 'right': '4.5em',  # Adjusted from 'right' to 'left' to align with the left edge
-                                 'backgroundColor': 'transparent',  # Make background transparent
-                                 'padding': '5px',
-                                 'borderRadius': '5px'
-                             },
-                             mathjax=True
-                             )
+                    style={
+                        'position': 'absolute',
+                        'bottom': '9.5em',
+                        'right': '4.5em',
+                        'backgroundColor': 'transparent',  # Make background transparent
+                        'padding': '5px',
+                        'borderRadius': '5px'
+                    },
+                    mathjax=True
+                )
             ], style={'display': 'flex', 'flexDirection': 'column', 'height': '100%'}),
 
             dcc.Interval(
@@ -514,10 +537,10 @@ class SecurityDashboard:
                 Input(self.LOAD_PLOT_BUTTON_ID, 'n_clicks'),
 
                 Input(self.SECURITIES_INPUT_ID, 'n_submit'),
+                Input(self.ADD_TRACE_ID, 'value'),
                 State(self.SECURITIES_INPUT_ID, 'value'),
 
                 Input(self.SECURITIES_DROPDOWN_ID, 'value'),
-
                 Input(self.FRED_SWITCH_ID, 'value'),
 
                 Input(self.START_DATE_ID, 'value'),
@@ -541,6 +564,7 @@ class SecurityDashboard:
         )
         def update_graph(n_clicks: int,
                          n_submit: int,
+                         add_trace=None,
                          input_symbol: Optional[str] = self.input_symbol,
                          dropdown_symbol: Optional[str] = self.dropdown_symbol,
                          use_fred=None,
@@ -575,15 +599,20 @@ class SecurityDashboard:
                 detrend_plot = self.show_detrended
             if use_fred is None:
                 use_fred = self.use_fred
+            if add_trace is None:
+                add_trace = self.add_trace
             print('\n')
 
             ctx = dash.callback_context
 
             if self.dropdown_symbol != dropdown_symbol:
-                print(f"self.dropdown_symbol: {self.dropdown_symbol} != dropdown_symbol: {dropdown_symbol} oi")
+                print(f"self.dropdown_symbol: {self.dropdown_symbol} != dropdown_symbol: {dropdown_symbol}")
 
             if self.use_fred != use_fred:
                 print(f"self.use_fred: {self.use_fred} != use_fred: {use_fred}")
+
+            if self.add_trace != add_trace:
+                print(f"self.add_trace: {self.add_trace} != add_trace: {add_trace}")
 
             if start_date != self.start_date:
                 print(f"start_date: {start_date} != self.start_date: {self.start_date}")
@@ -647,14 +676,14 @@ class SecurityDashboard:
                 self.index = True
 
                 return self.plot, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
-                    [{'label': sector, 'value': sector} for sector in self.sectors], \
-                    [{'label': group, 'value': group} for group in self.industry_groups], \
-                    [{'label': industry, 'value': industry} for industry in self.industries], \
-                    [{'label': country, 'value': country} for country in self.countries], \
-                    [{'label': state, 'value': state} for state in self.states], \
-                    [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
-                    self.sectors, self.industry_groups, self.industries, \
-                    self.countries, self.states, self.market_caps
+                       [{'label': sector, 'value': sector} for sector in self.sectors], \
+                       [{'label': group, 'value': group} for group in self.industry_groups], \
+                       [{'label': industry, 'value': industry} for industry in self.industries], \
+                       [{'label': country, 'value': country} for country in self.countries], \
+                       [{'label': state, 'value': state} for state in self.states], \
+                       [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
+                       self.sectors, self.industry_groups, self.industries, \
+                       self.countries, self.states, self.market_caps
 
             # Skip the update if no relevant trigger has occurred
             if not ctx.triggered or (
@@ -682,6 +711,7 @@ class SecurityDashboard:
                     )
                     and ctx.triggered_id != 'initial-load-interval.n_intervals'
             ):
+                # Return the same state that it was already in
                 return self.plot, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
                        [{'label': sector, 'value': sector} for sector in self.sectors], \
                        [{'label': group, 'value': group} for group in self.industry_groups], \
@@ -713,6 +743,139 @@ class SecurityDashboard:
                     print(len(test_security.positive_correlations[start_date]))
                     for key, value in test_security.positive_correlations.items():
                         print(key, value[:2])
+
+            if input_symbol and add_trace:
+                plot = self.plot
+                security = Security(input_symbol)
+                name = security.name
+                name = CorrelationPlotter.wrap_text(name, 50)
+                trace_series = read_series_data(security.symbol, 'yahoo')
+
+                trace_series = fit_data_to_time_range(trace_series, start_date)
+                trace_series = CorrelationPlotter.normalize_data(trace_series)
+
+                if self.monthly_resample:
+                    trace_series = trace_series.resample('MS').first()
+
+                if self.show_detrended:
+                    trace_series = trace_series.diff().dropna()
+
+                trace_series_detrended = original_get_validated_security_data(input_symbol, self.start_date,
+                                                                              '2023-06-02', 'yahoo', False, False)
+
+                correlation = get_correlation_for_series(self.main_security.series_data_detrended[self.start_date],
+                                                         trace_series_detrended)
+
+                plot.add_trace(go.Scatter(x=trace_series.index, y=trace_series, mode='lines',
+                                          name=f'{correlation:.3}  {input_symbol} - {name}'), row=1, col=1)
+                plot.add_trace(go.Scatter(x=trace_series.index, y=trace_series, mode='lines',
+                                          name=f'{correlation:.3}  {input_symbol} - {name}'), row=2, col=1)
+                self.plot = plot
+
+                save_plot(input_symbol, plot)
+
+                return self.plot, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
+                       [{'label': sector, 'value': sector} for sector in self.sectors], \
+                       [{'label': group, 'value': group} for group in self.industry_groups], \
+                       [{'label': industry, 'value': industry} for industry in self.industries], \
+                       [{'label': country, 'value': country} for country in self.countries], \
+                       [{'label': state, 'value': state} for state in self.states], \
+                       [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
+                       self.sectors, self.industry_groups, self.industries, \
+                       self.countries, self.states, self.market_caps
+
+            if ctx.triggered_id == self.DETREND_SWITCH_ID or ctx.triggered_id == self.MONTHLY_SWITCH_ID:
+                fig = copy.deepcopy(self.plot)
+                if monthly and detrend_plot:
+                    for trace in fig.data:
+                        y_series = pd.Series(trace.y)
+                        detrended_y = y_series.diff().dropna().values
+
+                        # Adjust the x-values to match the detrended y-values
+                        trace.x = trace.x[1:]  # Drop the first x-value
+
+                        # Update the y-data of the trace
+                        trace.y = detrended_y
+                    fig.update_traces()
+
+                    for trace in fig.data:
+                        x = pd.to_datetime(trace.x)
+                        y = pd.Series(trace.y, index=x)
+
+                        # Resample the y-data
+                        resampled_y = y.resample('MS').first()
+
+                        # Update the x and y data of the trace
+                        trace.x = resampled_y.index
+                        trace.y = resampled_y.values
+                    fig.update_traces()
+
+                    return fig, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
+                           [{'label': sector, 'value': sector} for sector in self.sectors], \
+                           [{'label': group, 'value': group} for group in self.industry_groups], \
+                           [{'label': industry, 'value': industry} for industry in self.industries], \
+                           [{'label': country, 'value': country} for country in self.countries], \
+                           [{'label': state, 'value': state} for state in self.states], \
+                           [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
+                           self.sectors, self.industry_groups, self.industries, \
+                           self.countries, self.states, self.market_caps
+
+                elif detrend_plot:
+                    for trace in fig.data:
+                        y_series = pd.Series(trace.y)
+                        detrended_y = y_series.diff().dropna().values
+
+                        # Adjust the x-values to match the detrended y-values
+                        trace.x = trace.x[1:]  # Drop the first x-value
+
+                        # Update the y-data of the trace
+                        trace.y = detrended_y
+                    fig.update_traces()
+
+                    return fig, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
+                           [{'label': sector, 'value': sector} for sector in self.sectors], \
+                           [{'label': group, 'value': group} for group in self.industry_groups], \
+                           [{'label': industry, 'value': industry} for industry in self.industries], \
+                           [{'label': country, 'value': country} for country in self.countries], \
+                           [{'label': state, 'value': state} for state in self.states], \
+                           [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
+                           self.sectors, self.industry_groups, self.industries, \
+                           self.countries, self.states, self.market_caps
+
+                elif monthly:
+                    # print("Truthy")
+                    for trace in fig.data:
+                        x = pd.to_datetime(trace.x)
+                        y = pd.Series(trace.y, index=x)
+
+                        # Resample the y-data
+                        resampled_y = y.resample('MS').first()
+
+                        # Update the x and y data of the trace
+                        trace.x = resampled_y.index
+                        trace.y = resampled_y.values
+                    fig.update_traces()
+
+                    return fig, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
+                           [{'label': sector, 'value': sector} for sector in self.sectors], \
+                           [{'label': group, 'value': group} for group in self.industry_groups], \
+                           [{'label': industry, 'value': industry} for industry in self.industries], \
+                           [{'label': country, 'value': country} for country in self.countries], \
+                           [{'label': state, 'value': state} for state in self.states], \
+                           [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
+                           self.sectors, self.industry_groups, self.industries, \
+                           self.countries, self.states, self.market_caps
+                else:
+                    return fig, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
+                           [{'label': sector, 'value': sector} for sector in self.sectors], \
+                           [{'label': group, 'value': group} for group in self.industry_groups], \
+                           [{'label': industry, 'value': industry} for industry in self.industries], \
+                           [{'label': country, 'value': country} for country in self.countries], \
+                           [{'label': state, 'value': state} for state in self.states], \
+                           [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
+                           self.sectors, self.industry_groups, self.industries, \
+                           self.countries, self.states, self.market_caps
+
 
             if recompute_plot or security_exists_but_year_doesnt:
                 print('Load', recompute_plot, security_exists_but_year_doesnt)
@@ -761,7 +924,7 @@ class SecurityDashboard:
                     self.all_available_securities.append(param_symbol)
                     self.dropdown_options = self.available_securities
                 elif use_fred and param_symbol not in self.all_available_securities:
-                    self.all_available_securities.append(param_symbol)
+                    self.all_available_securities.append(f'{param_symbol}_fred')
 
                 self.dropdown_symbol = param_symbol
                 self.plot = fig_list[0]
@@ -775,6 +938,7 @@ class SecurityDashboard:
                 else:
                     self.latex_equation = ''
 
+                # Return newly calculated correlation and its plot
                 return self.plot, '', self.dropdown_symbol, self.dropdown_options, self.latex_equation, 1, 1, 1, \
                        [{'label': sector, 'value': sector} for sector in self.sectors], \
                        [{'label': group, 'value': group} for group in self.industry_groups], \

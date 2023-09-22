@@ -13,6 +13,23 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
 
 
+def compute_correlation(series_data1: pd.Series, series_data2: pd.Series) -> float:
+    return series_data1.corr(series_data2)
+
+
+def get_correlation_for_series(main_security_data_detrended: pd.DataFrame,
+                               security_data_detrended: pd.DataFrame) -> float:
+    aligned_main, aligned_symbol = main_security_data_detrended.align(security_data_detrended, join='inner', axis=0)
+
+    # After aligning, ensure column names are retained
+    aligned_main.columns = main_security_data_detrended.columns
+    aligned_symbol.columns = security_data_detrended.columns
+
+    correlation = compute_correlation(aligned_main['main'], aligned_symbol['symbol'])
+
+    return correlation
+
+
 def define_top_correlations(all_main_securities: Union[List['Security'], List['FredSeries']]) \
         -> Union[List['Security'], List['FredSeries']]:
     num_symbols = 100
@@ -64,7 +81,7 @@ def process_symbol(args):
 
         main_security_data_detrended = single_main_security.series_data_detrended[start_date]
 
-        corr_float = self.get_correlation_for_series(main_security_data_detrended, security_data)
+        corr_float = get_correlation_for_series(main_security_data_detrended, security_data)
 
         if corr_float is not None:
             result_list.append((single_main_security, symbol, corr_float))
@@ -138,22 +155,6 @@ all_main_securities is generally only a few securities long"""
         # print(f"Cache miss for {symbol}. Total hits: {cache.get_hits()}, Total misses: {cache.get_misses()}")
         return data
 
-    def get_correlation_for_series(self, main_security_data_detrended: pd.DataFrame,
-                                   security_data: pd.DataFrame) -> float:
-        aligned_main, aligned_symbol = main_security_data_detrended.align(security_data, join='inner', axis=0)
-
-        # After aligning, ensure column names are retained
-        aligned_main.columns = main_security_data_detrended.columns
-        aligned_symbol.columns = security_data.columns
-
-        correlation = self.compute_correlation(aligned_main['main'], aligned_symbol['symbol'])
-
-        return correlation
-
-    @staticmethod
-    def compute_correlation(series_data1: pd.Series, series_data2: pd.Series) -> float:
-        return series_data1.corr(series_data2)
-
     def define_correlations_for_series_list(self, all_main_securities: Union[Set['Security'], Set['FredSeries']],
                                             start_date: str, end_date: str, source: str, dl_data: bool, use_ch: bool) \
             -> Set['Security']:
@@ -164,8 +165,8 @@ all_main_securities is generally only a few securities long"""
 
         for symbol in symbols:
             try:
-                security_data = original_get_validated_security_data(symbol, start_date, end_date, source,
-                                                                     dl_data, use_ch)
+                security_data_detrended = original_get_validated_security_data(symbol, start_date, end_date, source,
+                                                                               dl_data, use_ch)
             except AttributeError:  # Better than checking if its None every time
                 continue
 
@@ -177,7 +178,8 @@ all_main_securities is generally only a few securities long"""
                 main_security_data_detrended = main_security.series_data_detrended[start_date]
 
                 try:
-                    correlation_float = self.get_correlation_for_series(main_security_data_detrended, security_data)
+                    correlation_float = get_correlation_for_series(main_security_data_detrended,
+                                                                   security_data_detrended)
                 except TypeError:
                     logger.warning(f'Skipping correlation calculation for {symbol} due to missing data.')
                     continue
@@ -202,7 +204,7 @@ all_main_securities is generally only a few securities long"""
             main_security_data_detrended = main_security.series_data_detrended[start_date]
 
             try:
-                correlation_float = self.get_correlation_for_series(main_security_data_detrended, security_data)
+                correlation_float = get_correlation_for_series(main_security_data_detrended, security_data)
             except TypeError:
                 logger.warning(f'Skipping correlation calculation for {symbol} due to missing data.')
                 continue

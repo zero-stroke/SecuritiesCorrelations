@@ -196,3 +196,5 @@ data/Graphs/json_plots/*
 *.iml
 *.pyc
 *.log
+
+testing.ipynb
