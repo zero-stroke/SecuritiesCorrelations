@@ -63,8 +63,8 @@ Feel free to fork the repository and submit pull requests for any enhancements o
 ## License:
 This project is open source and available under the GNU General Public License.
 
-![GME Plot](ui/screenshots/GME_default.png)
+![RPI Plot](ui/screenshots/RPI_fred_2010.png)
 
 ![Dropdown Filters](ui/screenshots/GME_filters.png)
 
-![RPI Plot with 12 traces shown](ui/screenshots/RPI_12traces_2010.png)
+![AMD Plot](ui/screenshots/AMD_detrended_monthly_2010.png)
