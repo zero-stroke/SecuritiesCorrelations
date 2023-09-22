@@ -23,6 +23,9 @@ IF %ERRORLEVEL% EQU 0 (
     :: Activate the conda environment and install required packages.
     echo Installing requirements...
     call conda activate SecuritiesCorrelations && pip install -r requirements.txt
+
+    echo Downloading data...
+    call conda activate SecuritiesCorrelations && python scripts/download_zip_data.py
 ) ELSE (
     :: If conda is not available, fall back to using Python's built-in 'venv' module.
     echo Using Python venv...
@@ -37,6 +40,9 @@ IF %ERRORLEVEL% EQU 0 (
     :: Activate the virtual environment and install required packages.
     echo Installing requirements...
     call .\SecuritiesCorrelations\Scripts\activate && pip install -r requirements.txt
+
+    echo Downloading data...
+    call .\SecuritiesCorrelations\Scripts\activate && python scripts/download_zip_data.py
 )
 
 :: End the localized environment changes and keep the command prompt open for user inspection.
