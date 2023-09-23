@@ -47,7 +47,10 @@ class SecurityDashboard:
     SECURITIES_INPUT_ID = 'security_input'
     SECURITIES_DROPDOWN_ID = 'security-dropdown'
 
-    FRED_SWITCH_ID = 'fred_switch'
+    FREDMD_SWITCH_ID = 'fredmd_switch'
+    FREDAPI_SWITCH_ID = 'fredapi_switch'
+    SECURITY_SWITCH_ID = 'security_switch'
+
     ADD_TRACE_ID = 'add_trace'
 
     START_DATE_ID = 'start_date_dropdown'
@@ -201,6 +204,11 @@ class SecurityDashboard:
             'margin': '0 0.5em',
         }  # Adjust the value to control the horizontal spacing
 
+        switch_style = {
+            'padding': '0',
+            'margin': '0',
+        }  # Adjust the value to control the horizontal spacing
+
         multi_dropdown_style = {
             'backgroundColor': '#171717',
             'color': '#fff',
@@ -225,55 +233,99 @@ class SecurityDashboard:
             'margin': '0'
         }
 
-        dropdown_div_style = {'margin': '0.5em 3rem'}
+        dropdown_div_style = {'margin': '0.5em 2rem 0.5rem 0.1em'}
 
-        div_style = {'display': 'flex', 'justifyContent': 'flex-start', 'alignItems': 'center', 'margin': '0.5em 4em'}
-        div_style2 = {'display': 'flex', 'justifyContent': 'flex-start', 'alignItems': 'center',
-                      'margin': '0.5em 0.1em'}
+        div_style_tri_switch = {'display': 'flex', 'justifyContent': 'flex-start',
+                                'alignItems': 'center', 'margin': '0.5em 4em'}
+        div_style_input = {'display': 'flex', 'justifyContent': 'flex-start', 'alignItems': 'center',
+                           'margin': '0.5em 0.1em'}
+        div_style_switch = {
+            'display': 'flex',
+            'flexDirection': 'column',  # Set to 'column' for vertical alignment
+            'justifyContent': 'flex-start',  # Align items vertically to the top
+            'alignItems': 'center',
+            'margin': '0.5em 0.1em'
+        }
+
+        dropdown_container_style = {
+            'width': '9rem',
+            'margin': '0 1em 0 0'
+        }
 
         self.app.layout = html.Div([
 
             html.Div([
                 html.Div([
                     html.Div([
-                        dbc.Input(id=self.SECURITIES_INPUT_ID, type='text', placeholder='Enter new...', debounce=True,
-                                  n_submit=0,
-                                  style={
-                                      'width': '9rem',
-                                  }
-                                  ),
-                        dcc.Checklist(
-                            id=self.ADD_TRACE_ID,
-                            options=[{'label': '', 'value': 'add_trace'}],
-                            value=self.use_fred,
-                            inline=True,
-                            className='custom-switch',
-                            style=item_style,  # Apply item_style to the element
-                            labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
-                        ),
-                        html.Label('Add trace'),
-                    ], style=div_style2),
+                        html.Div([
+                            dbc.Input(id=self.SECURITIES_INPUT_ID, type='text', placeholder='Enter new...',
+                                      debounce=True,
+                                      n_submit=0,
+                                      style={
+                                          'width': '9rem',
+                                      }),
+                        ], style=dropdown_container_style),
+                        html.Div([
+                            html.Label('Add trace', style={'fontSize': '0.8em', 'padding': '0.1em'}),
+                            dcc.Checklist(
+                                id=self.ADD_TRACE_ID,
+                                options=[{'label': '', 'value': 'add_trace'}],
+                                value=self.use_fred,
+                                inline=True,
+                                className='custom-switch',
+                                style=switch_style,  # Apply item_style to the element
+                                labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
+                            ),
+                        ], style=div_style_switch),
+                    ], style=div_style_input),
                     html.Div([
-                        dcc.Dropdown(
-                            id=self.SECURITIES_DROPDOWN_ID,
-                            options=[{'label': security, 'value': security} for security in self.available_securities],
-                            value=main_security.symbol,  # Use the random security here
-                            style={
-                                'width': '9rem',
-                            },
-                        ),
+                        html.Div([
+                            dcc.Dropdown(
+                                id=self.SECURITIES_DROPDOWN_ID,
+                                options=[{'label': security, 'value': security} for security in
+                                         self.available_securities],
+                                value=main_security.symbol,  # Use the random security here
+                                style={'width': '9em'},
+                            ),
+                        ], style=dropdown_container_style),
                         #  Changes dropdown options from being regular stocks to being fred-md series
-                        dcc.Checklist(
-                            id=self.FRED_SWITCH_ID,
-                            options=[{'label': '', 'value': 'use_fred'}],
-                            value=self.use_fred,
-                            inline=True,
-                            className='custom-switch',
-                            style=item_style,  # Apply item_style to the element
-                            labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
-                        ),
-                        html.Label('FRED'),
-                    ], style=div_style2)
+                        html.Div([  # Switch
+                            html.Label('Securities', style={'fontSize': '0.8em', 'padding': '0.1em'}),
+                            dcc.Checklist(
+                                id=self.SECURITY_SWITCH_ID,
+                                options=[{'label': '', 'value': 'selected'}],
+                                value=self.use_fred,
+                                inline=True,
+                                className='custom-switch',
+                                style=switch_style,  # Apply item_style to the element
+                                labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
+                            ),
+                        ], style=div_style_switch),
+                        html.Div([  # Switch
+                            html.Label('FRED-MD', style={'fontSize': '0.8em', 'padding': '0.1em'}),
+                            dcc.Checklist(
+                                id=self.FREDMD_SWITCH_ID,
+                                options=[{'label': '', 'value': 'selected'}],
+                                value=self.use_fred,
+                                inline=True,
+                                className='custom-switch',
+                                style=switch_style,  # Apply item_style to the element
+                                labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
+                            ),
+                        ], style=div_style_switch),
+                        html.Div([  # Switch
+                            html.Label('FRED API', style={'fontSize': '0.8em', 'padding': '0.1em'}),
+                            dcc.Checklist(
+                                id=self.FREDAPI_SWITCH_ID,
+                                options=[{'label': '', 'value': 'selected'}],
+                                value=self.use_fred,
+                                inline=True,
+                                className='custom-switch',
+                                style=switch_style,  # Apply item_style to the element
+                                labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
+                            ),
+                        ], style=div_style_switch),
+                    ], style=div_style_input)
 
                 ], style=dropdown_div_style),
 
@@ -331,8 +383,8 @@ class SecurityDashboard:
                         labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
                     ),
                     html.Label('Monthly Resample'),
-                ], style=div_style),
-            ], style=div_style,
+                ], style=div_style_tri_switch),
+            ], style=div_style_tri_switch,
             ),
 
             # Checklist to include ETFs, Stocks, and/or Indices
@@ -541,7 +593,7 @@ class SecurityDashboard:
                 State(self.SECURITIES_INPUT_ID, 'value'),
 
                 Input(self.SECURITIES_DROPDOWN_ID, 'value'),
-                Input(self.FRED_SWITCH_ID, 'value'),
+                Input(self.FREDMD_SWITCH_ID, 'value'),
 
                 Input(self.START_DATE_ID, 'value'),
                 Input(self.NUM_TRACES_ID, 'value'),
@@ -664,7 +716,7 @@ class SecurityDashboard:
 
             self.otc_filter = otc_filter  #
 
-            if ctx.triggered_id == self.FRED_SWITCH_ID:
+            if ctx.triggered_id == self.FREDMD_SWITCH_ID:
                 is_fred_selected = 'use_fred' in use_fred
 
                 self.dropdown_options = [{'label': security, 'value': security} for security in
@@ -875,7 +927,6 @@ class SecurityDashboard:
                            [{'label': market_cap, 'value': market_cap} for market_cap in self.market_caps], \
                            self.sectors, self.industry_groups, self.industries, \
                            self.countries, self.states, self.market_caps
-
 
             if recompute_plot or security_exists_but_year_doesnt:
                 print('Load', recompute_plot, security_exists_but_year_doesnt)

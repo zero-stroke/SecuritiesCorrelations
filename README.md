@@ -67,7 +67,7 @@ If fred is selected, there's another switch to select if you want fred data from
 
 Fred-api switch will change dropdown values to values supported by api, which is mostly identical except for HWIRATIO, CONSPI, and COMPAPFFx.
 
-Radio buttons - Securities - FRED MD - FRED API & As Reported
+Radio buttons: Securities - FRED MD - FRED API & As Reported
 
 As reported data correlations will give a better insight into what was truly following the movement. Fred api data will allow for as-reported data as well as more granular data retrieval for series such as VIXCLSx. 
 
