@@ -12,9 +12,7 @@ The SecuritiesCorrelations project is a tool that provides insights into the cor
 4. Advanced Correlation Analysis: The scripts directory contains various Python scripts to compute correlations, read files, and plot data.
     
 ## Setup
-Make sure python is installed, preferably ≥ 3.10, and if on Windows, run setup.bat. Once the environment has been set up, running run.bat will start the interface. 
-
-For the 'main' branch you need to download a folder with 2gb of parquets from https://drive.google.com/drive/folders/1W8n0o0Nrj4bJgsXEk1uneZqqyqk0bJfP?usp=drive_link and place it in the data/yahoo_daily/ folder so that every Stock, ETF, and Index has data.   
+Make sure python is installed, preferably ≥ 3.10, and if on Windows, run setup.bat. It will download about 2gb of Stock, ETF, and Index data from Google Drive that is used to calculate correlations. Once the environment has been set up, running run.bat will start the interface. For easy access, you can make a shortcut for run.bat by right-clicking it and selecting "Create Shortcut", and adding it to your desktop.
 
 ## Running the Dashboard:
 To launch the interactive dashboard, navigate to the root directory of the project and run:
@@ -66,6 +64,8 @@ Radio buttons - Securities - FRED MD - FRED API & As Reported
 As reported data correlations will give a better insight into what was truly following the movement. Fred api data will allow for as-reported data as well as more granular data retrieval for series such as VIXCLSx. 
 
 Navigable Fred-md release archive calendar
+
+Add Crypto, Funds, and more macroeconomic data.
 
 ## Contributing:
 Feel free to fork the repository and submit pull requests for any enhancements or bug fixes. I appreciate your contribution!

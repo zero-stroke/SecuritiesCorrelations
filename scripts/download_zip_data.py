@@ -14,7 +14,7 @@ def download_data_from_drive(zip_url, output_path):
         zip_ref.extractall(os.path.dirname(output_path))
     os.remove(output_path)  # Remove the zip file after extraction
 
-
-url = r'https://drive.google.com/file/d/1s8_UUgCuluLiWl45Ndl7UU0mIy1r-J5j/view?usp=sharing'
-output = str(DATA_DIR / 'Stock_data/dl_folder')
+# Using the direct download link format provided by gdown's warning
+url = r'https://drive.google.com/uc?id=1jZSSNTLwt_0ChQmmBaZ2dVMsH7XDprJP'
+output = str(DATA_DIR / 'Stock_data/yahoo_daily/parquets_data.zip')
 download_data_from_drive(url, output)
