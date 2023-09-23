@@ -65,7 +65,7 @@ Add anomaly detection.
 
 If fred is selected, there's another switch to select if you want fred data from the fred-md csv or from the fred api. If fred api is selected, can choose if you want the data to be as-reported or not.
 
-Fred-api switch will change dropdown values to values supports by api, which is mostly identical except for HWIRATIO, CONSPI, and COMPAPFFx.
+Fred-api switch will change dropdown values to values supported by api, which is mostly identical except for HWIRATIO, CONSPI, and COMPAPFFx.
 
 Radio buttons - Securities - FRED MD - FRED API & As Reported
 
