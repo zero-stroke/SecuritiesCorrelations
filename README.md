@@ -12,13 +12,13 @@ The SecuritiesCorrelations project is a tool that provides insights into the cor
 4. Advanced Correlation Analysis: The scripts directory contains various Python scripts to compute correlations, read files, and plot data.
     
 ## Setup
-Make sure python is installed, preferably ≥ 3.10, and run the following command, in a conda or venv environment if you prefer:
+Make sure python is installed, preferably ≥ 3.10, and run the following command from your command prompt at the root directory, in a conda or venv environment if you prefer:
 
     pip install -r requirements.txt
 
-Next 
+Next run setup.py, it will download about 2gb of Stock, ETF, and Index data from Google Drive that is used to calculate correlations. 
 
-It will download about 2gb of Stock, ETF, and Index data from Google Drive that is used to calculate correlations. 
+    python setup.py
 
 Once the environment has been set up, running run.bat will start the interface. For easy access, you can make a shortcut for run.bat by right-clicking it and selecting "Create Shortcut", and adding it to your desktop.
 
