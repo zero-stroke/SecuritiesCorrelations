@@ -22,7 +22,7 @@ def download_data_from_drive(zip_url, output_path):
 
 
 if __name__ == "__main__":
-    # Using the direct download link format provided by gdown's warning
-    url = r'https://drive.google.com/uc?id=1mzSDgkoVM_LLogmINCVcFv7YRPUYP3Zx'
+    url = r'https://drive.google.com/uc?id=1jZSSNTLwt_0ChQmmBaZ2dVMsH7XDprJP'
+    # url = r'https://drive.google.com/uc?id=1mzSDgkoVM_LLogmINCVcFv7YRPUYP3Zx'   # Example data
     output = str(DATA_DIR / 'Stock_data/yahoo_daily/parquets_data.zip')
     download_data_from_drive(url, output)
