@@ -56,7 +56,7 @@ def test_caching_large(symbols_list: list, source: str):
 def main_test():
     compute_security_correlations_and_plot(
         symbol_list=['U'],
-        use_fred=False,
+        fred_source=False,
         start_date='2023',
         end_date='2023-06-02',
         num_traces=4,

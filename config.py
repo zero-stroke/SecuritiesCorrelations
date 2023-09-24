@@ -11,3 +11,5 @@ stock_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv',
 index_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv', index_col='symbol')
 
 securities_metadata = (etf_metadata, stock_metadata, index_metadata)
+
+FRED_KEY = 'c0741d356c1d0a639e3a63e8350252d2'

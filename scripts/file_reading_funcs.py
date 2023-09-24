@@ -212,21 +212,27 @@ def is_series_continuous(series, symbol: str) -> bool:
     return True
 
 
-def pickle_securities_objects(security: Security | FredSeries, use_fred: bool):
+def pickle_securities_objects(security: Security | FredSeries, source: str):
     """Pickles a security object to re-use the calculations"""
-    file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{security.symbol}.pkl'
-    if use_fred:
-        file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{security.symbol}_fred.pkl'
+    symbol = security.symbol
+
+    file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}.pkl'
+    if source == 'FREDMD':
+        file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}_fred.pkl'
+    elif source == 'FREDAPI':
+        file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}_fredapi.pkl'
     # Save dict of base security id's, and symbols that correlate with them for later use
     with open(file_path, 'wb') as pickle_file:
         pickle.dump(security, pickle_file)
 
 
-def load_saved_securities(symbol: str, use_fred: bool | List[str]) -> Union[Security, FredSeries]:
+def load_saved_securities(symbol: str, source: str | List[str]) -> Union[Security, FredSeries]:
     """Loads and returns saved security objects from pickle files."""
     file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}.pkl'
-    if use_fred:
+    if source == 'FREDMD':
         file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}_fred.pkl'
+    elif source == 'FREDAPI':
+        file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}_fredapi.pkl'
 
     if file_path.exists():
         with open(file_path, 'rb') as pickle_file:

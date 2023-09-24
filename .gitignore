@@ -198,3 +198,5 @@ data/Graphs/json_plots/*
 *.log
 
 testing.ipynb
+
+config.py

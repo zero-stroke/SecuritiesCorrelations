@@ -10,7 +10,7 @@ DEBUG = False
 
 
 def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_security: Security = None,
-                                           symbol_list: List[str] = None, use_fred: bool = False,
+                                           symbol_list: List[str] = None, fred_source: str = False,
                                            start_date: str = '2023', end_date: str = '2023-06-02',
                                            num_traces: int = 2,
                                            source: str = 'yahoo', dl_data: bool = False,
@@ -23,10 +23,13 @@ def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_securit
                                            industry: List[str] = None, country: List[str] = None,
                                            state: List[str] = None, market_cap: List[str] = None):
     """Returns list of tickers from most to least correlated"""
-    if not use_fred:
+    if fred_source == 'SECURITIES' or 'yahoo':
         securities_list = make_securities_set(symbol_list)
     elif len(symbol_list) < 3:
-        securities_list = {FredSeries(symbol_list[0])}
+        if fred_source == 'FREDMD':
+            securities_list = {FredSeries(symbol_list[0])}
+        elif fred_source == 'FREDAPI':
+            securities_list = {FredSeries(symbol_list[0])}
     else:
         securities_list = get_fred_md_series_list()
 
@@ -63,7 +66,7 @@ def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_securit
                             len(old_security.positive_correlations[date]) != 0:
                         security.positive_correlations[date] = old_security.positive_correlations[date]
                         security.negative_correlations[date] = old_security.negative_correlations[date]
-            pickle_securities_objects(security, use_fred)
+            pickle_securities_objects(security, fred_source)
 
     plotter = CorrelationPlotter()
     fig_list = []  # List of figures from plotly
@@ -128,7 +131,7 @@ def main():
         cache=cache,
 
         symbol_list=['RPI', 'AAA'],
-        use_fred=True,
+        fred_source=True,
         start_date=start_date,
         end_date=end_date,
         num_traces=num_traces,

@@ -23,7 +23,14 @@ from scripts.file_reading_funcs import load_saved_securities, read_series_data, 
 from scripts.plotting_functions import CorrelationPlotter, save_plot
 
 
-def get_all_fred_series_ids() -> List[str]:
+def get_all_fred_api_series_ids() -> List[str]:
+    with open(FRED_DIR / 'FRED_all_series.txt', 'r') as f:
+        fred_api_symbols = [symbol.strip() for symbol in f.readlines()]
+
+    return fred_api_symbols
+
+
+def get_all_fredmd_series_ids() -> List[str]:
     fred_md_metadata = pd.read_csv(FRED_DIR / 'fred_md_metadata.csv')
 
     return fred_md_metadata[fred_md_metadata['fred_md_id'].notna()]['fred_md_id'].tolist()
@@ -47,9 +54,7 @@ class SecurityDashboard:
     SECURITIES_INPUT_ID = 'security_input'
     SECURITIES_DROPDOWN_ID = 'security-dropdown'
 
-    FREDMD_SWITCH_ID = 'fredmd_switch'
-    FREDAPI_SWITCH_ID = 'fredapi_switch'
-    SECURITY_SWITCH_ID = 'security_switch'
+    TRI_RADIO_ID = 'tri_radio'
 
     ADD_TRACE_ID = 'add_trace'
 
@@ -76,24 +81,29 @@ class SecurityDashboard:
     LATEX_ID = 'latex_equation'
 
     def __init__(self, data_dir):
+        self.DEBUG: bool = True
         self.data_dir = data_dir
         self.cache = SharedMemoryCache()
 
-        self.available_securities: List[str] = self.get_available_securities()  # Doesn't include FRED series
         self.all_available_securities: List[str] = self.get_all_available_securities()  # Includes FRED series
-        self.fred_indicators: List[str] = get_all_fred_series_ids()
+
+        self.available_securities: List[str] = self.get_available_securities()  # Doesn't include FRED series
+        self.fredmd_metrics: List[str] = get_all_fredmd_series_ids()
+        self.fred_api_metrics: List[str] = get_all_fred_api_series_ids()
 
         if not self.available_securities:  # If there is nothing saved to disk
             compute_security_correlations_and_plot(cache=self.cache, symbol_list=['GME'])
-        self.available_start_dates = ['2010', '2018', '2021', '2022', '2023']
-        self.main_security: Security = load_saved_securities('GME', False)
+        self.available_start_dates: List[str] = ['2010', '2018', '2021', '2022', '2023']
 
-        self.input_symbol = self.main_security.symbol
-        self.dropdown_symbol = self.main_security.symbol
-        self.dropdown_options = self.available_securities
-        self.latex_equation = ''
+        self.dropdown_source = 'Securities'
 
-        self.use_fred = []
+        self.main_security: Security = load_saved_securities('GME', self.dropdown_source)
+
+        self.input_symbol: str = self.main_security.symbol
+        self.dropdown_symbol: str = self.main_security.symbol
+        self.dropdown_options: List[str] = self.available_securities
+        self.latex_equation: str = ''
+
         self.add_trace = []
 
         self.etf: bool = True
@@ -103,9 +113,9 @@ class SecurityDashboard:
         self.start_date = '2023'
         self.num_traces = 2
 
-        self.show_detrended = []
-        self.monthly_resample = []
-        self.otc_filter = []
+        self.show_detrended: list = []
+        self.monthly_resample: list = []
+        self.otc_filter: list = []
 
         self.displayed_positively_correlated: List[Security] = []
         self.displayed_negatively_correlated: List[Security] = []
@@ -130,7 +140,7 @@ class SecurityDashboard:
     def pick_random_security(self):
         random_security = None
         while random_security is not Security:
-            random_security = load_saved_securities(choice(list(self.available_securities)), self.use_fred)
+            random_security = load_saved_securities(choice(list(self.available_securities)), self.dropdown_source)
             print(random_security)
         return random_security
 
@@ -170,7 +180,7 @@ class SecurityDashboard:
 
     def get_available_securities(self) -> List[str]:
         return [file.split('.')[0] for file in os.listdir(self.data_dir / 'Graphs/pickled_securities_objects/') if
-                file.endswith('.pkl') and not file.endswith('_fred.pkl')]
+                file.endswith('.pkl') and not (file.endswith('_fred.pkl') or file.endswith('fredapi.pkl'))]
 
     def get_all_available_securities(self) -> List[str]:
         return [file.split('.')[0] for file in os.listdir(self.data_dir / 'Graphs/pickled_securities_objects/') if
@@ -270,7 +280,7 @@ class SecurityDashboard:
                             dcc.Checklist(
                                 id=self.ADD_TRACE_ID,
                                 options=[{'label': '', 'value': 'add_trace'}],
-                                value=self.use_fred,
+                                value=self.dropdown_source,
                                 inline=True,
                                 className='custom-switch',
                                 style=switch_style,  # Apply item_style to the element
@@ -289,42 +299,19 @@ class SecurityDashboard:
                             ),
                         ], style=dropdown_container_style),
                         #  Changes dropdown options from being regular stocks to being fred-md series
-                        html.Div([  # Switch
-                            html.Label('Securities', style={'fontSize': '0.8em', 'padding': '0.1em'}),
-                            dcc.Checklist(
-                                id=self.SECURITY_SWITCH_ID,
-                                options=[{'label': '', 'value': 'selected'}],
-                                value=self.use_fred,
-                                inline=True,
-                                className='custom-switch',
-                                style=switch_style,  # Apply item_style to the element
-                                labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
-                            ),
-                        ], style=div_style_switch),
-                        html.Div([  # Switch
-                            html.Label('FRED-MD', style={'fontSize': '0.8em', 'padding': '0.1em'}),
-                            dcc.Checklist(
-                                id=self.FREDMD_SWITCH_ID,
-                                options=[{'label': '', 'value': 'selected'}],
-                                value=self.use_fred,
-                                inline=True,
-                                className='custom-switch',
-                                style=switch_style,  # Apply item_style to the element
-                                labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
-                            ),
-                        ], style=div_style_switch),
-                        html.Div([  # Switch
-                            html.Label('FRED API', style={'fontSize': '0.8em', 'padding': '0.1em'}),
-                            dcc.Checklist(
-                                id=self.FREDAPI_SWITCH_ID,
-                                options=[{'label': '', 'value': 'selected'}],
-                                value=self.use_fred,
-                                inline=True,
-                                className='custom-switch',
-                                style=switch_style,  # Apply item_style to the element
-                                labelStyle={'display': 'flex', 'alignItems': 'center'},  # vertically align the label
-                            ),
-                        ], style=div_style_switch),
+                        html.Div([
+                            dcc.RadioItems(
+                                id=self.TRI_RADIO_ID,
+                                options=[
+                                    {'label': 'Securities', 'value': 'SECURITIES'},
+                                    {'label': 'FRED-MD', 'value': 'FREDMD'},
+                                    {'label': 'FRED API', 'value': 'FREDAPI'},
+                                ],
+                                value='SECURITIES',  # default value
+                                labelStyle={'display': 'block', 'margin': '0 0.2em'},
+                                style={'fontSize': '0.8em', 'padding': '0.1em'}
+                            )
+                        ], style=div_style_switch)
                     ], style=div_style_input)
 
                 ], style=dropdown_div_style),
@@ -593,7 +580,7 @@ class SecurityDashboard:
                 State(self.SECURITIES_INPUT_ID, 'value'),
 
                 Input(self.SECURITIES_DROPDOWN_ID, 'value'),
-                Input(self.FREDMD_SWITCH_ID, 'value'),
+                Input(self.TRI_RADIO_ID, 'value'),
 
                 Input(self.START_DATE_ID, 'value'),
                 Input(self.NUM_TRACES_ID, 'value'),
@@ -619,7 +606,7 @@ class SecurityDashboard:
                          add_trace=None,
                          input_symbol: Optional[str] = self.input_symbol,
                          dropdown_symbol: Optional[str] = self.dropdown_symbol,
-                         use_fred=None,
+                         dropdown_source=None,
                          start_date: str = self.start_date, num_traces: int = self.num_traces,
                          etf_clicks: int = self.etf, stock_clicks: int = self.stock, index_clicks: int = self.index,
                          detrend_plot=None,
@@ -649,8 +636,8 @@ class SecurityDashboard:
                 monthly = self.monthly_resample
             if detrend_plot is None:
                 detrend_plot = self.show_detrended
-            if use_fred is None:
-                use_fred = self.use_fred
+            if dropdown_source is None:
+                dropdown_source = self.dropdown_source
             if add_trace is None:
                 add_trace = self.add_trace
             print('\n')
@@ -660,8 +647,8 @@ class SecurityDashboard:
             if self.dropdown_symbol != dropdown_symbol:
                 print(f"self.dropdown_symbol: {self.dropdown_symbol} != dropdown_symbol: {dropdown_symbol}")
 
-            if self.use_fred != use_fred:
-                print(f"self.use_fred: {self.use_fred} != use_fred: {use_fred}")
+            if self.dropdown_source != dropdown_source:
+                print(f"self.use_fred: {self.dropdown_source} != use_fred: {dropdown_source}")
 
             if self.add_trace != add_trace:
                 print(f"self.add_trace: {self.add_trace} != add_trace: {add_trace}")
@@ -690,8 +677,8 @@ class SecurityDashboard:
             if self.otc_filter != otc_filter:
                 print(f"self.otc_filter: {self.otc_filter} != otc_filter: {otc_filter}")
 
-            if self.dropdown_symbol != dropdown_symbol or self.use_fred \
-                    != use_fred or start_date != self.start_date or num_traces != self.num_traces or \
+            if self.dropdown_symbol != dropdown_symbol or self.dropdown_source \
+                    != dropdown_source or start_date != self.start_date or num_traces != self.num_traces or \
                     (etf_clicks % 2 == 1) != self.etf or (stock_clicks % 2 == 1) != self.stock or \
                     (index_clicks % 2 == 1) != self.index or detrend_plot != \
                     self.show_detrended or monthly != self.monthly_resample or self.otc_filter != otc_filter:
@@ -702,7 +689,7 @@ class SecurityDashboard:
             self.input_symbol = input_symbol
             self.dropdown_symbol = dropdown_symbol
 
-            self.use_fred = use_fred  #
+            self.dropdown_source = dropdown_source  #
 
             self.start_date = start_date
             self.num_traces = num_traces
@@ -716,12 +703,15 @@ class SecurityDashboard:
 
             self.otc_filter = otc_filter  #
 
-            if ctx.triggered_id == self.FREDMD_SWITCH_ID:
-                is_fred_selected = 'use_fred' in use_fred
+            if ctx.triggered_id == self.TRI_RADIO_ID:
+                is_fred_selected = 'use_fred' in dropdown_source
 
+            if not is_fred_selected:
                 self.dropdown_options = [{'label': security, 'value': security} for security in
-                                         self.available_securities] \
-                    if not is_fred_selected else [{'label': series, 'value': series} for series in self.fred_indicators]
+                                         self.available_securities]
+            elif
+            else:
+                [{'label': series, 'value': series} for series in self.fredmd_metrics]
 
                 self.etf = True
                 self.stock = True
@@ -779,16 +769,16 @@ class SecurityDashboard:
 
             # Does plot need to be computed from scratch
             recompute_plot = False
-            if input_symbol or (use_fred and f"{dropdown_symbol}_fred" not in self.all_available_securities) or \
+            if input_symbol or (dropdown_source and f"{dropdown_symbol}_fred" not in self.all_available_securities) or \
                     (n_clicks is not None and no_changes_have_been_made) \
                     or len(self.main_security.positive_correlations[start_date]) == 0:
-                print(use_fred, dropdown_symbol, self.all_available_securities, "n_clicks: ", n_clicks)
+                print(dropdown_source, dropdown_symbol, self.all_available_securities, "n_clicks: ", n_clicks)
                 recompute_plot = True
 
             # New dropdown security's pkl file exists, but selected year is not yet created
             security_exists_but_year_doesnt = False
             if not recompute_plot and loading_new_plot and dropdown_symbol in self.all_available_securities:
-                test_security = load_saved_securities(dropdown_symbol, self.use_fred)
+                test_security = load_saved_securities(dropdown_symbol, self.dropdown_source)
                 if len(test_security.positive_correlations[self.start_date]) == 0:
                     security_exists_but_year_doesnt = True
 
@@ -943,7 +933,7 @@ class SecurityDashboard:
                     old_security=self.main_security,
 
                     symbol_list=[param_symbol],
-                    use_fred=self.use_fred,
+                    fred_source=self.dropdown_source,
                     start_date=start_date,
                     end_date='2023-06-02',
                     num_traces=num_traces,
@@ -962,7 +952,7 @@ class SecurityDashboard:
                     monthly_resample=self.monthly_resample,
                     otc_filter=self.otc_filter,
                 )
-                self.main_security = load_saved_securities(param_symbol, self.use_fred)
+                self.main_security = load_saved_securities(param_symbol, self.dropdown_source)
 
                 print(len(self.main_security.positive_correlations[start_date]))
                 for key, value in self.main_security.positive_correlations.items():
@@ -970,11 +960,11 @@ class SecurityDashboard:
 
                 # Once self.main_security is updated, then we can call update_filter_options
                 update_filter_options()
-                if not use_fred and param_symbol not in self.available_securities:
+                if not dropdown_source and param_symbol not in self.available_securities:
                     self.available_securities.append(param_symbol)
                     self.all_available_securities.append(param_symbol)
                     self.dropdown_options = self.available_securities
-                elif use_fred and param_symbol not in self.all_available_securities:
+                elif dropdown_source and param_symbol not in self.all_available_securities:
                     self.all_available_securities.append(f'{param_symbol}_fred')
 
                 self.dropdown_symbol = param_symbol
@@ -984,7 +974,7 @@ class SecurityDashboard:
                 self.stock = True
                 self.index = True
 
-                if use_fred:
+                if dropdown_source:
                     self.latex_equation = self.main_security.latex_equation
                 else:
                     self.latex_equation = ''
@@ -1002,7 +992,7 @@ class SecurityDashboard:
 
             print(f'{dropdown_symbol} != {self.main_security.symbol} is {loading_new_plot}')
             plotter = CorrelationPlotter()
-            self.main_security = load_saved_securities(dropdown_symbol, self.use_fred)
+            self.main_security = load_saved_securities(dropdown_symbol, self.dropdown_source)
 
             if loading_new_plot:
                 print('Loading new plot, dropdown:', dropdown_symbol, 'self.main.symbol: ',
@@ -1030,7 +1020,7 @@ class SecurityDashboard:
                 self.stock = True
                 self.index = True
 
-                if use_fred:
+                if dropdown_source:
                     self.latex_equation = self.main_security.latex_equation
                 else:
                     self.latex_equation = ''

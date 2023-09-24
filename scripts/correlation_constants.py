@@ -212,6 +212,45 @@ class Security:
                f"{self.market_cap}'\n"
 
 
+class FredSeries:
+    def __init__(self, fred_md_id):
+        # common attributes
+        ...
+
+    def get_latex_equation(self):
+        # common methods
+        ...
+
+class FredMDSeries(FredSeries):
+    def __init__(self, fred_md_id):
+        super().__init__(fred_md_id)
+        # attributes specific to FRED-MD dataset
+        ...
+
+    def set_fredmd_series(self):
+        # method specific to FRED-MD dataset
+        ...
+
+class FredAPISeries(FredSeries):
+    def __init__(self, fred_md_id):
+        super().__init__(fred_md_id)
+        # attributes specific to FRED API
+        ...
+
+    def set_api_series(self):
+        # method to fetch data from the FRED API
+        ...
+
+class FredAPIAsReportedSeries(FredSeries):
+    def __init__(self, fred_md_id):
+        super().__init__(fred_md_id)
+        # attributes specific to the as-reported version from the FRED API
+        ...
+
+    def set_as_reported_series(self):
+        # method to fetch as-reported data from the FRED API
+        ...
+
 # Define Series class with data about each series. Needs self.update_time to be added
 class FredSeries:
     def __init__(self, fred_md_id):
