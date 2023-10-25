@@ -6,13 +6,12 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 from config import DATA_DIR
-from scripts.correlation_constants import Security, EnhancedEncoder, FredSeries
+from scripts.correlation_constants import Security, EnhancedEncoder, FredmdSeries, FredapiSeries
 from scripts.file_reading_funcs import read_series_data, fit_data_to_time_range
 
 
-def set_comment_text(main_security: FredSeries | Security) -> str:
-    is_fred_object = isinstance(main_security, FredSeries)
-    if is_fred_object:
+def set_comment_text(main_security:  FredmdSeries | FredapiSeries | Security) -> str:
+    if isinstance(main_security, FredapiSeries) or isinstance(main_security, FredmdSeries):
         # Remove "http://www." prefix from source_link and release_link
         source_link_cleaned = main_security.source_link.replace("http://www.", "")
         source_link_cleaned = source_link_cleaned.replace("https://www.", "")
@@ -41,7 +40,7 @@ class CorrelationPlotter:
     DEBUG = False
     MAIN_SERIES_COLOR = '#FFFFFF'
 
-    def __init__(self):
+    def __init__(self):\
         pass
 
     @staticmethod
@@ -182,9 +181,9 @@ class CorrelationPlotter:
         if display_plot:
             self.show_popup_plot(main_security.symbol, fig)
 
-        # # Save plot (if not in debug mode)
+        # Save plot (if not in debug mode)
         # if not self.DEBUG:
-        #     self.save_plot(main_security.symbol, fig, start_date)
+        #     save_plot(main_security.symbol, fig)
 
         return fig
 

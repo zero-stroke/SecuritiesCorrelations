@@ -71,6 +71,9 @@ Modifying the plot using anything other than the filter options will reset the f
 
 Click and drag on the plot to zoom in to select a time range to zoom in on. Double click to zoom back out.
 
+Add FRED symbols to the 'data/FRED_all_series.txt' file to add to the dropdown of which FRED Series you can fetch from
+the api
+
 ## Future Enhancements:
 
 Integrate more data sources to provide a comprehensive analysis.
@@ -96,7 +99,7 @@ Navigable Fred-md release archive calendar
 
 Add Crypto, Funds, and more macroeconomic data.
 
-Add plotting of Google trends data, a stock's reddit sentiment data, news data. 
+Add plotting of Google trends data, a stock's reddit sentiment data, news data.
 
 Able to add fundamental data to plot for visual aid, not necessarily for correlation, from SEC filings such
 as earnings yield, PEG, price/sales ratio, PSG, free cash flow, P/FCFG ratio, current ratio, quick ratio, price/book
@@ -117,7 +120,6 @@ This project is open source and available under the GNU General Public License.
 ![Dropdown Filters](ui/screenshots/GME_filters.png)
 
 ![AMD Plot](ui/screenshots/AMD_detrended_monthly_2010.png)
-
 
 ### Notes:
 

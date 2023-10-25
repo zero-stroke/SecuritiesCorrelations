@@ -4,7 +4,6 @@ import pandas as pd
 from functools import lru_cache, wraps
 import threading
 import logging
-from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from config import STOCKS_DIR
 

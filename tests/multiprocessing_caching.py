@@ -1,6 +1,6 @@
 import unittest
 from multiprocessing import Process, Manager
-from scripts.file_reading_funcs import get_validated_security_data
+from scripts import get_validated_security_data
 from scripts.correlation_constants import SecurityMetadata
 
 

@@ -1,8 +1,9 @@
 import time
-from typing import List, Union
+from typing import List
 
-from scripts.correlation_constants import SecurityMetadata, Security, FredSeries, SharedMemoryCache
-from scripts.file_reading_funcs import pickle_securities_objects, get_fred_md_series_list, load_saved_securities
+from config import start_years
+from scripts.correlation_constants import Security, SharedMemoryCache, FredmdSeries, FredapiSeries
+from scripts.file_reading_funcs import pickle_securities_objects, get_fred_md_series_list, build_symbol_list
 from scripts.calculate_correlations import CorrelationCalculator, define_top_correlations
 from scripts.plotting_functions import CorrelationPlotter
 
@@ -10,7 +11,7 @@ DEBUG = False
 
 
 def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_security: Security = None,
-                                           symbol_list: List[str] = None, fred_source: str = False,
+                                           symbol_list: List[str] = None, fred_source: str = 'SECURITIES',
                                            start_date: str = '2023', end_date: str = '2023-06-02',
                                            num_traces: int = 2,
                                            source: str = 'yahoo', dl_data: bool = False,
@@ -23,21 +24,26 @@ def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_securit
                                            industry: List[str] = None, country: List[str] = None,
                                            state: List[str] = None, market_cap: List[str] = None):
     """Returns list of tickers from most to least correlated"""
-    if fred_source == 'SECURITIES' or 'yahoo':
+    if fred_source == 'SECURITIES' or fred_source == 'yahoo':
         securities_list = make_securities_set(symbol_list)
     elif len(symbol_list) < 3:
         if fred_source == 'FREDMD':
-            securities_list = {FredSeries(symbol_list[0])}
+            securities_list = {FredmdSeries(symbol_list[0])}
         elif fred_source == 'FREDAPI':
-            securities_list = {FredSeries(symbol_list[0])}
+            securities_list = {FredapiSeries(symbol_list[0], revised=True)}
+        elif fred_source == 'FREDAPIOG':
+            securities_list = {FredapiSeries(symbol_list[0], revised=False)}
+        else:
+            raise ValueError('Unknown fred_source')
     else:
         securities_list = get_fred_md_series_list()
 
+    for security in securities_list:
+        assert next(iter(security.series_data_detrended.items())), f"Invalid symbol, no data for {security.symbol}."
     start_time = time.time()
-    metadata = SecurityMetadata()  # Initialize SecurityMetadata Singleton object
 
     # Build list of symbols to be used for comparisons
-    symbols = metadata.build_symbol_list(etf, stock, index)
+    symbols = build_symbol_list(etf, stock, index)
 
     # MAIN CALCULATION
     calculator = CorrelationCalculator(symbols, cache)  # Calculate all correlations for securities_list
@@ -51,21 +57,23 @@ def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_securit
         with open('scripts/temp_file.txt', 'a') as f:
             f.write(f'{securities_list, start_date, end_date, source, dl_data, use_ch}')
 
-    # Take the num_traces positively and negatively correlated and assign to Security
+    # Take the 100 most positively and negatively correlated and assign to Security
     securities_list = define_top_correlations(securities_list)
 
     # for security in securities_list:
     #     print(f'{str(security):<90}', security.positive_correlations, '\n')
     #     print(f'{str(security):<90}', security.negative_correlations, '\n')
 
-    if not DEBUG:  # Pickle securities list to use later for configuring plots
+    if True:  # Pickle securities list to use later for configuring plots
         for security in securities_list:
-            if old_security is not None and security.symbol == old_security.symbol:
-                for date in ['2010', '2018', '2021', '2022', '2023']:
-                    if len(security.positive_correlations[date]) == 0 and \
-                            len(old_security.positive_correlations[date]) != 0:
-                        security.positive_correlations[date] = old_security.positive_correlations[date]
-                        security.negative_correlations[date] = old_security.negative_correlations[date]
+            # If the old security is the same as the new security, add to the correlation cache list
+            if old_security is not None and type(old_security) == type(security) and \
+                    security.symbol == old_security.symbol:
+                for year in start_years:
+                    if len(security.positive_correlations[year]) == 0 and \
+                            len(old_security.positive_correlations[year]) != 0:
+                        security.positive_correlations[year] = old_security.positive_correlations[year]
+                        security.negative_correlations[year] = old_security.negative_correlations[year]
             pickle_securities_objects(security, fred_source)
 
     plotter = CorrelationPlotter()
@@ -130,8 +138,8 @@ def main():
     fig_list = compute_security_correlations_and_plot(
         cache=cache,
 
-        symbol_list=['RPI', 'AAA'],
-        fred_source=True,
+        symbol_list=['RPI'],
+        fred_source='FREDAPIOG',
         start_date=start_date,
         end_date=end_date,
         num_traces=num_traces,
@@ -140,7 +148,7 @@ def main():
         dl_data=dl_data,
         display_plot=display_plot,
         use_ch=use_ch,
-        use_multiprocessing=True,
+        use_multiprocessing=False,
 
         etf=False,
         stock=True,

@@ -1,11 +1,10 @@
 import subprocess
-import subprocess
 
 import numpy as np
 import plotly.express as px
 
 from config import DATA_DIR
-from scripts.file_reading_funcs import read_series_data
+from scripts import read_series_data
 
 
 def show_popup_plot(symbol, fig):

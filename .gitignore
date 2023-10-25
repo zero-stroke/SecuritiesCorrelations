@@ -1,4 +1,4 @@
-data/*
+../data/FRED
 !data/*/
 
 data/Stock_data/debug/

@@ -1,18 +1,172 @@
 import json
 # Configure the logger at the module level
 import logging
+import time
 from datetime import datetime
-from enum import Enum
 from multiprocessing import Manager
 from typing import List, Dict, Optional, Iterable
+from finagg import fred
 
 import pandas as pd
+from requests import HTTPError
 from unicodedata import normalize
 
-from config import STOCKS_DIR, FRED_DIR, securities_metadata
+from config import STOCKS_DIR, FRED_DIR, securities_metadata, FRED_KEY, start_years
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
+
+
+class FredSeriesBase:
+    def __init__(self, _id, id_type):
+        self.symbol = _id
+        fred_metadata = pd.read_csv(FRED_DIR / 'fred_md_metadata.csv')
+        try:
+            row = fred_metadata[fred_metadata[id_type] == _id].iloc[0]
+        except IndexError:
+            raise IndexError(f'{_id} does not exist.')
+
+        self.fred_md_id = row['fred_md_id']
+        self.api_id = row['api_id']
+        self.name = row['title']
+        self.source_title = row['source_title']
+        self.source_link = row['source_link']
+        self.release_title = row['release_title']
+        self.release_link = row['release_link']
+        self.tcode = row['tcode']
+        self.frequency = row['frequency']
+        self.latex_equation = self.get_latex_equation()
+        self.series_data: pd.Series = {}
+        self.series_data_detrended: pd.DataFrame = {}
+        self.positive_correlations, self.negative_correlations, self.all_correlations = self.initialize_correlations()
+
+    def initialize_correlations(self):
+        return (
+            {start_date: [] for start_date in start_years},
+            {start_date: [] for start_date in start_years},
+            {start_date: {} for start_date in start_years}
+        )
+
+    def get_latex_equation(self):
+        latex_eq_dict = {
+            1: r"No transformation",
+            2: r"$\Delta x_t$",
+            3: r"$\Delta^2 x_t$",
+            4: r"$\log(x_t)$",
+            5: r"$\Delta \log(x_t)$",
+            6: r"$\Delta^2 \log(x_t)$",
+            7: r"$\Delta (x_t/x_{t−1} - 1.0)$"
+        }
+        return latex_eq_dict.get(self.tcode, "Unknown transformation code")
+
+    def get_unique_values(self, attribute_name: str, start_date) -> List[str]:
+        unique_values = set()
+        unique_values.update(getattr(security, attribute_name) for security in
+                             self.positive_correlations[start_date] if getattr(security, attribute_name))
+        unique_values.update(getattr(security, attribute_name) for security in
+                             self.negative_correlations[start_date] if getattr(security, attribute_name))
+        return list(unique_values)
+
+    def __str__(self):
+        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source_title}"
+
+    def __repr__(self):
+        return (
+                "FredSeries(fred_md_id=" + f"{self.fred_md_id}\n"
+                + "api_id=" + f"{self.api_id}\n"
+                + "title=" + f"{self.name}\n"
+                + "source_title=" + f"{self.source_title}\n"
+                + "tcode=" + f"{self.tcode}\n"
+                + f"frequency={self.frequency})"
+        )
+
+    def __hash__(self):  # Make the instance hashable using its symbol attribute
+        return hash(self.symbol)
+
+    def __eq__(self, other) -> bool:
+        if isinstance(other, Security):
+            return self.symbol == other.symbol
+        return False
+
+    def to_dict(self):
+        return self.__dict__
+
+
+class FredapiSeries(FredSeriesBase):
+    def __init__(self, api_id, revised):
+        super().__init__(api_id, 'api_id')
+        if not revised:
+            self.name = self.name + ' (UNREVISED)'
+        self.set_fred_series(revised)
+
+    def set_fred_series(self, revised):
+        """For getting a series from the FRED API"""
+        if revised:
+            while True:
+                try:
+                    df = fred.api.series.observations.get_first_observations(
+                        self.symbol,
+                        observation_start="1980-02-27",
+                        observation_end="2023-06-29",
+                        api_key=FRED_KEY,
+                    )
+                    break
+                except HTTPError as err:
+                    if '429' in str(err):  # Too Many Requests error
+                        time.sleep(5)  # Sleep for 5 seconds before trying again
+                    else:  # For any other HTTP error, just raise the error to be handled in the main loop
+                        raise
+        else:
+            while True:
+                try:
+                    df = fred.api.series.observations.get(
+                        self.symbol,
+                        observation_start="1980-02-27",
+                        observation_end="2023-06-29",
+                        api_key=FRED_KEY,
+                    )
+                    break
+                except HTTPError as err:
+                    if '429' in str(err):
+                        time.sleep(5)
+                    else:
+                        raise
+
+        # Rename the 'date' column to 'Date'
+        df = df.rename(columns={'date': 'Date'})
+        df = df.rename(columns={'value': self.symbol})
+
+        # Convert the 'Date' column to datetime
+        df['Date'] = pd.to_datetime(df['Date'])
+
+        # Set the 'Date' column as the index
+        df = df.set_index('Date')[self.symbol]
+
+        for year in start_years:
+            self.series_data[year] = df[df.index.year >= int(year)]
+            detrended_series = self.series_data[year].diff().dropna()
+            self.series_data_detrended[year] = detrended_series.to_frame(name='main')
+
+
+class FredmdSeries(FredSeriesBase):
+    def __init__(self, fred_md_id):
+        super().__init__(fred_md_id, 'fred_md_id')
+        self.set_fred_series()
+
+    def set_fred_series(self):
+        """For getting a series from the FRED-MD dataset"""
+        md_data = pd.read_csv(FRED_DIR / 'FRED_MD/MD_2023-08-02.csv')
+        md_data = md_data.rename(columns={'sasdate': 'Date'})
+
+        md_data['Date'] = pd.to_datetime(md_data['Date'])
+
+        # Extract the 'series_id' column for correlation
+        md_data = md_data.set_index('Date')[self.fred_md_id]
+
+        for year in start_years:
+            self.series_data[year] = md_data[md_data.index.year >= int(year)]
+            detrended_series = self.series_data[year].diff().dropna()
+            self.series_data_detrended[year] = detrended_series.to_frame(name='main')
 
 
 class SharedMemoryCache:
@@ -38,53 +192,6 @@ class SharedMemoryCache:
 
     def get_misses(self):
         return self.misses.value
-
-
-class SecurityMetadata:
-    _instance = None
-
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super(SecurityMetadata, cls).__new__(cls)
-            # Load ETF, Stock, and Index data
-            cls._instance.etf_metadata = \
-                pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_etf_data.csv', index_col='symbol')
-            cls._instance.stock_metadata = \
-                pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv', index_col='symbol')
-            cls._instance.index_metadata = \
-                pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv', index_col='symbol')
-        return cls._instance
-
-    def build_symbol_list(self, etf: bool = False, stock: bool = True, index: bool = False) -> List[str]:
-        """Build list of symbols from the given data sources."""
-        symbols = []
-
-        if etf and self.etf_metadata is not None:
-            etf_metadata_filtered = self.etf_metadata[self.etf_metadata['market'].notna() &
-                                                      self.etf_metadata['exchange'].notna() &
-                                                      self.etf_metadata['family'].notna()]
-            symbols.extend(etf_metadata_filtered.index.tolist())
-
-        if stock and self.stock_metadata is not None:
-
-            # Use a txt file with all stock symbols
-            stock_composite_list = []
-            with open(STOCKS_DIR / 'all_stock_symbols.txt', 'r') as f:
-                for line in f.readlines():
-                    stock_composite_list.append(line.strip())
-
-            # # Use only data from the metadata csv
-            # stock_metadata_filtered = \
-            #     self.stock_metadata[~self.stock_metadata['market_cap'].isin(['Nano Cap', 'Micro Cap']) &
-            #                         self.stock_metadata['market_cap'].notna()]
-
-            symbols.extend(stock_composite_list)
-
-        if index and self.index_metadata is not None:
-            index_metadata_filtered = self.index_metadata[self.index_metadata['name'].notna()]
-            symbols.extend(index_metadata_filtered.index.tolist())
-
-        return symbols
 
 
 class Security:
@@ -126,7 +233,6 @@ class Security:
             return None
 
         # Filter series for each start year and store in series_data dictionary
-        start_years = ['2010', '2018', '2021', '2022', '2023']
         for year in start_years:
             self.series_data[year] = full_series[full_series.index.year >= int(year)]
             detrended_series = self.series_data[year].diff().dropna()
@@ -210,147 +316,6 @@ class Security:
                f" Industry_group: {self.industry_group}, Industry: {self.industry}, Market: {self.market}, Country: " \
                f"{self.country}, State: {self.state}, City: {self.city}, Website: {self.website}, Market Cap: " \
                f"{self.market_cap}'\n"
-
-
-class FredSeries:
-    def __init__(self, fred_md_id):
-        # common attributes
-        ...
-
-    def get_latex_equation(self):
-        # common methods
-        ...
-
-class FredMDSeries(FredSeries):
-    def __init__(self, fred_md_id):
-        super().__init__(fred_md_id)
-        # attributes specific to FRED-MD dataset
-        ...
-
-    def set_fredmd_series(self):
-        # method specific to FRED-MD dataset
-        ...
-
-class FredAPISeries(FredSeries):
-    def __init__(self, fred_md_id):
-        super().__init__(fred_md_id)
-        # attributes specific to FRED API
-        ...
-
-    def set_api_series(self):
-        # method to fetch data from the FRED API
-        ...
-
-class FredAPIAsReportedSeries(FredSeries):
-    def __init__(self, fred_md_id):
-        super().__init__(fred_md_id)
-        # attributes specific to the as-reported version from the FRED API
-        ...
-
-    def set_as_reported_series(self):
-        # method to fetch as-reported data from the FRED API
-        ...
-
-# Define Series class with data about each series. Needs self.update_time to be added
-class FredSeries:
-    def __init__(self, fred_md_id):
-        self.fred_md_id = fred_md_id
-        self.symbol = fred_md_id
-
-        # Fetch the data for the given fred_md_id from fred_md_metadata.csv
-        fred_md_metadata = pd.read_csv(FRED_DIR / 'fred_md_metadata.csv')
-        try:
-            row = fred_md_metadata[fred_md_metadata['fred_md_id'] == fred_md_id].iloc[0]
-        except IndexError:
-            raise IndexError(f'{fred_md_id} does not exist. Maybe you forgot to put an \'x\' at the end')
-
-        self.api_id = row['api_id']
-        self.name = row['title']
-        self.source_title = row['source_title']
-        self.source_link = row['source_link']
-        self.release_title = row['release_title']
-        self.release_link = row['release_link']
-        self.tcode = row['tcode']
-        self.frequency = row['frequency']
-        self.latex_equation = self.get_latex_equation()
-        self.series_data: pd.Series = {}
-        self.series_data_detrended: pd.DataFrame = {}
-
-        self.positive_correlations: Dict[str, List[Security]] = \
-            {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
-        self.negative_correlations: Dict[str, List[Security]] = \
-            {start_date: [] for start_date in ['2010', '2018', '2021', '2022', '2023']}
-        self.all_correlations: Dict[str, Optional[Dict[str, float]]] = \
-            {start_date: {} for start_date in ['2010', '2018', '2021', '2022', '2023']}
-        self.set_fredmd_series()
-
-    def get_latex_equation(self):
-        latex_eq_dict = {
-            1: r"No transformation",
-            2: r"$\Delta x_t$",
-            3: r"$\Delta^2 x_t$",
-            4: r"$\log(x_t)$",
-            5: r"$\Delta \log(x_t)$",
-            6: r"$\Delta^2 \log(x_t)$",
-            7: r"$\Delta (x_t/x_{t−1} - 1.0)$"
-        }
-        return latex_eq_dict.get(self.tcode, "Unknown transformation code")
-
-    def __repr__(self):
-        return (
-                "FredSeries(fred_md_id=" + f"{self.fred_md_id:<17},"
-                + " api_id=" + f"{self.api_id:<17}"
-                + " title=" + f"{self.name:<80}"
-                + " source_title=" + f"{self.source_title:<35},"
-                + " tcode=" + f"{self.tcode:<4}"
-                + f" frequency={self.frequency})"
-        )
-
-    def set_fredmd_series(self):
-        """For getting a series from the FRED-MD dataset"""
-        md_data = pd.read_csv(FRED_DIR / 'FRED_MD/MD_2023-08-02.csv')
-        md_data = md_data.rename(columns={'sasdate': 'Date'})
-        md_data['Date'] = pd.to_datetime(md_data['Date'])
-
-        # Extract the 'series_id' column for correlation
-        md_data = md_data.set_index('Date')[self.fred_md_id]
-
-        start_years = ['2010', '2018', '2021', '2022', '2023']
-        for year in start_years:
-            self.series_data[year] = md_data[md_data.index.year >= int(year)]
-            detrended_series = self.series_data[year].diff().dropna()
-            self.series_data_detrended[year] = detrended_series.to_frame(name='main')
-
-        return md_data
-
-    def get_unique_values(self, attribute_name: str, start_date) -> List[str]:
-        """Returns a list of a correlation_list's unique values for a given attribute"""
-        unique_values = set()
-
-        # Get values from positive_correlations
-        unique_values.update(getattr(security, attribute_name) for security in
-                             self.positive_correlations[start_date] if getattr(security, attribute_name))
-
-        # Get values from negative_correlations
-        unique_values.update(getattr(security, attribute_name) for security in
-                             self.negative_correlations[start_date] if getattr(security, attribute_name))
-
-        return list(unique_values)
-
-    def __hash__(self):
-        # Make the instance hashable using its symbol attribute
-        return hash(self.symbol)
-
-    def __eq__(self, other) -> bool:
-        if isinstance(other, Security):
-            return self.symbol == other.symbol
-        return False
-
-    def to_dict(self):
-        return self.__dict__
-
-    def __str__(self):
-        return f"Symbol: {self.symbol}, Name: {self.name}, Source: {self.source_title}"
 
 
 class EnhancedEncoder(json.JSONEncoder):

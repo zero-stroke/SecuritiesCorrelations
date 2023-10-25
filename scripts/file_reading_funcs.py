@@ -1,20 +1,19 @@
 import logging
+import pickle
 import threading
 import traceback
-from typing import List, Union, Set
-import pickle
-import os
 from functools import lru_cache
 from functools import wraps
+from typing import List, Set
 
+import financedatabase as fd
 import numpy as np
 import pandas as pd
 import yfinance as yf
-import financedatabase as fd
 
-from scripts.correlation_constants import FredSeries, Security, logger
+from config import STOCKS_DIR, FRED_DIR, DATA_DIR, etf_metadata, index_metadata
 from scripts.clickhouse_functions import get_data_from_ch_stock_data
-from config import STOCKS_DIR, FRED_DIR, DATA_DIR
+from scripts.correlation_constants import Security, logger, FredmdSeries, FredapiSeries
 
 # Configure the logger at the module level
 log_format = '%(asctime)s - %(message)s'
@@ -22,9 +21,6 @@ date_format = '%H:%M:%S'
 
 logging.basicConfig(filename='cache_info.log', level=logging.INFO,
                     format=log_format, datefmt=date_format, filemode='a')
-
-from multiprocessing import Manager
-
 
 # def initialize_shared_objects():
 #     global shared_cache, cache_lock
@@ -67,10 +63,10 @@ def read_series_data(symbol: str, source: str):
         return None
 
 
-@cache_info
+# @cache_info
 @lru_cache(maxsize=None)
 def original_get_validated_security_data(symbol: str, start_date: str, end_date: str, source: str, dl_data: bool,
-                                         use_ch: bool)\
+                                         use_ch: bool) \
         -> pd.DataFrame:
     """Get security data from file, make sure it's within range and continuous"""
     if dl_data:
@@ -130,7 +126,7 @@ def series_is_empty(series, symbol) -> bool:
     return False
 
 
-def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:  # TODO
+def is_series_within_date_range(series, start_date: str, end_date: str) -> bool:
     """Check if series is within date range, takes start_date format as either YYYY or YYYY-MM-DD"""
 
     # Extracting year and month from the start_date and end_date
@@ -212,7 +208,7 @@ def is_series_continuous(series, symbol: str) -> bool:
     return True
 
 
-def pickle_securities_objects(security: Security | FredSeries, source: str):
+def pickle_securities_objects(security: Security | FredapiSeries | FredmdSeries, source: str):
     """Pickles a security object to re-use the calculations"""
     symbol = security.symbol
 
@@ -221,18 +217,25 @@ def pickle_securities_objects(security: Security | FredSeries, source: str):
         file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}_fred.pkl'
     elif source == 'FREDAPI':
         file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}_fredapi.pkl'
+    elif source == 'FREDAPIOG':
+        file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}_fredapi_og.pkl'
     # Save dict of base security id's, and symbols that correlate with them for later use
     with open(file_path, 'wb') as pickle_file:
         pickle.dump(security, pickle_file)
 
 
-def load_saved_securities(symbol: str, source: str | List[str]) -> Union[Security, FredSeries]:
+def load_saved_securities(symbol: str, source: str) -> Security | FredapiSeries | FredmdSeries:
     """Loads and returns saved security objects from pickle files."""
-    file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}.pkl'
-    if source == 'FREDMD':
+    if source == 'SECURITIES':
+        file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}.pkl'
+    elif source == 'FREDMD':
         file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}_fred.pkl'
     elif source == 'FREDAPI':
         file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}_fredapi.pkl'
+    elif source == 'FREDAPIOG':
+        file_path = DATA_DIR / f'Graphs/pickled_securities_objects/{symbol}_fredapi_og.pkl'
+    else:
+        raise ValueError(f"Unrecognized source: {source}")
 
     if file_path.exists():
         with open(file_path, 'rb') as pickle_file:
@@ -242,7 +245,7 @@ def load_saved_securities(symbol: str, source: str | List[str]) -> Union[Securit
         print(f"No saved data found for symbol: {symbol}")
 
 
-def get_fred_md_series_list() -> Set[FredSeries]:
+def get_fred_md_series_list() -> Set[FredmdSeries]:
     """Create list of FredSeries objects from fred_md_metadata csv"""
     fred_md_metadata = pd.read_csv(FRED_DIR / 'fred_md_metadata.csv')
 
@@ -250,7 +253,7 @@ def get_fred_md_series_list() -> Set[FredSeries]:
     valid_rows = fred_md_metadata[pd.notnull(fred_md_metadata['fred_md_id']) & (fred_md_metadata['fred_md_id'] != '')]
 
     # Create a list of FredSeries objects using the 'fred_md_id' from the valid rows
-    fred_series_list = {FredSeries(row['fred_md_id']) for _, row in valid_rows.iterrows()}
+    fred_series_list = {FredmdSeries(row['fred_md_id']) for _, row in valid_rows.iterrows()}
 
     return fred_series_list
 
@@ -281,11 +284,8 @@ def initialize_fin_db_stock_metadata():
     df.to_csv(STOCKS_DIR / 'FinDB/fin_db_stock_data.csv')
 
 
-def delete_symbol_from_metadata(symbol):
-    # Read the CSV into a DataFrame
-    etf_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_etf_data.csv', index_col='symbol')
-    stock_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_stock_data.csv', index_col='symbol')
-    index_metadata = pd.read_csv(STOCKS_DIR / 'FinDB/updated_fin_db_indices_data.csv', index_col='symbol')
+def delete_symbol_from_metadata(symbol: str):
+    """For when cleaning out the metadata files to remove strange data."""
 
     with open(STOCKS_DIR / 'all_stock_symbols.txt', 'r') as file:
         all_symbols = file.read().splitlines()
@@ -327,7 +327,38 @@ def download_yfin_data(symbol):
         return pd.Series()
 
 
-def download_findb_data():
+def download_findb_data():  # Test if this works properly later
     indices = fd.Indices()
     indices.select().to_csv(STOCKS_DIR / 'FinDB/fin_db_indices2.csv')
 
+
+def build_symbol_list(etf: bool = False, stock: bool = True, index: bool = False) -> List[str]:
+    """Build list of symbols from the given data sources."""
+    symbols = []
+
+    if etf:
+        etf_metadata_filtered = etf_metadata[etf_metadata['market'].notna() &
+                                             etf_metadata['exchange'].notna() &
+                                             etf_metadata['family'].notna()]
+        symbols.extend(etf_metadata_filtered.index.tolist())
+
+    if stock:
+
+        # Use a txt file with all stock symbols
+        stock_composite_list = []
+        with open(STOCKS_DIR / 'all_stock_symbols.txt', 'r') as f:
+            for line in f.readlines():
+                stock_composite_list.append(line.strip())
+
+        # # Use only data from the metadata csv
+        # stock_metadata_filtered = \
+        #     self.stock_metadata[~self.stock_metadata['market_cap'].isin(['Nano Cap', 'Micro Cap']) &
+        #                         self.stock_metadata['market_cap'].notna()]
+
+        symbols.extend(stock_composite_list)
+
+    if index:
+        index_metadata_filtered = index_metadata[index_metadata['name'].notna()]
+        symbols.extend(index_metadata_filtered.index.tolist())
+
+    return symbols

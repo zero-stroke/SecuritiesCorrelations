@@ -5,9 +5,8 @@ from typing import List, Union, Set
 
 import pandas as pd
 
-from scripts.correlation_constants import Security, FredSeries
+from .correlation_constants import Security, FredapiSeries, FredmdSeries
 from scripts.file_reading_funcs import original_get_validated_security_data
-from multiprocessing import Manager
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development
@@ -30,8 +29,8 @@ def get_correlation_for_series(main_security_data_detrended: pd.DataFrame,
     return correlation
 
 
-def define_top_correlations(all_main_securities: Union[List['Security'], List['FredSeries']]) \
-        -> Union[List['Security'], List['FredSeries']]:
+def define_top_correlations(all_main_securities: List[Security | FredmdSeries | FredapiSeries]) \
+        -> List[Security | FredmdSeries | FredapiSeries]:
     num_symbols = 100
 
     # Define the correlation attributes and their corresponding positive and negative correlation attributes
@@ -95,7 +94,7 @@ all_main_securities is generally only a few securities long"""
 
     def __init__(self, symbols, cache):
         self.DEBUG = False
-        self.symbols = ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'MVIS', 'ASML', 'GS', 'CLX',
+        self.symbols = ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'ASML', 'GS', 'CLX',
                         'CHD', 'TSLA',
                         'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
                         'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW',
@@ -155,7 +154,7 @@ all_main_securities is generally only a few securities long"""
         # print(f"Cache miss for {symbol}. Total hits: {cache.get_hits()}, Total misses: {cache.get_misses()}")
         return data
 
-    def define_correlations_for_series_list(self, all_main_securities: Union[Set['Security'], Set['FredSeries']],
+    def define_correlations_for_series_list(self, all_main_securities: Union[Set['Security'], Set['FredapiSeries']],
                                             start_date: str, end_date: str, source: str, dl_data: bool, use_ch: bool) \
             -> Set['Security']:
         """Main function for calculating the correlations for each Security against a list of other securities"""
@@ -214,7 +213,8 @@ all_main_securities is generally only a few securities long"""
 
             main_security.all_correlations[start_date][symbol] = correlation_float
 
-    def define_correlations_for_series_list_multithread(self, all_main_securities: Set['Security'] | Set['FredSeries'],
+    def define_correlations_for_series_list_multithread(self, all_main_securities: Set[Security | FredmdSeries
+                                                                                       | FredapiSeries],
                                                         start_date: str, end_date: str, source: str, dl_data: bool,
                                                         use_ch: bool) -> Set['Security']:
 

@@ -1,4 +1,3 @@
-import json
 import os
 from random import choice
 from typing import List, Optional
@@ -11,7 +10,7 @@ from dash.dependencies import Output, State, Input
 
 from config import DATA_DIR
 from scripts.correlation_constants import Security
-from scripts.file_reading_funcs import load_saved_securities, read_series_data
+from scripts import load_saved_securities, read_series_data
 from scripts.plotting_functions import CorrelationPlotter
 
 
