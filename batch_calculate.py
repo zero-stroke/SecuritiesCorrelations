@@ -1,8 +1,7 @@
 import time
 from typing import List
 
-from config import start_years
-from scripts.correlation_constants import Security, SharedMemoryCache, FredmdSeries, FredapiSeries
+from scripts.correlation_constants import Security, SharedMemoryCache, FredmdSeries, FredapiSeries, start_years
 from scripts.file_reading_funcs import pickle_securities_objects, get_fred_md_series_list, build_symbol_list
 from scripts.calculate_correlations import CorrelationCalculator, define_top_correlations
 from scripts.plotting_functions import CorrelationPlotter
