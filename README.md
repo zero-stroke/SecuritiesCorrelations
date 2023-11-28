@@ -30,7 +30,7 @@ python setup.py
 Once the environment has been set up, running run.bat will start the interface. For easy access, you can make a shortcut
 for run.bat by right-clicking it and selecting "Create Shortcut", and adding it to your desktop.
 
-If you want to fetch data from the FRED API, set your API key in config.py.
+If you want to fetch data from the FRED API, get a [FRED API](https://fredaccount.stlouisfed.org/login/secure/)  key if you don't already have one, and set it in config.py.
 
 ## Running the Dashboard:
 
