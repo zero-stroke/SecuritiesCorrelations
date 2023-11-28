@@ -40,26 +40,21 @@ correlations.
 python setup.py
 ```
 
-Once the environment has been set up, running run.bat will start the interface. 
-```
-run.bat
-```
-
-If you want to fetch data from the FRED API, get a [FRED API](https://fredaccount.stlouisfed.org/login/secure/)  key if you don't already have one, and set it in config.py.
-
-## Running the Dashboard:
-
-To launch the interactive dashboard, navigate to the root directory of the project and run:
+Once the environment has been set up, navigate to the root directory of the project and run:
 
 ```
 python main_ui.py
 ```
-
 This will start the Dash server and the dashboard will be accessible in your browser at localhost:8080.
+If you want to fetch data from the FRED API, get a [FRED API](https://fredaccount.stlouisfed.org/login/secure/)  key if you don't already have one, and set it in config.py.
+
+## Running the Dashboard:
 
 First time calculations will take a minute, but subsequent calculations will only take a few seconds due to caching data
 retrieval. Once a calculation is made it should be saved to data/Graphs/pickled_security_correlations/.
-Entering a ticker into the top "Enter New..." box will always calculate the correlation from scratch. You can recalculate correlations with the "Reload" button as well.
+Entering a ticker into the top "Enter New..." box will always calculate the correlation from scratch. Once a security has had its correlations calculated, it will appear in the "Securities" dropdown. You can recalculate correlations with the "Reload" button if desired.
+
+When the switch next to "Enter New..." is set to "Add Series to Plot", the current plot will be kept and a new series will be added to it, including any metrics from the FRED website if you have set your API Key. For example if you want to overlay a GDP chart over AAPL you can enter "GDP" and press enter.   
 
 Securities, FRED-MD, FRED API, and FRED API Unrevised buttons makes the dropdown show Securities or different macroeconomic indicators form the FRED-MD dataset that can be selected from.
 

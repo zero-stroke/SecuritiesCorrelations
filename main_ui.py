@@ -278,7 +278,7 @@ class SecurityDashboard:
                                 style=switch_style,  # Apply item_style to the element
                                 labelStyle={'display': 'flex', 'justifyContent': 'center'},  # vertical align the label
                             ),
-                            html.Label('Add Series', style=html_switch_label_style),
+                            html.Label('Add Series to Plot', style=html_switch_label_style),
                         ], style=div_style_input_box),
                     ], style=div_style_input),
                     html.Div([
@@ -801,7 +801,7 @@ class SecurityDashboard:
 
                     source='yahoo',
                     dl_data=False,
-                    display_plot=True,
+                    display_plot=False,
                     use_ch=False,
                     use_multiprocessing=False,
 
@@ -1074,7 +1074,7 @@ class SecurityDashboard:
             return no_changes_have_been_made
 
     def run(self):
-        self.app.run_server(debug=True, host='localhost', port=int(os.environ.get('PORT', 8080)))
+        self.app.run_server(debug=False, host='localhost', port=int(os.environ.get('PORT', 8080)))
 
 
 if __name__ == '__main__':

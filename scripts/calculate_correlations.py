@@ -2,11 +2,14 @@ import logging
 from concurrent.futures import ThreadPoolExecutor
 from multiprocessing import Pool, cpu_count
 from typing import List, Union, Set
+import warnings
 
 import pandas as pd
 
 from scripts.correlation_constants import Security, FredapiSeries, FredmdSeries, start_years
 from scripts.file_reading_funcs import original_get_validated_security_data
+
+warnings.filterwarnings("ignore")
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.WARNING)  # Set to WARNING for production; DEBUG for development

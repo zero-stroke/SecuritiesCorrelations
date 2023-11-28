@@ -60,15 +60,15 @@ def read_series_data(symbol: str, source: str) -> pd.Series | None:
             else:
                 raise ValueError("Unknown source")
         except FileNotFoundError as e:
-            raise ValueError(f"File not found{e}")
-            # df: pd.DataFrame = fred.api.series.observations.get_first_observations(
-            #     symbol, observation_start="1980-02-27", observation_end=observation_end, api_key=FRED_KEY,
-            # )
-            # df: pd.DataFrame = df.rename(columns={'date': 'Date'})
-            # df = df.rename(columns={'value': symbol})
-            # df['Date'] = pd.to_datetime(df['Date'])
-            # trace_series: pd.Series = df.set_index('Date')[symbol]
-            # return trace_series
+            # raise ValueError(f"File not found{e}")
+            df: pd.DataFrame = fred.api.series.observations.get_first_observations(
+                symbol, observation_start="1980-02-27", observation_end=observation_end, api_key=FRED_KEY,
+            )
+            df: pd.DataFrame = df.rename(columns={'date': 'Date'})
+            df = df.rename(columns={'value': symbol})
+            df['Date'] = pd.to_datetime(df['Date'])
+            trace_series: pd.Series = df.set_index('Date')[symbol]
+            return trace_series
 
 
 # @cache_info
