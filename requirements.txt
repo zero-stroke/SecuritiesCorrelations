@@ -57,7 +57,6 @@ fastapi==0.98.0
 fastjsonschema==2.16.2
 ffmpy==0.3.0
 filelock==3.12.2
-finagg==0.3.1
 financedatabase==2.1.1
 flashy==0.0.2
 Flask==2.2.2
@@ -145,7 +144,7 @@ omegaconf==2.3.0
 openunmix==1.2.1
 orjson==3.9.1
 packaging==23.1
-pandas==1.5.3
+pandas>=1
 pandas-stubs==1.5.3.230321
 pandocfilters==1.5.0
 parso==0.8.3
