@@ -21,7 +21,7 @@ def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_securit
                                            otc_filter: bool = True,
                                            sector: List[str] = None, industry_group: List[str] = None,
                                            industry: List[str] = None, country: List[str] = None,
-                                           state: List[str] = None, market_cap: List[str] = None):
+                                           state: List[str] = None, market_cap: List[str] = None, debug=False):
     """Returns list of tickers from most to least correlated"""
     if fred_source == 'SECURITIES' or fred_source == 'yahoo':
         securities_list = make_securities_set(symbol_list)
@@ -45,7 +45,7 @@ def compute_security_correlations_and_plot(cache: SharedMemoryCache, old_securit
     symbols = build_symbol_list(etf, stock, index)
 
     # MAIN CALCULATION
-    calculator = CorrelationCalculator(symbols, cache)  # Calculate all correlations for securities_list
+    calculator = CorrelationCalculator(symbols, cache, debug=debug)  # Calculate all correlations for securities_list
 
     if use_multiprocessing:
         securities_list = calculator.define_correlation_for_each_year(securities_list, end_date,

@@ -91,14 +91,9 @@ class CorrelationCalculator:
     """Calculates correlations between different series. symbols attribute is generally thousands long,
 all_main_securities is generally only a few securities long"""
 
-    def __init__(self, symbols, cache):
-        self.DEBUG = False
-        self.symbols = ['AAPL', 'MSFT', 'TSM', 'BRK-A', 'CAT', 'CCL', 'NVDA', 'ASML', 'GS', 'CLX',
-                        'CHD', 'TSLA',
-                        'COST', 'TGT', 'JNJ', 'GOOG', 'AMZN', 'UNH', 'XOM', 'PG', 'TM', 'SHEL', 'META', 'CRM', 'AVGO',
-                        'QCOM', 'TXM', 'MA', 'SHOP', 'NOW', 'V', 'SCHW',
-                        'TMO', 'DHR', 'TT', 'UNP', 'PYPL', 'BAC', 'WFC',
-                        'TD', 'NU', 'TAK', 'ZTS', 'HCA', 'HON', 'NEE', 'LIN', 'SHW', 'BHP', 'ET', 'LNG', 'E'] \
+    def __init__(self, symbols, cache, debug=False):
+        self.DEBUG = debug
+        self.symbols = ['AAPL', 'MSFT', 'GME', 'UNH', 'SHEL', 'FNV', 'DIS', 'NFLX', 'VZ', 'TMUS', 'INTC'] \
             if self.DEBUG else symbols
         self.cache = cache
 

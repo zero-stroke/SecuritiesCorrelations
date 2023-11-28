@@ -15,10 +15,23 @@ dynamics.
 
 ## Setup
 
-Make sure python 3.10 is installed, and that it has been added to your PATH. After you've downloaded the repo, run the following command from your command prompt at the download's directory, preferable in a conda or venv environment:
+Make sure you've installed [conda](https://docs.conda.io/projects/conda/en/stable/user-guide/install/download.html) and created an environment for this application using python 3.10: 
+```
+conda create -n myenv python=3.10
+```
+Downloaded the repo:
+```
+git clone https://github.com/NoHedge/SecuritiesCorrelations.git
+```
+Activate your conda environment:
+```
+conda activate myenv
+```
+And install the requirements:
 
 ```
-pip install -r requirements.txt
+cd SecuritiesCorrelations
+python -m pip install -r requirements.txt
 ```
 
 Next run setup.py, it will download about 2gb of Stock, ETF, and Index data from Google Drive that is used to calculate
@@ -27,8 +40,10 @@ correlations.
 python setup.py
 ```
 
-Once the environment has been set up, running run.bat will start the interface. For easy access, you can make a shortcut
-for run.bat by right-clicking it and selecting "Create Shortcut", and adding it to your desktop.
+Once the environment has been set up, running run.bat will start the interface. 
+```aidl
+run.bat
+```
 
 If you want to fetch data from the FRED API, get a [FRED API](https://fredaccount.stlouisfed.org/login/secure/)  key if you don't already have one, and set it in config.py.
 
@@ -64,6 +79,8 @@ Stock Filters is a list of filters that will only apply to stocks. Metadata is t
 information for the majority of stocks but occasionally has "Missing" or "nan" values.
 
 ### Tips:
+
+For easy access, you can make a shortcut for run.bat by right-clicking it and selecting "Create Shortcut", and adding it to your desktop.
 
 Click on a security in the legend to hide it from the graph.
 
@@ -105,8 +122,3 @@ By using this application, you are agreeing to be bound by the FRED® API Terms 
 
 In rare circumstances localhost:8080 might not work for you due to the port being in use by another process. In this
 case find `port=int(os.environ.get('PORT', 8080)))` at the bottom of main_ui.py and change the port to another number.
-
-It will say 
-   Dash is running on  http://0.0.0.0:8080/
-But you will likely not be able to click the link to visit the app, instead "http://localhost:8080/" is the correct url.
-

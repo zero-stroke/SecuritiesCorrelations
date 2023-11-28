@@ -197,4 +197,11 @@ data/Graphs/json_plots/*
 !data/Stock_data/yahoo_daily/parquets/DE.parquet
 !data/Stock_data/yahoo_daily/parquets/WM.parquet
 !data/Stock_data/yahoo_daily/parquets/GTLB.parquet
+!data/Stock_data/yahoo_daily/parquets/SCHW.parquet
+!data/Stock_data/yahoo_daily/parquets/UNP.parquet
+!data/Stock_data/yahoo_daily/parquets/ZTS.parquet
+!data/Stock_data/yahoo_daily/parquets/E.parquet
+!data/Stock_data/yahoo_daily/parquets/LNG.parquet
+!data/Stock_data/yahoo_daily/parquets/HCA.parquet
+!data/Stock_data/yahoo_daily/parquets/TM.parquet
 

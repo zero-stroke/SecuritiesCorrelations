@@ -92,7 +92,7 @@ class SecurityDashboard:
         self.fred_api_unrevised_metrics: List[str] = get_all_fred_api_series_ids()
 
         if not self.available_securities:  # If there is nothing saved to disk
-            compute_security_correlations_and_plot(cache=self.cache, symbol_list=['GME'])
+            compute_security_correlations_and_plot(cache=self.cache, symbol_list=['GME'], debug=True)
         self.available_start_dates: List[str] = start_years
 
         self.dropdown_source = self.SECURITIES_SOURCE
@@ -1074,7 +1074,7 @@ class SecurityDashboard:
             return no_changes_have_been_made
 
     def run(self):
-        self.app.run_server(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+        self.app.run_server(debug=True, host='localhost', port=int(os.environ.get('PORT', 8080)))
 
 
 if __name__ == '__main__':
