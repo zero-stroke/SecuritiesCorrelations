@@ -41,7 +41,7 @@ python setup.py
 ```
 
 Once the environment has been set up, running run.bat will start the interface. 
-```aidl
+```
 run.bat
 ```
 
