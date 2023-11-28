@@ -57,6 +57,7 @@ fastapi==0.98.0
 fastjsonschema==2.16.2
 ffmpy==0.3.0
 filelock==3.12.2
+financedatabase
 flashy==0.0.2
 Flask==2.2.2
 Flask-Compress==1.13
