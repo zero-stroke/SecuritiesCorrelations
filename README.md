@@ -97,7 +97,7 @@ Add Crypto, Funds, and more macroeconomic data.
 ## Contributing:
 
 Feel free to fork the repository and submit pull requests for any enhancements or bug fixes. I appreciate your
-contribution!
+contribution.
 
 ## License:
 
